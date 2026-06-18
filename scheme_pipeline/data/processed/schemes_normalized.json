@@ -356,7 +356,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 10
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -426,7 +426,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 60
+        "max": null
       },
       "gender": "female",
       "income_limit": {
@@ -828,7 +828,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 10
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -962,7 +962,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 50
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1029,7 +1029,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 5
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1096,7 +1096,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "female",
       "income_limit": {
@@ -1163,7 +1163,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 1958
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1230,7 +1230,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1363,8 +1363,8 @@
     "state": "Dadra & Nagar Haveli and Daman & Diu",
     "eligibility_json": {
       "age": {
-        "min": 1,
-        "max": 12
+        "min": null,
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1431,7 +1431,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1565,7 +1565,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 2
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1833,7 +1833,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1900,7 +1900,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -1967,7 +1967,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -2159,7 +2159,7 @@
     "benefits": "",
     "benefit_type": "Composite",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The Indian Agricultural Statistics Research Institute is a premier Institute under Indian Council of Agricultural Research for conducting research and education in the field of agricultural statistics and computer application in agriculture. The Institute has functioned as the Centre of Advanced Studies in Agricultural Statistics and Computer Application from October 12,1983 to March 31,1992 under the aegis of United Nations Development Programme. Subsequently, ICAR established the Centre of Advanced Studies on Agricultural Statistics and Computer Application at the Institute from February 2,1995 as a part of its Human Resource Development Programme. Besides having modern laboratories, up to date library and other infrastructure, the Institute has a dedicated team of qualified and experienced faculty in the field of Agricultural Statistics and Computer Application. The Institute conducts Post Graduate Degree Programmes in collaboration with the Indian | Agricultural Research Institute which has the status of a Deemed University under the University Grants Commission Act. The teaching is organized on the basis of trimester system. An Academic Session consists of three trimesters, each consisting of nearly twelve weeks duration. The programme of studies at the Institute includes | a) M.Sc. (Agricultural Statistics) | b) M.Sc. (Computer Application) | c) Ph.D. (Agricultural Statistics) | The alumni of the Institute have served/are occupying important positions in various prestigious institutions/universities in India and abroad | M.Sc. Degree Course | The admission to M.Sc. programme is through All India Combined Competitive Examination conducted by the Education Division, Indian Council of Agricultural Research (ICAR). On the basis of the merit the ICAR finalizes the admission.",
     "documents_required": "",
     "application_url": "https://www.myscheme.gov.in/schemes/iasri-scholarship",
     "deadline": "2023-09-30",
@@ -2168,7 +2168,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 10
+        "max": 55
       },
       "gender": "all",
       "income_limit": {
@@ -2230,7 +2230,7 @@
     "benefits": "",
     "benefit_type": "Composite",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "NATIONAL PROFESSORIAL | To promote excellence by recognizing outstanding scientists with proven output and outcomes for creating a culture of basic research through their project work in the National Agricultural Research System (NARS). Establishing and nurturing a novel school of thought around the recognized person. | Number of Positions | The total number of positions of ICAR National Professors would not exceed ten (10) at any given time. These will include one B.P. Pal Chair in Genetics and Plant Breeding at IARI, New Delhi and one Norman Borlaug Chair in International Agriculture located in ICARAgricultural | University System. | Salary | The ICAR National Professor would be appointed with a monthly pay of Rs. 75,000/- (fixed) along with admissible allowances and as revised from time to time. | Nature of Award | The award of the National Professor will be tenurial in nature. He/she will be appointed for an initial tenure of five years, which can be extended for one or more tenures of five years subject to quality performance as assessed by the Selection Committee but not beyond 65 | years of age. | Service Conditions | - The ICAR National Professor who continues to serve under the Scheme up to 65 years of age will stand retired at the age as applicable for other scientists in the sponsoring institution. However, he/she will continue as ICAR National Professor till the end of the tenure or 65 years of age whichever is earlier, | - The ICAR National Professor will be eligible for pension and benefits fixed on the salary at the time of attaining the age of superannuation in the normal course as per the rules of the sponsoring institution. | - The responsibility of providing pension and other retirement benefits will rest with the sponsoring institution. However, these will be received by him/her after he/she ceases to be ICAR National Professor. | - For all practical purposes, the scientist appointed as ICAR National Professor will remain an employee of the sponsoring organization and he/she shall continue to enjoy the benefits of leave, medical facilities/accommodation etc. as any other employee of the sponsoring organization. | - In case the ICAR National Professor is from a sponsoring institution outside the ICAR, the Council will not be responsible for his/her continuation and protection of service interests in his/her sponsoring organization | - The National Professor, if from outside ICAR, will not be absorbed in the ICAR on completion of the tenure. | - ICAR National Professor is expected to devote full time for his/her approved project and shall not engage him/herself on any other work except for the projects related to the theme of his agreed research work-plan and with prior approval of the Council. He/she would not accept any other position in the University/Institute except Chairmanship/membership of important scientific committees. | - ICAR National Professor shall have total academic freedom in the planning and execution of his/her approved project and shall have requisite administrative control over staff working under him/her in his/her project. Need-based adequate support from the sponsoring institution must be extended for his/her work. He/she must not be burdened with routine administrative responsibilities of the Institute/University. | - The scientists associated with the National Professor will be Co-Principal Investigators in the National Professor project but will be allowed to submit Research Project Files(RPF) or projects in equivalent formats under the National Professor's overall research Workplan/ thematic areas and shall have the status of Principal Investigator of a regular Institute/University project for Agricultural Scientist Recruitment Board(ASRB) and related markings, | - ICAR National Professor will be permitted by the ICAR to accept foreign assignments, befitting his/her status in an international organization for a total period of not exceeding six months during each term of five years (not allowed to be cumulative over the terms), after completing at least one year in the position. Participation in conferences, seminars, symposiums etc. will not be construed as such an assignment. | - ICAR National Professor may apply for or accept any other regular or term offer/appointment within the country or abroad after a minimum period of five years as a National Professor. On selection to the regular or term appointment and with effect from joining the same, the ICAR National Professor shall cease to be an ICAR National Professor. | - The award of ICAR National Professor should be consummated within six months from the date of issue of the Award Letter and no extension will be given beyond six months. | NATIONAL FELLOWSHIP | To promote excellence at the national level in agricultural research and education. To recognize the meritorious contribution of individual agricultural scientists/teachers and facilitate their research and related activities in agriculture. | Number of Fellowships | The total number of positions of ICAR National Fellows would not exceed twenty-five (25) at any given time. | Salary | - Irrespective of the previous emoluments, the [CAR National Fellow would be appointed in the Pay Band - IV of Rs. 37,400 — 67,000 with Research Grade Pay of Rs. 10,000/-, per month or as applicable/revised from time to time. | - His/her starting pay would be determined/fixed by the Council as per relevant ICAR rules. | Nature of appointment | The appointment of the National Fellow will be tenurial in nature but not beyond the age of superannuation as prevalent at his/her sponsoring institution. An ICAR National Fellow will be appointed for an initial tenure of five years, which can be extended for one more, i.e., second tenure of five years subject to the quality performance as assessed by the Search-cum-Selection Committee. Only in case of exceptionally good contributions, as assessed by the Selection Committee, the tenure may be further extended for the third and final term of five years or until superannuation whichever is earlier. | Service Conditions | - In case the ICAR National Fellow is from a sponsoring institution outside the ICAR, the Council will not be responsible for his/her continuation and protection of service interests in his/her sponsoring organization. | - The age of superannuation for an ICAR National Fellow, if not from an ICAR institution, would remain the same as in the sponsoring institution. | - The Fellow, if from outside the ICAR, will not be absorbed in the ICAR on completion of the tenure. | - ICAR National Fellow is expected to devote full time for his/her approved project and shall not engage him/herself on any other work. | - ICAR National Fellow will be permitted by the ICAR to accept foreign assignment, befitting his/her status in an international organization for a total period of not exceeding three months during each term of five years (not allowed to be cumulative over the terms), after completing at least one year in the project/fellowship. Participation in conferences, seminars, symposium etc. will not be construed as such an assignment. | - ICAR National Fellow may apply for or accept any other regular or term offer/appointment within the country or abroad after a minimum period of three years as National Fellow. On selection to the regular or term appointment and with effect from joining the same, the Fellow shall cease to be an ICAR National Fellow. | - The offer of appointment as ICAR National Fellow should be consummated within six months from the date of issue of the order and no extension will be given beyond six months.",
     "documents_required": "",
     "application_url": "https://www.myscheme.gov.in/schemes/icar-npanf",
     "deadline": "2022-04-14",
@@ -2239,7 +2239,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 8
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -2440,7 +2440,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 39
+        "max": null
       },
       "gender": "female",
       "income_limit": {
@@ -2507,7 +2507,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -2574,7 +2574,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 22
+        "max": null
       },
       "gender": "female",
       "income_limit": {
@@ -2641,7 +2641,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 5
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -2708,7 +2708,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 40
+        "max": null
       },
       "gender": "female",
       "income_limit": {
@@ -4318,8 +4318,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": 17,
-        "max": 18
+        "min": null,
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -4386,7 +4386,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 39
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -4457,7 +4457,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 5
+        "max": null
       },
       "gender": "female",
       "income_limit": {
@@ -4524,7 +4524,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 36
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -4725,7 +4725,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 40
+        "max": null
       },
       "gender": "female",
       "income_limit": {
@@ -4792,7 +4792,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -5129,7 +5129,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 2
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -5266,7 +5266,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 39
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -5333,7 +5333,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 1
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -5400,7 +5400,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 60
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -5533,8 +5533,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": 2025,
-        "max": 31
+        "min": null,
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -5735,7 +5735,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 9
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -5804,7 +5804,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -5938,7 +5938,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 18
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -6072,7 +6072,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 3
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -6208,7 +6208,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": 1
+        "max": null
       },
       "gender": "all",
       "income_limit": {
@@ -6341,7 +6341,7 @@
     "state": "Madhya Pradesh",
     "eligibility_json": {
       "age": {
-        "min": 60,
+        "min": null,
         "max": null
       },
       "gender": "all",
@@ -6899,8 +6899,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 15,
+        "max": 45
       },
       "gender": "all",
       "income_limit": {
@@ -8226,7 +8226,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -10571,7 +10571,7 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
+        "min": 17,
         "max": null
       },
       "gender": "all",
@@ -10869,7 +10869,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The State Government of Maharashtra has introduced in 2003-04 the scheme to create self-employment for unemployed youths and students of VJNT and SBC who apply for a Vocational Training.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -11541,7 +11541,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -12399,7 +12399,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme has been introduced to uplift the sizeable community of traditional Fishermen, by providing them financial help in the form of subsidy on the construction/ purchase of Fishing Craft less than 26 feet for fishing in inland waters of Goa. The applications are accepted only in offline mode.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -13020,7 +13020,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -14703,7 +14703,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 55
       },
       "gender": "all",
       "income_limit": {
@@ -15510,7 +15510,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The Board is implementing this scheme by entering an MoU with M/s Labour Net Services Private Limited and M/s G&G Skill Developers Private Limited, to provide training to the Construction Workers enrolled as beneficiaries in the Board. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -15561,7 +15561,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The Board provides financial assistance of ₹ 2,000/- to the registered worker as a relief during a natural calamity/pandemic. The amount is credited through Direct Benefit Transfer (DBT) into the bank account of the registered construction worker. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -15918,7 +15918,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Cash Grant in lieu of Sewing Machine\" is a Welfare Scheme by the Armed Forces Flag Day Fund of the Dept of Sainik Welfare, Puducherry. Through this scheme, ₹10,000/- is provided to the Widows of Ex-servicemen for the purchase of a Sewing Machine. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -16385,7 +16385,7 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
+        "min": 35,
         "max": null
       },
       "gender": "all",
@@ -16785,7 +16785,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through the \"Death Benefit\" scheme, the nominee/dependant of the deceased worker is provided with financial assistance. The death should have either been natural or caused due to an accident, during the course of employment. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -16998,7 +16998,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 0
       },
       "gender": "all",
       "income_limit": {
@@ -19344,7 +19344,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -20457,7 +20457,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The objective of this scheme is to provide government assistance for pilgrimage to the senior citizens & Persons with Disabilities (PwDs), who are residents of Chhattisgarh, to visit one or more of the various designated pilgrimage sites outside the state, once in their lifetime.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -20771,7 +20771,7 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
+        "min": 3,
         "max": null
       },
       "gender": "all",
@@ -20873,8 +20873,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 45
       },
       "gender": "all",
       "income_limit": {
@@ -21587,8 +21587,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 40,
+        "max": 79
       },
       "gender": "all",
       "income_limit": {
@@ -22353,7 +22353,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 65
       },
       "gender": "all",
       "income_limit": {
@@ -23670,7 +23670,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Tap Water Scheme\" (नल जल योजना) by the Panchayat and Rural Development Department, Government of Madhya Pradesh aims to provide clean water in Gram Panchayat areas in an accessible manner. The application has to be made to the concerned Gram Panchayat.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -24597,7 +24597,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 65
       },
       "gender": "all",
       "income_limit": {
@@ -26271,7 +26271,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The objective of the scheme is to enable the Goan writers to come in close contact with the senior writers of a language-region other than their own within India to acquaint them with the writers and the people of that region, and to widen their awareness and sensibility about the country.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -26433,7 +26433,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -26484,7 +26484,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -26535,7 +26535,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -27138,7 +27138,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme provides financial assistance to pilgrims from Gujarat undertaking the Kailash Darshan Yatra. To be eligible, the applicant must be a selected pilgrim from Gujarat and submit proof of yatra completion within 90 days. Applications for this scheme are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -27342,7 +27342,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to provide financial assistance of ₹15,000/- to pilgrims from Gujarat undertaking the Sindhu Darshan Yatra in Leh-Ladakh, fostering national unity. Intended beneficiaries include native Gujaratis who complete the yatra and apply within 60 days.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -28217,7 +28217,7 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
+        "min": 50,
         "max": null
       },
       "gender": "all",
@@ -28464,7 +28464,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme provides 5–20% rebates on sales of handicraft goods to cooperatives, with higher incentives for women-led groups and during festivals. Applications are submitted online via e-Kutir.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -29033,8 +29033,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 14,
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -30155,8 +30155,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 14,
+        "max": 23
       },
       "gender": "all",
       "income_limit": {
@@ -30258,7 +30258,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -31065,7 +31065,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to provide a common platform for officers, teachers, and students from universities, colleges, schools, and other departments to actively participate and gain knowledge about the simplified curriculum of Vedic Mathematics and its easy-to-apply methods.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -31677,7 +31677,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme provides financial assistance, in the form of a Scholarship, proportionate to the fees paid by Scheduled Tribe students at the Higher Secondary School Certificate (HSSC) level in order to take offline coaching assistance through reputed institutions for preparation for NEET & JEE.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -31983,7 +31983,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to ensure fair crop prices for farmers by facilitating government procurement and provides easy online registration for landholding farmers to sell their crops at minimum support price.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -32042,8 +32042,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 10,
+        "max": 19
       },
       "gender": "all",
       "income_limit": {
@@ -32493,7 +32493,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to assist the people who want to visit the places connected with Dr. B.R. Ambedkar’s life in India. It provides comprehensive financial assistance, with all expenses for the tour programme fully borne by the Department, targeting SC/ST applicants of Puducherry.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -33258,7 +33258,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to provide an efficient online system for landowners in Haridwar district to get approval for their residential and commercial property maps quickly and easily, ensuring transparency and reducing delays.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -33921,7 +33921,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to financially assist the well performing SSI units for the purchase of identifiable items of equipment / machinery for diversification / modernization / expansion / replacement and also balancing equipment. The applications for this scheme are accepted online through PIPDIC portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -33981,7 +33981,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -34134,7 +34134,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 4
       },
       "gender": "all",
       "income_limit": {
@@ -34388,8 +34388,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 8,
+        "max": 14
       },
       "gender": "all",
       "income_limit": {
@@ -34644,7 +34644,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -34899,7 +34899,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -36012,7 +36012,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to assist Qualified Personnel in Medicine, Management, Accountancy, Engineering, Architecture, etc. and Good Borrowers of the Corporation (Industrial Units) for purchase of New Four Wheeler Vehicle (Air Conditioned or Non-air-conditioned) for own use. The applications are online.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -39429,7 +39429,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The “Raman-Charpak Fellowship Programme” is in honour of two Nobel Laureates in Physics, Prof C.V. Raman, Indian Nobel Laureate (1930) & Prof Georges Charpak, French Nobel Laureate (1992). The Fellowship was launched during the State visit of the President of France to India in February, 2013.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -40509,7 +40509,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 17
       },
       "gender": "all",
       "income_limit": {
@@ -40661,8 +40661,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 59
       },
       "gender": "all",
       "income_limit": {
@@ -40713,7 +40713,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -41580,7 +41580,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 45
       },
       "gender": "all",
       "income_limit": {
@@ -41622,7 +41622,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "UDID Card or Unique Disability Identity card is an initiative by Government of India with a view of creating a National Database for Persons with Disabilities (PwDs). Under the UDID project Disability Certificate and Unique Disability Identity Card is issued to each PwD through online platform.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -41979,7 +41979,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "A Research Grant by MoST for female candidates with break in their career interested in addressing societal challenges through viable S&T interventions. Women scientists who wish to apply under this scheme are required to develop their own project/proposals for scientific and technological solutions",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -42293,8 +42293,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -42599,8 +42599,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 14,
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -42701,8 +42701,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 29
       },
       "gender": "all",
       "income_limit": {
@@ -42803,8 +42803,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -43313,8 +43313,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 25,
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -43721,8 +43721,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -43866,7 +43866,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Under this scheme, widows and destitute women aged 18 years and above are eligible for a pension if they are domiciles of Haryana and have been residing in the state for at least one year at the time of application submission.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -43875,7 +43875,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -44435,8 +44435,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 6,
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -44742,7 +44742,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -46119,7 +46119,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 25
       },
       "gender": "all",
       "income_limit": {
@@ -48711,7 +48711,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through this scheme, financial assistance is provided to eligible fishermen for the construction and renovation of the Farm, for the purchase of farming equipment, and for the purchase of feed. Only the farmers having a water spread area of 2 hectares or less can apply to this scheme.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -48864,7 +48864,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "BIRAC’s E-YUVA Fellows shall apply as a team and pursue their research work at their College/University labs and will also be allowed access to facilities at EYC and EYC Knowledge Partners as and when required.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -50097,7 +50097,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -50607,7 +50607,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -52035,7 +52035,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -52893,7 +52893,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The \"Outstanding Artisan of the Year\" award is conferred upon the artisan who has been a participant for 3 years in National / International handicraft exhibitions/fairs. The awardee is given a cash award of ₹2,00,000/- and a citation. The applications are accepted offline in the prescribed form.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -52995,7 +52995,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Under the Kam Lagat Pyaaj Bhandaran Sanrachna yojana Construction of warehouses should be done at a high level to prevent moisture and dampness which occur due to direct contact of onions with soil.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -55044,7 +55044,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 58
       },
       "gender": "all",
       "income_limit": {
@@ -55145,7 +55145,7 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
+        "min": 1,
         "max": null
       },
       "gender": "all",
@@ -56217,7 +56217,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -56268,7 +56268,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 2
       },
       "gender": "all",
       "income_limit": {
@@ -57390,7 +57390,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 10
       },
       "gender": "all",
       "income_limit": {
@@ -57950,8 +57950,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 79
       },
       "gender": "all",
       "income_limit": {
@@ -58401,7 +58401,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme “Visit of Contract Farming Farmers to the Research Stations in Karnataka” facilitates visits for contract farming farmers to research stations across Karnataka to gain agricultural knowledge. Financial support is provided for a 3-day visit.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -58664,8 +58664,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 3,
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -58962,7 +58962,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Launched on 1st January 2018, the \"Workers for Class 9th to 12th\" scheme, under the MUHAFIZ Scheme by the Building and Other Construction Workers Welfare Board, Labour Dept., J&K, provides ₹1,200 per year for up to two children of registered BOC workers through the National Scholarship Portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -59225,8 +59225,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 65
       },
       "gender": "all",
       "income_limit": {
@@ -61470,7 +61470,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 13
       },
       "gender": "all",
       "income_limit": {
@@ -61929,7 +61929,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -61980,7 +61980,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 20
       },
       "gender": "all",
       "income_limit": {
@@ -62439,7 +62439,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -62634,7 +62634,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The \"Technology Upgradation Fund Scheme\" aims to assist the Existing/New Proprietary/Partnership Concerns and Private/Public Limited Companies with or without expansion, for modernization engaged in textile, as prescribed by SIDBI. The applications for this scheme are accepted online only.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -67437,7 +67437,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 100
       },
       "gender": "all",
       "income_limit": {
@@ -67742,8 +67742,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 30
       },
       "gender": "all",
       "income_limit": {
@@ -68907,7 +68907,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to provide financial assistance not exceeding ₹50,000/- or the actual cost, whichever is less, to needy Goan artists or their families for setting up self-employment ventures, helping them establish sustainable income sources. The applications for this scheme are accepted Offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -69366,7 +69366,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The system aims to develop and promote an innovative solar-based hydroponic system that integrates solar energy with modern greenhouse technology and mobile application support.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -69833,8 +69833,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 10,
+        "max": 19
       },
       "gender": "all",
       "income_limit": {
@@ -70947,7 +70947,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to simplify the process of granting official permission for film shooting in Uttarakhand through a single-window online system, ensuring timely approvals and promoting the state as a film-friendly destination.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -71202,7 +71202,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to financially assist the Khadi & Village Industries (KVI) Institutions for the purchase of new mobile sales vans for stocking display sales of KVI products and also to, transport of raw materials for producing KVI Products. The applications for this scheme are accepted online.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -71355,7 +71355,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to extend financial assistance to the Launderers and barbers for the purchase of worktables & furniture, etc. The applications for this scheme are accepted online through the PIPDIC portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -71457,7 +71457,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to promote rural tourism and generate local employment by enabling residents to register their homes as certified home-stays that offer safe, affordable accommodation and meal facilities to tourists in Uttarakhand.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -71619,7 +71619,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 16
       },
       "gender": "all",
       "income_limit": {
@@ -71874,7 +71874,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 2
       },
       "gender": "all",
       "income_limit": {
@@ -73149,7 +73149,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 3
       },
       "gender": "all",
       "income_limit": {
@@ -75954,7 +75954,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -76464,7 +76464,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 10
       },
       "gender": "all",
       "income_limit": {
@@ -77526,7 +77526,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The Directorate of Higher Education has launched the Nagaland State Merit Scholarship for the students of classes from 11th to 12th and UG Degree to PG degree so that they will be able to secure their scholarship rights or seats after getting online registration under this scholarship.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -79779,7 +79779,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 2
       },
       "gender": "all",
       "income_limit": {
@@ -80178,7 +80178,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Post-Matric Scholarship for OBC, EBC & DNT students of UT domicile with parental income below ₹2.5 lakh p.a. Academic allowance ₹5,000–₹20,000 p.a. for eligible courses. Online/correspondence students get tuition fees only. Institutes must have AISHE/UDISE code and NAAC/NBA accreditation.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -80535,7 +80535,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Introduced in 2004 by the Govt. of India, SCSS offers a steady stream of income for individuals over 60 years old. As it is a government-backed scheme, there is minimal risk associated with SCSS. Individuals can apply for this scheme in post offices and public and private banks.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -80688,7 +80688,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme \"Dr. S. Radhakrishnan UGC Post-Doctoral Fellowship\" is a fellowship scheme by the University Grants Commission (UGC), Department of Higher Education (DoHE). Post-doctoral research is an important enabling step in grooming young researchers for launching an academic/research career.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -80799,7 +80799,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -81249,7 +81249,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The Directorate of University & Higher Education, Manipur is interested in awarding State Merit Scholarships to meritorious students of Manipur through online application submissions to promote higher education for economically weaker students in the state.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -81869,8 +81869,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -82014,7 +82014,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Medhavi Putra/Putri Chhatravritti Yojana\" is a Scholarship Scheme by the Department of Labour, Employment, Training & Skill Development Govt of Jharkhand. This is a 100% State Sponsored Scheme. Only the residents/domicile of the state of Jharkhand can apply to this scheme.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -82065,7 +82065,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Incentive Award for Marriage with Disabled Person\" is a Grant by the Social Welfare Department, Govt. of Manipur. In this scheme, incentive is granted to a person who marries a Person with Disability. This is a State Sponsored Scheme. Only the citizens who are domicile of Manipur can apply.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -84615,7 +84615,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The Internship Scheme by the UIDAI enables the students to gain adequate exposure to various Technology tracks and other units within UIDAI Headquarters, Technology Centre and Regional offices. It would be expected to work in the field of application development, legal domains (cyber laws/IT) etc.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -86961,7 +86961,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "“Financial Assistance to Mussel Culture and Oyster Farming in Goa” is a scheme by the Dept. of Fisheries, Govt. of Goa. Through this scheme, financial assistance is provided to eligible fishermen for setting up units in estuarine waters, and in open sea. Only offline applications are accepted.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -87072,7 +87072,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -88593,7 +88593,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme “Allowance for 100% Blind\" aims to provide a monthly pension of ₹2,000/- to the blind persons of Tripura aged 10 years and above having 100% blindness. The application should be submitted to the nearest Child Development Project Officer (CDPO).",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -88602,7 +88602,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 10
       },
       "gender": "all",
       "income_limit": {
@@ -89214,7 +89214,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 20
       },
       "gender": "all",
       "income_limit": {
@@ -89265,7 +89265,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 100
       },
       "gender": "all",
       "income_limit": {
@@ -89468,8 +89468,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 11,
+        "max": 14
       },
       "gender": "all",
       "income_limit": {
@@ -89520,7 +89520,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -89571,7 +89571,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -91194,7 +91194,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through this scheme, the academically meritorious wards of the ESM / Widows of ESM pursuing higher education are provided cash incentive of ₹1,000 per month. The application should be submitted within three months from the date of publication of the result of the respective exam.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -91500,7 +91500,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Grant to Meritorious Wards of ESM in Sports: National / International Level\" is a Welfare Scheme by the Department of Sainik Welfare, Puducherry. The meritorious wards of the ESM are provided grants for their achievements in sports at national and international levels. The application is offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -91866,7 +91866,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 65
       },
       "gender": "all",
       "income_limit": {
@@ -92580,7 +92580,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 3
       },
       "gender": "all",
       "income_limit": {
@@ -92979,7 +92979,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme is implemented by the Directorate of Employment, Government of Haryana on 1st December, 1992 in Haryana State. Eligible applicants can register their names under this scheme, making them eligible for all benefits provided by the Employment Department.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -93549,7 +93549,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 1
       },
       "gender": "all",
       "income_limit": {
@@ -93957,7 +93957,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -94059,7 +94059,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -94212,7 +94212,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 30
       },
       "gender": "all",
       "income_limit": {
@@ -94772,8 +94772,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 40,
+        "max": 79
       },
       "gender": "all",
       "income_limit": {
@@ -96099,7 +96099,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -100179,7 +100179,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -100536,7 +100536,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 5
       },
       "gender": "all",
       "income_limit": {
@@ -100637,8 +100637,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 42
       },
       "gender": "all",
       "income_limit": {
@@ -101046,7 +101046,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 30
       },
       "gender": "all",
       "income_limit": {
@@ -102167,8 +102167,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 15,
+        "max": 35
       },
       "gender": "all",
       "income_limit": {
@@ -103740,7 +103740,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to preserve and promote the traditional folk theatre of Goa called 'The Khell'. It provides financial assistance to participating theatre troupes in annual competitions organized across Goa. The applications for this scheme are accepted offline through prescribed application forms.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -106095,7 +106095,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -106196,8 +106196,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 3,
+        "max": 9
       },
       "gender": "all",
       "income_limit": {
@@ -106749,7 +106749,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme was launched by PIPDIC, Department of Industries & Commerce, Puducherry. The scheme aims to financially assist entrepreneurs for setting up entrepreneurs setting up of hotel/restaurant projects in urban areas. The applications for this scheme are accepted online through the PIPDIC portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -108287,8 +108287,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 15,
+        "max": 19
       },
       "gender": "all",
       "income_limit": {
@@ -108389,8 +108389,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 15,
+        "max": 19
       },
       "gender": "all",
       "income_limit": {
@@ -108738,7 +108738,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The \"Car Loan Scheme\" aims to assist the employees of the Government of Puducherry & Employees of the Government of Puducherry undertaking for the purchase of a new car for personal use. The applications for this scheme are accepted online only.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -109359,7 +109359,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 45
       },
       "gender": "all",
       "income_limit": {
@@ -110634,7 +110634,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -111705,7 +111705,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -112520,8 +112520,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 27,
+        "max": 45
       },
       "gender": "all",
       "income_limit": {
@@ -113133,7 +113133,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 25
       },
       "gender": "all",
       "income_limit": {
@@ -113991,7 +113991,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "BIRAC’s Innovation fellows shall apply as an individual and are required to work full time at EYC. BIRAC’s Innovation Fellows are expected to initiate biotech startups. Hence, only proposals with potential to commercialize innovative products and technologies will be considered for support.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -115317,7 +115317,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "An employment scheme by the MoRD, providing provide at least 100 days of guaranteed wage employment in a financial year to every rural household whose adult members volunteer to do unskilled work. Any Indian citizen above the age of 18 years and residing in a rural area can apply to this scheme.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -115326,7 +115326,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -115580,8 +115580,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 21,
+        "max": 65
       },
       "gender": "all",
       "income_limit": {
@@ -116286,7 +116286,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Antayoshti Sahayata Yojana\" is a scheme by the Department of Labour, Employment, Training & Skill Development Govt of Jharkhand. The scheme provides ₹ 10,000/- for the last rites in the case of the death of the registered beneficiary. Only the residents/domicile of the state of Jharkhand can apply.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -116847,7 +116847,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "In this scheme, if a Person with Disability (PwD) gets married to a non-disabled person, then the couple is provided a marriage incentive of up to ₹ 50,000. Only citizens who are permanent residents of the state of Maharashtra are eligible to apply for this scheme.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -116856,7 +116856,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -117612,7 +117612,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "In the \"Financial Assistance to Gad-Hanjis\", financial assistance for the purchase of Nylon Twine is provided to the Licensed Fisherman by the Social Welfare Department. The beneficiary shall approach the concerned District Social Welfare Officer (DSWO) for submission of the application.",
     "documents_required": "",
     "application_url": "",
     "deadline": "2020-01-01",
@@ -119966,8 +119966,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 0,
+        "max": 5
       },
       "gender": "all",
       "income_limit": {
@@ -120987,7 +120987,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -121437,7 +121437,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "“Financial Assistance for setting up of Ornamental Fish Unit in Goa” is a scheme by the Dept. of Fisheries, Govt. of Goa. Through this scheme, financial assistance is provided to eligible fishermen for setting up Breeding Units and Rearing Units. The applications are accepted only in offline mode.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -121650,7 +121650,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 25
       },
       "gender": "all",
       "income_limit": {
@@ -122967,7 +122967,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Under the scheme, Horticulture and Food Processing Department provide visit to the different location to make the farmers aware of the new technologies of agronomy by giving them tours.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -123231,7 +123231,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -124455,7 +124455,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -124557,7 +124557,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -124803,7 +124803,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The Puducherry Unorganised Labourers' Welfare Society extends ₹500/- to the Unorganised Workers as a Cash Gift during the festival of Diwali. The amount is credited through Direct Benefit Transfer (DBT) into the bank account of the worker. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -127260,7 +127260,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 45
       },
       "gender": "all",
       "income_limit": {
@@ -127515,7 +127515,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 25
       },
       "gender": "all",
       "income_limit": {
@@ -128688,7 +128688,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 2
       },
       "gender": "all",
       "income_limit": {
@@ -129452,7 +129452,7 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
+        "min": 60,
         "max": null
       },
       "gender": "all",
@@ -129708,7 +129708,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -130116,7 +130116,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -130983,7 +130983,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -131901,7 +131901,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -137256,7 +137256,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -137663,8 +137663,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 30
       },
       "gender": "all",
       "income_limit": {
@@ -138377,7 +138377,7 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
+        "min": 10,
         "max": null
       },
       "gender": "all",
@@ -138480,7 +138480,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 16
       },
       "gender": "all",
       "income_limit": {
@@ -139551,7 +139551,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 20
       },
       "gender": "all",
       "income_limit": {
@@ -139908,7 +139908,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 5
       },
       "gender": "all",
       "income_limit": {
@@ -140265,7 +140265,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 0
       },
       "gender": "all",
       "income_limit": {
@@ -141276,7 +141276,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to financially assist the registered Medical practitioners for acquisition and installation of Electro Medical and other related equipment. The applications for this scheme are accepted online through the PIPDIC portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -141429,7 +141429,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to financially assist entrepreneurs for setting up or development of amusement parks, cultural centres, convention centres, restaurants, tourist service agencies, including expansion and modernization project. The applications for scheme are accepted online through PIPDIC portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -141480,7 +141480,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to financially assist the entrepreneurs for setting up hospitals/nursing homes. The applications for this scheme are accepted online through the PIPDIC portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -141591,7 +141591,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 2
       },
       "gender": "all",
       "income_limit": {
@@ -141947,8 +141947,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 3,
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -142509,7 +142509,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -143520,7 +143520,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to assist the units who are in existence for a minimum period of 2 years with good track record. The assistance is provided for purchase of existing land, building and machinery with prescribed residual life. The applications for this scheme are accepted online only.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -143622,7 +143622,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to assist organizations (Public Limited Companies, Private Limited Companies, Partnerships, Sole Proprietary, and Municipalities) for setting up of industrial estates for exclusive allotment of sheds/plots to SSI units. The applications for this scheme are accepted online only.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -143673,7 +143673,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Scheme for Purchase of Paddy Harvesting Machine\" aims to assist agriculturists belonging to Puducherry for the purchase of a tractor and harvesting machine to harvest the crops in their vicinity. The applications for this scheme are accepted online only.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -144591,7 +144591,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The Exposure Visits to the Assam Legislative Assembly scheme was introduced in the budget speech during the first Budget Session in July 2016. It aims to provide an opportunity for Political Science students in Assam to visit and observe the functioning of the Assam Legislative Assembly.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -144642,7 +144642,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to ensure timely online payment to farmers for wheat sold at government procurement centers through the Just-In-Time (JIT) system directly into their bank accounts.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -145109,8 +145109,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 79
       },
       "gender": "all",
       "income_limit": {
@@ -145160,8 +145160,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 40,
+        "max": 79
       },
       "gender": "all",
       "income_limit": {
@@ -146334,7 +146334,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 12
       },
       "gender": "all",
       "income_limit": {
@@ -146937,7 +146937,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme \"Consolidation of Coffee\" aims to increase the productivity of the existing coffee holdings by gap filling or rejuvenation, followed by improved cultivation methods such as application of compost, bush management, shade management, pest and disease control, etc.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -147098,8 +147098,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 59
       },
       "gender": "all",
       "income_limit": {
@@ -147150,7 +147150,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -147251,8 +147251,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 27,
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -148629,7 +148629,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 1961
       },
       "gender": "all",
       "income_limit": {
@@ -148773,7 +148773,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "This is a micro-financing programme aiming towards the empowerment of women from underprivileged backgrounds or economically backward areas. Through this scheme, these women can apply for a loan at a nominal interest rate to fulfil their dreams and goals and gain financial independence.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -149292,7 +149292,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -150558,7 +150558,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Dr. D.S. Kothari Post Doctoral Fellowships in Sciences was introduced by the UGC. In addition to the existing RA/PDF positions provided by various funding agencies, a need was felt for a PDF scheme running in a flexible mode, with fast track, online handling, and decision-making.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -151170,7 +151170,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Cycle Sahayata Yojana\" is a scheme by the Department of Labour, Employment, Training & Skill Development Govt of Jharkhand. Applications for this scheme are accepted online through the official website of the department. In this scheme, bicycles are provided to the women workers.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -151893,7 +151893,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -154749,7 +154749,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -156372,7 +156372,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "“Financial Assistance for Purchase of Barrier Net and its Accessories” is a scheme by Dept. of Fisheries, Govt. of Goa. Under this Scheme financial assistance is provided as a subsidy on the purchase of barrier nets and accessories for the fishermen. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -156780,7 +156780,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "This scheme aims to enhance the nutritional status of Pregnant Women. ₹500/- assistance is provided to eligible beneficiaries during their pregnancies. The scheme is a crucial step towards ensuring the well-being of both mother and child. The benefit will be provided for upto two pregnancies only.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -157401,7 +157401,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 5
       },
       "gender": "all",
       "income_limit": {
@@ -157707,7 +157707,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -157911,7 +157911,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -159390,7 +159390,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 19
       },
       "gender": "all",
       "income_limit": {
@@ -160044,7 +160044,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through the \"Diwali Gift Benefit\" scheme, the Board sanction sum of ₹ 2,000/- to each beneficiary enrolled in the Board every year to celebrate the Diwali festival. The amount is credited through DBT into the bank account of the registered construction worker. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -160911,7 +160911,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through this scheme, the academically meritorious wards of the ESM / Widows of ESM who have secured the top three ranks in academics are provided with lump sum grants of upto ₹18,000. The application should be submitted within three months from the date of publication of the result.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -161931,7 +161931,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through the \"Financial Assistance for Education (GBOCWWB)\" scheme, the worker registered with the Board is provided with financial assistance, as determined by the Board, for the education of their children. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -163062,7 +163062,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -163368,7 +163368,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -163419,7 +163419,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 25
       },
       "gender": "all",
       "income_limit": {
@@ -163827,7 +163827,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -164846,8 +164846,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 21,
+        "max": 65
       },
       "gender": "all",
       "income_limit": {
@@ -165153,7 +165153,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -165254,8 +165254,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 11,
+        "max": 14
       },
       "gender": "all",
       "income_limit": {
@@ -167141,8 +167141,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 59
       },
       "gender": "all",
       "income_limit": {
@@ -167957,8 +167957,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 35
       },
       "gender": "all",
       "income_limit": {
@@ -168978,7 +168978,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -169122,7 +169122,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Divyangjan Scholarship Scheme\" provides financial assistance for the education and training of differently-abled children, who are regular students in a school or college. The application needs to be submitted to the District Office, Panchayat and Social Welfare / Janpad Panchayat Office.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -169479,7 +169479,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "This scheme was launched with objective of promoting digital education & providing online learning to children from poor & needy families, proving to be a boon for them. Under this scheme, free tablets are provided to students, enabling access to state-of-the-art software & learning materials.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -169683,7 +169683,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to facilitate higher education and global career opportunities for students by covering the cost of passport issuance. Under this scheme, final-year UG and PG students in government colleges receive reimbursement for passport application fees.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -169742,7 +169742,7 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
+        "min": 18,
         "max": null
       },
       "gender": "all",
@@ -171060,7 +171060,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The \"Awarding Teleeducation Scholarships To Afghan Students\" scheme under e-VidyaBharati Network Project, launched by the Ministry of External Affairs, offers 1000 annual scholarships to Afghan students for UGC-approved online UG and PG programs from Indian universities.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -171264,7 +171264,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to support the Scheduled Tribe candidates from Scheduled Areas and the Saharia Area of Rajasthan to register themselves as research scholars with all recognized Central/State/Deemed/Private University located in any part of India for pursuing Ph.D. Programme.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -171417,7 +171417,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to invite scholars from any state in India to submit research manuscripts on Sanskrit literature, as well as socially relevant research books related to Sanskrit literature in the context of Uttarakhand.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -172140,7 +172140,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 20
       },
       "gender": "all",
       "income_limit": {
@@ -172191,7 +172191,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 25
       },
       "gender": "all",
       "income_limit": {
@@ -172293,7 +172293,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 10
       },
       "gender": "all",
       "income_limit": {
@@ -172395,7 +172395,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -173007,7 +173007,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -173661,7 +173661,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to increase inland fish production and employment through reservoir-based fish farming. The scheme offers financial assistance to individuals and groups via the iKhedut portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -175038,7 +175038,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to provide community-service-based skill development and employment opportunities for women in the field of animal husbandry. Eligible women members of Self-Help Groups under the Uttarakhand State Rural Livelihood Mission can apply.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -175446,7 +175446,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to establish Digital Learning Platform to provide training and career counseling on various subjects, including ICT orientation, emerging technologies, and more, through both online and offline modes for students of secondary schools across the state.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -175497,7 +175497,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "It aims to promote scientific awareness among students, teachers, and the general public by conducting outreach programmes and activities in various fields of science through both online and offline modes, thereby making science education and research more accessible across the state.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -176313,7 +176313,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to aid in the conversion of available on-farm organic waste into chemical-free organic manure, providing quality organic farming inputs for sustainable agriculture. The applications for this scheme are accepted offline via the Zonal Agriculture Officer.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -177129,7 +177129,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to grant financial assistance to the family of the temple employee who expires while in service. The scheme provides an amount of ₹5,000/- under the Group Insurance Scheme and an amount of ₹20,000/- under the Chief Minister’s Welfare Fund. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -177537,7 +177537,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "It aims to register cultivators who grow medicinal and aromatic plants, make the process of using their cultivated herbs easier, and stop the illegal collection of herbs from forests.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -177741,7 +177741,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to provide financial incentives to industrial units, hospitals, and educational institutions in the State of Goa to obtain quality certifications and register Intellectual Property Rights, thereby enhancing their competitive strength in global markets and promoting innovation.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -178098,7 +178098,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to extend financial assistance to SC/ST Entrepreneurs for setting up new Micro Enterprises or for expansion of existing units. The applications for this scheme are accepted online through the PIPDIC portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -178149,7 +178149,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme was launched by PIPDIC, Department of Industries & Commerce, Puducherry. The scheme aims to financially assist entrepreneurs for setting up entrepreneurs setting up of hotel/restaurant projects in urban areas. The applications for this scheme are accepted online through the PIPDIC portal.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -178515,7 +178515,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -179178,7 +179178,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 65
       },
       "gender": "all",
       "income_limit": {
@@ -179883,7 +179883,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to assist the Proprietary/Partnership Concerns, Public/Private Limited Companies, Co-operative Societies, Market Committees, Boards, and Agro Industries Corporations. The assistance is provided for setting up of Cold Storage facilities. The applications for this scheme are online.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -180138,7 +180138,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to assist Qualified Personnel in Medicine, Management, Accountancy, Engineering, Architecture, etc. and Good Borrowers of the Corporation (Industrial Units) for purchase of New Four Wheeler Vehicle (Air Conditioned or Non-air-conditioned) for own use. The applications are online.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -180198,7 +180198,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -184686,7 +184686,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 12
       },
       "gender": "all",
       "income_limit": {
@@ -186462,7 +186462,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Launched on 14th April 2016, e-NAM is a pan-India electronic trading platform that links existing mandis to create a unified online market for agricultural commodities, promoting “One Nation One Market” and enabling transparent, efficient, and nationwide agri-trade.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -186776,8 +186776,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 27,
+        "max": 32
       },
       "gender": "all",
       "income_limit": {
@@ -186921,7 +186921,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "\"Indira Gandhi National Old Age Pension Scheme\" is one of the five sub-schemes of the National Social Assistance Programme. Under IGNOAPS, citizens living Below Poverty Line and 60 years or above in age are eligible to apply. A monthly pension of ₹ 200 up to 79 years and ₹ 500 thereafter.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -186981,7 +186981,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 45
       },
       "gender": "all",
       "income_limit": {
@@ -189888,7 +189888,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 1
       },
       "gender": "all",
       "income_limit": {
@@ -190347,7 +190347,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -194223,7 +194223,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -194631,7 +194631,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -194733,7 +194733,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 5
       },
       "gender": "all",
       "income_limit": {
@@ -196212,7 +196212,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 2
       },
       "gender": "all",
       "income_limit": {
@@ -196313,8 +196313,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 60
       },
       "gender": "all",
       "income_limit": {
@@ -196773,7 +196773,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -197028,7 +197028,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -197121,7 +197121,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to provide a lumpsum grant (maximum ₹20,000/-) to the dependent family in case of death of the artist. The one-time financial assistance amount is disbursed to the eligible applicant in the form of Electronic Clearing Service (ECS) mode. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -198609,7 +198609,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 25
       },
       "gender": "all",
       "income_limit": {
@@ -199680,7 +199680,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -199833,7 +199833,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 0
       },
       "gender": "all",
       "income_limit": {
@@ -199986,7 +199986,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -200240,8 +200240,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 45
       },
       "gender": "all",
       "income_limit": {
@@ -201567,7 +201567,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 31
       },
       "gender": "all",
       "income_limit": {
@@ -201711,7 +201711,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The ARUNDHATI scheme started on January 1, 2020. It will offer 10 grams of gold as a gift to every bride. The bride and Bridegroom can apply for the scheme before the wedding. The scheme will cost about Rs 800 crore annually.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -201821,8 +201821,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 18,
+        "max": 59
       },
       "gender": "all",
       "income_limit": {
@@ -202425,7 +202425,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme “Incentive Award to Inter-Caste Married Couples” was introduced by the Adi Dravidar Welfare Department, Government of Puducherry. The objective of the scheme is to reduce the effect of untouchability and as a step towards bringing about a casteless society.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -207678,7 +207678,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through the \"Generator Subsidy\" scheme, 50% subsidy is provided to the industrial units of the micro, small, medium and large industries for the purchase and installation of generators. The applications are accepted offline in the prescribed form available on the Official Website of the Department.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -211001,8 +211001,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 3,
+        "max": 6
       },
       "gender": "all",
       "income_limit": {
@@ -211707,7 +211707,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The scheme aims to provide national recognition, financial incentives, and professional encouragement to Indian citizens and institutions contributing significantly to telecom development and its application in sectors such as agriculture, health, education, and commerce.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -214053,7 +214053,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through this scheme, the fisheries co-operative societies/associations registered with the Fisheries Co-operative Societies, having more than 25 members, will be eligible for financial assistance to the extent of ₹50,000 as a grant-in-aid. The applications are accepted only in offline mode.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -214818,7 +214818,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The industrial units which have availed loans from financial institutions towards the creation of fixed assets and for working capital shall be eligible for an interest incentive to an extent of 25% of the annual interest amount paid. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -214869,7 +214869,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through \"Market Development Support Assistance\", assistance worth 50% of total rent, literature and display material (subject to a max. of ₹5,00,000/-) is provided to the industrial unit for participation in international trade fair as an industry association. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -215073,7 +215073,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through \"Assistance for Technology Acquisition\", assistance for acquisition of appropriate technology in any form for specific product/process is provided by way of 50% grant subject to a maximum of ₹10,00,000/-. The applications are accepted offline in the prescribed form available.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -215184,7 +215184,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 12
       },
       "gender": "all",
       "income_limit": {
@@ -222570,7 +222570,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through this scheme, the industrial units availing loans from financial institutions towards the creation of fixed assets and for working capital shall be eligible for an interest subsidy to an extent of 25% of the annual interest amount paid. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -222621,7 +222621,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Throught the \"Capital Investment Subsidy: Thrust Area Industries\" scheme, the Thrust Area Industries are provided Subsidy on the Investments on Plant and Machinery. The applications are accepted offline in the prescribed form available on the Official Website of the Department.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -222672,7 +222672,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through \"Capital Investment Subsidy (for New and Existing Industries)\", the enterprises & entrepreneurs are provided subsidies of upto 45% on the investments made on land, buildings, plants and machinery. The applications are accepted offline in the prescribed form available on the Official website.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -222732,7 +222732,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 50
       },
       "gender": "all",
       "income_limit": {
@@ -222774,7 +222774,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through \"Subsidy to Pollution Control Equipment\", the units which are installing pollution control equipment will be granted subsidy @ 25% up to a max. of ₹5,00,000/-. The applications are accepted offline in the prescribed form available on the Official Website of the Department.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -225588,7 +225588,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 40
       },
       "gender": "all",
       "income_limit": {
@@ -225885,7 +225885,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "It aims to establish a transparent, efficient, and standardized system for the online registration of tourism-related businesses and service units across the state.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -227934,7 +227934,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 10
       },
       "gender": "all",
       "income_limit": {
@@ -228189,7 +228189,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 18
       },
       "gender": "all",
       "income_limit": {
@@ -229098,7 +229098,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through this scheme, the micro, small and medium industrial units (manufacturing and service sector) shall be eligible for the grant of 50% subsidy with a cap of ₹5,00,000/- per industrial unit on the investment made on or after 5-3-2009 on generator sets. The applications are accepted offline.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -229149,7 +229149,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through this scheme, assistance of 50% is provided subject to a maximum of ₹2,00,000/- for the expenditure for obtaining domestic patent (₹5,00,000/- for international patent). The applications are accepted offline in the prescribed form available on the Official Website of the Department.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -229209,7 +229209,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 20
       },
       "gender": "all",
       "income_limit": {
@@ -232974,7 +232974,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The project aims to promote sustainable rural development through the application of science & technology to enhance livelihoods in selected villages throughout Uttarakhand. Under the project, rural development initiatives are implemented through the formation of village clusters across the state.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -234861,7 +234861,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through Idea Lab Scheme, AICTE will be setting up Idea Labs in AICTE approved institutions to encourage students for application of science, technology engineering and mathematics (STEM) fundamentals towards enhanced hands-on experience, learning by doing and even product visualization.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -237156,7 +237156,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "“Construction of Fish Markets” is a scheme by the Dept. of Fisheries, Govt. of Goa. Through this scheme, subsidy is provided to the local bodies such as Municipalities and Village Panchayat in the State of Goa for the construction of fish markets. The applications are accepted only in offline mode.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -237513,7 +237513,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "Through the \"Employment Incentive\" scheme, Wage/Employment subsidy of 20% wage/salary up to a maximum of ₹5,00,000/- per annum, in case of workers who are covered under Provident Fund (PF), will be granted. The applications are accepted offline in prescribed form available on the Official Website.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -237522,7 +237522,7 @@
     "eligibility_json": {
       "age": {
         "min": null,
-        "max": null
+        "max": 20
       },
       "gender": "all",
       "income_limit": {
@@ -241899,7 +241899,7 @@
     "benefits": "",
     "benefit_type": "",
     "benefit_amount": "",
-    "application_process": "",
+    "application_process": "The \"Scheme aims to enhance the reach of development interventions of the Government and fill the gaps in service-deficient Scheduled Caste-dominant areas in sectors such as education, health, vocational training, etc., through the efforts of voluntary organizations and other organizations.",
     "documents_required": "",
     "application_url": "",
     "deadline": null,
@@ -242876,8 +242876,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 8,
+        "max": 10
       },
       "gender": "all",
       "income_limit": {
@@ -245120,8 +245120,8 @@
     "state": "Central",
     "eligibility_json": {
       "age": {
-        "min": null,
-        "max": null
+        "min": 2017,
+        "max": 18
       },
       "gender": "all",
       "income_limit": {

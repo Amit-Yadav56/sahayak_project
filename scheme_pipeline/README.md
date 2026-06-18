@@ -53,7 +53,6 @@ python pipeline.py
 ```bash
 # Step 1: Scrape all sources
 python -m scrapers.myscheme       # → data/raw/myscheme_raw.json
-python -m scrapers.datagovin      # → data/raw/datagovin_*.json
 python -m scrapers.kaggle_dl      # → data/raw/kaggle/*/
 
 # Step 2: Parse and normalize

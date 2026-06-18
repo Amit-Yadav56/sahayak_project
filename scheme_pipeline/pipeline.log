@@ -1,0 +1,110 @@
+2026-06-17 16:39:12,917 INFO [pipeline] STEP 1 — Scraping data sources
+2026-06-17 16:39:12,938 ERROR [pipeline] myscheme scrape failed: No module named 'requests'
+2026-06-17 16:39:12,948 ERROR [pipeline] data.gov.in download failed: No module named 'requests'
+2026-06-17 16:39:12,963 ERROR [pipeline] Kaggle download failed: No module named 'dotenv' (set KAGGLE_USERNAME + KAGGLE_KEY in .env)
+2026-06-17 16:39:12,967 INFO [pipeline] STEP 2 — Parsing & normalizing
+2026-06-17 16:42:44,374 INFO [pipeline] STEP 1 — Scraping data sources
+2026-06-17 16:42:44,842 INFO [scrapers.myscheme] Fetching offset=0
+2026-06-17 16:42:45,226 INFO [scrapers.myscheme] Downloaded 100 / 4720
+2026-06-17 16:42:46,228 INFO [scrapers.myscheme] Fetching offset=100
+2026-06-17 16:42:46,551 INFO [scrapers.myscheme] Downloaded 200 / 4720
+2026-06-17 16:42:47,553 INFO [scrapers.myscheme] Fetching offset=200
+2026-06-17 16:42:47,924 INFO [scrapers.myscheme] Downloaded 300 / 4720
+2026-06-17 16:42:48,926 INFO [scrapers.myscheme] Fetching offset=300
+2026-06-17 16:42:49,240 INFO [scrapers.myscheme] Downloaded 400 / 4720
+2026-06-17 16:42:50,242 INFO [scrapers.myscheme] Fetching offset=400
+2026-06-17 16:42:50,583 INFO [scrapers.myscheme] Downloaded 500 / 4720
+2026-06-17 16:42:51,584 INFO [scrapers.myscheme] Fetching offset=500
+2026-06-17 16:42:52,003 INFO [scrapers.myscheme] Downloaded 600 / 4720
+2026-06-17 16:42:53,005 INFO [scrapers.myscheme] Fetching offset=600
+2026-06-17 16:42:53,358 INFO [scrapers.myscheme] Downloaded 700 / 4720
+2026-06-17 16:42:54,360 INFO [scrapers.myscheme] Fetching offset=700
+2026-06-17 16:42:54,660 INFO [scrapers.myscheme] Downloaded 800 / 4720
+2026-06-17 16:42:55,661 INFO [scrapers.myscheme] Fetching offset=800
+2026-06-17 16:42:55,960 INFO [scrapers.myscheme] Downloaded 900 / 4720
+2026-06-17 16:42:56,961 INFO [scrapers.myscheme] Fetching offset=900
+2026-06-17 16:42:57,289 INFO [scrapers.myscheme] Downloaded 1000 / 4720
+2026-06-17 16:42:58,291 INFO [scrapers.myscheme] Fetching offset=1000
+2026-06-17 16:42:58,639 INFO [scrapers.myscheme] Downloaded 1100 / 4720
+2026-06-17 16:42:59,640 INFO [scrapers.myscheme] Fetching offset=1100
+2026-06-17 16:42:59,943 INFO [scrapers.myscheme] Downloaded 1200 / 4720
+2026-06-17 16:43:00,946 INFO [scrapers.myscheme] Fetching offset=1200
+2026-06-17 16:43:01,439 INFO [scrapers.myscheme] Downloaded 1300 / 4720
+2026-06-17 16:43:02,440 INFO [scrapers.myscheme] Fetching offset=1300
+2026-06-17 16:43:02,868 INFO [scrapers.myscheme] Downloaded 1400 / 4720
+2026-06-17 16:43:03,869 INFO [scrapers.myscheme] Fetching offset=1400
+2026-06-17 16:43:04,297 INFO [scrapers.myscheme] Downloaded 1500 / 4720
+2026-06-17 16:43:05,299 INFO [scrapers.myscheme] Fetching offset=1500
+2026-06-17 16:43:05,623 INFO [scrapers.myscheme] Downloaded 1600 / 4720
+2026-06-17 16:43:06,625 INFO [scrapers.myscheme] Fetching offset=1600
+2026-06-17 16:43:06,958 INFO [scrapers.myscheme] Downloaded 1700 / 4720
+2026-06-17 16:43:07,960 INFO [scrapers.myscheme] Fetching offset=1700
+2026-06-17 16:43:08,274 INFO [scrapers.myscheme] Downloaded 1800 / 4720
+2026-06-17 16:43:09,275 INFO [scrapers.myscheme] Fetching offset=1800
+2026-06-17 16:43:09,655 INFO [scrapers.myscheme] Downloaded 1900 / 4720
+2026-06-17 16:43:10,656 INFO [scrapers.myscheme] Fetching offset=1900
+2026-06-17 16:43:11,000 INFO [scrapers.myscheme] Downloaded 2000 / 4720
+2026-06-17 16:43:12,001 INFO [scrapers.myscheme] Fetching offset=2000
+2026-06-17 16:43:12,291 INFO [scrapers.myscheme] Downloaded 2100 / 4720
+2026-06-17 16:43:13,293 INFO [scrapers.myscheme] Fetching offset=2100
+2026-06-17 16:43:13,584 INFO [scrapers.myscheme] Downloaded 2200 / 4720
+2026-06-17 16:43:14,585 INFO [scrapers.myscheme] Fetching offset=2200
+2026-06-17 16:43:14,864 INFO [scrapers.myscheme] Downloaded 2300 / 4720
+2026-06-17 16:43:15,866 INFO [scrapers.myscheme] Fetching offset=2300
+2026-06-17 16:43:16,200 INFO [scrapers.myscheme] Downloaded 2400 / 4720
+2026-06-17 16:43:17,201 INFO [scrapers.myscheme] Fetching offset=2400
+2026-06-17 16:43:17,510 INFO [scrapers.myscheme] Downloaded 2500 / 4720
+2026-06-17 16:43:18,512 INFO [scrapers.myscheme] Fetching offset=2500
+2026-06-17 16:43:18,811 INFO [scrapers.myscheme] Downloaded 2600 / 4720
+2026-06-17 16:43:19,812 INFO [scrapers.myscheme] Fetching offset=2600
+2026-06-17 16:43:20,151 INFO [scrapers.myscheme] Downloaded 2700 / 4720
+2026-06-17 16:43:21,153 INFO [scrapers.myscheme] Fetching offset=2700
+2026-06-17 16:43:21,455 INFO [scrapers.myscheme] Downloaded 2800 / 4720
+2026-06-17 16:43:22,456 INFO [scrapers.myscheme] Fetching offset=2800
+2026-06-17 16:43:22,769 INFO [scrapers.myscheme] Downloaded 2900 / 4720
+2026-06-17 16:43:23,770 INFO [scrapers.myscheme] Fetching offset=2900
+2026-06-17 16:43:24,083 INFO [scrapers.myscheme] Downloaded 3000 / 4720
+2026-06-17 16:43:25,088 INFO [scrapers.myscheme] Fetching offset=3000
+2026-06-17 16:43:25,325 INFO [scrapers.myscheme] Downloaded 3100 / 4720
+2026-06-17 16:43:26,326 INFO [scrapers.myscheme] Fetching offset=3100
+2026-06-17 16:43:26,741 INFO [scrapers.myscheme] Downloaded 3200 / 4720
+2026-06-17 16:43:27,742 INFO [scrapers.myscheme] Fetching offset=3200
+2026-06-17 16:43:28,081 INFO [scrapers.myscheme] Downloaded 3300 / 4720
+2026-06-17 16:43:29,083 INFO [scrapers.myscheme] Fetching offset=3300
+2026-06-17 16:43:29,386 INFO [scrapers.myscheme] Downloaded 3400 / 4720
+2026-06-17 16:43:30,388 INFO [scrapers.myscheme] Fetching offset=3400
+2026-06-17 16:43:30,695 INFO [scrapers.myscheme] Downloaded 3500 / 4720
+2026-06-17 16:43:31,697 INFO [scrapers.myscheme] Fetching offset=3500
+2026-06-17 16:43:32,072 INFO [scrapers.myscheme] Downloaded 3600 / 4720
+2026-06-17 16:43:33,073 INFO [scrapers.myscheme] Fetching offset=3600
+2026-06-17 16:43:33,786 INFO [scrapers.myscheme] Downloaded 3700 / 4720
+2026-06-17 16:43:34,788 INFO [scrapers.myscheme] Fetching offset=3700
+2026-06-17 16:43:35,076 INFO [scrapers.myscheme] Downloaded 3800 / 4720
+2026-06-17 16:43:36,077 INFO [scrapers.myscheme] Fetching offset=3800
+2026-06-17 16:43:36,538 INFO [scrapers.myscheme] Downloaded 3900 / 4720
+2026-06-17 16:43:37,540 INFO [scrapers.myscheme] Fetching offset=3900
+2026-06-17 16:43:37,878 INFO [scrapers.myscheme] Downloaded 4000 / 4720
+2026-06-17 16:43:38,880 INFO [scrapers.myscheme] Fetching offset=4000
+2026-06-17 16:43:39,176 INFO [scrapers.myscheme] Downloaded 4100 / 4720
+2026-06-17 16:43:40,177 INFO [scrapers.myscheme] Fetching offset=4100
+2026-06-17 16:43:40,539 INFO [scrapers.myscheme] Downloaded 4200 / 4720
+2026-06-17 16:43:41,541 INFO [scrapers.myscheme] Fetching offset=4200
+2026-06-17 16:43:41,849 INFO [scrapers.myscheme] Downloaded 4300 / 4720
+2026-06-17 16:43:42,851 INFO [scrapers.myscheme] Fetching offset=4300
+2026-06-17 16:43:43,209 INFO [scrapers.myscheme] Downloaded 4400 / 4720
+2026-06-17 16:43:44,210 INFO [scrapers.myscheme] Fetching offset=4400
+2026-06-17 16:43:46,972 INFO [scrapers.myscheme] Downloaded 4500 / 4720
+2026-06-17 16:43:47,973 INFO [scrapers.myscheme] Fetching offset=4500
+2026-06-17 16:43:49,282 INFO [scrapers.myscheme] Downloaded 4600 / 4720
+2026-06-17 16:43:50,283 INFO [scrapers.myscheme] Fetching offset=4600
+2026-06-17 16:43:51,104 INFO [scrapers.myscheme] Downloaded 4700 / 4720
+2026-06-17 16:43:52,107 INFO [scrapers.myscheme] Fetching offset=4700
+2026-06-17 16:43:52,561 INFO [scrapers.myscheme] Downloaded 4720 / 4720
+2026-06-17 16:43:53,563 INFO [scrapers.myscheme] Fetching offset=4800
+2026-06-17 16:43:54,011 ERROR [pipeline] myscheme scrape failed: 'charmap' codec can't encode character '\u20b9' in position 8937: character maps to <undefined>
+2026-06-17 16:43:54,028 INFO [scrapers.datagovin] Downloading resource 'central_govt_schemes' (6176ee09-3d56-4a3b-8115-21841ddd696a) ...
+2026-06-17 16:43:54,029 INFO [scrapers.datagovin]   Fetching offset=0 ...
+2026-06-17 16:44:24,714 ERROR [pipeline] data.gov.in download failed: HTTPSConnectionPool(host='api.data.gov.in', port=443): Read timed out. (read timeout=30)
+2026-06-17 16:44:24,722 INFO [scrapers.kaggle_dl] Kaggle auth set from environment variables.
+2026-06-17 16:44:37,577 INFO [scrapers.kaggle_dl]   Downloaded files: ['schemes.csv', 'schemes_faqs.csv']
+2026-06-17 16:44:37,589 INFO [pipeline] STEP 2 — Parsing & normalizing

@@ -67,28 +67,49 @@ def parse_age(raw_age) -> dict:
         return out
     s = str(raw_age).lower().strip()
 
+    # Only parse numbers that appear in an age-specific context.
+    # This prevents unrelated numbers in descriptions from being treated as ages.
+    age_contexts = [
+        s,
+        s[s.find("age"):] if "age" in s else "",
+        s[s.find("ages"):] if "ages" in s else "",
+    ]
+
     # "18-60" or "18 to 60"
-    m = re.search(r"(\d+)\s*(?:-|to)\s*(\d+)", s)
-    if m:
-        out["min"], out["max"] = int(m.group(1)), int(m.group(2))
-        return out
+    for context in age_contexts:
+        if not context:
+            continue
+        m = re.search(r"(?:age|ages?)\D{0,40}(\d+)\s*(?:-|to)\s*(\d+)", context)
+        if m:
+            out["min"], out["max"] = int(m.group(1)), int(m.group(2))
+            return out
 
     # "above 18" / "minimum 18"
-    m = re.search(r"(?:above|min(?:imum)?|from|>)\s*(\d+)", s)
-    if m:
-        out["min"] = int(m.group(1))
-        return out
+    for context in age_contexts:
+        if not context:
+            continue
+        m = re.search(r"(?:age|ages?)\D{0,40}(?:above|min(?:imum)?|from|over|at\s+least|>)\s*(\d+)", context)
+        if m:
+            out["min"] = int(m.group(1))
+            return out
 
     # "below 60" / "upto 60" / "maximum 60"
-    m = re.search(r"(?:below|upto|up to|max(?:imum)?|<)\s*(\d+)", s)
-    if m:
-        out["max"] = int(m.group(1))
-        return out
+    for context in age_contexts:
+        if not context:
+            continue
+        m = re.search(r"(?:age|ages?)\D{0,40}(?:below|upto|up to|max(?:imum)?|under|<|not\s+more\s+than)\s*(\d+)", context)
+        if m:
+            out["max"] = int(m.group(1))
+            return out
 
-    # bare number → treat as max
-    m = re.search(r"(\d+)", s)
-    if m:
-        out["max"] = int(m.group(1))
+    # "age 19 years" or "age 19"
+    for context in age_contexts:
+        if not context:
+            continue
+        m = re.search(r"(?:age|ages?)\D{0,40}(\d+)\s*(?:years?|yrs?)?\b", context)
+        if m:
+            out["max"] = int(m.group(1))
+            return out
 
     return out
 
@@ -209,6 +230,44 @@ def extract_benefit_amount(raw_benefits: str) -> str:
     return ""
 
 
+def extract_application_process(*candidates: str) -> str:
+    """
+    Pull a process/how-to-apply style description from verbose source text.
+
+    If the source already provides an explicit application_process field, that
+    should win. Otherwise this returns a cleaned fallback only when the text
+    looks like actual instructions (visit/apply/submit/register/etc.).
+    """
+    process_hints = (
+        r"\bapply\b",
+        r"\bapplication\b",
+        r"\bvisit\b",
+        r"\bsubmit\b",
+        r"\bregister\b",
+        r"\bportal\b",
+        r"\bonline\b",
+        r"\boffline\b",
+        r"\bdownload\b",
+        r"\bfill\b",
+        r"\bcontact\b",
+        r"\bstep\b",
+    )
+
+    for raw in candidates:
+        if not raw:
+            continue
+
+        text = re.sub(r"\s+", " ", str(raw)).strip()
+        if not text:
+            continue
+
+        lowered = text.lower()
+        if any(re.search(pattern, lowered) for pattern in process_hints):
+            return text
+
+    return ""
+
+
 def parse_myscheme_live_record(raw: dict) -> dict | None:
     """
     Map one record from the LIVE myscheme.gov.in search API (scrapers/myscheme.py)
@@ -237,6 +296,8 @@ def parse_myscheme_live_record(raw: dict) -> dict | None:
         first_state = str(states[0]).strip()
         el["state"] = first_state if first_state.lower() != "all" else "all"
 
+    el["age"] = parse_age(raw.get("description") or raw.get("short_title") or "")
+
     # categories is a list here too (e.g. ["Agriculture", "Social welfare"])
     cats = raw.get("categories") or []
     primary_category = str(cats[0]).strip() if isinstance(cats, list) and cats else ""
@@ -254,7 +315,7 @@ def parse_myscheme_live_record(raw: dict) -> dict | None:
         "benefits":           "",
         "benefit_type":       "",
         "benefit_amount":     "",
-        "application_process": "",
+        "application_process": extract_application_process(raw.get("description")),
         "documents_required": "",
         "application_url":    f"https://www.myscheme.gov.in/schemes/{raw.get('slug')}" if raw.get("slug") else "",
         "deadline":           raw.get("close_date") or None,
@@ -303,6 +364,7 @@ def parse_myscheme_record(raw: dict) -> dict | None:
     el["state"]        = (raw.get("state") or "all").strip() or "all"
     el["residence"]    = parse_residence(combined)
     el["disability"]   = "disab" in combined.lower()
+    el["age"]          = parse_age(" ".join(age_clauses) or combined or raw.get("description") or raw.get("detailed_description") or raw.get("brief_description") or "")
 
     btype = raw.get("beneficiary_type") or raw.get("target_beneficiaries") or ""
     el["occupation"] = [t.strip().lower() for t in str(btype).split(";") if t.strip()]
@@ -329,7 +391,11 @@ def parse_myscheme_record(raw: dict) -> dict | None:
         "benefits":           benefits_text,
         "benefit_type":       raw.get("benefit_type") or parse_benefit_type(benefits_text),
         "benefit_amount":     extract_benefit_amount(benefits_text),
-        "application_process": raw.get("application_process") or "",
+        "application_process": raw.get("application_process") or extract_application_process(
+            raw.get("detailed_description"),
+            raw.get("brief_description"),
+            raw.get("description"),
+        ),
         "documents_required": raw.get("documents_required") or "",
         "application_url":    raw.get("source_url") or raw.get("application_url") or "",
         "deadline":           raw.get("scheme_close_date") or None,
@@ -354,6 +420,16 @@ def parse_datagovin_record(raw: dict, resource_name: str) -> dict | None:
     el["state"]        = raw.get("state_name") or raw.get("state") or "all"
     el["gender"]       = parse_gender(raw.get("gender") or raw.get("beneficiary"))
     el["income_limit"] = parse_income(raw.get("income_limit") or raw.get("annual_income"))
+    el["age"]          = parse_age(
+        raw.get("age")
+        or raw.get("age_limit")
+        or raw.get("age_group")
+        or raw.get("description")
+        or raw.get("objective")
+        or raw.get("benefits")
+        or raw.get("benefit_details")
+        or ""
+    )
 
     return {
         "source":           "datagovin",
@@ -365,6 +441,14 @@ def parse_datagovin_record(raw: dict, resource_name: str) -> dict | None:
         "category":         raw.get("category") or raw.get("sector") or "",
         "description":      raw.get("description") or raw.get("objective") or "",
         "benefits":         raw.get("benefits") or raw.get("benefit_details") or "",
+        "application_process": extract_application_process(
+            raw.get("application_process"),
+            raw.get("how_to_apply"),
+            raw.get("description"),
+            raw.get("objective"),
+            raw.get("benefits"),
+            raw.get("benefit_details"),
+        ),
         "application_url":  raw.get("apply_link") or raw.get("website") or "",
         "state":            raw.get("state_name") or "Central",
         "eligibility_json": el,
@@ -380,6 +464,17 @@ def parse_kaggle_row(row: dict, filename: str) -> dict | None:
     el = empty_eligibility()
     el["state"]  = row.get("state") or row.get("State") or "all"
     el["gender"] = parse_gender(row.get("gender") or row.get("Gender") or row.get("beneficiary"))
+    el["age"]    = parse_age(
+        row.get("age")
+        or row.get("Age")
+        or row.get("description")
+        or row.get("Description")
+        or row.get("benefits")
+        or row.get("Benefits")
+        or row.get("eligibility")
+        or row.get("Eligibility")
+        or ""
+    )
 
     return {
         "source":           "kaggle",
@@ -391,6 +486,14 @@ def parse_kaggle_row(row: dict, filename: str) -> dict | None:
         "category":         row.get("category") or row.get("Category") or "",
         "description":      row.get("description") or row.get("Description") or "",
         "benefits":         row.get("benefits") or row.get("Benefits") or "",
+        "application_process": extract_application_process(
+            row.get("application_process"),
+            row.get("Application_Process"),
+            row.get("description"),
+            row.get("Description"),
+            row.get("benefits"),
+            row.get("Benefits"),
+        ),
         "application_url":  row.get("link") or row.get("URL") or "",
         "state":            row.get("state") or row.get("State") or "Central",
         "eligibility_json": el,
