@@ -15,7 +15,7 @@
 --   deadline             | date                     |
 --   description          | text                     |
 --   documents_required   | text                     |
---   eligibility_json     | jsonb                    |
+--   eligibility_json     | text                     |   <- TEXT, not JSONB
 --   eligibility_summary  | character varying(255)  |
 --   how_to_apply         | text                     |
 --   is_active            | boolean                  |
@@ -57,8 +57,8 @@ CREATE INDEX IF NOT EXISTS idx_schemes_fts ON schemes
 -- ============================================================
 -- Only do this if you decide you want native JSON querying (@>, ->, etc.)
 -- in Postgres instead of parsing the string in application code.
--- db/loader.py now performs this migration automatically when it finds a
--- legacy TEXT column.
+-- Requires updating db/loader.py to pass psycopg2.extras.Json(...) instead
+-- of json.dumps(...), and your Java entity's column type if applicable.
 --
 -- ALTER TABLE schemes
 --   ALTER COLUMN eligibility_json TYPE jsonb

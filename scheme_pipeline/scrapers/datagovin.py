@@ -12,12 +12,19 @@ import os
 import json
 import time
 import logging
+import sys
 from pathlib import Path
 
 import requests
 from dotenv import load_dotenv
 
 load_dotenv()
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
@@ -111,7 +118,7 @@ def download_resource(resource: dict) -> Path:
         "records": records,
     }, indent=2, ensure_ascii=False))
 
-    log.info(f"  Saved {len(records)} records → {out}")
+    log.info(f"  Saved {len(records)} records -> {out}")
     return out
 
 

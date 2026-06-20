@@ -11,9 +11,22 @@ Output: data/processed/schemes_normalized.json
 import json
 import logging
 import re
+import sys
 from pathlib import Path
 
 import pandas as pd
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
+# ── Model 2 (NER extractor) — optional, falls back to regex if unavailable ───
+try:
+    from ml.ner_extractor.extractor import extract_eligibility as _ml_extract_eligibility
+    _ML_EXTRACTOR_AVAILABLE = True
+except ImportError:
+    _ML_EXTRACTOR_AVAILABLE = False
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
@@ -32,6 +45,7 @@ OUTPUT_FILE   = PROCESSED_DIR / "schemes_normalized.json"
 #    "age":           { "min": int|null, "max": int|null },
 #    "gender":        "all" | "male" | "female" | "transgender",
 #    "income_limit":  { "annual_inr": int|null, "bpl_only": bool },
+#    "education":     [ "8th standard" | "12th standard" | "graduate" | ... ],
 #    "caste":         [ "SC" | "ST" | "OBC" | "EWS" | "General" ],  # [] = all
 #    "state":         "all" | "Tamil Nadu" | ...,
 #    "occupation":    [ "farmer" | "student" | "widow" | "disabled" | ... ],
@@ -44,12 +58,48 @@ def empty_eligibility() -> dict:
         "age":          {"min": None, "max": None},
         "gender":       "all",
         "income_limit": {"annual_inr": None, "bpl_only": False},
+        "education":    [],
         "caste":        [],
         "state":        "all",
         "occupation":   [],
         "disability":   False,
         "residence":    "all",
     }
+
+
+def map_model2_output_to_eligibility(ml_result: dict, state_hint: str = "all") -> dict:
+    """
+    Map Model 2's (ml/ner_extractor/extractor.py) output shape onto the
+    eligibility_json shape this pipeline already uses.
+
+    Model 2 returns:
+        {min_age, max_age, max_income, categories, gender,
+            education, occupation, state, disability, is_widow, requires}
+
+    eligibility_json expects:
+        {age: {min, max}, gender, income_limit: {annual_inr, bpl_only},
+            education, caste, state, occupation, disability, residence}
+    """
+    el = empty_eligibility()
+    el["age"]["min"] = ml_result.get("min_age")
+    el["age"]["max"] = ml_result.get("max_age")
+    el["gender"]     = ml_result.get("gender") or "all"
+    if el["gender"] == "any":
+        el["gender"] = "all"  # Model 2 uses "any", eligibility_json uses "all" — keep consistent
+
+    bpl_only = "bpl_certificate" in (ml_result.get("requires") or [])
+    el["income_limit"]["bpl_only"]   = bpl_only
+    # Model 2 sets max_income=0 as a BPL marker — don't store 0 as a real
+    # income ceiling, store None and let bpl_only carry that meaning instead.
+    max_income = ml_result.get("max_income")
+    el["income_limit"]["annual_inr"] = max_income if (max_income and max_income > 0) else None
+
+    el["caste"]      = ml_result.get("categories") or []
+    el["education"]  = ml_result.get("education") or []
+    el["state"]      = state_hint or "all"
+    el["occupation"] = ml_result.get("occupation") or []
+    el["disability"] = bool(ml_result.get("disability"))
+    return el
 
 
 # ── Field extraction helpers ───────────────────────────────────────────────────
@@ -59,6 +109,7 @@ def parse_age(raw_age) -> dict:
     Parse age from various raw formats:
       "18-60 years"  → {"min": 18, "max": 60}
       "Above 18"     → {"min": 18, "max": None}
+            "20 years and above" → {"min": 20, "max": None}
       "Below 60"     → {"min": None, "max": 60}
       60             → {"min": None, "max": 60}
     """
@@ -67,49 +118,34 @@ def parse_age(raw_age) -> dict:
         return out
     s = str(raw_age).lower().strip()
 
-    # Only parse numbers that appear in an age-specific context.
-    # This prevents unrelated numbers in descriptions from being treated as ages.
-    age_contexts = [
-        s,
-        s[s.find("age"):] if "age" in s else "",
-        s[s.find("ages"):] if "ages" in s else "",
-    ]
-
     # "18-60" or "18 to 60"
-    for context in age_contexts:
-        if not context:
-            continue
-        m = re.search(r"(?:age|ages?)\D{0,40}(\d+)\s*(?:-|to)\s*(\d+)", context)
-        if m:
-            out["min"], out["max"] = int(m.group(1)), int(m.group(2))
-            return out
+    m = re.search(r"(\d+)\s*(?:-|to)\s*(\d+)", s)
+    if m:
+        out["min"], out["max"] = int(m.group(1)), int(m.group(2))
+        return out
 
     # "above 18" / "minimum 18"
-    for context in age_contexts:
-        if not context:
-            continue
-        m = re.search(r"(?:age|ages?)\D{0,40}(?:above|min(?:imum)?|from|over|at\s+least|>)\s*(\d+)", context)
-        if m:
-            out["min"] = int(m.group(1))
-            return out
+    m = re.search(r"(?:above|min(?:imum)?|from|>)\s*(\d+)", s)
+    if m:
+        out["min"] = int(m.group(1))
+        return out
+
+    # "20 years and above" / "20 and above" / "20+ years"
+    m = re.search(r"(\d+)\s*(?:years?|yrs?)?\s*(?:and\s+)?above", s)
+    if m:
+        out["min"] = int(m.group(1))
+        return out
 
     # "below 60" / "upto 60" / "maximum 60"
-    for context in age_contexts:
-        if not context:
-            continue
-        m = re.search(r"(?:age|ages?)\D{0,40}(?:below|upto|up to|max(?:imum)?|under|<|not\s+more\s+than)\s*(\d+)", context)
-        if m:
-            out["max"] = int(m.group(1))
-            return out
+    m = re.search(r"(?:below|upto|up to|max(?:imum)?|<)\s*(\d+)", s)
+    if m:
+        out["max"] = int(m.group(1))
+        return out
 
-    # "age 19 years" or "age 19"
-    for context in age_contexts:
-        if not context:
-            continue
-        m = re.search(r"(?:age|ages?)\D{0,40}(\d+)\s*(?:years?|yrs?)?\b", context)
-        if m:
-            out["max"] = int(m.group(1))
-            return out
+    # bare number → treat as max
+    m = re.search(r"(\d+)", s)
+    if m:
+        out["max"] = int(m.group(1))
 
     return out
 
@@ -190,6 +226,32 @@ def parse_residence(raw) -> str:
     return "all"
 
 
+def parse_education(raw_text) -> list[str]:
+    if not raw_text:
+        return []
+
+    s = str(raw_text).lower()
+    found = []
+
+    patterns = [
+        (r"\b(?:8th|eighth)\s+(?:standard|class|grade)\b|\bclass\s*8\b", "8th standard"),
+        (r"\b(?:9th|ninth)\s+(?:standard|class|grade)\b|\bclass\s*9\b", "9th standard"),
+        (r"\b(?:10th|tenth|ssc|matric|matriculation)\s+(?:standard|class|grade)?\b|\bclass\s*10\b|\b10\+2\b", "10th standard"),
+        (r"\b(?:12th|twelfth|hsc|intermediate)\s+(?:standard|class|grade)?\b|\bclass\s*12\b|\b\+2\b", "12th standard"),
+        (r"\bundergraduate\b|\bgraduat(?:e|ion)\b|\bdegree\b", "graduate"),
+        (r"\bpost[-\s]?graduate\b|\bpg\b|\bmphil\b|\bphd\b", "postgraduate"),
+        (r"\bdiploma\b", "diploma"),
+        (r"\biti\b|\bindustrial training institute\b", "iti"),
+        (r"\bpolytechnic\b", "polytechnic"),
+    ]
+
+    for pattern, label in patterns:
+        if re.search(pattern, s):
+            found.append(label)
+
+    return sorted(set(found))
+
+
 # ── Source-specific parsers ────────────────────────────────────────────────────
 
 def parse_benefit_type(raw_benefits: str) -> str:
@@ -230,44 +292,6 @@ def extract_benefit_amount(raw_benefits: str) -> str:
     return ""
 
 
-def extract_application_process(*candidates: str) -> str:
-    """
-    Pull a process/how-to-apply style description from verbose source text.
-
-    If the source already provides an explicit application_process field, that
-    should win. Otherwise this returns a cleaned fallback only when the text
-    looks like actual instructions (visit/apply/submit/register/etc.).
-    """
-    process_hints = (
-        r"\bapply\b",
-        r"\bapplication\b",
-        r"\bvisit\b",
-        r"\bsubmit\b",
-        r"\bregister\b",
-        r"\bportal\b",
-        r"\bonline\b",
-        r"\boffline\b",
-        r"\bdownload\b",
-        r"\bfill\b",
-        r"\bcontact\b",
-        r"\bstep\b",
-    )
-
-    for raw in candidates:
-        if not raw:
-            continue
-
-        text = re.sub(r"\s+", " ", str(raw)).strip()
-        if not text:
-            continue
-
-        lowered = text.lower()
-        if any(re.search(pattern, lowered) for pattern in process_hints):
-            return text
-
-    return ""
-
-
 def parse_myscheme_live_record(raw: dict) -> dict | None:
     """
     Map one record from the LIVE myscheme.gov.in search API (scrapers/myscheme.py)
@@ -296,8 +320,6 @@ def parse_myscheme_live_record(raw: dict) -> dict | None:
         first_state = str(states[0]).strip()
         el["state"] = first_state if first_state.lower() != "all" else "all"
 
-    el["age"] = parse_age(raw.get("description") or raw.get("short_title") or "")
-
     # categories is a list here too (e.g. ["Agriculture", "Social welfare"])
     cats = raw.get("categories") or []
     primary_category = str(cats[0]).strip() if isinstance(cats, list) and cats else ""
@@ -315,7 +337,7 @@ def parse_myscheme_live_record(raw: dict) -> dict | None:
         "benefits":           "",
         "benefit_type":       "",
         "benefit_amount":     "",
-        "application_process": extract_application_process(raw.get("description")),
+        "application_process": "",
         "documents_required": "",
         "application_url":    f"https://www.myscheme.gov.in/schemes/{raw.get('slug')}" if raw.get("slug") else "",
         "deadline":           raw.get("close_date") or None,
@@ -344,30 +366,37 @@ def parse_myscheme_record(raw: dict) -> dict | None:
     eligibility_text = raw.get("eligibility") or ""
     benefits_text     = raw.get("benefits") or ""
 
-    # ── build eligibility_json from the semicolon-delimited eligibility text ───
+    # ── build eligibility_json — Model 2 (NER extractor) first, regex fallback ──
     # Dataset's eligibility field is semicolon-delimited into separate clauses
     # (e.g. "age 18-60 years; resident of X; income below Rs 2,50,000").
-    # We scope each parser to clauses that look relevant to it, rather than
-    # running every parser on the full combined text — otherwise parse_income
-    # would grab the "18" out of an age clause, etc.
-    el = empty_eligibility()
     clauses = [c.strip() for c in eligibility_text.split(";") if c.strip()]
     combined = " ".join(clauses)
+    state_value = (raw.get("state") or "all").strip() or "all"
 
-    age_clauses    = [c for c in clauses if re.search(r"\bage\b|\byears?\b|\byrs?\b", c, re.IGNORECASE)]
-    income_clauses = [c for c in clauses if re.search(r"\bincome\b|\bbpl\b|\bAPL\b|₹|\brs\.?\b", c, re.IGNORECASE)]
+    if _ML_EXTRACTOR_AVAILABLE and combined:
+        ml_result = _ml_extract_eligibility(combined, state_hint=state_value)
+        el = map_model2_output_to_eligibility(ml_result, state_hint=state_value)
+        # residence isn't covered by Model 2 yet — keep using the regex helper for it
+        el["residence"] = parse_residence(combined)
+    else:
+        # Fallback: original regex-based extraction (used if spaCy isn't
+        # installed, or there's no eligibility text to run the model on).
+        el = empty_eligibility()
+        age_clauses    = [c for c in clauses if re.search(r"\bage\b|\byears?\b|\byrs?\b", c, re.IGNORECASE)]
+        income_clauses = [c for c in clauses if re.search(r"\bincome\b|\bbpl\b|\bAPL\b|₹|\brs\.?\b", c, re.IGNORECASE)]
 
-    el["age"]          = parse_age(" ".join(age_clauses) or combined)
-    el["gender"]       = parse_gender(combined)
-    el["caste"]        = parse_caste(combined)
-    el["income_limit"] = parse_income(" ".join(income_clauses))  # empty string if no income clause found — correctly yields {annual_inr: None}
-    el["state"]        = (raw.get("state") or "all").strip() or "all"
-    el["residence"]    = parse_residence(combined)
-    el["disability"]   = "disab" in combined.lower()
-    el["age"]          = parse_age(" ".join(age_clauses) or combined or raw.get("description") or raw.get("detailed_description") or raw.get("brief_description") or "")
+        el["age"]          = parse_age(" ".join(age_clauses) or combined)
+        el["gender"]       = parse_gender(combined)
+        el["caste"]        = parse_caste(combined)
+        el["income_limit"] = parse_income(" ".join(income_clauses))
+        el["education"]    = parse_education(combined)
+        el["state"]        = state_value
+        el["residence"]    = parse_residence(combined)
+        el["disability"]   = "disab" in combined.lower()
 
     btype = raw.get("beneficiary_type") or raw.get("target_beneficiaries") or ""
-    el["occupation"] = [t.strip().lower() for t in str(btype).split(";") if t.strip()]
+    if not el["occupation"]:  # Model 2 may have already found occupations from text
+        el["occupation"] = [t.strip().lower() for t in str(btype).split(";") if t.strip()]
 
     # ── categories: "categories" is a Python-list-style string in some exports ──
     cats = raw.get("categories") or raw.get("category") or ""
@@ -391,11 +420,7 @@ def parse_myscheme_record(raw: dict) -> dict | None:
         "benefits":           benefits_text,
         "benefit_type":       raw.get("benefit_type") or parse_benefit_type(benefits_text),
         "benefit_amount":     extract_benefit_amount(benefits_text),
-        "application_process": raw.get("application_process") or extract_application_process(
-            raw.get("detailed_description"),
-            raw.get("brief_description"),
-            raw.get("description"),
-        ),
+        "application_process": raw.get("application_process") or "",
         "documents_required": raw.get("documents_required") or "",
         "application_url":    raw.get("source_url") or raw.get("application_url") or "",
         "deadline":           raw.get("scheme_close_date") or None,
@@ -403,56 +428,6 @@ def parse_myscheme_record(raw: dict) -> dict | None:
         "state":              raw.get("state") or "Central",
         "eligibility_json":   el,
         "raw_json":           raw,
-    }
-
-
-def parse_datagovin_record(raw: dict, resource_name: str) -> dict | None:
-    """
-    Map one data.gov.in record → normalized scheme dict.
-    Field names vary by dataset — inspect your downloaded JSON to calibrate.
-    """
-    if not raw:
-        return None
-
-    el = empty_eligibility()
-
-    # Common field patterns in data.gov.in scheme datasets
-    el["state"]        = raw.get("state_name") or raw.get("state") or "all"
-    el["gender"]       = parse_gender(raw.get("gender") or raw.get("beneficiary"))
-    el["income_limit"] = parse_income(raw.get("income_limit") or raw.get("annual_income"))
-    el["age"]          = parse_age(
-        raw.get("age")
-        or raw.get("age_limit")
-        or raw.get("age_group")
-        or raw.get("description")
-        or raw.get("objective")
-        or raw.get("benefits")
-        or raw.get("benefit_details")
-        or ""
-    )
-
-    return {
-        "source":           "datagovin",
-        "source_id":        str(raw.get("_id") or raw.get("sr_no") or ""),
-        "slug":             "",
-        "name":             raw.get("scheme_name") or raw.get("name") or "",
-        "ministry":         raw.get("ministry") or raw.get("implementing_agency") or "",
-        "department":       raw.get("department") or "",
-        "category":         raw.get("category") or raw.get("sector") or "",
-        "description":      raw.get("description") or raw.get("objective") or "",
-        "benefits":         raw.get("benefits") or raw.get("benefit_details") or "",
-        "application_process": extract_application_process(
-            raw.get("application_process"),
-            raw.get("how_to_apply"),
-            raw.get("description"),
-            raw.get("objective"),
-            raw.get("benefits"),
-            raw.get("benefit_details"),
-        ),
-        "application_url":  raw.get("apply_link") or raw.get("website") or "",
-        "state":            raw.get("state_name") or "Central",
-        "eligibility_json": el,
-        "raw_json":         raw,
     }
 
 
@@ -464,16 +439,8 @@ def parse_kaggle_row(row: dict, filename: str) -> dict | None:
     el = empty_eligibility()
     el["state"]  = row.get("state") or row.get("State") or "all"
     el["gender"] = parse_gender(row.get("gender") or row.get("Gender") or row.get("beneficiary"))
-    el["age"]    = parse_age(
-        row.get("age")
-        or row.get("Age")
-        or row.get("description")
-        or row.get("Description")
-        or row.get("benefits")
-        or row.get("Benefits")
-        or row.get("eligibility")
-        or row.get("Eligibility")
-        or ""
+    el["education"] = parse_education(
+        row.get("eligibility") or row.get("eligibility_text") or row.get("eligibility_summary") or ""
     )
 
     return {
@@ -486,14 +453,6 @@ def parse_kaggle_row(row: dict, filename: str) -> dict | None:
         "category":         row.get("category") or row.get("Category") or "",
         "description":      row.get("description") or row.get("Description") or "",
         "benefits":         row.get("benefits") or row.get("Benefits") or "",
-        "application_process": extract_application_process(
-            row.get("application_process"),
-            row.get("Application_Process"),
-            row.get("description"),
-            row.get("Description"),
-            row.get("benefits"),
-            row.get("Benefits"),
-        ),
         "application_url":  row.get("link") or row.get("URL") or "",
         "state":            row.get("state") or row.get("State") or "Central",
         "eligibility_json": el,
@@ -510,7 +469,7 @@ def dedup(schemes: list[dict]) -> list[dict]:
     """
     seen   = {}
     result = []
-    priority = {"myscheme": 0, "datagovin": 1, "kaggle": 2}
+    priority = {"myscheme_merged": 0, "myscheme": 1, "myscheme_live": 2, "kaggle": 3}
 
     # Sort so myscheme records win ties
     schemes.sort(key=lambda s: priority.get(s.get("source", ""), 9))
@@ -581,20 +540,21 @@ def merge_live_with_kaggle(live_schemes: list[dict], kaggle_schemes: list[dict])
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def run() -> list[dict]:
+def run(max_records: int | None = None) -> list[dict]:
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
     live_schemes   = []
     kaggle_schemes = []
-    other_schemes  = []  # data.gov.in, anything else
 
-    # ── 1a. myscheme.gov.in LIVE search API (scrapers/myscheme.py output) ────
-    # This is JSON in the NEW shape: id, slug, scheme_name, short_title, level,
+    # ── 1. myscheme.gov.in LIVE search API (scrapers/myscheme.py output) ─────
+    # This is JSON in the shape: id, slug, scheme_name, short_title, level,
     # scheme_for, ministry, categories, states, description, tags, close_date,
     # priority — listing fields only, no eligibility text.
     myscheme_live_file = RAW_DIR / "myscheme_raw.json"
     if myscheme_live_file.exists():
         raw_list = json.loads(myscheme_live_file.read_text(encoding="utf-8"))
+        if max_records:
+            raw_list = raw_list[:max_records]
         parsed   = [parse_myscheme_live_record(r) for r in raw_list]
         parsed   = [p for p in parsed if p and p["name"]]
         log.info(f"myscheme (live API): parsed {len(parsed)} schemes")
@@ -602,7 +562,7 @@ def run() -> list[dict]:
     else:
         log.warning(f"Not found: {myscheme_live_file} — run scrapers/myscheme.py first")
 
-    # ── 1b. Kaggle CSV — rich shape with eligibility, benefits, etc. ─────────
+    # ── 2. Kaggle CSV — rich shape with eligibility, benefits, etc. ──────────
     # Covers both data/raw/kaggle/**/*.csv (from kaggle_dl.py) and any
     # myscheme_*.csv dropped directly into data/raw/ (manual CSV export).
     kaggle_csv_paths = list((RAW_DIR / "kaggle").glob("**/*.csv")) + list(RAW_DIR.glob("myscheme_*.csv"))
@@ -610,6 +570,8 @@ def run() -> list[dict]:
         try:
             df   = pd.read_csv(csv_file, dtype=str).fillna("")
             rows = df.to_dict("records")
+            if max_records:
+                rows = rows[:max_records]
             parsed = [parse_myscheme_record(r) for r in rows]
             parsed = [p for p in parsed if p and p["name"]]
             log.info(f"kaggle/{csv_file.name}: parsed {len(parsed)} schemes (rich eligibility)")
@@ -617,27 +579,14 @@ def run() -> list[dict]:
         except Exception as e:
             log.error(f"Failed to parse {csv_file}: {e}")
 
-    # ── 2. data.gov.in ───────────────────────────────────────────────────────
-    for f in RAW_DIR.glob("datagovin_*.json"):
-        data     = json.loads(f.read_text(encoding="utf-8"))
-        records  = data.get("records", [])
-        resource = data.get("name", f.stem)
-        parsed   = [parse_datagovin_record(r, resource) for r in records]
-        parsed   = [p for p in parsed if p and p["name"]]
-        log.info(f"datagovin/{resource}: parsed {len(parsed)} records")
-        other_schemes.extend(parsed)
-
-
-    # ── 3. Merge live API + Kaggle, then fold in anything else (data.gov.in) ──
-    merged = merge_live_with_kaggle(live_schemes, kaggle_schemes)
-    all_schemes = merged + other_schemes
+    # ── 3. Merge live API + Kaggle ────────────────────────────────────────────
+    all_schemes = merge_live_with_kaggle(live_schemes, kaggle_schemes)
 
     # ── Dedup & save ─────────────────────────────────────────────────────────
     final = dedup(all_schemes)
-    OUTPUT_FILE.write_text(
-        json.dumps(final, indent=2, ensure_ascii=False),
-        encoding="utf-8"
-    )
+    if max_records:
+        final = final[:max_records]
+    OUTPUT_FILE.write_text(json.dumps(final, indent=2, ensure_ascii=False), encoding="utf-8")
     log.info(f"Saved {len(final)} normalized schemes → {OUTPUT_FILE}")
 
     # Print eligibility sample
@@ -648,4 +597,10 @@ def run() -> list[dict]:
 
 
 if __name__ == "__main__":
-    run()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Normalize raw scheme data into structured JSON")
+    parser.add_argument("--max", type=int, default=None, help="Limit normalization to the first N records for testing")
+    args = parser.parse_args()
+
+    run(max_records=args.max)

@@ -56,6 +56,7 @@ python -m scrapers.myscheme       # → data/raw/myscheme_raw.json
 python -m scrapers.kaggle_dl      # → data/raw/kaggle/*/
 
 # Step 2: Parse and normalize
+python -m parsers.normalize --max 10
 python -m parsers.normalize       # → data/processed/schemes_normalized.json
 
 # Step 3: Load into PostgreSQL
