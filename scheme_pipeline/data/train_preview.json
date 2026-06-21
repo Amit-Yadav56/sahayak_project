@@ -1,0 +1,554 @@
+[
+  {
+    "scheme": "Vasantrao Naik Merit Awards To The Vjnt Students Who Came First In State Or First In Board Of 10th And 12th Standard Examination",
+    "text": "The students should belong to the VJNT category.; The student should be First in State, or First in Board Examination of 10th or 12th.standard.; First Boy and First Girl Students who stood first in state and board both are eligible for Award.",
+    "entities": [
+      {
+        "text": "students",
+        "label": "OCCUPATION",
+        "start": 4,
+        "end": 12
+      },
+      {
+        "text": "student",
+        "label": "OCCUPATION",
+        "start": 54,
+        "end": 61
+      },
+      {
+        "text": "Boy",
+        "label": "GENDER",
+        "start": 151,
+        "end": 154
+      },
+      {
+        "text": "Girl",
+        "label": "GENDER",
+        "start": 165,
+        "end": 169
+      },
+      {
+        "text": "Students",
+        "label": "OCCUPATION",
+        "start": 170,
+        "end": 178
+      }
+    ]
+  },
+  {
+    "scheme": "Assistance for Damage to Agricultural Land and Other Losses",
+    "text": "The applicant must be a resident of Uttarakhand.; The applicant must be a farmer/family who has suffered disaster-related losses.; The beneficiary must not be receiving or have received benefits for the same loss under any other scheme.; The applicant must have suffered damage to land that they legally own, according to revenue records.",
+    "entities": [
+      {
+        "text": "farmer",
+        "label": "OCCUPATION",
+        "start": 74,
+        "end": 80
+      }
+    ]
+  },
+  {
+    "scheme": "Dr. B. R. Ambedkar’s Electric Auto (e-Auto) Subsidy Scheme",
+    "text": "The applicant should belong to the Union Territory of Puducherry either by virtue of birth or by virtue of continuous residence of not less than 5 years.; The applicant must be of the Scheduled Caste / Scheduled Tribe community recognized by the Union Territory of Puducherry.; The applicant must be a woman.; The total annual income of the applicant and her spouse must not exceed ₹2,00,000/-.; The applicant must be at least 18 years old on the date of application.; The applicant must not be more than 45 years old on the date of application.; The applicant must not be availing assistance under a prolonged disease.; The applicant must have a valid driving licence for operating the electric auto issued by a Competent Authority.; The applicant must not have availed of a similar subsidy under any other State / Central Scheme for the same purpose.; Only one person per family can avail the benefit once in their lifetime.",
+    "entities": [
+      {
+        "text": "woman",
+        "label": "GENDER",
+        "start": 302,
+        "end": 307
+      },
+      {
+        "text": "2,00,000/-",
+        "label": "INCOME",
+        "start": 383,
+        "end": 393
+      },
+      {
+        "text": "at least 18",
+        "label": "AGE",
+        "start": 418,
+        "end": 429
+      }
+    ]
+  },
+  {
+    "scheme": "Welfare Measures for Children of Labourers",
+    "text": "Children of SC/ST labourers working in coffee plantations and Licensed Coffee Curing Works, who are pursuing higher education after the 10th grade, are eligible.; Eligibility extends to the first two surviving children of SC/ST labourers employed in Coffee Plantations and Licensed Coffee Curing Works. In cases where the birth of the second child results in twins or multiple births, assistance shall be granted to all the children, provided they meet individual merit requirements.; Children of Clerks, Drivers, Supervisors, and Estate/Curing Works Managers are not entitled to these benefits.; The educational institution where the student is enrolled must be recognized by the Central or State Governments.; **Educational Stipends:** Students who have successfully passed the SSLC (Secondary School Leaving Certificate), 10th Class, or Matriculation examination and have commenced higher studies after SSLC, such as 1st-year PUC (Pre-University Course), Polytechnic, or Vocational Training in the current academic year, are eligible.1. **Incentive Award:** One female student and one male student in each region under the Deputy Director (Extension) (or Joint Director (Extension) for the NER region) who have achieved the highest marks in the SSLC, 10th Class, or Matriculation examination in the previous academic year and continue their studies in the current academic year are eligible.1. **Financial Assistance:** Students pursuing higher education, including Graduation, Post-Graduation, and Professional Courses such as Medical, Engineering, Agriculture, Pharmacy, and Nursing in the current academic year after completing the 2nd PUC (Pre-University Course) or 12th Class in the previous academic year, are eligible.1. A student eligible for an Educational Stipend is also eligible for an Incentive Award based on their academic merit.; Students pursuing the 1st year of PUC (11th Class) or Diploma courses during a specific academic year but completed the SSLC (10th Class) in earlier years are also eligible for educational stipends.; Students pursuing Graduation or Professional Courses during a specific academic year but completed the 2nd year of PUC (12th Class) in earlier years are also eligible for financial assistance.; Students pursuing Post-Graduation studies during the academic year 2017-18 but completed Graduation in years other than 2016-17 are also eligible for financial assistance.; Students pursuing the 2nd or 3rd year of Graduation or Post-Graduation courses, as the case may be, are eligible for financial assistance, regardless of whether they had previously availed or applied for financial assistance in previous years while pursuing the 1st or 2nd year of their course.",
+    "entities": [
+      {
+        "text": "SC",
+        "label": "CATEGORY",
+        "start": 12,
+        "end": 14
+      },
+      {
+        "text": "ST",
+        "label": "CATEGORY",
+        "start": 15,
+        "end": 17
+      },
+      {
+        "text": "labourers",
+        "label": "OCCUPATION",
+        "start": 18,
+        "end": 27
+      },
+      {
+        "text": "10th grade",
+        "label": "EDUCATION",
+        "start": 136,
+        "end": 146
+      },
+      {
+        "text": "SC",
+        "label": "CATEGORY",
+        "start": 222,
+        "end": 224
+      },
+      {
+        "text": "ST",
+        "label": "CATEGORY",
+        "start": 225,
+        "end": 227
+      },
+      {
+        "text": "labourers",
+        "label": "OCCUPATION",
+        "start": 228,
+        "end": 237
+      },
+      {
+        "text": "student",
+        "label": "OCCUPATION",
+        "start": 635,
+        "end": 642
+      },
+      {
+        "text": "Students",
+        "label": "OCCUPATION",
+        "start": 738,
+        "end": 746
+      },
+      {
+        "text": "10th Class",
+        "label": "EDUCATION",
+        "start": 825,
+        "end": 835
+      },
+      {
+        "text": "female",
+        "label": "GENDER",
+        "start": 1065,
+        "end": 1071
+      },
+      {
+        "text": "student",
+        "label": "OCCUPATION",
+        "start": 1072,
+        "end": 1079
+      },
+      {
+        "text": "male",
+        "label": "GENDER",
+        "start": 1088,
+        "end": 1092
+      },
+      {
+        "text": "student",
+        "label": "OCCUPATION",
+        "start": 1093,
+        "end": 1100
+      },
+      {
+        "text": "10th Class",
+        "label": "EDUCATION",
+        "start": 1254,
+        "end": 1264
+      },
+      {
+        "text": "Students",
+        "label": "OCCUPATION",
+        "start": 1423,
+        "end": 1431
+      },
+      {
+        "text": "Graduation",
+        "label": "EDUCATION",
+        "start": 1469,
+        "end": 1479
+      },
+      {
+        "text": "Graduation",
+        "label": "EDUCATION",
+        "start": 1486,
+        "end": 1496
+      },
+      {
+        "text": "12th Class",
+        "label": "EDUCATION",
+        "start": 1673,
+        "end": 1683
+      },
+      {
+        "text": "student",
+        "label": "OCCUPATION",
+        "start": 1733,
+        "end": 1740
+      },
+      {
+        "text": "Students",
+        "label": "OCCUPATION",
+        "start": 1849,
+        "end": 1857
+      },
+      {
+        "text": "11th Class",
+        "label": "EDUCATION",
+        "start": 1888,
+        "end": 1898
+      },
+      {
+        "text": "Diploma",
+        "label": "EDUCATION",
+        "start": 1903,
+        "end": 1910
+      },
+      {
+        "text": "10th Class",
+        "label": "EDUCATION",
+        "start": 1975,
+        "end": 1985
+      },
+      {
+        "text": "Students",
+        "label": "OCCUPATION",
+        "start": 2049,
+        "end": 2057
+      },
+      {
+        "text": "Graduation",
+        "label": "EDUCATION",
+        "start": 2067,
+        "end": 2077
+      },
+      {
+        "text": "12th Class",
+        "label": "EDUCATION",
+        "start": 2169,
+        "end": 2179
+      },
+      {
+        "text": "Students",
+        "label": "OCCUPATION",
+        "start": 2243,
+        "end": 2251
+      },
+      {
+        "text": "Graduation",
+        "label": "EDUCATION",
+        "start": 2266,
+        "end": 2276
+      },
+      {
+        "text": "Graduation",
+        "label": "EDUCATION",
+        "start": 2332,
+        "end": 2342
+      },
+      {
+        "text": "Students",
+        "label": "OCCUPATION",
+        "start": 2416,
+        "end": 2424
+      },
+      {
+        "text": "Graduation",
+        "label": "EDUCATION",
+        "start": 2457,
+        "end": 2467
+      },
+      {
+        "text": "Graduation",
+        "label": "EDUCATION",
+        "start": 2476,
+        "end": 2486
+      }
+    ]
+  },
+  {
+    "scheme": "West Bengal Transport Workers’ Social Security Scheme: Assistance for Marriage",
+    "text": "The applicant must be between 18 and 60 years of age at the time of enrolment.; The applicant must be an unorganized worker employed in the operation of commercial vehicles, such as cars, taxis, luxury taxis, light commercial vehicles, vans, auto-rickshaws, tempos, lorries, trucks, or buses.; The applicant’s vehicle must be used for commercial purposes and not solely for personal or family use.",
+    "entities": [
+      {
+        "text": "between 18 and 60",
+        "label": "AGE",
+        "start": 22,
+        "end": 39
+      }
+    ]
+  },
+  {
+    "scheme": "Maternity Assistance for the Construction Worker",
+    "text": "The applicant should be a resident of Sikkim.; The applicant should be a Building/ Construction Worker.; The applicant should be between 18 and 60 years.; The applicant should have served the Board for at least 90 days in a given year.; Registered women member Under the Sikkim Building and Other Construction Workers Welfare Board.; Women should be pregnant.; The applicant shall be eligible to avail the benefits only for their first 2 children.",
+    "entities": [
+      {
+        "text": "Construction",
+        "label": "OCCUPATION",
+        "start": 83,
+        "end": 95
+      },
+      {
+        "text": "between 18 and 60",
+        "label": "AGE",
+        "start": 129,
+        "end": 146
+      },
+      {
+        "text": "women",
+        "label": "GENDER",
+        "start": 248,
+        "end": 253
+      },
+      {
+        "text": "Construction",
+        "label": "OCCUPATION",
+        "start": 297,
+        "end": 309
+      },
+      {
+        "text": "Women",
+        "label": "GENDER",
+        "start": 334,
+        "end": 339
+      }
+    ]
+  },
+  {
+    "scheme": "Janani Express Yojana",
+    "text": "The applicant must be a resident of Madhya Pradesh.; The applicant must be a pregnant woman.",
+    "entities": [
+      {
+        "text": "woman",
+        "label": "GENDER",
+        "start": 86,
+        "end": 91
+      }
+    ]
+  },
+  {
+    "scheme": "Pension Scheme for Cancer Patients",
+    "text": "The applicant should be a resident of Tripura.; The income of the applicant should not exceed ₹1,50,000/- per annum.; No member of the family (father, mother, son(s), or unmarried daughter(s)) of the applicant should be in government service.; The applicant should be suffering from cancer.",
+    "entities": [
+      {
+        "text": "1,50,000/-",
+        "label": "INCOME",
+        "start": 95,
+        "end": 105
+      }
+    ]
+  },
+  {
+    "scheme": "Educational Loan Scheme (GBCDC)",
+    "text": "MBA or its equivalent (recognized by AICTE); Master of Computer Applications (MCA) or its equivalent (recognized by AICTE); Graduate-level engineering courses conducted by IITs or other institutions (recognized by AICTE); Medical or allied education such as Ayurvedic, Homeopathy, Unani, etc., from institutions recognized by the Medical Council of India; Diploma course in Hospitality Management recognized by the National Council of Hotel Management",
+    "entities": [
+      {
+        "text": "Graduate",
+        "label": "EDUCATION",
+        "start": 124,
+        "end": 132
+      },
+      {
+        "text": "Diploma",
+        "label": "EDUCATION",
+        "start": 356,
+        "end": 363
+      }
+    ]
+  },
+  {
+    "scheme": "Khet Talai",
+    "text": "The applicant should be a Farmer.; The applicant should be a native of Rajasthan.; The applicant farmer should have a minimum cultivable land of 0.3 hectares at one place in his name.; In the case of the joint account holder, the minimum land in one place should be 0.5 hectares.",
+    "entities": [
+      {
+        "text": "Farmer",
+        "label": "OCCUPATION",
+        "start": 26,
+        "end": 32
+      },
+      {
+        "text": "farmer",
+        "label": "OCCUPATION",
+        "start": 97,
+        "end": 103
+      }
+    ]
+  },
+  {
+    "scheme": "Indira Mahila Shakti Udyam Protsahan Yojana",
+    "text": "The applicant's age should be 18 years or more.; The applicant should be a permanent resident of Rajasthan.; The women's self-help group or group of these groups (cluster/ federation) must be registered under any department of the state government and in case of cluster/federation of groups, it will be necessary to be registered under the Cooperative Act as per the rules.",
+    "entities": [
+      {
+        "text": "women",
+        "label": "GENDER",
+        "start": 113,
+        "end": 118
+      }
+    ]
+  },
+  {
+    "scheme": "Vanchit Ikai Samooh Aur Vargon Ko Aarthik Sahayata Yojana",
+    "text": "Members of Backward Classes, as notified by Central Government/State Governments; All OBC Antyodaya Anna Yojana (AAY) cardholders, and OBC individuals facing three or more Deprivations in terms of SECC-2011, as per records available at the relevant BDO Office shall be eligible for Interest Subvention; All OBC beneficiaries involved in Agricultural activities and getting coverage under the PM KISAN; SHGs must be registered with NRLM/NULM/NABARD with more than two years of credit history; NSFDC recognized Self-Help Groups (SHGs) registered with NRLM/NULM and NABARD; The definition of Scheduled Castes includes all castes notified in the State and/or Central Government lists of SCs; Valid Annual Income Certificate issued by the competent authority of the State Government; AAY cardholders, and other individuals facing three or more Deprivations in terms of SECC-2011; All beneficiaries involved in Agricultural activities and getting coverage under the PM KISAN",
+    "entities": [
+      {
+        "text": "OBC",
+        "label": "CATEGORY",
+        "start": 86,
+        "end": 89
+      },
+      {
+        "text": "OBC",
+        "label": "CATEGORY",
+        "start": 135,
+        "end": 138
+      },
+      {
+        "text": "OBC",
+        "label": "CATEGORY",
+        "start": 307,
+        "end": 310
+      }
+    ]
+  },
+  {
+    "scheme": "Chief Ministers Special Rural Development Fund (CMSRDF)",
+    "text": "Identified by Local MLAs; All implementing agencies' NGOs, etc., should open a Bank Account, jointly operated by two members and funds should be released to their accounts only.; If the fund due to be released is above Rs. 50.000 the Block Development Officer concerned should release the same in 2 installments.; The fund shall not be allowed to be utilized for land compensation or for payment of salaries and office expenses.; A utilization certificate in respect of the amount drawn and utilized should be furnished by the Partner organizations to the Block Development officers concerned for record.; If the organization/beneficiaries fail to submit the UC(Utilization Certificate) for first installment and do not claim the second installment after a gap of three years, the particular work or project allotted or executed by them should be deemed as closed and the fund be returned back to the Directorate.; Citizens and SHGs in particular may seek the help of their local MLA to avail this scheme.",
+    "entities": [
+      {
+        "text": "Bank Account",
+        "label": "REQUIREMENT",
+        "start": 79,
+        "end": 91
+      }
+    ]
+  },
+  {
+    "scheme": "SAKSHAM - KVK 2.0",
+    "text": "The applicant must be a domicile of Gujarat.; The applicant must be minimum 14 years of age as per labour law for non-hazardous occupations.; The applicant must be maximum 59 years of age for Short Term Training.; The applicant must be maximum 65 years of age for Special Projects.; The applicant must be looking for fresh skills, reskilling, or upskilling opportunities for Short Term Training.; The applicant must be out of education, school/college dropout, or unemployed youth for Short Term Training.; The applicant must belong to marginalized, vulnerable groups requiring special attention or specific job roles for Special Projects.",
+    "entities": [
+      {
+        "text": "minimum 14",
+        "label": "AGE",
+        "start": 68,
+        "end": 78
+      },
+      {
+        "text": "maximum 59",
+        "label": "AGE",
+        "start": 164,
+        "end": 174
+      },
+      {
+        "text": "unemployed",
+        "label": "OCCUPATION",
+        "start": 464,
+        "end": 474
+      }
+    ]
+  },
+  {
+    "scheme": "Aushadhi Avam Sugandhit Fasal Shetra Vistar",
+    "text": "This scheme will be applicable for all sections.; Farmers who have obtained forest rights certificates to will also be eligible to avail the benefits.; The grant will be payable only once to a farmer.; A farmer can do farming for the first time in as much area as he wants but the grant will be payable for minimum 0.25 hectare and maximum 2.00 hectare.",
+    "entities": [
+      {
+        "text": "Farmers",
+        "label": "OCCUPATION",
+        "start": 50,
+        "end": 57
+      },
+      {
+        "text": "farmer",
+        "label": "OCCUPATION",
+        "start": 193,
+        "end": 199
+      },
+      {
+        "text": "farmer",
+        "label": "OCCUPATION",
+        "start": 204,
+        "end": 210
+      }
+    ]
+  },
+  {
+    "scheme": "Mukhyamantri Sports Development Scheme - Retired Person",
+    "text": "The applicant should be a resident of Tripura.; The applicant should be a retired sportsperson.; The applicant's age should be less than 64 years.",
+    "entities": [
+      {
+        "text": "sportsperson",
+        "label": "OCCUPATION",
+        "start": 82,
+        "end": 94
+      }
+    ]
+  },
+  {
+    "scheme": "Old Age Assistance",
+    "text": "Applicants must be 60 years or older.; They must have resided in Delhi for a minimum of five years before the date of application.; The applicant's annual family income from all sources, including rent, interest/dividends on savings and investments, earnings from farming, property sale proceeds, etc., should be less than Rs. 1,00,000.; The applicant must have an Aadhaar number.; The applicant must have a singly-operated account in any bank within the National Capital Territory of Delhi only for receiving payment through the Public Financial Management System (PFMS).; The applicant must not be receiving any pension/financial assistance from the Central Government/State Government/other governmental local bodies or any other source for this purpose.",
+    "entities": [
+      {
+        "text": "1,00,000",
+        "label": "INCOME",
+        "start": 327,
+        "end": 335
+      },
+      {
+        "text": "Aadhaar",
+        "label": "REQUIREMENT",
+        "start": 365,
+        "end": 372
+      }
+    ]
+  },
+  {
+    "scheme": "Vidhyadeep Yojana",
+    "text": "The beneficiary must be a student studying in all Primary, Secondary, and Higher Secondary schools of Gujarat.; The applicant must be the successor or the disabled beneficiary themselves in case of permanent disability.; The applicant must appear in person with the original identity card.; The applicant must submit the written application in the prescribed format to the local Nodal/Competent Officer.; The application must be submitted within ninety (90) days from the date of death or accident.",
+    "entities": [
+      {
+        "text": "student",
+        "label": "OCCUPATION",
+        "start": 26,
+        "end": 33
+      },
+      {
+        "text": "disabled",
+        "label": "OCCUPATION",
+        "start": 155,
+        "end": 163
+      }
+    ]
+  },
+  {
+    "scheme": "Divyang Pension Yojana",
+    "text": "The age of the applicant should be 18 years or more.; Applicant must be a permanent resident of Uttar Pradesh.; Should have a minimum of 40 percent disability.; The person getting pension/grant/assistance under the applicant&#39;s old age pension, widow pension, socialist pension or any other similar scheme and the person receiving free maintenance in government institutions/homes should not be eligible.; The annual income of the applicant or his family is within the definition of the poverty line (currently fixed at Rs. 46,080/- in rural areas and Rs. 56,460/- per family per year in urban areas) will be eligible for the grant.",
+    "entities": [
+      {
+        "text": "widow",
+        "label": "OCCUPATION",
+        "start": 248,
+        "end": 253
+      }
+    ]
+  },
+  {
+    "scheme": "Widow Pension - Uttar Pradesh",
+    "text": "The applicant should be a permanent resident of Uttar Pradesh state.; The applicant's husband has died.; The age of the applicant should not be less than 18 years.; The annual income of the applicant and her family from all sources should not exceed  ₹ 2,00,000/-",
+    "entities": [
+      {
+        "text": "2,00,000/-",
+        "label": "INCOME",
+        "start": 253,
+        "end": 263
+      }
+    ]
+  }
+]
