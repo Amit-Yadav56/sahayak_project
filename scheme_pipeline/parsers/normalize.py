@@ -219,9 +219,26 @@ def parse_residence(raw) -> str:
     if not raw:
         return "all"
     s = str(raw).lower()
-    if "rural" in s:
+    # Word-boundary match only, and skip clauses that are clearly naming an
+    # Act/scheme/institution rather than stating a residence requirement
+    # (e.g. "...National Rural Employment Guarantee Act" matched bare
+    # "rural" and produced residence="rural" for a scheme with no actual
+    # residence restriction). Requiring "resident"/"residing"/"village"/
+    # "area" context, or that the match isn't immediately followed by a
+    # capitalized word chain ending in "Act"/"Scheme"/"Yojana", avoids this.
+    rural_match = re.search(r"\brural\b", s)
+    urban_match = re.search(r"\burban\b", s)
+
+    def _is_proper_noun_context(match) -> bool:
+        # crude but effective: if "act"/"scheme"/"yojana"/"mission"/"guarantee"
+        # appears within a few words after the match, it's almost certainly
+        # part of a scheme/law name, not a residence requirement.
+        window = s[match.end():match.end() + 40]
+        return bool(re.search(r"\b(act|scheme|yojana|mission|guarantee|programme|program)\b", window))
+
+    if rural_match and not _is_proper_noun_context(rural_match):
         return "rural"
-    if "urban" in s:
+    if urban_match and not _is_proper_noun_context(urban_match):
         return "urban"
     return "all"
 
@@ -370,7 +387,13 @@ def parse_myscheme_record(raw: dict) -> dict | None:
     # Dataset's eligibility field is semicolon-delimited into separate clauses
     # (e.g. "age 18-60 years; resident of X; income below Rs 2,50,000").
     clauses = [c.strip() for c in eligibility_text.split(";") if c.strip()]
-    combined = " ".join(clauses)
+    # IMPORTANT: join with "; " (not " ") to preserve clause boundaries.
+    # Model 2's false-friend context guards (e.g. distinguishing "2 to 3
+    # years experience" from a real age range, or "50% women members" on
+    # a panel from an applicant gender requirement) scan outward to the
+    # nearest ';' or '.' — joining with a bare space merges every clause
+    # into one undifferentiated blob and silently defeats those guards.
+    combined = "; ".join(clauses)
     state_value = (raw.get("state") or "all").strip() or "all"
 
     if _ML_EXTRACTOR_AVAILABLE and combined:
