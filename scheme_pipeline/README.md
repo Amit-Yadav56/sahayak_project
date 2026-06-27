@@ -2,7 +2,8 @@
 
 Scrapes Indian government schemes from myscheme.gov.in, data.gov.in, and Kaggle,
 normalizes eligibility data into a structured JSON format using a rule-based +
-trainable-NER extractor, and loads everything into PostgreSQL.
+trainable-NER extractor, loads everything into PostgreSQL, and serves a FastAPI
+that matches user profiles to schemes using XGBoost.
 
 ---
 
@@ -18,11 +19,10 @@ If you are installing on Python 3.14, make sure pip is pulling a recent pandas
 release. Older pandas pins can force a NumPy source build on Windows when no
 compatible wheel is available.
 
-`ml/ner_extractor` additionally needs `spacy` (already in `requirements.txt`).
-No pretrained spaCy model download is required for the rule-based extractor —
-it runs on `spacy.blank("en")`. The trainable NER model (see below) is trained
-from scratch on this project's own data, so nothing needs downloading there
-either.
+`ml/ner_extractor` and `ml/eligibility_matcher` additionally need `spacy`,
+`xgboost`, and `scikit-learn` (all in `requirements.txt`). No pretrained model
+downloads are required — both ML models are trained from scratch on this
+project's own data.
 
 ### 2. Configure credentials
 
@@ -61,14 +61,16 @@ python pipeline.py
 python -m scrapers.myscheme       # → data/raw/myscheme_raw.json
 python -m scrapers.kaggle_dl      # → data/raw/kaggle/*/
 
-# Step 2: Parse and normalize (runs ml/ner_extractor under the hood
-#          to populate eligibility_json from raw eligibility text)
+# Step 2: Parse and normalize
 python -m parsers.normalize --max 10
 python -m parsers.normalize       # → data/processed/schemes_normalized.json
 
 # Step 3: Load into PostgreSQL
 python -m db.loader               # upserts all rows
 python -m db.loader --reset       # drops tables first (dev only)
+
+# Step 4: Run the API
+uvicorn api.main:app --reload --port 8000
 ```
 
 ---
@@ -77,145 +79,222 @@ python -m db.loader --reset       # drops tables first (dev only)
 
 ```
 scheme_pipeline/
-├── .env.example          ← copy to .env and fill in credentials
+├── .env.example
 ├── requirements.txt
-├── pipeline.py           ← master runner (run this)
+├── pipeline.py                    ← master runner
 │
 ├── scrapers/
-│   ├── myscheme.py       ← scrapes myscheme.gov.in via JSON API
-│   ├── datagovin.py      ← downloads from data.gov.in REST API
-│   └── kaggle_dl.py      ← downloads CSVs via Kaggle Python API
+│   ├── myscheme.py                ← scrapes myscheme.gov.in via JSON API
+│   ├── datagovin.py               ← downloads from data.gov.in REST API
+│   └── kaggle_dl.py               ← downloads CSVs via Kaggle Python API
 │
 ├── parsers/
-│   └── normalize.py      ← maps all sources to unified schema + builds eligibility_json
-│                            (calls ml/ner_extractor on the raw eligibility text)
+│   ├── normalize.py               ← maps all sources → unified schema + eligibility_json
+│   └── canonicalize.py            ← collapses duplicate strings (Degree/degree, class 10/10th standard)
 │
 ├── ml/
-│   └── ner_extractor/
-│       ├── extractor.py          ← MODEL 2: rule-based spaCy Matcher extractor
-│       │                            (extract_eligibility, extract_entities)
+│   ├── ner_extractor/
+│   │   ├── extractor.py           ← MODEL 2: rule-based spaCy Matcher + regex extractor
+│   │   └── __init__.py
+│   │
+│   └── eligibility_matcher/
+│       ├── features.py            ← MODEL 1: feature encoder (user + scheme → vector)
+│       ├── synthesize.py          ← synthetic training data generator
+│       ├── train.py               ← XGBoost trainer + evaluator
+│       ├── score.py               ← inference: user profile → ranked scheme list
+│       ├── eligibility_model.pkl  ← trained XGBoost model (generated)
 │       └── __init__.py
 │
+├── api/
+│   ├── main.py                    ← FastAPI app (2 endpoints)
+│   └── __init__.py
+│
 ├── db/
-│   ├── schema.sql         ← table DDL + indexes (auto-applied by loader.py)
-│   └── loader.py          ← upserts data/processed/schemes_normalized.json → PostgreSQL
+│   ├── schema.sql                 ← table DDL + indexes
+│   └── loader.py                  ← upserts schemes_normalized.json → PostgreSQL
 │
 ├── data/
-│   ├── raw/               ← raw scraped JSON and CSV files
-│   ├── processed/         ← normalized JSON ready for DB (schemes_normalized.json)
-│   ├── train.spacy        ← NER training split (generated, see below)
-│   ├── dev.spacy          ← NER held-out eval split (generated, see below)
-│   └── train_preview.json ← human-readable sample of silver-labeled spans
+│   ├── raw/                       ← raw scraped JSON and CSV files
+│   ├── processed/                 ← schemes_normalized.json (ready for DB)
+│   ├── synthetic_user_profiles.csv ← 500 synthetic user profiles (for reference/testing)
+│   ├── train.spacy                ← NER training split (generated)
+│   ├── dev.spacy                  ← NER held-out eval split (generated)
+│   ├── manual_labels.json         ← human-reviewed NER labels (built by label_tool.py)
+│   └── manual_labels.spacy        ← exported spaCy format of manual labels (generated)
 │
-├── trained_model/         ← trained spaCy NER pipeline (generated, see below)
+├── trained_model/                 ← trained spaCy NER pipeline (generated)
 │
-├── audit_normalized.py        ← coverage stats + red-flag detection over the full normalized dataset
-├── generate_training_data.py  ← converts extractor spans → spaCy train/dev .spacy files
-└── train_ner.py                ← trains + evaluates the NER model on held-out dev data
+├── audit_normalized.py            ← coverage stats + red-flag detection at full scale
+├── generate_training_data.py      ← extractor spans → spaCy train/dev .spacy files
+├── train_ner.py                   ← trains + evaluates the NER model
+└── label_tool.py                  ← interactive CLI for manually labeling 50 paragraphs
 ```
 
 ---
 
-## ML Model 2 — Eligibility Criteria Extractor
+## API
 
-`ml/ner_extractor/extractor.py` turns raw eligibility text into the structured
-`eligibility_json` shape. It runs in two parts:
+Start the server from your repo root:
 
-- **AGE / GENDER / CATEGORY / OCCUPATION / EDUCATION / REQUIREMENT** — spaCy
-  `Matcher` token patterns, with context guards that reject false positives
-  (e.g. "2 to 3 years of experience" isn't an age range; "50% women members"
-  on a review panel isn't an applicant gender requirement; numbers outside a
-  0–100 plausibility bound are rejected outright — catches things like
-  "academic year 2022-23" or "up to 150 units" of electricity).
-- **INCOME / BPL** — a separate clause-scoped regex pass, *not* the Matcher.
-  Indian government text writes amounts as `₹48,000/-`, which breaks spaCy's
-  `like_num` token check, and naive matching tends to cross clause boundaries
-  and grab numbers from unrelated sentences. The regex pass handles comma
-  formatting (including the stray-space `"₹2, 00,000/-"` variant), `lakh`/
-  `lac`/`lahk`/`crore`/`LPA`/`thousand` multipliers, decimal lakhs
-  (`"₹2.50 Lakh"`), polarity (`"greater than X"` is a floor, not a ceiling —
-  declined rather than mislabeled), `"Non BPL"` exclusion, and skips
-  `"Income Tax Act"` boilerplate common in trust/organization eligibility
-  text.
-
-```python
-from ml.ner_extractor.extractor import extract_eligibility
-
-result = extract_eligibility(scheme["raw_json"]["eligibility"])
-# {
-#   "min_age": 18, "max_age": 60, "max_income": 250000,
-#   "categories": ["SC", "ST"], "gender": "female",
-#   "occupation": ["farmer"], "state": "any",
-#   "education": [], "disability": False, "is_widow": False,
-#   "requires": ["aadhar", "bank_account"]
-# }
+```bash
+uvicorn api.main:app --reload --port 8000
 ```
 
-Always feed it the clean, semicolon-delimited `eligibility` field — not the
-full scheme description — and make sure clauses stay joined with `"; "`, not
-a bare space, when reconstructing text upstream. The false-friend context
-guards scan outward to the nearest `;` boundary; collapsing clauses into one
-undifferentiated blob silently defeats them.
+Open `http://localhost:8000/docs` for the interactive Swagger UI — test both
+endpoints directly in the browser without writing any curl commands.
 
-### Known limitations (not bugs — schema/ambiguity gaps)
+### `POST /api/match` — Match schemes to a user profile
 
-- **Monthly vs. annual income.** `max_income` is meant to be annual, but
-  some source text only states a monthly figure (e.g. *"income less than
-  ₹500/- per month"*). The extractor reports the number as written rather
-  than guessing a ×12 conversion. Worth a product decision if you want
-  estimated-annual values instead.
-- **Two-age-bracket schemes.** A handful of schemes state eligibility for
-  two disjoint groups in one record (e.g. *"orphan children below 14"* **and**
-  *"elderly above 60"*). `min_age`/`max_age` can't represent two separate
-  bands — this needs a schema change (e.g. a list of age brackets), not a
-  better regex.
-- **`occupation` sometimes contains beneficiary-type values**, not real
-  occupations (`"individual"`, `"infra"`, `"family"`). This comes from
-  `normalize.py`'s fallback to the raw `beneficiary_type` CSV column when the
-  extractor finds nothing — those are beneficiary classifications, not
-  occupations, and the field is somewhat overloaded as a result.
+Takes a user profile, scores all ~4789 schemes using the XGBoost eligibility
+model, and returns the top matches ranked by confidence score. Typical
+response time: ~100ms for all schemes.
 
-### Auditing extraction quality at scale
+**Request body:**
+```json
+{
+  "age": 28,
+  "gender": "female",
+  "state": "Tamil Nadu",
+  "annual_income": 80000,
+  "income_source": "farmer",
+  "caste_category": "SC",
+  "disability": false,
+  "is_widow": false,
+  "education_level": "class 10",
+  "has_bank_account": true,
+  "has_aadhar": true
+}
+```
+
+**Optional query params:**
+- `top_n=20` — number of results (max 200)
+- `min_status=LIKELY_ELIGIBLE` — filter threshold
+
+**Status values:**
+| Status | Score | Meaning |
+|---|---|---|
+| `ELIGIBLE` | ≥ 0.80 | All known criteria satisfied |
+| `LIKELY_ELIGIBLE` | ≥ 0.55 | Most criteria satisfied |
+| `CHECK_REQUIRED` | ≥ 0.30 | Partial match — verify manually |
+| `NOT_ELIGIBLE` | < 0.30 | Hard criterion violated |
+
+**Field values:**
+- `income_source`: `farmer` / `labourer` / `salaried` / `self_employed` / `unemployed` / `other`
+- `caste_category`: `General` / `OBC` / `SC` / `ST` / `EWS`
+- `education_level`: `none` / `class 5` / `class 8` / `class 10` / `class 12` / `diploma` / `graduate` / `postgraduate` / `phd`
+
+---
+
+### `GET /api/schemes` — Browse and filter schemes
+
+Direct structured filter — no ML scoring. Useful for building filter UIs or
+exploring what's in the database.
+
+**Query params (all optional):**
+- `state=Tamil Nadu`
+- `gender=female`
+- `category=Health`
+- `caste=SC`
+- `disability=true`
+- `min_age=28` — schemes whose age range includes this age
+- `max_income=80000` — schemes whose income limit is at least this value
+- `page=1`, `per_page=20`
+
+**Example:**
+```bash
+curl "http://localhost:8000/api/schemes?state=Tamil+Nadu&gender=female&caste=SC"
+```
+
+---
+
+## ML Model 1 — Eligibility Matcher (XGBoost)
+
+`ml/eligibility_matcher/` scores a user profile against every scheme and
+returns a ranked list with confidence scores.
+
+For each (user, scheme) pair, `features.py` builds a 33-feature vector of
+direct match signals (age in range? income below cap? caste in list?) plus
+raw user and scheme properties. XGBoost predicts a 0–1 score from this vector.
+
+**Why XGBoost over simple filters:**
+- Handles null eligibility fields — 83% of schemes have no age constraint,
+  84% have no income constraint. A pure filter skips these; the model learns
+  their typical weight from non-null examples.
+- Gives smooth partial-match scores — a scheme for SC women scores 0.6 for
+  an OBC woman rather than hard-zero.
+- Ranks among technically-eligible schemes so the most relevant appear first.
+
+**Retrain when your data changes:**
+```bash
+python -m ml.eligibility_matcher.train
+# Generates 191k synthetic (user, scheme) pairs, trains XGBoost,
+# evaluates on 15% held-out test set, saves eligibility_model.pkl
+# (~15 seconds total)
+```
+
+**Use directly in code:**
+```python
+from ml.eligibility_matcher.score import EligibilityMatcher
+
+matcher = EligibilityMatcher()   # load once at startup
+results = matcher.score_user({
+    "age": 28, "gender": "female", "state": "Tamil Nadu",
+    "annual_income": 80000, "income_source": "farmer",
+    "caste_category": "SC", "disability": False, "is_widow": False,
+    "education_level": "class 10",
+    "has_bank_account": True, "has_aadhar": True,
+}, top_n=20)
+```
+
+**Honest caveat:** trained on synthetic data derived from the eligibility_json
+rules. It handles partial matches and null fields better than rules, but the
+underlying "ground truth" is still the extracted rules. Becomes meaningfully
+better once real user interaction data (clicks, applications, outcomes) is
+available for retraining.
+
+---
+
+## ML Model 2 — Eligibility Criteria Extractor (spaCy)
+
+`ml/ner_extractor/extractor.py` turns raw eligibility text into structured
+`eligibility_json`. Called automatically by `parsers/normalize.py`.
+
+Two extraction passes:
+
+- **AGE / GENDER / CATEGORY / OCCUPATION / EDUCATION / REQUIREMENT** — spaCy
+  Matcher token patterns with context guards rejecting false positives
+  (e.g. "2 to 3 years of experience" isn't an age range; numbers outside
+  0–100 are rejected outright).
+- **INCOME / BPL** — clause-scoped regex pass. Handles `₹48,000/-` formatting,
+  `lakh`/`crore`/`LPA` multipliers, decimal amounts (`₹2.50 Lakh`), polarity
+  (`"greater than X"` is a floor not a ceiling), and skips `"Income Tax Act"`
+  boilerplate.
+
+### Known limitations
+
+- **Monthly vs. annual income** — some text only gives a monthly figure.
+  The extractor reports the number as written rather than guessing ×12.
+- **Two-age-bracket schemes** — a handful of schemes cover two disjoint groups
+  (e.g. children under 14 AND elderly over 60). `min_age`/`max_age` can't
+  represent this — schema gap, not an extraction bug.
+
+### Auditing at scale
 
 ```bash
 python audit_normalized.py
 ```
 
-Prints per-field coverage (% of records where each `eligibility_json` field
-got populated), automated red-flag checks (`age min > max`, implausible ages,
-suspiciously small income ceilings), top occupation/caste/education value
-distributions, and a random spot-check sample — run this after any change to
-`extractor.py` or `normalize.py`, against the full dataset, not a handful of
-examples. Several real bugs in this pipeline (clause-crossing income matches,
-calendar years read as ages, institutional "years of existence" read as
-applicant age) only became visible at full volume — a small sample isn't
-enough to trust a change.
+Run after any change to `extractor.py` or `normalize.py`. Several real bugs
+were only visible at full 4789-record volume.
 
----
-
-## Training the NER model
-
-The Matcher/regex extractor above is also a **silver-label generator**: its
-own (filtered, non-overlapping) entity spans become training data for a real
-spaCy `ner` pipeline component, so the model can generalize past exact rule
-wording instead of only matching hand-written patterns.
+### Training the NER model
 
 ```bash
-# 1. Make sure data/processed/schemes_normalized.json is up to date
-python -m parsers.normalize
-
-# 2. Convert it into a train/dev split (90/10) of spaCy training data
-python generate_training_data.py
-#   → data/train.spacy, data/dev.spacy, data/train_preview.json
-
-# 3. Train + evaluate on the held-out dev set
-python train_ner.py
-#   → trained_model/  (loadable spaCy pipeline)
+python generate_training_data.py   # → data/train.spacy + data/dev.spacy
+python train_ner.py                # → trained_model/
 ```
 
-`train_ner.py` prints precision/recall/F1 per entity label on dev data that
-was never seen during training. As of the last full run (4789 records, 3033
-train / 336 dev):
+Dev set results (336 held-out records):
 
 | Label | P | R | F1 |
 |---|---|---|---|
@@ -228,42 +307,56 @@ train / 336 dev):
 | REQUIREMENT | 1.000 | 1.000 | 1.000 |
 | **Overall** | **0.953** | **0.983** | **0.968** |
 
-**Caveat:** the dev set is labeled by the same rule-based extractor the model
-trains on (weak/distant supervision). High F1 here means the model learned to
-reproduce the rules' decision boundary — useful, since it implies the model
-will generalize to phrasing the hand-written patterns don't cover — but it is
-**not** a ground-truth accuracy number. Validate against a small
-human-checked sample before trusting this for anything beyond what the rules
-already do.
+**Caveat:** dev labels come from the same rule-based extractor the model trains
+on. High F1 means the model generalizes past exact rule wording — not that
+it has been validated against human ground truth.
 
-```python
-import spacy
-nlp = spacy.load("trained_model")
-doc = nlp("Applicants must be female, aged 18 to 35, with family income below ₹2 lakh")
-print([(ent.text, ent.label_) for ent in doc.ents])
+### Manual labeling (improves the model)
+
+```bash
+python label_tool.py            # label 50 records (~3 hours)
+python label_tool.py --export   # → data/manual_labels.spacy
 ```
+
+Pre-fills every record with the extractor's spans — you're correcting mistakes,
+not labeling from scratch. Most records need only a keypress to accept.
+
+**Controls:**
+```
+Enter / y              → accept all pre-labeled entities
+d N                    → delete entity N
+r N LABEL              → relabel entity N  (e.g.  r 1 INCOME)
+a START:END LABEL      → add a new entity by character offset
+s                      → skip this record
+q                      → quit and save progress
+```
+
+Progress auto-saves after every accepted record so you can stop and resume
+across sessions.
+
+**Do not add a STATE label** — state is already captured more reliably from
+the structured metadata field. Stick to the six existing labels:
+`AGE`, `INCOME`, `GENDER`, `CATEGORY`, `OCCUPATION`, `EDUCATION`, `REQUIREMENT`.
 
 ---
 
 ## eligibility_json schema
-
-Every scheme row stores a structured `eligibility_json` JSONB column:
 
 ```json
 {
   "age":           { "min": 18, "max": 60 },
   "gender":        "female",
   "income_limit":  { "annual_inr": 250000, "bpl_only": false },
-  "education":     [],
+  "education":     ["class 10"],
   "caste":         ["SC", "ST"],
   "state":         "Tamil Nadu",
-  "occupation":    ["farmer", "student"],
+  "occupation":    ["farmer"],
   "disability":    false,
   "residence":     "rural"
 }
 ```
 
-### Example queries
+### Example PostgreSQL queries
 
 ```sql
 -- Schemes for women in Tamil Nadu
@@ -282,12 +375,9 @@ SELECT name FROM schemes
 WHERE eligibility_json @> '{"disability": true}';
 ```
 
-If you run these queries in `psql` on Windows and see a `WIN1252` encoding
-error on `₹` or other UTF-8 characters, switch the session encoding first:
+If you see a `WIN1252` encoding error on `₹` in psql on Windows:
 
 ```sql
-\encoding UTF8
--- or
 SET client_encoding = 'UTF8';
 ```
 
@@ -295,12 +385,10 @@ SET client_encoding = 'UTF8';
 
 ## Calibrating field names
 
-After scraping, run this to see the exact keys the APIs return:
-
 ```python
 import json
 data = json.load(open("data/raw/myscheme_raw.json"))
-print(list(data[0].keys()))  # see available fields
+print(list(data[0].keys()))
 ```
 
-Then update the field mappings in `parsers/normalize.py` accordingly.
+Update field mappings in `parsers/normalize.py` accordingly.

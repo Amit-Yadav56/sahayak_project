@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "pbs-hbocwwb",
+    "name": "Paternity Benefit Scheme (HBOCWWB)",
+    "text": "The applicant should be a male construction worker.; The male worker should be registered under Haryana Building and Other Construction Workers Welfare Board (HBOCWWB).; The registered worker should have a minimum of one-year regular membership.; Only the registered worker whose wife has delivered a baby is eligible to avail of the benefits under the scheme.; The wife of the registered worker has not claimed the maternity benefit from any other employer.",
+    "entities": [
+      {
+        "start": 26,
+        "end": 30,
+        "label": "GENDER",
+        "text": "male"
+      },
+      {
+        "start": 31,
+        "end": 43,
+        "label": "OCCUPATION",
+        "text": "construction"
+      },
+      {
+        "start": 57,
+        "end": 61,
+        "label": "GENDER",
+        "text": "male"
+      },
+      {
+        "start": 123,
+        "end": 135,
+        "label": "OCCUPATION",
+        "text": "Construction"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "tecis",
+    "name": "TEC Internship Scheme",
+    "text": "The applicant should be a citizen of India.; The applicant should be studying at a recognized university in India or abroad.; The applicant should be studying in the 3rd/ 4th year (Final or pre-final year) in Bachelor's Degree course in Electronics/ Communications/ Telecommunication/ Radio/ Information Technology/ Computers / Electrical Engineering or related discipline and secured a minimum of 60% marks.; The qualifications may be relaxed in deserving cases based on the needs of the TEC, on the recommendations of the Selection Committee and approval of the Head of TEC.; Candidates having exposure in the area of intended internship with good academic background and having higher qualifications, based on need shall be given preference.",
+    "entities": [
+      {
+        "start": 209,
+        "end": 226,
+        "label": "EDUCATION",
+        "text": "Bachelor's Degree"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "sds",
+    "name": "Sugar Distribution Scheme",
+    "text": "The applicant must be a resident of Jharkhand.; The applicant must belong to a household holding an Antyodaya Anna Yojana (AAY) ration card under the NFSA.; The applicant should provide Aadhaar authentication or an Aadhaar number for identity verification.",
+    "entities": [
+      {
+        "start": 100,
+        "end": 139,
+        "label": "REQUIREMENT",
+        "text": "Antyodaya Anna Yojana (AAY) ration card"
+      },
+      {
+        "start": 186,
+        "end": 193,
+        "label": "REQUIREMENT",
+        "text": "Aadhaar"
+      },
+      {
+        "start": 215,
+        "end": 222,
+        "label": "REQUIREMENT",
+        "text": "Aadhaar"
+      }
+    ],
+    "reviewed": true
+  }
+]

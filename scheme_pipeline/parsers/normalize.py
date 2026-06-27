@@ -28,6 +28,8 @@ try:
 except ImportError:
     _ML_EXTRACTOR_AVAILABLE = False
 
+from parsers.canonicalize import canonicalize_education, canonicalize_occupation, filter_non_occupation_fallback
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
@@ -419,7 +421,18 @@ def parse_myscheme_record(raw: dict) -> dict | None:
 
     btype = raw.get("beneficiary_type") or raw.get("target_beneficiaries") or ""
     if not el["occupation"]:  # Model 2 may have already found occupations from text
-        el["occupation"] = [t.strip().lower() for t in str(btype).split(";") if t.strip()]
+        fallback_values = [t.strip().lower() for t in str(btype).split(";") if t.strip()]
+        # Drop generic beneficiary-type classifications ("individual",
+        # "infra", "family", ...) — these aren't real occupations and
+        # pollute occupation-based search filters. See canonicalize.py.
+        el["occupation"] = filter_non_occupation_fallback(fallback_values)
+
+    # Canonicalize education/occupation regardless of which path produced
+    # them (Model 2 or the regex fallback) — collapses search-breaking
+    # duplicate strings like "Degree"/"degree" or "farmer"/"farmers" into
+    # one consistent value. See parsers/canonicalize.py.
+    el["education"]  = canonicalize_education(el["education"])
+    el["occupation"] = canonicalize_occupation(el["occupation"])
 
     # ── categories: "categories" is a Python-list-style string in some exports ──
     cats = raw.get("categories") or raw.get("category") or ""
