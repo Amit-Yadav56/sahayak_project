@@ -178,7 +178,8 @@ def _parse_command(line: str, entities: list, text: str):
             print(cyan(f"  '{phrase}' found at:"))
             for s, e in matches:
                 print(f"    {s}:{e}   context: ...{repr(text[max(0,s-15):e+15])}...")
-            print(cyan(f"  → to add all as EDUCATION: xa {s}:{e} EDUCATION {phrase}"))
+            print(cyan(f"  → to label all occurrences: xa <LABEL> {phrase}"))
+            print(cyan(f"  → to label by offset:       a {matches[0][0]}:{matches[0][1]} <LABEL>"))
         return None  # don't advance — let user issue the add command next
 
     # Replace-all: xa START:END LABEL PHRASE

@@ -362,17 +362,17 @@ the structured metadata field. Stick to the six existing labels:
 -- Schemes for women in Tamil Nadu
 SELECT name, ministry
 FROM schemes
-WHERE eligibility_json @> '{"gender": "female", "state": "Tamil Nadu"}';
+WHERE eligibility_json::jsonb @> '{"gender": "female", "state": "Tamil Nadu"}'::jsonb;
 
 -- Schemes for SC/ST with income limit
-SELECT name, eligibility_json -> 'income_limit'
+SELECT name, (eligibility_json::jsonb -> 'income_limit')
 FROM schemes
-WHERE eligibility_json -> 'caste' ? 'SC'
-  AND (eligibility_json -> 'income_limit' ->> 'annual_inr')::int > 0;
+WHERE (eligibility_json::jsonb -> 'caste') ? 'SC'
+  AND ((eligibility_json::jsonb -> 'income_limit' ->> 'annual_inr')::int > 0);
 
 -- Schemes with disability support
 SELECT name FROM schemes
-WHERE eligibility_json @> '{"disability": true}';
+WHERE eligibility_json::jsonb @> '{"disability": true}'::jsonb;
 ```
 
 If you see a `WIN1252` encoding error on `₹` in psql on Windows:

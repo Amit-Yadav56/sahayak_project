@@ -70,5 +70,4021 @@
       }
     ],
     "reviewed": true
+  },
+  {
+    "slug": "ascfpssguj",
+    "name": "Assistance to Scheduled Castes for Fisheries: Prawn Seed Stocking Gujarat",
+    "text": "The applicant should belong to the Scheduled Caste (SC) community.; The applicant should be above 18 years of age.; The applicant should be involved in inland fisheries activities.; The applicant can be an individual, a society, a self-help group, an association, a reservoir monopoly, or a private unit.; The applicant must have a bank account in their own name.; The applicant must have an Aadhar Card/Voter ID/Ration Card/Passport as proof of identity.",
+    "entities": [
+      {
+        "start": 52,
+        "end": 54,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 92,
+        "end": 100,
+        "label": "AGE",
+        "text": "above 18"
+      },
+      {
+        "start": 332,
+        "end": 344,
+        "label": "REQUIREMENT",
+        "text": "bank account"
+      },
+      {
+        "start": 392,
+        "end": 398,
+        "label": "REQUIREMENT",
+        "text": "Aadhar"
+      },
+      {
+        "start": 404,
+        "end": 412,
+        "label": "REQUIREMENT",
+        "text": "Voter ID"
+      },
+      {
+        "start": 413,
+        "end": 424,
+        "label": "REQUIREMENT",
+        "text": "Ration Card"
+      },
+      {
+        "start": 425,
+        "end": 433,
+        "label": "REQUIREMENT",
+        "text": "Passport"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "ascftsctguj",
+    "name": "Assistance to Scheduled Castes for Fisheries: Training of Scheduled Caste trainees Gujarat",
+    "text": "The applicant should belong to the Scheduled Caste (SC) community.; The applicant should be above 18 years of age.; The applicant should be involved in inland fisheries activities.; The applicant can be an individual, a society, a self-help group, an association, a reservoir monopoly, or a private unit.; The applicant must have a bank account in their own name.; The applicant must have an Aadhar Card/Voter ID/Ration Card/Passport as proof of identity.",
+    "entities": [
+      {
+        "start": 52,
+        "end": 54,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 92,
+        "end": 100,
+        "label": "AGE",
+        "text": "above 18"
+      },
+      {
+        "start": 332,
+        "end": 344,
+        "label": "REQUIREMENT",
+        "text": "bank account"
+      },
+      {
+        "start": 392,
+        "end": 398,
+        "label": "REQUIREMENT",
+        "text": "Aadhar"
+      },
+      {
+        "start": 404,
+        "end": 412,
+        "label": "REQUIREMENT",
+        "text": "Voter ID"
+      },
+      {
+        "start": 413,
+        "end": 424,
+        "label": "REQUIREMENT",
+        "text": "Ration Card"
+      },
+      {
+        "start": 425,
+        "end": 433,
+        "label": "REQUIREMENT",
+        "text": "Passport"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "mpss",
+    "name": "Post-matric Scholarship Scheme- Uttar Pradesh",
+    "text": "Native and under study in Uttar Pradesh.; The annual income of parents/guardian of the student is upto Rs. 2 Lakh.; Students from Other Backwards Classes study in all government-aided and recognized state educational institutes (subject to budget availability).",
+    "entities": [
+      {
+        "start": 87,
+        "end": 94,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 107,
+        "end": 113,
+        "label": "INCOME",
+        "text": "2 Lakh"
+      },
+      {
+        "start": 116,
+        "end": 124,
+        "label": "OCCUPATION",
+        "text": "Students"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "bauuyabii",
+    "name": "Dr.Babasaheb Ambedkar Udyog Uday Yojana: Assistance to basic industrial infrastructure (Water, Gas and Approach Road)",
+    "text": "**SC/ST Enterprise:** SC/ST Enterprise means the enterprise in which contribution of SC/ST entrepreneur is 51% or more.",
+    "entities": [
+      {
+        "start": 2,
+        "end": 4,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 5,
+        "end": 7,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 22,
+        "end": 24,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 25,
+        "end": 27,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 85,
+        "end": 87,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 88,
+        "end": 90,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 91,
+        "end": 103,
+        "label": "OCCUPATION",
+        "text": "entrepreneur"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "mkyh",
+    "name": "Mahila Kisan Yojana",
+    "text": "The applicant should be a female.; The applicant should be a permanent resident of Haryana.; The applicant should be from a &#39;Scheduled Caste&#39;.; The applicant&#39;s annual family income should not exceed the Below Poverty Line (BPL).; The applicant&#39;s name should be present in the BPL survey list.; The income ceiling is at least 50% of the beneficiaries having annual family income upto ₹1,50,000/- and balance 50% of the beneficiaries having annual family income upto ₹3,00,000/-.",
+    "entities": [
+      {
+        "start": 26,
+        "end": 32,
+        "label": "GENDER",
+        "text": "female"
+      },
+      {
+        "start": 129,
+        "end": 144,
+        "label": "CATEGORY",
+        "text": "Scheduled Caste"
+      },
+      {
+        "start": 235,
+        "end": 238,
+        "label": "INCOME",
+        "text": "BPL"
+      },
+      {
+        "start": 400,
+        "end": 410,
+        "label": "INCOME",
+        "text": "1,50,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "pmmsyctguj",
+    "name": "PMMSY: Construction of Ice Plant/Storage of Minimum 10 Tonne Capacity - Gujarat",
+    "text": "Women, SC, and ST beneficiaries are eligible for 60% assistance of the unit cost.; General category beneficiaries are eligible for 40% assistance of the unit cost.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "label": "GENDER",
+        "text": "Women"
+      },
+      {
+        "start": 7,
+        "end": 9,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 15,
+        "end": 17,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 83,
+        "end": 99,
+        "label": "CATEGORY",
+        "text": "General category"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "anmukhopadhyayuk",
+    "name": "Dr. A.N. Mukhopadhyay Gold Medal Award (B.Sc. Agriculture - Final Year Student)",
+    "text": "The applicant must be a student.; The applicant must be enrolled in the final year of the B.Sc. Agriculture course at Govind Ballabh Pant University of Agriculture and Technology, Pantnagar.; The award is granted for a duration of one year only.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 31,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 90,
+        "end": 107,
+        "label": "EDUCATION",
+        "text": "B.Sc. Agriculture"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "sclcss",
+    "name": "Special Credit Linked Capital Subsidy Scheme (SCLCSS) for Scheduled Caste/Scheduled Tribe",
+    "text": "Sole proprietorships, partnerships, co-operatives, private/public limited companies owned by SC/ST entrepreneurs in manufacturing or service sectors.; Must have valid Udyam Registration.; SC/ST units graduated from small to medium scale within 3 years of graduation.; New industries graduating to medium scale due to loan.",
+    "entities": [
+      {
+        "start": 93,
+        "end": 95,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 96,
+        "end": 98,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 99,
+        "end": 112,
+        "label": "OCCUPATION",
+        "text": "entrepreneurs"
+      },
+      {
+        "start": 188,
+        "end": 190,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 191,
+        "end": 193,
+        "label": "CATEGORY",
+        "text": "ST"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "fssm",
+    "name": "Financial Support Scheme for Farm Mechanization (FSSM)",
+    "text": "Individual farmers registered under Krishak Bandhu (New) Scheme.; Minimum 0.5 (half) acre agricultural land (RoR) is required by the applicant for purchase of power tiller & solar photo-voltaic water pumping system under FSSM.; The age of the beneficiary should be minimum 18 years at the time of application.",
+    "entities": [
+      {
+        "start": 11,
+        "end": 18,
+        "label": "OCCUPATION",
+        "text": "farmers"
+      },
+      {
+        "start": 109,
+        "end": 112,
+        "label": "REQUIREMENT",
+        "text": "RoR"
+      },
+      {
+        "start": 265,
+        "end": 275,
+        "label": "AGE",
+        "text": "minimum 18"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "ogoaih",
+    "name": "State Government-Run Old Age and Infirm Homes",
+    "text": "The applicant must be a permanent resident of Uttarakhand.; The applicant should be a male or female.; The applicant's age must be 60 years or above.; There is no income ceiling for eligibility.; The applicant must not have a communicable disease (certified by a government doctor).",
+    "entities": [
+      {
+        "start": 86,
+        "end": 90,
+        "label": "GENDER",
+        "text": "male"
+      },
+      {
+        "start": 94,
+        "end": 100,
+        "label": "GENDER",
+        "text": "female"
+      },
+      {
+        "start": 131,
+        "end": 148,
+        "label": "AGE",
+        "text": "60 years or above"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "db-gbocwwb",
+    "name": "Death Benefit (GBOCWWB)",
+    "text": "The deceased should have been a Worker.; The deceased should have been between 18 to 60 years of age.; The deceased should have completed ninety days of service as a registered worker.; The deceased should have been registered with the Goa Building and Other Construction Workers Welfare Board.; The applicant should be the nominee/dependant of the deceased.; The death of the worker should have either been natural or caused due to an accident during the course of employment.; The nominee/dependant of the unregistered workers shall be eligible upon the production of a certificate from the builder or Inspector of the area stating that the deceased was a building worker.",
+    "entities": [
+      {
+        "start": 32,
+        "end": 38,
+        "label": "OCCUPATION",
+        "text": "Worker"
+      },
+      {
+        "start": 79,
+        "end": 93,
+        "label": "AGE",
+        "text": "18 to 60 years"
+      },
+      {
+        "start": 166,
+        "end": 183,
+        "label": "OCCUPATION",
+        "text": "registered worker"
+      },
+      {
+        "start": 240,
+        "end": 279,
+        "label": "OCCUPATION",
+        "text": "Building and Other Construction Workers"
+      },
+      {
+        "start": 377,
+        "end": 383,
+        "label": "OCCUPATION",
+        "text": "worker"
+      },
+      {
+        "start": 508,
+        "end": 528,
+        "label": "OCCUPATION",
+        "text": "unregistered workers"
+      },
+      {
+        "start": 510,
+        "end": 527,
+        "label": "OCCUPATION",
+        "text": "registered worker"
+      },
+      {
+        "start": 658,
+        "end": 673,
+        "label": "OCCUPATION",
+        "text": "building worker"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "vppy",
+    "name": "Vats Palan Protsahan Yojana",
+    "text": "The applicant must be a resident of Madhya Pradesh.; The applicant must be a livestock farmer owning Indian high-yielding indigenous cows.; The cow’s milk production must be at least 30% higher than the breed average.; The calf must be born through artificial insemination or natural insemination using genetically superior Indian bulls.; Both urban and rural farmers are eligible.; Both male and female calves receive support up to two years of age.",
+    "entities": [
+      {
+        "start": 77,
+        "end": 93,
+        "label": "OCCUPATION",
+        "text": "livestock farmer"
+      },
+      {
+        "start": 360,
+        "end": 367,
+        "label": "OCCUPATION",
+        "text": "farmers"
+      },
+      {
+        "start": 388,
+        "end": 392,
+        "label": "GENDER",
+        "text": "male"
+      },
+      {
+        "start": 397,
+        "end": 403,
+        "label": "GENDER",
+        "text": "female"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "nkymp",
+    "name": "Nalkoop Khanan Yojana- Madhya Pradesh",
+    "text": "The applicant should be a native of Madhya Pradesh.; The applicant should be a farmer.; Farmers from Shajapur and Indore districts of Madhya Pradesh are excluded from this scheme.; The applicant should belong to the Scheduled Caste or Scheduled Tribe category.; The applicant should own agricultural land within the state.",
+    "entities": [
+      {
+        "start": 79,
+        "end": 85,
+        "label": "OCCUPATION",
+        "text": "farmer"
+      },
+      {
+        "start": 88,
+        "end": 95,
+        "label": "OCCUPATION",
+        "text": "Farmers"
+      },
+      {
+        "start": 216,
+        "end": 231,
+        "label": "CATEGORY",
+        "text": "Scheduled Caste"
+      },
+      {
+        "start": 235,
+        "end": 250,
+        "label": "CATEGORY",
+        "text": "Scheduled Tribe"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "bsy-pudu",
+    "name": "Balika Samrithi Yojana",
+    "text": "The applicant should be a girl child born on or after 15-8-97.; The annual income of the family of the applicant should not exceed ₹15,000.; The applicant should be a citizen of India.; The applicant should be a native of the Union Territory of Pondicherry by birth or continuous residence for not less than 3 years.",
+    "entities": [
+      {
+        "start": 26,
+        "end": 30,
+        "label": "GENDER",
+        "text": "girl"
+      },
+      {
+        "start": 132,
+        "end": 138,
+        "label": "INCOME",
+        "text": "15,000"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "dccrcpu-giapsca",
+    "name": "Day Care - cum - Recreation Centre and Physiotherapy Unit",
+    "text": "The applicant should be 60 years or above in age.; The applicant should be a Native/Resident of the Union Territory of Puducherry for at least 5 years.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 41,
+        "label": "AGE",
+        "text": "60 years or above"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "bauuysdpd",
+    "name": "Dr.Babasaheb Ambedkar Udyog Uday Yojana: Assistance to MSEs for Shed Developed by Private Developer",
+    "text": "**SC/ST Enterprise:** SC/ST Enterprise means the enterprise in which contribution of SC/ST entrepreneur is 51% or more.",
+    "entities": [
+      {
+        "start": 2,
+        "end": 4,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 5,
+        "end": 7,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 22,
+        "end": 24,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 25,
+        "end": 27,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 85,
+        "end": 87,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 88,
+        "end": 90,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 91,
+        "end": 103,
+        "label": "OCCUPATION",
+        "text": "entrepreneur"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "as-smp",
+    "name": "Annapurna Scheme: Seed Multiplication Programme",
+    "text": "The applicant must belong to the Scheduled Caste (SC) or Scheduled Tribe (ST) category.; The applicant must be a small or marginal farmer.; The applicant must be willing to participate in the Seed Production Programme.; The applicant's land must fall within the 10 km perimeter of the selected Government Agricultural Farms.; The applicant must conduct the program in a minimum area of 1/2 acre (0.2 hectare).; The maximum area for which subsidy is eligible is 1 hectare.; The applicant must mandatorily register with the Seed Certification Agency.; Kharif crops - Paddy, Jowar, Bajra, Maize, Kodo, Kutki, Ragi.; Rabi crops - Wheat, Barley.",
+    "entities": [
+      {
+        "start": 33,
+        "end": 48,
+        "label": "CATEGORY",
+        "text": "Scheduled Caste"
+      },
+      {
+        "start": 50,
+        "end": 52,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 57,
+        "end": 72,
+        "label": "CATEGORY",
+        "text": "Scheduled Tribe"
+      },
+      {
+        "start": 74,
+        "end": 76,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 113,
+        "end": 137,
+        "label": "OCCUPATION",
+        "text": "small or marginal farmer"
+      },
+      {
+        "start": 522,
+        "end": 547,
+        "label": "REQUIREMENT",
+        "text": "Seed Certification Agency"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "pashupalangbcdc",
+    "name": "Pashupalan (GBCDC)",
+    "text": "The applicant must be from a Socially and Educationally Backward Class (SEBC).; The total annual income of the applicant's family should not exceed ₹3,00,000/-.; The applicant's age should be between 21 and 45 years on the date of application.; The applicant must have experience in a business requiring technical and other skills.",
+    "entities": [
+      {
+        "start": 29,
+        "end": 70,
+        "label": "CATEGORY",
+        "text": "Socially and Educationally Backward Class"
+      },
+      {
+        "start": 72,
+        "end": 76,
+        "label": "CATEGORY",
+        "text": "SEBC"
+      },
+      {
+        "start": 149,
+        "end": 159,
+        "label": "INCOME",
+        "text": "3,00,000/-"
+      },
+      {
+        "start": 192,
+        "end": 209,
+        "label": "AGE",
+        "text": "between 21 and 45"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "masabsn",
+    "name": "Medical Aid Scheme (Ayushman Bharat Scheme 'Niramaya') (MPBOCWWB)",
+    "text": "The applicant should be a resident of Madhya Pradesh.; The applicant should be a Building/ Construction Worker.; The applicant should be between 18 and 60 years.; The applicant should have engaged in any building or other construction work for at least 90 days during the preceding 12 months.; The registration of the applicant should be renewed annually.; The applicant should be a female construction worker with a valid identity card, in case of maternity.; The applicant should be a male construction worker with a valid identity card, in case of his wife's delivery.",
+    "entities": [
+      {
+        "start": 81,
+        "end": 110,
+        "label": "OCCUPATION",
+        "text": "Building/ Construction Worker"
+      },
+      {
+        "start": 137,
+        "end": 154,
+        "label": "AGE",
+        "text": "between 18 and 60"
+      },
+      {
+        "start": 204,
+        "end": 239,
+        "label": "OCCUPATION",
+        "text": "building or other construction work"
+      },
+      {
+        "start": 383,
+        "end": 389,
+        "label": "GENDER",
+        "text": "female"
+      },
+      {
+        "start": 390,
+        "end": 409,
+        "label": "OCCUPATION",
+        "text": "construction worker"
+      },
+      {
+        "start": 423,
+        "end": 436,
+        "label": "REQUIREMENT",
+        "text": "identity card"
+      },
+      {
+        "start": 487,
+        "end": 491,
+        "label": "GENDER",
+        "text": "male"
+      },
+      {
+        "start": 492,
+        "end": 511,
+        "label": "OCCUPATION",
+        "text": "construction worker"
+      },
+      {
+        "start": 525,
+        "end": 538,
+        "label": "REQUIREMENT",
+        "text": "identity card"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "wos-b",
+    "name": "Women Scientist Scheme-B",
+    "text": "The applicant must be a FEMALE.; The applicant must either be unemployed or in a position other than regular/permanent position.; The age of the applicant must be between 27 and 57 years (5 year relaxation for SC/ST/OBC and physically challenged candidates); The applicant must hold either of the following Minimum essential qualification - a)   Minimum Post Graduate degree, equivalent to M.Sc. in Basic or Applied Sciences or B.Tech. or MBBS or other equivalent professional qualifications;    b)   M.Phil/M.Tech/M.Pharm/M.VSc or equivalent qualifications;   c)   Ph.D. in Basic or Applied Sciences.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "label": "GENDER",
+        "text": "FEMALE"
+      },
+      {
+        "start": 62,
+        "end": 72,
+        "label": "OCCUPATION",
+        "text": "unemployed"
+      },
+      {
+        "start": 163,
+        "end": 186,
+        "label": "AGE",
+        "text": "between 27 and 57 years"
+      },
+      {
+        "start": 210,
+        "end": 212,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 213,
+        "end": 215,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 216,
+        "end": 219,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 354,
+        "end": 374,
+        "label": "EDUCATION",
+        "text": "Post Graduate degree"
+      },
+      {
+        "start": 390,
+        "end": 394,
+        "label": "EDUCATION",
+        "text": "M.Sc"
+      },
+      {
+        "start": 428,
+        "end": 434,
+        "label": "EDUCATION",
+        "text": "B.Tech"
+      },
+      {
+        "start": 439,
+        "end": 443,
+        "label": "EDUCATION",
+        "text": "MBBS"
+      },
+      {
+        "start": 501,
+        "end": 507,
+        "label": "EDUCATION",
+        "text": "M.Phil"
+      },
+      {
+        "start": 508,
+        "end": 514,
+        "label": "EDUCATION",
+        "text": "M.Tech"
+      },
+      {
+        "start": 515,
+        "end": 522,
+        "label": "EDUCATION",
+        "text": "M.Pharm"
+      },
+      {
+        "start": 523,
+        "end": 528,
+        "label": "EDUCATION",
+        "text": "M.VSc"
+      },
+      {
+        "start": 566,
+        "end": 570,
+        "label": "EDUCATION",
+        "text": "Ph.D"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "fs",
+    "name": "Free Studentship",
+    "text": "The applicant should be a citizen of India.; The applicant should be a permanent resident of Meghalaya.; The applicant should be a Student.; He/ She should belong to Scheduled Casts (SC)/ Scheduled Tribes (ST)/ Other Backward Classes (OBC).; He/ She should be pursuing a regular course of studies in a recognized institution.; The student's guardian/parents should be citizens of India.; He/she should not be receiving financial assistance from the Indian government's Post Matric Scholarship for SC/ST students and other government central and state scholarship schemes.; He/she should not be a government/non-government employee.; He/she should not be a repeater in the same class more than once.",
+    "entities": [
+      {
+        "start": 131,
+        "end": 138,
+        "label": "OCCUPATION",
+        "text": "Student"
+      },
+      {
+        "start": 166,
+        "end": 181,
+        "label": "CATEGORY",
+        "text": "Scheduled Casts"
+      },
+      {
+        "start": 188,
+        "end": 204,
+        "label": "CATEGORY",
+        "text": "Scheduled Tribes"
+      },
+      {
+        "start": 211,
+        "end": 233,
+        "label": "CATEGORY",
+        "text": "Other Backward Classes"
+      },
+      {
+        "start": 235,
+        "end": 238,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 331,
+        "end": 338,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 497,
+        "end": 499,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 500,
+        "end": 502,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 503,
+        "end": 511,
+        "label": "OCCUPATION",
+        "text": "students"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "ddukk-msc",
+    "name": "Deen Dayal Upadhyay Kaushal Kendra (DDUKK)- Mega Skill Centre",
+    "text": "The applicant must be a resident of Jharkhand.; The applicant's age should be 18-35 years.; The applicant must belong to one of the priority groups (SC/ST, women, PwD, transgender).",
+    "entities": [
+      {
+        "start": 78,
+        "end": 89,
+        "label": "AGE",
+        "text": "18-35 years"
+      },
+      {
+        "start": 149,
+        "end": 151,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 152,
+        "end": 154,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 156,
+        "end": 161,
+        "label": "GENDER",
+        "text": "women"
+      },
+      {
+        "start": 163,
+        "end": 166,
+        "label": "CATEGORY",
+        "text": "PwD"
+      },
+      {
+        "start": 168,
+        "end": 179,
+        "label": "GENDER",
+        "text": "transgender"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "ipshaaciec",
+    "name": "Investment Promotion Scheme (IPS) For Handicraft Artisans: Assistance For Capital Investment To Uplift The Economic Condition Of Artisans/ Persons",
+    "text": "The applicant should be a Handloom and Handicrafts artisan.; The applicant should be a resident of the U.T. of Dadra and Nagar Haveli &amp; Daman and Diu.; The applicant should be above 18 years of age.; The applicant should belong to the SC/ST/OBC/EWS communities.; The applicant should be engaged in 27 different activities, as mentioned in the [Official Guidelines](https://swp.dddgov.in/assets/pdf/Notification_IPS_2022_DNH_DD.pdf) (Refer page no. 47 &amp; 48 of the document).   1. Applicant’s annual income should be upto ₹2,00,000/- for rural areas and upto ₹2,50,000/- in urban areas.",
+    "entities": [
+      {
+        "start": 26,
+        "end": 58,
+        "label": "OCCUPATION",
+        "text": "Handloom and Handicrafts artisan"
+      },
+      {
+        "start": 180,
+        "end": 188,
+        "label": "AGE",
+        "text": "above 18"
+      },
+      {
+        "start": 239,
+        "end": 241,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 242,
+        "end": 244,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 245,
+        "end": 248,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 249,
+        "end": 252,
+        "label": "CATEGORY",
+        "text": "EWS"
+      },
+      {
+        "start": 529,
+        "end": 539,
+        "label": "INCOME",
+        "text": "2,00,000/-"
+      },
+      {
+        "start": 566,
+        "end": 576,
+        "label": "INCOME",
+        "text": "2,50,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "scdf",
+    "name": "Semi-Commercial Duck Farming",
+    "text": "The applicant should be a permanent resident of Odisha.; Individuals, farmers, and entrepreneurs will be eligible to avail of support under the scheme.; All beneficiaries covered under the Scheme should mandatorily be Aadhaar linked to avoid duplication.; The beneficiaries who have availed of subsidy previously in a similar scheme should not be included.",
+    "entities": [
+      {
+        "start": 70,
+        "end": 77,
+        "label": "OCCUPATION",
+        "text": "farmers"
+      },
+      {
+        "start": 83,
+        "end": 96,
+        "label": "OCCUPATION",
+        "text": "entrepreneurs"
+      },
+      {
+        "start": 218,
+        "end": 225,
+        "label": "REQUIREMENT",
+        "text": "Aadhaar"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "fafeftcw",
+    "name": "Financial Assistance for Education for the Construction Workers",
+    "text": "Class 1 to 12 **Or,**  - Graduation/ ITI Course/ Polytechnic Diploma (3 years)/Technical Courses (like MBA, Engineering, Medicine, etc.) **Or,**  - Preparing for Competitive Exams.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "label": "EDUCATION",
+        "text": "Class 1 to 12"
+      },
+      {
+        "start": 25,
+        "end": 35,
+        "label": "EDUCATION",
+        "text": "Graduation"
+      },
+      {
+        "start": 37,
+        "end": 47,
+        "label": "EDUCATION",
+        "text": "ITI Course"
+      },
+      {
+        "start": 49,
+        "end": 68,
+        "label": "EDUCATION",
+        "text": "Polytechnic Diploma"
+      },
+      {
+        "start": 79,
+        "end": 136,
+        "label": "EDUCATION",
+        "text": "Technical Courses (like MBA, Engineering, Medicine, etc.)"
+      },
+      {
+        "start": 148,
+        "end": 179,
+        "label": "EDUCATION",
+        "text": "Preparing for Competitive Exams"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "cm-sky",
+    "name": "Chief Minister’s Shasakt Kisan Yojana",
+    "text": "The applicant/farmer should be a permanent resident of Arunachal Pradesh.; The applicant should be a progressive farmer of any area/field.; All categories of farmers are eligible to apply under the scheme.",
+    "entities": [
+      {
+        "start": 14,
+        "end": 20,
+        "label": "OCCUPATION",
+        "text": "farmer"
+      },
+      {
+        "start": 101,
+        "end": 119,
+        "label": "OCCUPATION",
+        "text": "progressive farmer"
+      },
+      {
+        "start": 158,
+        "end": 165,
+        "label": "OCCUPATION",
+        "text": "farmers"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "kyg",
+    "name": "Kutirjyoti Yojana Gujarat",
+    "text": "The applicant should be a resident of Gujarat.; The applicant should belong to the Scheduled Tribe (ST) category.; The applicant should be living in a tribal area of the state.; The applicant’s family should belong to the Below Poverty Line (BPL) or lower-income group category.; The applicant’s family annual income should not exceed ₹1,50,000/-.; The applicant should own land or a house under a poverty housing scheme or through land allotment.",
+    "entities": [
+      {
+        "start": 83,
+        "end": 98,
+        "label": "CATEGORY",
+        "text": "Scheduled Tribe"
+      },
+      {
+        "start": 100,
+        "end": 102,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 222,
+        "end": 240,
+        "label": "INCOME",
+        "text": "Below Poverty Line"
+      },
+      {
+        "start": 242,
+        "end": 245,
+        "label": "INCOME",
+        "text": "BPL"
+      },
+      {
+        "start": 250,
+        "end": 268,
+        "label": "INCOME",
+        "text": "lower-income group"
+      },
+      {
+        "start": 336,
+        "end": 346,
+        "label": "INCOME",
+        "text": "1,50,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "pmsp",
+    "name": "Pre-Matric Scholarship Scheme",
+    "text": "The beneficiary should be a student.; The beneficiary should be a resident of Tamil Nadu.; The beneficiary should belong to the Backward Classes (BC), Most Backward Classes (MBC), and Denotified Communities (DNC).; Parents&#39; income should not exceed ₹1,00,000/- (for Backward Classes (BC) students).; There should be no graduate in the family (for Backward Classes (BC) students).; The beneficiary should be studying in 11th or 12th standard in an English medium school.",
+    "entities": [
+      {
+        "start": 28,
+        "end": 35,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 128,
+        "end": 144,
+        "label": "CATEGORY",
+        "text": "Backward Classes"
+      },
+      {
+        "start": 146,
+        "end": 148,
+        "label": "CATEGORY",
+        "text": "BC"
+      },
+      {
+        "start": 151,
+        "end": 172,
+        "label": "CATEGORY",
+        "text": "Most Backward Classes"
+      },
+      {
+        "start": 174,
+        "end": 177,
+        "label": "CATEGORY",
+        "text": "MBC"
+      },
+      {
+        "start": 184,
+        "end": 206,
+        "label": "CATEGORY",
+        "text": "Denotified Communities"
+      },
+      {
+        "start": 208,
+        "end": 211,
+        "label": "CATEGORY",
+        "text": "DNC"
+      },
+      {
+        "start": 254,
+        "end": 264,
+        "label": "INCOME",
+        "text": "1,00,000/-"
+      },
+      {
+        "start": 270,
+        "end": 286,
+        "label": "CATEGORY",
+        "text": "Backward Classes"
+      },
+      {
+        "start": 288,
+        "end": 290,
+        "label": "CATEGORY",
+        "text": "BC"
+      },
+      {
+        "start": 351,
+        "end": 367,
+        "label": "CATEGORY",
+        "text": "Backward Classes"
+      },
+      {
+        "start": 369,
+        "end": 371,
+        "label": "CATEGORY",
+        "text": "BC"
+      },
+      {
+        "start": 423,
+        "end": 444,
+        "label": "EDUCATION",
+        "text": "11th or 12th standard"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "akvkckcvy",
+    "name": "Bicycle Distribution Scheme for Girl Students of Economically Weaker Section",
+    "text": "The applicant should be a native of Rajasthan.; The applicant should be a girl student.; The applicant should be studying in Class 6, 7, or 8 in a government school in Rajasthan.; The applicant should belong to the Economically Weaker Section (EWS) category.; The annual income of the applicant’s parents/guardian should be less than ₹1,00,000/-.; The applicant should have secured at least 60% marks in the previous examination.",
+    "entities": [
+      {
+        "start": 74,
+        "end": 78,
+        "label": "GENDER",
+        "text": "girl"
+      },
+      {
+        "start": 79,
+        "end": 86,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 125,
+        "end": 141,
+        "label": "EDUCATION",
+        "text": "Class 6, 7, or 8"
+      },
+      {
+        "start": 215,
+        "end": 242,
+        "label": "CATEGORY",
+        "text": "Economically Weaker Section"
+      },
+      {
+        "start": 244,
+        "end": 247,
+        "label": "CATEGORY",
+        "text": "EWS"
+      },
+      {
+        "start": 335,
+        "end": 345,
+        "label": "INCOME",
+        "text": "1,00,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "nos-swd",
+    "name": "National Overseas Scholarship For Students With Disabilities",
+    "text": "The applicant must be a student.; The applicant must be Admitted into (or received an unconditional offer of admission) Masters's level courses and Ph.D. courses abroad in institutions/universities accredited by the Government/authorized body of that country.; The Disability Percentage of the applicant must be 40% & above.; The applicant must be 35 years or lesser in age, as on the first day of the month of advertisement of the scheme.; The Total Family Income of the applicant (from all sources) must not exceed ₹ 6 lakh per annum.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 31,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 120,
+        "end": 143,
+        "label": "EDUCATION",
+        "text": "Masters's level courses"
+      },
+      {
+        "start": 148,
+        "end": 152,
+        "label": "EDUCATION",
+        "text": "Ph.D"
+      },
+      {
+        "start": 348,
+        "end": 366,
+        "label": "AGE",
+        "text": "35 years or lesser"
+      },
+      {
+        "start": 519,
+        "end": 525,
+        "label": "INCOME",
+        "text": "6 lakh"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "vt-pudu",
+    "name": "\"Vocational Training\" Component of the \"Development of Industries\" Scheme",
+    "text": "The applicant should be between 18 and 35 years of age.; The applicant should be unemployed.; The applicant should have passed Class 10th (SSLC) passed.; The applicant should be a native of the Union Territory of Puducherry (or) continuous resident of the area for the past three years.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 41,
+        "label": "AGE",
+        "text": "between 18 and 35"
+      },
+      {
+        "start": 81,
+        "end": 91,
+        "label": "OCCUPATION",
+        "text": "unemployed"
+      },
+      {
+        "start": 127,
+        "end": 137,
+        "label": "EDUCATION",
+        "text": "Class 10th"
+      },
+      {
+        "start": 139,
+        "end": 143,
+        "label": "EDUCATION",
+        "text": "SSLC"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "fapsubnc1t12cw-hlwb",
+    "name": "Financial Assistance for Purchasing School Uniforms, Books and Notebooks from Class 1st to 12th for Children of Workers- Haryana Labour Welfare Board",
+    "text": "The applicant should be employed in an industrial or commercial establishment in Haryana.; The worker should be registered with the Haryana Labour Welfare Board.; The monthly salary of the worker should not exceed ₹25,000/-.; The service period of the workers is fixed for two years.; The worker&#39;s children studying in Class I to Class XII are eligible for the scheme&#39;s benefits at the time of admission to continue their studies.; The scheme benefits are available to three girls and two boys per worker.; The name of the child/children should be mentioned on the Ration Card/ESI Card of the worker.",
+    "entities": [
+      {
+        "start": 215,
+        "end": 223,
+        "label": "INCOME",
+        "text": "25,000/-"
+      },
+      {
+        "start": 323,
+        "end": 343,
+        "label": "EDUCATION",
+        "text": "Class I to Class XII"
+      },
+      {
+        "start": 483,
+        "end": 488,
+        "label": "GENDER",
+        "text": "girls"
+      },
+      {
+        "start": 497,
+        "end": 501,
+        "label": "GENDER",
+        "text": "boys"
+      },
+      {
+        "start": 573,
+        "end": 584,
+        "label": "REQUIREMENT",
+        "text": "Ration Card"
+      },
+      {
+        "start": 585,
+        "end": 593,
+        "label": "REQUIREMENT",
+        "text": "ESI Card"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "pomc",
+    "name": "Pandit Omkarnath Music Competition",
+    "text": "The applicant must be a resident of Gujarat.; The applicant must be between 12 to 19 years of age or between 20 to 35 years of age.; The applicant must be a classical music artist.; The applicant must specialize in singing, vocal performance, or percussion instruments.",
+    "entities": [
+      {
+        "start": 76,
+        "end": 90,
+        "label": "AGE",
+        "text": "12 to 19 years"
+      },
+      {
+        "start": 109,
+        "end": 123,
+        "label": "AGE",
+        "text": "20 to 35 years"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "sui",
+    "name": "Stand-Up India",
+    "text": "Finance is  provided for Greenfield Enterprises.; If the applicant is a male, he must be from SC / ST category.; The age of the applicant must be at least 18 years.; The applicant must not be in default to any bank/financial institution.",
+    "entities": [
+      {
+        "start": 72,
+        "end": 76,
+        "label": "GENDER",
+        "text": "male"
+      },
+      {
+        "start": 94,
+        "end": 96,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 99,
+        "end": 101,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 146,
+        "end": 157,
+        "label": "AGE",
+        "text": "at least 18"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "lbsspy",
+    "name": "Lakshmi Bai Samajik Suraksha Pension Yojana",
+    "text": "Widow woman must be a resident of Bihar.; The woman should be a widow.; The woman should be living below the poverty line.; The annual income of the woman's family should be Rs. 60,000/- or less.; The age of the woman should be 18 years or more.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "label": "OCCUPATION",
+        "text": "Widow"
+      },
+      {
+        "start": 6,
+        "end": 11,
+        "label": "GENDER",
+        "text": "woman"
+      },
+      {
+        "start": 46,
+        "end": 51,
+        "label": "GENDER",
+        "text": "woman"
+      },
+      {
+        "start": 64,
+        "end": 69,
+        "label": "OCCUPATION",
+        "text": "widow"
+      },
+      {
+        "start": 76,
+        "end": 81,
+        "label": "GENDER",
+        "text": "woman"
+      },
+      {
+        "start": 149,
+        "end": 154,
+        "label": "GENDER",
+        "text": "woman"
+      },
+      {
+        "start": 178,
+        "end": 186,
+        "label": "INCOME",
+        "text": "60,000/-"
+      },
+      {
+        "start": 212,
+        "end": 217,
+        "label": "GENDER",
+        "text": "woman"
+      },
+      {
+        "start": 228,
+        "end": 244,
+        "label": "AGE",
+        "text": "18 years or more"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "mvdcws-pmsby",
+    "name": "Motor Vehicle Driver-Conductor Welfare Scheme- Pradhanmantri Suraksha Bima Yojana",
+    "text": "The applicant should be a permanent resident of Madhya Pradesh.; The applicant's age should be between 18 to 70 years.; The applicant should be a registered transport vehicle driver or conductor in Madhya Pradesh.; The applicant should possess a valid commercial driving or conductor license issued in Madhya Pradesh.; The applicant should be registered on the Samagra Portal.",
+    "entities": [
+      {
+        "start": 103,
+        "end": 117,
+        "label": "AGE",
+        "text": "18 to 70 years"
+      },
+      {
+        "start": 157,
+        "end": 181,
+        "label": "OCCUPATION",
+        "text": "transport vehicle driver"
+      },
+      {
+        "start": 185,
+        "end": 194,
+        "label": "OCCUPATION",
+        "text": "conductor"
+      },
+      {
+        "start": 274,
+        "end": 283,
+        "label": "OCCUPATION",
+        "text": "conductor"
+      },
+      {
+        "start": 361,
+        "end": 375,
+        "label": "REQUIREMENT",
+        "text": "Samagra Portal"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "post-dis",
+    "name": "Post Matric Scholarship Students With Disabilities",
+    "text": "The applicant must be a student.; The applicant must be pursuing a post-matric qualification, i.e. Class 11th, Class 12th, including Polytechnics, Post-Matriculation Diploma/Certificates and Bachelor’s Degree/Diploma in India and Master’s Degree/Diploma.; The applicant must be disabled, with disability percentage of 40% or above.; The Total Annual income of parents/guardians of the applicant (from all sources) must not exceed ₹ 2.50 Lakh per Annum.; The applicant must not be availing any other scholarship by the govt.; The applicant must not be the third sibling of the family who has been given this scholarship.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 31,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 99,
+        "end": 109,
+        "label": "EDUCATION",
+        "text": "Class 11th"
+      },
+      {
+        "start": 111,
+        "end": 121,
+        "label": "EDUCATION",
+        "text": "Class 12th"
+      },
+      {
+        "start": 133,
+        "end": 145,
+        "label": "EDUCATION",
+        "text": "Polytechnics"
+      },
+      {
+        "start": 147,
+        "end": 173,
+        "label": "EDUCATION",
+        "text": "Post-Matriculation Diploma"
+      },
+      {
+        "start": 191,
+        "end": 208,
+        "label": "EDUCATION",
+        "text": "Bachelor’s Degree"
+      },
+      {
+        "start": 209,
+        "end": 216,
+        "label": "EDUCATION",
+        "text": "Diploma"
+      },
+      {
+        "start": 230,
+        "end": 245,
+        "label": "EDUCATION",
+        "text": "Master’s Degree"
+      },
+      {
+        "start": 246,
+        "end": 253,
+        "label": "EDUCATION",
+        "text": "Diploma"
+      },
+      {
+        "start": 432,
+        "end": 441,
+        "label": "INCOME",
+        "text": "2.50 Lakh"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "imspeksyrc",
+    "name": "Indira Mahila Shakti Prashikshan Evam Kaushal Sanvardhan Yojna -RS-CIT",
+    "text": "The applicant is a native citizen of Rajasthan.; Only women of the state will be considered eligible for the scheme.; Only girls and women between the ages of 16 years to 40 years will be considered eligible for the scheme.; Widow/divorced/abandoned women suffering from violence be given priority.; The applicant trainees who have passed class 10th from a government school and are graduates.; The applicant  Anganwadi worker must be a Graduate.",
+    "entities": [
+      {
+        "start": 54,
+        "end": 59,
+        "label": "GENDER",
+        "text": "women"
+      },
+      {
+        "start": 123,
+        "end": 128,
+        "label": "GENDER",
+        "text": "girls"
+      },
+      {
+        "start": 133,
+        "end": 138,
+        "label": "GENDER",
+        "text": "women"
+      },
+      {
+        "start": 159,
+        "end": 179,
+        "label": "AGE",
+        "text": "16 years to 40 years"
+      },
+      {
+        "start": 225,
+        "end": 230,
+        "label": "OCCUPATION",
+        "text": "Widow"
+      },
+      {
+        "start": 250,
+        "end": 255,
+        "label": "GENDER",
+        "text": "women"
+      },
+      {
+        "start": 339,
+        "end": 349,
+        "label": "EDUCATION",
+        "text": "class 10th"
+      },
+      {
+        "start": 410,
+        "end": 426,
+        "label": "OCCUPATION",
+        "text": "Anganwadi worker"
+      },
+      {
+        "start": 437,
+        "end": 445,
+        "label": "EDUCATION",
+        "text": "Graduate"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "mranmas-ii",
+    "name": "Moovalur Ramamirtham Ammaiyar Ninaivu Marriage Assistance Scheme - II",
+    "text": "The applicant should be a girl.; The bride should be 18 years or above at the time of marriage.; The bride should be a degree holder from a regular college, Distance Education / Government recognized Open University Or diploma holder should have qualified from Institutions recognized by the Directorate of Technical Education, Government of Tamil Nadu.; The bride's family income should not exceed ₹24,000/- per annum.; The assistance is given to only one girl in a family.",
+    "entities": [
+      {
+        "start": 26,
+        "end": 30,
+        "label": "GENDER",
+        "text": "girl"
+      },
+      {
+        "start": 53,
+        "end": 70,
+        "label": "AGE",
+        "text": "18 years or above"
+      },
+      {
+        "start": 119,
+        "end": 125,
+        "label": "EDUCATION",
+        "text": "degree"
+      },
+      {
+        "start": 219,
+        "end": 226,
+        "label": "EDUCATION",
+        "text": "diploma"
+      },
+      {
+        "start": 400,
+        "end": 408,
+        "label": "INCOME",
+        "text": "24,000/-"
+      },
+      {
+        "start": 457,
+        "end": 461,
+        "label": "GENDER",
+        "text": "girl"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "ghcsscp",
+    "name": "Grant of House Construction Subsidy to Scheduled Caste People",
+    "text": "The applicant should be a citizen of India.; The applicant should be a native or a permanent resident of the Union Territory of Pondicherry.; The applicant should not possess a house.; The applicant should be from Scheduled Caste or from Other Economically Backward Class.; The applicant should have a house site of an area of 450 sq.ft to build the house.; The annual income of the applicant should not exceed ₹2,00,000/-.; The applicant should have a house site granted by Adi Dravidar Welfare Department.; The annual income of the applicant should not exceed ₹24,000/-.",
+    "entities": [
+      {
+        "start": 214,
+        "end": 229,
+        "label": "CATEGORY",
+        "text": "Scheduled Caste"
+      },
+      {
+        "start": 238,
+        "end": 271,
+        "label": "CATEGORY",
+        "text": "Other Economically Backward Class"
+      },
+      {
+        "start": 412,
+        "end": 422,
+        "label": "INCOME",
+        "text": "2,00,000/-"
+      },
+      {
+        "start": 563,
+        "end": 571,
+        "label": "INCOME",
+        "text": "24,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "wbtwsaps",
+    "name": "West Bengal Transport Workers’ Social Security Scheme: Assistance for Purchase of Spectacles",
+    "text": "The applicant must be between 18 and 60 years of age at the time of enrolment.; The applicant must be an unorganized worker employed in the operation of commercial vehicles, such as cars, taxis, luxury taxis, light commercial vehicles, vans, auto-rickshaws, tempos, lorries, trucks, or buses.; The applicant’s vehicle must be used for commercial purposes and not solely for personal or family use.",
+    "entities": [
+      {
+        "start": 22,
+        "end": 39,
+        "label": "AGE",
+        "text": "between 18 and 60"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "fdd",
+    "name": "Flower Development (Demonstration)",
+    "text": "The applicant must be a farmer.; The applicant must be a resident of Madhya Pradesh.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "label": "OCCUPATION",
+        "text": "farmer"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "pg-igssgc",
+    "name": "Post Graduate Indira Gandhi Scholarship For Single Girl Child",
+    "text": "The applicant must be a citizen of India.; The applicant must be the only girl child in the family.; Girl students without having any brothers or the girl student who are twin daughters/ fraternal daughters may also apply; The age of the applicant should not be more than 30 years at the time of admission in the first year of PG; The applicant must have taken admission to regular, full-time first-year Master's Degree courses in any designated university or a post-graduate college.; The candidate should be pursuing a non-professional course and be taking regular classes from a recognized institution.; The applicant must not be [ursuing education through Distance education mode.",
+    "entities": [
+      {
+        "start": 74,
+        "end": 78,
+        "label": "GENDER",
+        "text": "girl"
+      },
+      {
+        "start": 101,
+        "end": 105,
+        "label": "GENDER",
+        "text": "Girl"
+      },
+      {
+        "start": 106,
+        "end": 114,
+        "label": "OCCUPATION",
+        "text": "students"
+      },
+      {
+        "start": 150,
+        "end": 154,
+        "label": "GENDER",
+        "text": "girl"
+      },
+      {
+        "start": 155,
+        "end": 162,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 255,
+        "end": 280,
+        "label": "AGE",
+        "text": "not be more than 30 years"
+      },
+      {
+        "start": 404,
+        "end": 419,
+        "label": "EDUCATION",
+        "text": "Master's Degree"
+      },
+      {
+        "start": 462,
+        "end": 475,
+        "label": "EDUCATION",
+        "text": "post-graduate"
+      },
+      {
+        "start": 521,
+        "end": 544,
+        "label": "EDUCATION",
+        "text": "non-professional course"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "cmses",
+    "name": "Chief Minister's Self Employment Scheme",
+    "text": "The applicant should be unemployed.; The applicant's age should be between 22 to 35 years.; The applicant should have passed the 10th class.; The applicant's family annual income should not exceed ₹2,50,000/-.; Only one member per family shall be considered for the benefit, except in the case of Below Poverty Line (BPL) families.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 34,
+        "label": "OCCUPATION",
+        "text": "unemployed"
+      },
+      {
+        "start": 75,
+        "end": 89,
+        "label": "AGE",
+        "text": "22 to 35 years"
+      },
+      {
+        "start": 129,
+        "end": 139,
+        "label": "EDUCATION",
+        "text": "10th class"
+      },
+      {
+        "start": 198,
+        "end": 208,
+        "label": "INCOME",
+        "text": "2,50,000/-"
+      },
+      {
+        "start": 297,
+        "end": 315,
+        "label": "INCOME",
+        "text": "Below Poverty Line"
+      },
+      {
+        "start": 317,
+        "end": 320,
+        "label": "INCOME",
+        "text": "BPL"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "obdtdaattnau",
+    "name": "Organizing Block Demonstration Through Department And Also Through TNAU",
+    "text": "The beneficiary should be a Farmer.; The beneficiary should be a resident of Tamil Nadu.; The beneficiary should grow maize in the following districts: Coimbatore, Dindigul, Erode, Dharmapuri, Krishnagiri, Namakkal, Perambalur, Virudhunagar, Theni, Villupuram, Vellore, Salem, Pudukkottai, Madurai, Sivagangai, Trichy, Tirunelveli, and Thoothukudi.",
+    "entities": [
+      {
+        "start": 28,
+        "end": 34,
+        "label": "OCCUPATION",
+        "text": "Farmer"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "psgsdgl",
+    "name": "Pragati Scholarship (81 for Uttarakhand girl students (Diploma) and 50 for Graduation)",
+    "text": "The applicant must be a girl student.; The applicant must be a resident of Uttarakhand.; The applicant’s annual family income must not exceed ₹8,00,000/-.; A maximum of two girl children are allowed per family to avail of this scholarship.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 28,
+        "label": "GENDER",
+        "text": "girl"
+      },
+      {
+        "start": 29,
+        "end": 36,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 143,
+        "end": 153,
+        "label": "INCOME",
+        "text": "8,00,000/-"
+      },
+      {
+        "start": 173,
+        "end": 177,
+        "label": "GENDER",
+        "text": "girl"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "msym",
+    "name": "Mahila Samridhi Yojana (Maharashtra)",
+    "text": "The applicant should be a female.; The applicant should belong to the Charmakar Community.; The applicant's age should be between 18 and 50 years.; The applicant should be a permanent resident of Maharashtra.; The applicant must have knowledge of the business for which the loan is being applied.; For the 50% Subsidy Scheme and Margin Money, the applicant's annual income must be below the poverty line.; For the NSFDC Scheme, the applicant's annual income should be below ₹98,000 for rural areas and ₹1,20,000 for urban areas.",
+    "entities": [
+      {
+        "start": 26,
+        "end": 32,
+        "label": "GENDER",
+        "text": "female"
+      },
+      {
+        "start": 70,
+        "end": 89,
+        "label": "CATEGORY",
+        "text": "Charmakar Community"
+      },
+      {
+        "start": 122,
+        "end": 139,
+        "label": "AGE",
+        "text": "between 18 and 50"
+      },
+      {
+        "start": 381,
+        "end": 403,
+        "label": "INCOME",
+        "text": "below the poverty line"
+      },
+      {
+        "start": 475,
+        "end": 481,
+        "label": "INCOME",
+        "text": "98,000"
+      },
+      {
+        "start": 503,
+        "end": 511,
+        "label": "INCOME",
+        "text": "1,20,000"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "aayu",
+    "name": "Atal Awas Yojana - Uttarakhand",
+    "text": "The applicant should be a native of Uttarakhand.; The applicant should belong to a Scheduled Caste family.; The applicant should belong to the Below Poverty Line (BPL) category or have an annual income not exceeding ₹48,000/-.; The applicant should not have their own house.; The applicant should have their own land for constructing a house.",
+    "entities": [
+      {
+        "start": 83,
+        "end": 98,
+        "label": "CATEGORY",
+        "text": "Scheduled Caste"
+      },
+      {
+        "start": 143,
+        "end": 161,
+        "label": "INCOME",
+        "text": "Below Poverty Line"
+      },
+      {
+        "start": 163,
+        "end": 166,
+        "label": "INCOME",
+        "text": "BPL"
+      },
+      {
+        "start": 217,
+        "end": 225,
+        "label": "INCOME",
+        "text": "48,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "icmr-jrf",
+    "name": "ICMR-Junior Research Fellowship",
+    "text": "The candidate should have a Post Graduate degree (M.Sc./MA) in basic science or a Post-Graduate degree (M.Sc./MA) in a professional course with 55% marks for General/Other Backward Class (OBC) and 50% for SC/ST/Physically Handicapped (PH)/Visually Handicapped (VH).; The students having degrees like B. Tech/M. Tech in biomedical sciences, B. Pharma/M. Pharma or D. Pharma are not eligible.; The upper age limit is 28 years [upper age limit relaxable up to five years in case of candidates belonging to SC/ST/OBC/PH/VH and female candidates, three years in the case of OBC category].",
+    "entities": [
+      {
+        "start": 28,
+        "end": 48,
+        "label": "EDUCATION",
+        "text": "Post Graduate degree"
+      },
+      {
+        "start": 50,
+        "end": 54,
+        "label": "EDUCATION",
+        "text": "M.Sc"
+      },
+      {
+        "start": 56,
+        "end": 58,
+        "label": "EDUCATION",
+        "text": "MA"
+      },
+      {
+        "start": 82,
+        "end": 102,
+        "label": "EDUCATION",
+        "text": "Post-Graduate degree"
+      },
+      {
+        "start": 104,
+        "end": 108,
+        "label": "EDUCATION",
+        "text": "M.Sc"
+      },
+      {
+        "start": 110,
+        "end": 112,
+        "label": "EDUCATION",
+        "text": "MA"
+      },
+      {
+        "start": 188,
+        "end": 191,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 205,
+        "end": 207,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 208,
+        "end": 210,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 271,
+        "end": 279,
+        "label": "OCCUPATION",
+        "text": "students"
+      },
+      {
+        "start": 300,
+        "end": 307,
+        "label": "EDUCATION",
+        "text": "B. Tech"
+      },
+      {
+        "start": 308,
+        "end": 315,
+        "label": "EDUCATION",
+        "text": "M. Tech"
+      },
+      {
+        "start": 340,
+        "end": 349,
+        "label": "EDUCATION",
+        "text": "B. Pharma"
+      },
+      {
+        "start": 350,
+        "end": 359,
+        "label": "EDUCATION",
+        "text": "M. Pharma"
+      },
+      {
+        "start": 363,
+        "end": 372,
+        "label": "EDUCATION",
+        "text": "D. Pharma"
+      },
+      {
+        "start": 503,
+        "end": 505,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 506,
+        "end": 508,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 509,
+        "end": 512,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 523,
+        "end": 529,
+        "label": "GENDER",
+        "text": "female"
+      },
+      {
+        "start": 569,
+        "end": 572,
+        "label": "CATEGORY",
+        "text": "OBC"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "tare",
+    "name": "Teachers Associateship for Research Excellence",
+    "text": "Indian citizens residing in India holding a Ph.D. degree in Science/Engineering or MS/MD in Medicine are eligible to apply.; The applicant(s) must hold a regular academic/research position in State Universities/ Colleges and private Academic Institutions.; Applicant should not hold any ongoing research projects or any fellowship at the time of submission of application.; The upper age limit for the award is 45 years at the time of the submission of the application. Age relaxation of 5 (five) years will be given to candidates belonging to SC/ST/OBC/Physically Challenged &amp; Women candidates.; Mentor should be at the level of Associate Professor/Scientist E, or higher level.; Only one candidate will be allowed to work with a mentor at any given point of time.",
+    "entities": [
+      {
+        "start": 44,
+        "end": 48,
+        "label": "EDUCATION",
+        "text": "Ph.D"
+      },
+      {
+        "start": 50,
+        "end": 56,
+        "label": "EDUCATION",
+        "text": "degree"
+      },
+      {
+        "start": 83,
+        "end": 85,
+        "label": "EDUCATION",
+        "text": "MS"
+      },
+      {
+        "start": 86,
+        "end": 88,
+        "label": "EDUCATION",
+        "text": "MD"
+      },
+      {
+        "start": 411,
+        "end": 419,
+        "label": "AGE",
+        "text": "45 years"
+      },
+      {
+        "start": 544,
+        "end": 546,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 547,
+        "end": 549,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 550,
+        "end": 553,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 582,
+        "end": 587,
+        "label": "GENDER",
+        "text": "Women"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "jgvy",
+    "name": "Jyoti Gramodyog Vikas Yojana",
+    "text": "The applicant must be aged between 25 to 50 years.; The applicant must have passed at least Class 10 from a recognized educational board.; The applicant must possess at least one year of experience in the proposed business activity or relevant training from a recognized institution.; The applicant must be either an individual artisan/entrepreneur or part of a Grade-II active Self Help Group engaged in small-scale production. The applicant's proposed project must be located in a rural area with a population not exceeding 20,000.; The applicant must not represent a partnership firm, private limited company, joint venture, HUF, or similar commercial entity.; For SC/ST, women, and physically handicapped applicants, additional benefits are provided as specified in the benefits section.",
+    "entities": [
+      {
+        "start": 35,
+        "end": 49,
+        "label": "AGE",
+        "text": "25 to 50 years"
+      },
+      {
+        "start": 92,
+        "end": 100,
+        "label": "EDUCATION",
+        "text": "Class 10"
+      },
+      {
+        "start": 328,
+        "end": 335,
+        "label": "OCCUPATION",
+        "text": "artisan"
+      },
+      {
+        "start": 336,
+        "end": 348,
+        "label": "OCCUPATION",
+        "text": "entrepreneur"
+      },
+      {
+        "start": 668,
+        "end": 670,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 671,
+        "end": 673,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 675,
+        "end": 680,
+        "label": "GENDER",
+        "text": "women"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "hrasfts",
+    "name": "Hostel Rent Assistance Scheme for Tribal Students",
+    "text": "The applicant should be studying regularly a undergraduate or postgraduate course in a government college.; The student should belong to a Scheduled Tribe community residing in the Scheduled Areas of Rajasthan.; The applicant should be a native of Rajasthan.; The applicant should be studying in a government college.; The applicant should not be residing in a government-run hostel.; The applicant's parents/guardian/husband should not be an income tax payer.; The applicant should not have any academic gap (break) after passing the last board examination.; The applicant should possess a valid Bhamashah card and an Aadhaar card.",
+    "entities": [
+      {
+        "start": 45,
+        "end": 58,
+        "label": "EDUCATION",
+        "text": "undergraduate"
+      },
+      {
+        "start": 62,
+        "end": 74,
+        "label": "EDUCATION",
+        "text": "postgraduate"
+      },
+      {
+        "start": 112,
+        "end": 119,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 139,
+        "end": 154,
+        "label": "CATEGORY",
+        "text": "Scheduled Tribe"
+      },
+      {
+        "start": 597,
+        "end": 611,
+        "label": "REQUIREMENT",
+        "text": "Bhamashah card"
+      },
+      {
+        "start": 619,
+        "end": 626,
+        "label": "REQUIREMENT",
+        "text": "Aadhaar"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "mmpyj",
+    "name": "Mukhyamantri Protsahan Yojana Jharkhand",
+    "text": "The applicant must be unemployed (not employed in the public/private sector or self-employed).; The applicant must be registered in a Jharkhand employment exchange.; The applicant should have completed a skill training course conducted by a government ITI, polytechnic, or other government vocational institutes aligned with NSQF.; The applicant must not have availed of any similar incentive under another scheme.; The applicant must be a domicile of Jharkhand.; The applicant should have a valid bank account and Aadhaar card.; The applicant should not have been convicted of a crime with a sentence of 48 hours or more.; The applicant must be between 18 to 35 years old on the date of employment exchange registration (relaxation as per government norms for SC/ST candidates).",
+    "entities": [
+      {
+        "start": 22,
+        "end": 32,
+        "label": "OCCUPATION",
+        "text": "unemployed"
+      },
+      {
+        "start": 204,
+        "end": 225,
+        "label": "EDUCATION",
+        "text": "skill training course"
+      },
+      {
+        "start": 241,
+        "end": 255,
+        "label": "EDUCATION",
+        "text": "government ITI"
+      },
+      {
+        "start": 257,
+        "end": 268,
+        "label": "EDUCATION",
+        "text": "polytechnic"
+      },
+      {
+        "start": 498,
+        "end": 510,
+        "label": "REQUIREMENT",
+        "text": "bank account"
+      },
+      {
+        "start": 515,
+        "end": 522,
+        "label": "REQUIREMENT",
+        "text": "Aadhaar"
+      },
+      {
+        "start": 654,
+        "end": 668,
+        "label": "AGE",
+        "text": "18 to 35 years"
+      },
+      {
+        "start": 761,
+        "end": 763,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 764,
+        "end": 766,
+        "label": "CATEGORY",
+        "text": "ST"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "sjay-hp",
+    "name": "Swaran Jayanti Ashray Yojana - Himachal Pradesh",
+    "text": "The applicant should be a permanent resident of Himachal Pradesh.; The applicant should belong to Scheduled Castes (SC), Scheduled Tribes (ST), or Other Backward Classes (OBC).; The applicant's annual income does not exceed ₹50,000/-.; The applicant should not have his own house.; The land in the applicant's name should be in the revenue record for the construction of the house.",
+    "entities": [
+      {
+        "start": 98,
+        "end": 114,
+        "label": "CATEGORY",
+        "text": "Scheduled Castes"
+      },
+      {
+        "start": 116,
+        "end": 118,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 121,
+        "end": 137,
+        "label": "CATEGORY",
+        "text": "Scheduled Tribes"
+      },
+      {
+        "start": 139,
+        "end": 141,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 147,
+        "end": 169,
+        "label": "CATEGORY",
+        "text": "Other Backward Classes"
+      },
+      {
+        "start": 171,
+        "end": 174,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 225,
+        "end": 233,
+        "label": "INCOME",
+        "text": "50,000/-"
+      },
+      {
+        "start": 355,
+        "end": 367,
+        "label": "OCCUPATION",
+        "text": "construction"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "cmssg",
+    "name": "Chief Minister Scholarship Scheme",
+    "text": "The applicant must be a resident of Gujarat.; The applicant must be a student.; The applicant must have passed the Class 10th or Class 12th examination.; The applicant must have secured admission in a diploma course, a degree course after diploma, or a degree course after Class 12th.; The applicant must be pursuing medical, dental, engineering, technology, pharmacy, Ayurveda, homeopathy, nursing, physiotherapy, para-medical, or higher education courses.; The applicant must have a family annual income of less than or equal to ₹4,50,000/-.",
+    "entities": [
+      {
+        "start": 70,
+        "end": 77,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 115,
+        "end": 125,
+        "label": "EDUCATION",
+        "text": "Class 10th"
+      },
+      {
+        "start": 129,
+        "end": 139,
+        "label": "EDUCATION",
+        "text": "Class 12th"
+      },
+      {
+        "start": 201,
+        "end": 208,
+        "label": "EDUCATION",
+        "text": "diploma"
+      },
+      {
+        "start": 219,
+        "end": 225,
+        "label": "EDUCATION",
+        "text": "degree"
+      },
+      {
+        "start": 239,
+        "end": 246,
+        "label": "EDUCATION",
+        "text": "diploma"
+      },
+      {
+        "start": 253,
+        "end": 259,
+        "label": "EDUCATION",
+        "text": "degree"
+      },
+      {
+        "start": 273,
+        "end": 283,
+        "label": "EDUCATION",
+        "text": "Class 12th"
+      },
+      {
+        "start": 317,
+        "end": 324,
+        "label": "EDUCATION",
+        "text": "medical"
+      },
+      {
+        "start": 326,
+        "end": 332,
+        "label": "EDUCATION",
+        "text": "dental"
+      },
+      {
+        "start": 334,
+        "end": 345,
+        "label": "EDUCATION",
+        "text": "engineering"
+      },
+      {
+        "start": 347,
+        "end": 357,
+        "label": "EDUCATION",
+        "text": "technology"
+      },
+      {
+        "start": 359,
+        "end": 367,
+        "label": "EDUCATION",
+        "text": "pharmacy"
+      },
+      {
+        "start": 369,
+        "end": 377,
+        "label": "EDUCATION",
+        "text": "Ayurveda"
+      },
+      {
+        "start": 379,
+        "end": 389,
+        "label": "EDUCATION",
+        "text": "homeopathy"
+      },
+      {
+        "start": 391,
+        "end": 398,
+        "label": "EDUCATION",
+        "text": "nursing"
+      },
+      {
+        "start": 400,
+        "end": 413,
+        "label": "EDUCATION",
+        "text": "physiotherapy"
+      },
+      {
+        "start": 415,
+        "end": 427,
+        "label": "EDUCATION",
+        "text": "para-medical"
+      },
+      {
+        "start": 532,
+        "end": 542,
+        "label": "INCOME",
+        "text": "4,50,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "tnsfdcis",
+    "name": "The NSFDC Internship Scheme",
+    "text": "The student should be pursuing or completed their undergraduate, graduate, or postgraduate degrees from recognized universities, colleges, or institutions in India.; The applicant must have his own laptop for the internship.; The applicant can get the internship benefit only at once during a financial year.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 11,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 50,
+        "end": 63,
+        "label": "EDUCATION",
+        "text": "undergraduate"
+      },
+      {
+        "start": 65,
+        "end": 73,
+        "label": "EDUCATION",
+        "text": "graduate"
+      },
+      {
+        "start": 78,
+        "end": 90,
+        "label": "EDUCATION",
+        "text": "postgraduate"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "nfbsb",
+    "name": "National Family Benefit Scheme- Bihar",
+    "text": "The applicant should be a resident of Bihar.; The applicant should be a family member or dependent of the deceased person.; The deceased person should have been the primary breadwinner (an earning member of the family) on whom the family primarily depended for income.; The family of the deceased should be living Below the Poverty Line (BPL).; At the time of death, the deceased should have been between 18 and 60 years old.",
+    "entities": [
+      {
+        "start": 314,
+        "end": 336,
+        "label": "INCOME",
+        "text": "Below the Poverty Line"
+      },
+      {
+        "start": 338,
+        "end": 341,
+        "label": "INCOME",
+        "text": "BPL"
+      },
+      {
+        "start": 397,
+        "end": 414,
+        "label": "AGE",
+        "text": "between 18 and 60"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "icds-chandigarh",
+    "name": "Integrated Child Development Services: Chandigarh",
+    "text": "Children in the age group of 0-6 years.; Pregnant women.; Lactating mothers.; Women from age group 14-18 years of UT Chandigarh.; The Scheme is universal for all categories of beneficiaries and in coverage.",
+    "entities": [
+      {
+        "start": 29,
+        "end": 38,
+        "label": "AGE",
+        "text": "0-6 years"
+      },
+      {
+        "start": 50,
+        "end": 55,
+        "label": "GENDER",
+        "text": "women"
+      },
+      {
+        "start": 78,
+        "end": 83,
+        "label": "GENDER",
+        "text": "Women"
+      },
+      {
+        "start": 99,
+        "end": 110,
+        "label": "AGE",
+        "text": "14-18 years"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "sshspms",
+    "name": "Simon Sing Horo Special Post-Matric Scholarship",
+    "text": "The applicant must be a permanent resident of Assam.; The applicant must belong to the Tea Tribes and Adivasi Community.; The applicant must have passed one of the following examinations -; The applicant's family income must not exceed ₹5,00,000/- per annum.",
+    "entities": [
+      {
+        "start": 87,
+        "end": 97,
+        "label": "CATEGORY",
+        "text": "Tea Tribes"
+      },
+      {
+        "start": 102,
+        "end": 119,
+        "label": "CATEGORY",
+        "text": "Adivasi Community"
+      },
+      {
+        "start": 237,
+        "end": 247,
+        "label": "INCOME",
+        "text": "5,00,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "ccdp",
+    "name": "Crop Cluster Development Programme",
+    "text": "Only Farmer Producer Organizations (FPOs) registered under the Companies Act in Haryana are eligible to submit project proposals and avail assistance under the scheme.; FPOs must have a minimum of 150 shareholders with a financial strength of at least Rs. 10.00 lakh in their bank account.; The FPOs should have an area of at least 500 acres under horticulture crops, although this requirement may be flexible based on the project's viability.; FPOs must have a business plan with backward and forward linkages of their produce.; Disputed FPOs or those not meeting the eligibility criteria mentioned above will not be considered eligible.",
+    "entities": [
+      {
+        "start": 5,
+        "end": 34,
+        "label": "OCCUPATION",
+        "text": "Farmer Producer Organizations"
+      },
+      {
+        "start": 256,
+        "end": 266,
+        "label": "INCOME",
+        "text": "10.00 lakh"
+      },
+      {
+        "start": 276,
+        "end": 288,
+        "label": "REQUIREMENT",
+        "text": "bank account"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "mukuy",
+    "name": "Mukhyamantri Udeeyman Khiladi Unnayan Chhatravriti Yojana",
+    "text": "The applicant must be a permanent resident of Uttarakhand.; The applicant must be a boy or girl between 8 and 14 years of age.; The boy or girl who obtain the highest marks based on merit in the final district-level competition, conducted through various stages of the Physical and Sports Aptitude Test (P-SAT) assessing physical abilities such as strength, flexibility, endurance, speed, and coordination, will be eligible for the sports scholarship.",
+    "entities": [
+      {
+        "start": 84,
+        "end": 87,
+        "label": "GENDER",
+        "text": "boy"
+      },
+      {
+        "start": 91,
+        "end": 95,
+        "label": "GENDER",
+        "text": "girl"
+      },
+      {
+        "start": 96,
+        "end": 112,
+        "label": "AGE",
+        "text": "between 8 and 14"
+      },
+      {
+        "start": 132,
+        "end": 135,
+        "label": "GENDER",
+        "text": "boy"
+      },
+      {
+        "start": 139,
+        "end": 143,
+        "label": "GENDER",
+        "text": "girl"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "siswtbottm",
+    "name": "Special Incentive Scheme for Women of Tharu, Boksa and Other Tribes (For Training and Marketing)",
+    "text": "Women artisans belonging to the Tharu, Boksa, and other tribes engaged in the craft sector in Uttarakhand will be eligible for training and marketing support.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "label": "GENDER",
+        "text": "Women"
+      },
+      {
+        "start": 6,
+        "end": 14,
+        "label": "OCCUPATION",
+        "text": "artisans"
+      },
+      {
+        "start": 32,
+        "end": 37,
+        "label": "CATEGORY",
+        "text": "Tharu"
+      },
+      {
+        "start": 39,
+        "end": 44,
+        "label": "CATEGORY",
+        "text": "Boksa"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "svpmss",
+    "name": "Swami Vivekananda Post-Matric Scholarship Scheme (Class 11th & 12th)",
+    "text": "The applicant should be a resident of Madhya Pradesh.; The applicant should be studying in Class 11 or Class 12.; The student should be enrolled in a government school.; Students studying in Class 11 must have passed their 10th board examination with a first division, and students studying in Class 12 must have passed their Class 11 examination with a first division to be eligible for this scholarship.; The applicant should belong to the Below Poverty Line (BPL) category.; The applicant&#39;s parents&#39; income from all sources should be less than ₹1,00,000/- per year.",
+    "entities": [
+      {
+        "start": 91,
+        "end": 99,
+        "label": "EDUCATION",
+        "text": "Class 11"
+      },
+      {
+        "start": 103,
+        "end": 111,
+        "label": "EDUCATION",
+        "text": "Class 12"
+      },
+      {
+        "start": 118,
+        "end": 125,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 170,
+        "end": 178,
+        "label": "OCCUPATION",
+        "text": "Students"
+      },
+      {
+        "start": 191,
+        "end": 199,
+        "label": "EDUCATION",
+        "text": "Class 11"
+      },
+      {
+        "start": 273,
+        "end": 281,
+        "label": "OCCUPATION",
+        "text": "students"
+      },
+      {
+        "start": 294,
+        "end": 302,
+        "label": "EDUCATION",
+        "text": "Class 12"
+      },
+      {
+        "start": 326,
+        "end": 334,
+        "label": "EDUCATION",
+        "text": "Class 11"
+      },
+      {
+        "start": 442,
+        "end": 460,
+        "label": "INCOME",
+        "text": "Below Poverty Line"
+      },
+      {
+        "start": 462,
+        "end": 465,
+        "label": "INCOME",
+        "text": "BPL"
+      },
+      {
+        "start": 556,
+        "end": 566,
+        "label": "INCOME",
+        "text": "1,00,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "igstcif-pdif",
+    "name": "IGSTC Industrial Fellowship- Post Doctoral Industrial Fellowship",
+    "text": "The applicant should be an Indian citizen.; The maximum age limit of the applicant should be 35 years.; Postdoctoral researchers/fresh PhDs who have been awarded their PhD degree in science/engineering within 3 years of the application deadline by any Indian institution/university are eligible to apply.; Outstanding researchers not holding a permanent position or having a career break are eligible to apply.; Those who have submitted their PhD thesis are also eligible to apply.; The Fellowship is granted to work in any industrial research set up in Germany.",
+    "entities": [
+      {
+        "start": 93,
+        "end": 101,
+        "label": "AGE",
+        "text": "35 years"
+      },
+      {
+        "start": 104,
+        "end": 128,
+        "label": "OCCUPATION",
+        "text": "Postdoctoral researchers"
+      },
+      {
+        "start": 168,
+        "end": 171,
+        "label": "EDUCATION",
+        "text": "PhD"
+      },
+      {
+        "start": 172,
+        "end": 178,
+        "label": "EDUCATION",
+        "text": "degree"
+      },
+      {
+        "start": 443,
+        "end": 453,
+        "label": "EDUCATION",
+        "text": "PhD thesis"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "cmacs",
+    "name": "CM Anuprati Coaching Scheme",
+    "text": "The candidate must be a native of Rajasthan.; The candidate should belong to one of the following categories: Scheduled Caste (SC), Scheduled Tribe (ST), Other Backward Class (OBC), Extremely Backward Class (EBC), Economically Weaker Section (EWS), or Minority category.; The annual income of the candidate’s parents/guardians (including the candidate’s income, if applicable) must be less than ₹8.00 lakh, or the candidate&#39;s parents must be State Government employees receiving a salary up to Level-11 of the Pay Matrix.; The candidate should not have previously availed the benefits of this scheme.; The candidate must possess the minimum qualifications required for the competitive examination.",
+    "entities": [
+      {
+        "start": 110,
+        "end": 125,
+        "label": "CATEGORY",
+        "text": "Scheduled Caste"
+      },
+      {
+        "start": 127,
+        "end": 129,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 132,
+        "end": 147,
+        "label": "CATEGORY",
+        "text": "Scheduled Tribe"
+      },
+      {
+        "start": 149,
+        "end": 151,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 154,
+        "end": 174,
+        "label": "CATEGORY",
+        "text": "Other Backward Class"
+      },
+      {
+        "start": 176,
+        "end": 179,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 182,
+        "end": 206,
+        "label": "CATEGORY",
+        "text": "Extremely Backward Class"
+      },
+      {
+        "start": 208,
+        "end": 211,
+        "label": "CATEGORY",
+        "text": "EBC"
+      },
+      {
+        "start": 214,
+        "end": 241,
+        "label": "CATEGORY",
+        "text": "Economically Weaker Section"
+      },
+      {
+        "start": 243,
+        "end": 246,
+        "label": "CATEGORY",
+        "text": "EWS"
+      },
+      {
+        "start": 252,
+        "end": 260,
+        "label": "CATEGORY",
+        "text": "Minority"
+      },
+      {
+        "start": 396,
+        "end": 405,
+        "label": "INCOME",
+        "text": "8.00 lakh"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "upoaps",
+    "name": "Uttar Pradesh Old Age Pension Scheme",
+    "text": "Age should be between 60 to 150.; Applicant should be below poverty line or his/her annual income should be upto for Rural Areas Rs. 46,080/- and Urban Areas Rs. 56,460/-.",
+    "entities": [
+      {
+        "start": 22,
+        "end": 31,
+        "label": "AGE",
+        "text": "60 to 150"
+      },
+      {
+        "start": 133,
+        "end": 141,
+        "label": "INCOME",
+        "text": "46,080/-"
+      },
+      {
+        "start": 162,
+        "end": 170,
+        "label": "INCOME",
+        "text": "56,460/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "mcacism-giapsca",
+    "name": "“Medical Camps (Allopathy and Indian systems of Medicine)\" under Grant-in-Aid to Pondicherry Society for the Care of the Aged (PONCARE)",
+    "text": "The applicant should be 60 years or above in age.; The applicant should be a Native/Resident of the Union Territory of Puducherry for at least 5 years.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 41,
+        "label": "AGE",
+        "text": "60 years or above"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "k-biref",
+    "name": "Kerala Biotechnology Re-Entry Fellowship",
+    "text": "The applicant should possess a Ph.D., M.D., or equivalent degree and at least three years of post-doctoral research experience in premier research laboratories abroad with an outstanding track record of research in biotechnology-related areas as reflected in publications and other recognitions.; Only candidates (Indian nationals) working overseas who are below 45 years of age are eligible; relaxable for 3 years for OBC and 5 years for SC/ST/PH candidates.; The fellowship is tenable at any reputed institution in Kerala.",
+    "entities": [
+      {
+        "start": 31,
+        "end": 35,
+        "label": "EDUCATION",
+        "text": "Ph.D"
+      },
+      {
+        "start": 38,
+        "end": 41,
+        "label": "EDUCATION",
+        "text": "M.D"
+      },
+      {
+        "start": 58,
+        "end": 64,
+        "label": "EDUCATION",
+        "text": "degree"
+      },
+      {
+        "start": 363,
+        "end": 371,
+        "label": "AGE",
+        "text": "45 years"
+      },
+      {
+        "start": 419,
+        "end": 422,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 439,
+        "end": 441,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 442,
+        "end": 444,
+        "label": "CATEGORY",
+        "text": "ST"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "eacpppc",
+    "name": "Educational Assistance To Children Of Prisoners (Pursuing Professional Course)",
+    "text": "The applicant should be a native and resident of Kerala State.; The applicants should belong to Below Poverty Line (BPL) category.; The applicant must be the child of a prisoner sentenced to life imprisonment or death sentence.; Those applicants who have been admitted to courses through merit basis are eligible for assistance.; Applicant must have secured 70 % or above marks in Higher secondary level exams.",
+    "entities": [
+      {
+        "start": 96,
+        "end": 114,
+        "label": "INCOME",
+        "text": "Below Poverty Line"
+      },
+      {
+        "start": 116,
+        "end": 119,
+        "label": "INCOME",
+        "text": "BPL"
+      },
+      {
+        "start": 381,
+        "end": 397,
+        "label": "EDUCATION",
+        "text": "Higher secondary"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "atwtctc",
+    "name": "Assistance to Women for Trainer and Coaches Training Course",
+    "text": "The applicant should be a resident of Gujarat.; The applicant should be a female.; The applicant should be a student.; The applicant should be pursuing a diploma course in sports from a recognized university or institution such as the Sports Authority of India.",
+    "entities": [
+      {
+        "start": 74,
+        "end": 80,
+        "label": "GENDER",
+        "text": "female"
+      },
+      {
+        "start": 109,
+        "end": 116,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 154,
+        "end": 161,
+        "label": "EDUCATION",
+        "text": "diploma"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "sbhs",
+    "name": "Solar Based Hydroponic System",
+    "text": "The applicant must be a resident of Uttarakhand.; The applicant must be a farmer, researcher, student, or entrepreneur.; Annually, over 500 farmers, consumers, researchers, students, and entrepreneurs benefit from this system.",
+    "entities": [
+      {
+        "start": 74,
+        "end": 80,
+        "label": "OCCUPATION",
+        "text": "farmer"
+      },
+      {
+        "start": 82,
+        "end": 92,
+        "label": "OCCUPATION",
+        "text": "researcher"
+      },
+      {
+        "start": 94,
+        "end": 101,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 106,
+        "end": 118,
+        "label": "OCCUPATION",
+        "text": "entrepreneur"
+      },
+      {
+        "start": 140,
+        "end": 147,
+        "label": "OCCUPATION",
+        "text": "farmers"
+      },
+      {
+        "start": 149,
+        "end": 158,
+        "label": "OCCUPATION",
+        "text": "consumers"
+      },
+      {
+        "start": 160,
+        "end": 171,
+        "label": "OCCUPATION",
+        "text": "researchers"
+      },
+      {
+        "start": 173,
+        "end": 181,
+        "label": "OCCUPATION",
+        "text": "students"
+      },
+      {
+        "start": 187,
+        "end": 200,
+        "label": "OCCUPATION",
+        "text": "entrepreneurs"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "mpmgarssc",
+    "name": "Mamasaheb Phadke Management of Govt Adarsh ​​Residential Schools (SC) Scheme",
+    "text": "The applicant should be a student.; The applicant should belong to the Scheduled Caste (SC) category.; The applicant must be a resident of Gujarat.; The applicant must be currently studying in standard 9th to 12th in a recognized institution.1. The applicant must have passed the previous annual exam with at least 50% marks (or a government-sanctioned exemption).",
+    "entities": [
+      {
+        "start": 26,
+        "end": 33,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 71,
+        "end": 86,
+        "label": "CATEGORY",
+        "text": "Scheduled Caste"
+      },
+      {
+        "start": 88,
+        "end": 90,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 202,
+        "end": 213,
+        "label": "EDUCATION",
+        "text": "9th to 12th"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "ignsap",
+    "name": "Indira Gandhi National Special Ability Pension",
+    "text": "The applicant must be a citizen of India.; The person must be between 18 to 79 years old.; The applicant should have 80% or more special ability.; The person should belong to a below-poverty-line household.; The applicant should have a valid bank account.",
+    "entities": [
+      {
+        "start": 70,
+        "end": 84,
+        "label": "AGE",
+        "text": "18 to 79 years"
+      },
+      {
+        "start": 177,
+        "end": 195,
+        "label": "INCOME",
+        "text": "below-poverty-line"
+      },
+      {
+        "start": 242,
+        "end": 254,
+        "label": "REQUIREMENT",
+        "text": "bank account"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "fp",
+    "name": "Fasal Pradarshan",
+    "text": "Farmers who can bear the additional cost as per departmental recommendations and need, along with the assistance provided under the scheme.; The selected demonstration area must have irrigation facilities apart from dryland farming.; Only one member from a farmer's family will be given the opportunity for demonstration.; The demonstration will be organized at the block level.; The selected seeds, fertilizers, and other inputs must be used as per the guidelines.; A farmer can set up a demonstration plot on a maximum of 1 hectare, but it can also be on less than 1 hectare on a pro-rata basis.; In the National Food Security Mission, the farmer's plot must be at least 0.4 hectares.; Farmers who have not benefited from crop demonstration programs in the past three years are eligible.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "label": "OCCUPATION",
+        "text": "Farmers"
+      },
+      {
+        "start": 257,
+        "end": 263,
+        "label": "OCCUPATION",
+        "text": "farmer"
+      },
+      {
+        "start": 469,
+        "end": 475,
+        "label": "OCCUPATION",
+        "text": "farmer"
+      },
+      {
+        "start": 642,
+        "end": 648,
+        "label": "OCCUPATION",
+        "text": "farmer"
+      },
+      {
+        "start": 688,
+        "end": 695,
+        "label": "OCCUPATION",
+        "text": "Farmers"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "cmss",
+    "name": "Chief Minister's Scholarship Scheme",
+    "text": "The student must be a domicile of Meghalaya.; The student must have a valid bank account, mobile number, and email ID.; Students pursuing part-time or correspondence courses are not eligible.; The student must have secured at least 35% marks in the preceding academic year.; The scholarship is available only to students pursuing full-time regular courses in recognized institutions, including:",
+    "entities": [
+      {
+        "start": 4,
+        "end": 11,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 50,
+        "end": 57,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 76,
+        "end": 88,
+        "label": "REQUIREMENT",
+        "text": "bank account"
+      },
+      {
+        "start": 90,
+        "end": 103,
+        "label": "REQUIREMENT",
+        "text": "mobile number"
+      },
+      {
+        "start": 109,
+        "end": 117,
+        "label": "REQUIREMENT",
+        "text": "email ID"
+      },
+      {
+        "start": 120,
+        "end": 128,
+        "label": "OCCUPATION",
+        "text": "Students"
+      },
+      {
+        "start": 197,
+        "end": 204,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 312,
+        "end": 320,
+        "label": "OCCUPATION",
+        "text": "students"
+      },
+      {
+        "start": 340,
+        "end": 355,
+        "label": "EDUCATION",
+        "text": "regular courses"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "freetablet",
+    "name": "e-Adhigam Scheme - Free Tablet",
+    "text": "The applicant must be a student of a government school in Haryana.; The applicant must be studying in Class 8, 9, 10, 11, or 12.; The applicant must be part of the phased distribution plan as per the Haryana Government’s rollout strategy.; Class 11 students will receive tablets only after clearing the Class 10 board exams.",
+    "entities": [
+      {
+        "start": 24,
+        "end": 31,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 102,
+        "end": 127,
+        "label": "EDUCATION",
+        "text": "Class 8, 9, 10, 11, or 12"
+      },
+      {
+        "start": 240,
+        "end": 248,
+        "label": "EDUCATION",
+        "text": "Class 11"
+      },
+      {
+        "start": 249,
+        "end": 257,
+        "label": "OCCUPATION",
+        "text": "students"
+      },
+      {
+        "start": 303,
+        "end": 311,
+        "label": "EDUCATION",
+        "text": "Class 10"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "pmmsyiceboxguj",
+    "name": "PMMSY: Motorcycle with Ice Box - Gujarat",
+    "text": "Women, SC, and ST beneficiaries are eligible for 60% assistance of the unit cost.; General category beneficiaries are eligible for 40% assistance of the unit cost.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "label": "GENDER",
+        "text": "Women"
+      },
+      {
+        "start": 7,
+        "end": 9,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 15,
+        "end": 17,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 83,
+        "end": 99,
+        "label": "CATEGORY",
+        "text": "General category"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "faocesm",
+    "name": "Financial Assistance to Orphan Children of Ex-Servicemen",
+    "text": "The applicant should be a bonafide resident of Haryana.; The applicant should be an orphan child of an ex-serviceman.; The applicant should not be receiving any kind of financial assistance from any department of the Haryana Government.; The applicant&#39;s age should be below 21 years.; The applicant should be unmarried.; The applicant should be unemployed.",
+    "entities": [
+      {
+        "start": 272,
+        "end": 280,
+        "label": "AGE",
+        "text": "below 21"
+      },
+      {
+        "start": 349,
+        "end": 359,
+        "label": "OCCUPATION",
+        "text": "unemployed"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "kpymp",
+    "name": "Khiladi Protsahan Yojana",
+    "text": "The applicant should be a native of Madhya Pradesh.; Family members registered under MP Building and Other Construction Workers Welfare Board.; The applicant should be a bank account.",
+    "entities": [
+      {
+        "start": 170,
+        "end": 182,
+        "label": "REQUIREMENT",
+        "text": "bank account"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "ksfs",
+    "name": "Kashyapa Scheme for Food & Shelter",
+    "text": "The applicant should belong to the Brahmin community and reside in Andhra Pradesh.; The applicant should be a holder of a white ration card.; The applicant's annual family income should not exceed ₹75,000/-.; The orphan children below 14 years of age as of 31st Jan 2019.; The Elderly above 60 years of age as of 31st Jan 2019.; All differently abled of any age and widows & destitute women (separated from husband, but do not have legal documents) of any age.; The applicant should not have availed himself/ herself of any amount under any other Government scheme for the same purpose.",
+    "entities": [
+      {
+        "start": 35,
+        "end": 52,
+        "label": "CATEGORY",
+        "text": "Brahmin community"
+      },
+      {
+        "start": 128,
+        "end": 139,
+        "label": "REQUIREMENT",
+        "text": "ration card"
+      },
+      {
+        "start": 198,
+        "end": 206,
+        "label": "INCOME",
+        "text": "75,000/-"
+      },
+      {
+        "start": 229,
+        "end": 237,
+        "label": "AGE",
+        "text": "below 14"
+      },
+      {
+        "start": 285,
+        "end": 293,
+        "label": "AGE",
+        "text": "above 60"
+      },
+      {
+        "start": 366,
+        "end": 372,
+        "label": "OCCUPATION",
+        "text": "widows"
+      },
+      {
+        "start": 375,
+        "end": 390,
+        "label": "GENDER",
+        "text": "destitute women"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "wdwps",
+    "name": "Widow / Destitute Women Pension Scheme - Punjab",
+    "text": "Beneficiary should be a Permanent Resident of Punjab .; The Annual Income of Beneficiary should not be more than Rs. 60,000/-per year .; The below mentioned women are eligible for monthly pension :-; Widow Women.; Destitute Women.; Unmarried Women.; The Age of the beneficiary should be :-; Widow or Destitute Women: Below 58 Years.; Unmarried Women: Above 30 Years.",
+    "entities": [
+      {
+        "start": 117,
+        "end": 125,
+        "label": "INCOME",
+        "text": "60,000/-"
+      },
+      {
+        "start": 157,
+        "end": 162,
+        "label": "GENDER",
+        "text": "women"
+      },
+      {
+        "start": 200,
+        "end": 211,
+        "label": "GENDER",
+        "text": "Widow Women"
+      },
+      {
+        "start": 214,
+        "end": 229,
+        "label": "GENDER",
+        "text": "Destitute Women"
+      },
+      {
+        "start": 232,
+        "end": 247,
+        "label": "GENDER",
+        "text": "Unmarried Women"
+      },
+      {
+        "start": 291,
+        "end": 296,
+        "label": "OCCUPATION",
+        "text": "Widow"
+      },
+      {
+        "start": 300,
+        "end": 315,
+        "label": "GENDER",
+        "text": "Destitute Women"
+      },
+      {
+        "start": 317,
+        "end": 325,
+        "label": "AGE",
+        "text": "Below 58"
+      },
+      {
+        "start": 334,
+        "end": 349,
+        "label": "GENDER",
+        "text": "Unmarried Women"
+      },
+      {
+        "start": 351,
+        "end": 359,
+        "label": "AGE",
+        "text": "Above 30"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "tfppt",
+    "name": "Training of Farmers on Pulses Production Technologies",
+    "text": "The beneficiary should be a Farmer.; The beneficiary should be a resident of Tamil Nadu.; The beneficiary should raise seed farms with Pulses crop.",
+    "entities": [
+      {
+        "start": 28,
+        "end": 34,
+        "label": "OCCUPATION",
+        "text": "Farmer"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "bpftcw",
+    "name": "Bus Passes for the Construction Workers",
+    "text": "The applicant should be a registered member under the Building and Other Construction Workers Welfare Board of U.T. Administration of Dadra and Nagar Haveli and Daman and Diu.",
+    "entities": [
+      {
+        "start": 73,
+        "end": 85,
+        "label": "OCCUPATION",
+        "text": "Construction"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "obcdssuk",
+    "name": "Other Backward Caste Dashamottar Scholarship Scheme (Starting from Class 11) - Uttarakhand",
+    "text": "The applicant must be a resident of Uttarakhand.; The applicant must belong to the Other Backward Class (OBC) category.; The applicant must be enrolled in a recognized school/educational institution in Uttarakhand.; The applicant must be studying in Class 11 or higher level course.; The applicant must possess valid documents, such as Caste Certificate, Residence Certificate, Bank Passbook, Aadhaar Card, Photograph, Educational Qualification Certificates, and Income Certificate.; The total annual income of the parents/guardians from all sources must not exceed ₹2.5 lakh.; The scholarship will be available for one year only for studying in any class.; The applicant must have a counselling certificate.",
+    "entities": [
+      {
+        "start": 83,
+        "end": 103,
+        "label": "CATEGORY",
+        "text": "Other Backward Class"
+      },
+      {
+        "start": 105,
+        "end": 108,
+        "label": "CATEGORY",
+        "text": "OBC"
+      },
+      {
+        "start": 250,
+        "end": 258,
+        "label": "EDUCATION",
+        "text": "Class 11"
+      },
+      {
+        "start": 262,
+        "end": 281,
+        "label": "EDUCATION",
+        "text": "higher level course"
+      },
+      {
+        "start": 336,
+        "end": 353,
+        "label": "REQUIREMENT",
+        "text": "Caste Certificate"
+      },
+      {
+        "start": 355,
+        "end": 376,
+        "label": "REQUIREMENT",
+        "text": "Residence Certificate"
+      },
+      {
+        "start": 378,
+        "end": 391,
+        "label": "REQUIREMENT",
+        "text": "Bank Passbook"
+      },
+      {
+        "start": 393,
+        "end": 400,
+        "label": "REQUIREMENT",
+        "text": "Aadhaar"
+      },
+      {
+        "start": 407,
+        "end": 417,
+        "label": "REQUIREMENT",
+        "text": "Photograph"
+      },
+      {
+        "start": 419,
+        "end": 457,
+        "label": "REQUIREMENT",
+        "text": "Educational Qualification Certificates"
+      },
+      {
+        "start": 463,
+        "end": 481,
+        "label": "REQUIREMENT",
+        "text": "Income Certificate"
+      },
+      {
+        "start": 567,
+        "end": 575,
+        "label": "INCOME",
+        "text": "2.5 lakh"
+      },
+      {
+        "start": 684,
+        "end": 707,
+        "label": "REQUIREMENT",
+        "text": "counselling certificate"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "iicmscc",
+    "name": "Incentive for the Intra Caste Marriage within Scheduled Caste Community",
+    "text": "The couple should belong to different sub caste of SC.; The bride and groom should be residing in Karnataka.; The family income of the applicant should not exceed ₹2,00,000/-.; The age of the bride should be between 18 to 42 years at the time of marriage.; The age of the groom should be between 21 to 45 years at the time of marriage.",
+    "entities": [
+      {
+        "start": 51,
+        "end": 53,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 164,
+        "end": 174,
+        "label": "INCOME",
+        "text": "2,00,000/-"
+      },
+      {
+        "start": 216,
+        "end": 230,
+        "label": "AGE",
+        "text": "18 to 42 years"
+      },
+      {
+        "start": 296,
+        "end": 310,
+        "label": "AGE",
+        "text": "21 to 45 years"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "wspsl",
+    "name": "Union Territory of Lakshadweep Pension Scheme for Widows",
+    "text": "The applicant should be a permanent resident of the Union Territory of Lakshadweep.; The applicant should be a widow.; The applicant should not have remarried.; The applicant should have only nominal income, not exceeding ₹1,500/- per month (₹18,000/- per annum).; The applicant should not be a beneficiary of any other similar pension scheme provided by the government.",
+    "entities": [
+      {
+        "start": 111,
+        "end": 116,
+        "label": "OCCUPATION",
+        "text": "widow"
+      },
+      {
+        "start": 243,
+        "end": 251,
+        "label": "INCOME",
+        "text": "18,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "elsbch",
+    "name": "Education Loan Scheme for Backward Classes Haryana",
+    "text": "The applicant should be between 18 to 55 years of age.; The applicant should be a permanent resident of Haryana.; The annual family income of the applicant should not exceed ₹3,00,000/- in both rural and urban areas.; The applicant should belong to Backward Classes.; The applicant should have obtained admission for any professional and technical courses approved by an appropriate agency, such as AICTE, Medical Council of India, UGC, etc., in a duly accredited/recognised institute.; The applicant should have a minimum of 50% marks in the qualifying exam, i.e., the exam whose qualification is a prerequisite for the course.; The applicant should have a Pariwar Pehchan Patra (PPP ID).",
+    "entities": [
+      {
+        "start": 32,
+        "end": 46,
+        "label": "AGE",
+        "text": "18 to 55 years"
+      },
+      {
+        "start": 175,
+        "end": 185,
+        "label": "INCOME",
+        "text": "3,00,000/-"
+      },
+      {
+        "start": 249,
+        "end": 265,
+        "label": "CATEGORY",
+        "text": "Backward Classes"
+      },
+      {
+        "start": 321,
+        "end": 355,
+        "label": "EDUCATION",
+        "text": "professional and technical courses"
+      },
+      {
+        "start": 658,
+        "end": 679,
+        "label": "REQUIREMENT",
+        "text": "Pariwar Pehchan Patra"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "rmewf-faocesm",
+    "name": "RMEWF- Financial Assistance to Orphan Children of ESM",
+    "text": "The applicant must be a legitimate offspring of an Ex-Serviceman, with details recorded in the Service Book.; The applicant must be a son below 21 years of age or an unmarried daughter.; The applicant must have lost both parents (ESM and spouse).; The application must be recommended by the respective Zila Sainik Board (ZSB).",
+    "entities": [
+      {
+        "start": 138,
+        "end": 146,
+        "label": "AGE",
+        "text": "below 21"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "bse-6c10c",
+    "name": "Bharati Scheme for Education - 6th Class to 10th Class",
+    "text": "The student and his/her parents should belong to the Brahmin community.; The student should be studying in Andhra Pradesh.; The student's parents/guardians should reside in Andhra Pradesh.; The annual family income of parents/guardians should not exceed ₹3,00,000/-.; The student under the category of orphan, differently abled (physically handicapped), or children of single parents' priority will be given.; The student should be enrolled in the Praja Sadhikara Survey (PSS).; The student should not have availed himself/ herself of any amount under any other government scheme for the same purpose.  However, students benefitting from Archaka Welfare Trust are eligible under this scheme.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 11,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 53,
+        "end": 70,
+        "label": "CATEGORY",
+        "text": "Brahmin community"
+      },
+      {
+        "start": 77,
+        "end": 84,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 128,
+        "end": 135,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 255,
+        "end": 265,
+        "label": "INCOME",
+        "text": "3,00,000/-"
+      },
+      {
+        "start": 272,
+        "end": 279,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 414,
+        "end": 421,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 448,
+        "end": 470,
+        "label": "REQUIREMENT",
+        "text": "Praja Sadhikara Survey"
+      },
+      {
+        "start": 483,
+        "end": 490,
+        "label": "OCCUPATION",
+        "text": "student"
+      },
+      {
+        "start": 612,
+        "end": 620,
+        "label": "OCCUPATION",
+        "text": "students"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "tdp-ptt",
+    "name": "Tribals Development Plan: Purchase of Tourist Taxi",
+    "text": "The applicant must belong to one of the Scheduled Tribe (ST) communities of Goa—Gawda, Velip, or Kunbi.; The applicant must be a resident of Goa.; The applicant’s annual family income must be less than ₹1,20,000/-.; The applicant must be part of a tribal household identified under the Tribals Development Plan.; The applicant’s family must fall under either:",
+    "entities": [
+      {
+        "start": 40,
+        "end": 55,
+        "label": "CATEGORY",
+        "text": "Scheduled Tribe"
+      },
+      {
+        "start": 57,
+        "end": 59,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 203,
+        "end": 213,
+        "label": "INCOME",
+        "text": "1,20,000/-"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "sogateakva",
+    "name": "Scheme of Giving Awards to Eminent Artists - Kalai Valarmani Award",
+    "text": "The applicant should be an artist.; The age of the applicant should be between 19 to 35 years.",
+    "entities": [
+      {
+        "start": 27,
+        "end": 33,
+        "label": "OCCUPATION",
+        "text": "artist"
+      },
+      {
+        "start": 79,
+        "end": 93,
+        "label": "AGE",
+        "text": "19 to 35 years"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "adtwstb",
+    "name": "Adi Dravidar and Tribal Welfare Department: Stationary-Text Books",
+    "text": "The beneficiary should be a Student.; The beneficiary should be a resident of Tamil Nadu.; The beneficiary should be enrolled in Adi Dravidar and Tribal welfare schools.; The beneficiary must be studying in any class between 1st to 12th standard.",
+    "entities": [
+      {
+        "start": 28,
+        "end": 35,
+        "label": "OCCUPATION",
+        "text": "Student"
+      },
+      {
+        "start": 117,
+        "end": 168,
+        "label": "REQUIREMENT",
+        "text": "enrolled in Adi Dravidar and Tribal welfare schools"
+      },
+      {
+        "start": 225,
+        "end": 245,
+        "label": "EDUCATION",
+        "text": "1st to 12th standard"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "tcmitfp",
+    "name": "The CM IT Fellowship Program",
+    "text": "The applicant must be an Indian National.; The applicant must hold a Domicile of Chhattisgarh.; The applicant must be upto 30 years of age as of the application deadline.; The applicant must be a graduate or postgraduate student.; The applicant must have qualified for the Graduate Aptitude Test in Engineering (GATE) in Computer Science (CS) or Data Science and Artificial Intelligence (DSAI).; The applicant must have secured a minimum CPI of 6.5 or 60% or First Class in their qualifying degree.; The applicant belonging to SC/ST/PwD categories is eligible for a relaxation of 5% marks or 0.5 CPI.; The applicant is eligible for age relaxations as per the Chhattisgarh Government reservation rules.",
+    "entities": [
+      {
+        "start": 118,
+        "end": 125,
+        "label": "AGE",
+        "text": "upto 30"
+      },
+      {
+        "start": 196,
+        "end": 204,
+        "label": "EDUCATION",
+        "text": "graduate"
+      },
+      {
+        "start": 208,
+        "end": 228,
+        "label": "EDUCATION",
+        "text": "postgraduate student"
+      },
+      {
+        "start": 273,
+        "end": 310,
+        "label": "REQUIREMENT",
+        "text": "Graduate Aptitude Test in Engineering"
+      },
+      {
+        "start": 312,
+        "end": 316,
+        "label": "REQUIREMENT",
+        "text": "GATE"
+      },
+      {
+        "start": 388,
+        "end": 392,
+        "label": "REQUIREMENT",
+        "text": "DSAI"
+      },
+      {
+        "start": 459,
+        "end": 470,
+        "label": "EDUCATION",
+        "text": "First Class"
+      },
+      {
+        "start": 491,
+        "end": 497,
+        "label": "EDUCATION",
+        "text": "degree"
+      },
+      {
+        "start": 527,
+        "end": 529,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 530,
+        "end": 532,
+        "label": "CATEGORY",
+        "text": "ST"
+      },
+      {
+        "start": 533,
+        "end": 536,
+        "label": "CATEGORY",
+        "text": "PwD"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "psgs-deg",
+    "name": "Pragati Scholarship Scheme For Girl Students (Technical Degree)",
+    "text": "The applicant must be a **Girl Student.**1. The applicant must be pursuing either **the First year of the degree course** OR **the Second year of the Degree course through lateral entry.**1. The **annual income of the family** (from all sources) must not be more than **₹ 8,00,000/- per annum** during the current financial year.1. **All eligible girls** (who submit online scholarship form) **from the following 13 Union Territories and North Eastern States** i.e. Andaman and Nicobar Islands (UT), Jammu and Kashmir (UT), Ladakh (UT), Dadra and Nagar Haveli & Daman and Diu (UT), Lakshadweep (UT), Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim & Tripura will be given a scholarship by AICTE.",
+    "entities": [
+      {
+        "start": 26,
+        "end": 30,
+        "label": "GENDER",
+        "text": "Girl"
+      },
+      {
+        "start": 106,
+        "end": 112,
+        "label": "EDUCATION",
+        "text": "degree"
+      },
+      {
+        "start": 150,
+        "end": 156,
+        "label": "EDUCATION",
+        "text": "Degree"
+      },
+      {
+        "start": 272,
+        "end": 282,
+        "label": "INCOME",
+        "text": "8,00,000/-"
+      },
+      {
+        "start": 347,
+        "end": 352,
+        "label": "GENDER",
+        "text": "girls"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "sgiavoowsc",
+    "name": "Scheme of Grant-in-Aid to Voluntary and other Organizations Working for Scheduled Castes",
+    "text": "Non-Governmental Organizations (NGOs)/Voluntary Organizations (VOs) must have maintained and operated a bank account in the name of NGOs/VOs for the last three years.; It should not operate for profit for any individual or body of individuals, except in the case of training institutions of repute.; Educationally Backward Blocks (EBBs); or; Service Deficient blocks with 40% SC population; or; Backward Districts identified by the Planning Commission or; Integrated Action Plan Districts identified by the Govt. of India.",
+    "entities": [
+      {
+        "start": 104,
+        "end": 116,
+        "label": "REQUIREMENT",
+        "text": "bank account"
+      },
+      {
+        "start": 300,
+        "end": 329,
+        "label": "CATEGORY",
+        "text": "Educationally Backward Blocks"
+      },
+      {
+        "start": 331,
+        "end": 335,
+        "label": "CATEGORY",
+        "text": "EBBs"
+      },
+      {
+        "start": 376,
+        "end": 378,
+        "label": "CATEGORY",
+        "text": "SC"
+      },
+      {
+        "start": 395,
+        "end": 403,
+        "label": "CATEGORY",
+        "text": "Backward"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "skvk2",
+    "name": "SAKSHAM - KVK 2.0",
+    "text": "The applicant must be a domicile of Gujarat.; The applicant must be minimum 14 years of age as per labour law for non-hazardous occupations.; The applicant must be maximum 59 years of age for Short Term Training.; The applicant must be maximum 65 years of age for Special Projects.; The applicant must be looking for fresh skills, reskilling, or upskilling opportunities for Short Term Training.; The applicant must be out of education, school/college dropout, or unemployed youth for Short Term Training.; The applicant must belong to marginalized, vulnerable groups requiring special attention or specific job roles for Special Projects.",
+    "entities": [
+      {
+        "start": 68,
+        "end": 78,
+        "label": "AGE",
+        "text": "minimum 14"
+      },
+      {
+        "start": 164,
+        "end": 174,
+        "label": "AGE",
+        "text": "maximum 59"
+      },
+      {
+        "start": 236,
+        "end": 246,
+        "label": "AGE",
+        "text": "maximum 65"
+      },
+      {
+        "start": 464,
+        "end": 474,
+        "label": "OCCUPATION",
+        "text": "unemployed"
+      }
+    ],
+    "reviewed": true
+  },
+  {
+    "slug": "pm-poshan",
+    "name": "PM POSHAN - Prime Minister's Overarching Scheme For Holistic Nourishment",
+    "text": "The applicant must be a citizen of India.; The applicant must be studying in a Primary or Upper Primary class (Class 1st to Class 8th) in a Government or a Government-aided school.",
+    "entities": [
+      {
+        "start": 111,
+        "end": 133,
+        "label": "EDUCATION",
+        "text": "Class 1st to Class 8th"
+      }
+    ],
+    "reviewed": true
   }
 ]

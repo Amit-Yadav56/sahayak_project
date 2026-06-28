@@ -90,6 +90,17 @@ def main():
     for d in dev_docs:
         dev_bin.add(d)
 
+    # Merge manual labels before saving — must happen before to_disk()
+    manual_path = Path("data/manual_labels.spacy")
+    if manual_path.exists():
+        manual_db = DocBin().from_disk(manual_path)
+        manual_docs = list(manual_db.get_docs(_NLP.vocab))
+        for doc in manual_docs * 5:
+            train_bin.add(doc)
+        print(f"  + {len(manual_docs)} manual labels (×5 weight) merged into train set")
+    else:
+        print("  (no manual_labels.spacy found — training on silver labels only)")
+
     TRAIN_OUT.parent.mkdir(parents=True, exist_ok=True)
     train_bin.to_disk(TRAIN_OUT)
     dev_bin.to_disk(DEV_OUT)
