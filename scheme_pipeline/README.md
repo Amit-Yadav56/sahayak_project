@@ -102,7 +102,7 @@ scheme_pipeline/
 │       ├── synthesize.py          ← synthetic training data generator
 │       ├── train.py               ← XGBoost trainer + evaluator
 │       ├── score.py               ← inference: user profile → ranked scheme list
-│       ├── eligibility_model.pkl  ← trained XGBoost model (generated)
+│       ├── model.json             ← trained XGBoost model (generated)
 │       └── __init__.py
 │
 ├── api/

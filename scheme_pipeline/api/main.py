@@ -74,19 +74,21 @@ app.add_middleware(
 _matcher: EligibilityMatcher | None = None
 _schemes: list[dict] | None = None
 
-SCHEMES_PATH = Path("data/processed/schemes_normalized.json")
-MODEL_PATH   = Path("ml/eligibility_matcher/eligibility_model.pkl")
+ROOT_DIR = Path(__file__).resolve().parents[1]
+
+SCHEMES_PATH = ROOT_DIR / "data" / "processed" / "schemes_normalized.json"
+MODEL_PATH   = ROOT_DIR / "ml" / "eligibility_matcher" / "model.json"
 
 
 def get_matcher() -> EligibilityMatcher:
     global _matcher
     if _matcher is None:
-        import pickle
         import xgboost as xgb
-        # Load via pickle (spec format) — internally wraps the xgb.Booster
-        with open(MODEL_PATH, "rb") as f:
-            booster = pickle.load(f)
-        # EligibilityMatcher expects model.json path — patch it to use our pkl booster
+        if not MODEL_PATH.exists():
+            raise RuntimeError(f"Missing XGBoost model artifact: {MODEL_PATH}")
+        booster = xgb.Booster()
+        booster.load_model(str(MODEL_PATH))
+        # EligibilityMatcher expects a loaded booster; patch it in here.
         _matcher = EligibilityMatcher.__new__(EligibilityMatcher)
         _matcher.model = booster
         _matcher.schemes = get_schemes()

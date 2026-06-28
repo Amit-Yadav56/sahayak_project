@@ -40,8 +40,10 @@ import xgboost as xgb
 from ml.eligibility_matcher.features import build_feature_vector, FEATURE_NAMES
 from ml.eligibility_matcher.synthesize import score_to_status
 
-MODEL_PATH  = Path("ml/eligibility_matcher/model.json")
-SCHEMES_PATH = Path("data/processed/schemes_normalized.json")
+ROOT_DIR = Path(__file__).resolve().parents[2]
+
+MODEL_PATH  = ROOT_DIR / "ml" / "eligibility_matcher" / "model.json"
+SCHEMES_PATH = ROOT_DIR / "data" / "processed" / "schemes_normalized.json"
 
 
 def _constraint_density(elig: dict) -> int:
