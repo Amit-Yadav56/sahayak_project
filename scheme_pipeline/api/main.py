@@ -47,6 +47,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from ml.eligibility_matcher.score import EligibilityMatcher
+from ml.semantic_search.search import SemanticSearch
 
 # ── App setup ────────────────────────────────────────────────────────────────
 
@@ -73,26 +74,19 @@ app.add_middleware(
 
 _matcher: EligibilityMatcher | None = None
 _schemes: list[dict] | None = None
+_search_engine: SemanticSearch | None = None
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 
 SCHEMES_PATH = ROOT_DIR / "data" / "processed" / "schemes_normalized.json"
 MODEL_PATH   = ROOT_DIR / "ml" / "eligibility_matcher" / "model.json"
+EMBED_PATH   = ROOT_DIR / "ml" / "semantic_search" / "scheme_embeddings.npy"
 
 
 def get_matcher() -> EligibilityMatcher:
     global _matcher
     if _matcher is None:
-        import xgboost as xgb
-        if not MODEL_PATH.exists():
-            raise RuntimeError(f"Missing XGBoost model artifact: {MODEL_PATH}")
-        booster = xgb.Booster()
-        booster.load_model(str(MODEL_PATH))
-        # EligibilityMatcher expects a loaded booster; patch it in here.
-        _matcher = EligibilityMatcher.__new__(EligibilityMatcher)
-        _matcher.model = booster
-        _matcher.schemes = get_schemes()
-        _matcher._eligibilities = [s.get("eligibility_json", {}) for s in _matcher.schemes]
+        _matcher = EligibilityMatcher()
     return _matcher
 
 
@@ -101,6 +95,18 @@ def get_schemes() -> list[dict]:
     if _schemes is None:
         _schemes = json.loads(SCHEMES_PATH.read_text(encoding="utf-8"))
     return _schemes
+
+
+def get_search_engine() -> SemanticSearch:
+    global _search_engine
+    if _search_engine is None:
+        if not EMBED_PATH.exists():
+            raise HTTPException(
+                status_code=503,
+                detail="Embedding index not found. Run `python -m ml.semantic_search.embed` first."
+            )
+        _search_engine = SemanticSearch()
+    return _search_engine
 
 
 # ── Request / Response models ─────────────────────────────────────────────────
@@ -291,6 +297,41 @@ def list_schemes(
         per_page=per_page,
         results=results[start:end],
     )
+
+
+# ── Endpoint 3: GET /api/search ──────────────────────────────────────────────
+
+@app.get(
+    "/api/search",
+    summary="Semantic search over schemes",
+    description=(
+        "Free-form natural language search using sentence embeddings + cosine "
+        "similarity. Finds semantically relevant schemes even when the query "
+        "uses different words than the scheme text.\n\n"
+        "**Example queries:**\n"
+        "- `schemes for poor farmers who lost crops in flood`\n"
+        "- `financial help for widow women`\n"
+        "- `scholarship for SC ST students`\n\n"
+        "**Requires:** run `python -m ml.semantic_search.embed` once to build "
+        "the embedding index before using this endpoint."
+    ),
+)
+def semantic_search(
+    q: str = Query(..., description="Natural language search query", min_length=3),
+    top_k: int = Query(5, ge=1, le=50, description="Number of results to return"),
+    min_score: float = Query(0.0, ge=0.0, le=1.0,
+                              description="Minimum cosine similarity score (0–1)"),
+):
+    engine = get_search_engine()
+    results = engine.query(q, top_k=top_k, min_score=min_score)
+    meta = results[0].pop("_meta", {}) if results else {}
+    return {
+        "query":      q,
+        "model":      meta.get("model", ""),
+        "elapsed_ms": meta.get("elapsed_ms", 0),
+        "returned":   len(results),
+        "results":    results,
+    }
 
 
 # ── Health check ──────────────────────────────────────────────────────────────
