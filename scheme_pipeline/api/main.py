@@ -45,7 +45,7 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-
+from ml.ner_extractor.extractor import extract_eligibility
 from ml.eligibility_matcher.score import EligibilityMatcher
 from ml.semantic_search.search import SemanticSearch
 
@@ -161,6 +161,14 @@ class SchemeListResponse(BaseModel):
     page:    int
     per_page: int
     results: list[dict]
+class ExtractCriteriaRequest(BaseModel):
+    text:       str = Field(..., min_length=10,
+                            description="Raw scheme eligibility text",
+                            example="The applicant must be female, aged between 18 and 60 years, "
+                                    "belonging to SC/ST/OBC category, with annual family income "
+                                    "below Rs 1,00,000. Must have a valid Aadhar card.")
+    state_hint: str = Field("any", description="Scheme's state, if known")
+
 
 
 # ── Endpoint 1: POST /api/match ───────────────────────────────────────────────
@@ -331,6 +339,23 @@ def semantic_search(
         "elapsed_ms": meta.get("elapsed_ms", 0),
         "returned":   len(results),
         "results":    results,
+    }
+# ── POST /extract-criteria ────────────────────────────────────────────────────
+
+@app.post("/extract-criteria",
+          summary="Extract structured eligibility JSON from raw scheme text")
+def extract_criteria(req: ExtractCriteriaRequest):
+    """
+    Used by Java's POST /api/admin/schemes/parse-url — Java fetches the
+    URL's text content, sends it here, gets back structured eligibility_json
+    to store in the DB without manual data entry.
+    """
+    t0     = time.time()
+    result = extract_eligibility(req.text, state_hint=req.state_hint)
+    return {
+        "eligibility_json": result,
+        "elapsed_ms":       round((time.time() - t0) * 1000, 1),
+        "input_length":     len(req.text),
     }
 
 
