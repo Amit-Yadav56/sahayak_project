@@ -15,8 +15,10 @@ Run:
 
 from __future__ import annotations
 
+import asyncio
 import json
 import time
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, Optional
 
@@ -30,26 +32,28 @@ from ml.eligibility_matcher.features import build_feature_vector, FEATURE_NAMES
 from ml.eligibility_matcher.synthesize import score_to_status
 from ml.ner_extractor.extractor import extract_eligibility
 
-# ── App ──────────────────────────────────────────────────────────────────────
+# ── App ──────────────────────────────────────────────────────────────────────────
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup: pre-load the sentence-transformer model and embedding index
+    # into memory when the Python server starts — not on the first user
+    # request. All subsequent /search calls will be fast (~20ms).
+    loop = asyncio.get_event_loop()
+    await loop.run_in_executor(None, _get_search)
+    yield
+    # (no shutdown cleanup needed)
+
 
 app = FastAPI(
     title="Sahayak ML Service",
     description="Internal ML inference service. Called by the Java backend.",
     version="1.0.0",
+    lifespan=lifespan,
 )
 app.add_middleware(CORSMiddleware, allow_origins=["*"],
                    allow_methods=["*"], allow_headers=["*"])
-# ── Debug middleware (temporary) ─────────────────────────────────────────────
-from fastapi import Request
 
-@app.middleware("http")
-async def log_requests(request: Request, call_next):
-    body = await request.body()
-    print(f">>> {request.method} {request.url}")
-    print(f">>> Headers: {dict(request.headers)}")
-    print(f">>> Body: {body}")
-    response = await call_next(request)
-    return response
 # ── Lazy-loaded globals (loaded once, reused across requests) ─────────────────
 
 _schemes:     list[dict] | None = None

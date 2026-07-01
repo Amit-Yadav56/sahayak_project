@@ -5,6 +5,7 @@ import com.example.demo.entity.Scheme;
 import com.example.demo.entity.User;
 import com.example.demo.entity.UserProfile;
 import com.example.demo.repository.UserProfileRepository;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.MlService;
 import com.example.demo.service.SchemeService;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -13,14 +14,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import org.springframework.security.core.Authentication;
-import com.example.demo.repository.UserRepository;
 
 @Slf4j
 @RestController
@@ -31,9 +30,9 @@ public class SchemeController {
     private final SchemeService         schemeService;
     private final MlService             mlService;
     private final UserProfileRepository profileRepository;
-    private final UserRepository userRepository;
+    private final UserRepository        userRepository;
 
-    // ── Existing endpoints (unchanged) ───────────────────────────────────────
+    // ── Existing endpoints ───────────────────────────────────────────────────
 
     @GetMapping
     public List<Scheme> getAllSchemes() {
@@ -55,7 +54,18 @@ public class SchemeController {
         return schemeService.searchSchemes(q);
     }
 
-    // ── New ML endpoints ─────────────────────────────────────────────────────
+    // ── Semantic search ───────────────────────────────────────────────────────
+
+    @GetMapping("/semantic-search")
+    public ResponseEntity<?> semanticSearch(
+            @RequestParam                       String q,
+            @RequestParam(defaultValue = "en")  String language,
+            @RequestParam(defaultValue = "10")  int    topK
+    ) {
+        return ResponseEntity.ok(schemeService.semanticSearch(q, language, topK));
+    }
+
+    // ── ML-matched schemes for logged-in user ────────────────────────────────
 
     /*
      *
@@ -98,7 +108,7 @@ public class SchemeController {
         UserProfile profile = profileRepository.findByUser(currentUser)
                 .orElseThrow(() -> new ProfileNotFoundException(
                         "No profile found for user " + currentUser.getId() +
-                                ". Complete your profile first."));
+                        ". Complete your profile first."));
 
         log.info("Matching schemes for user={} state={} caste={}",
                 currentUser.getId(),

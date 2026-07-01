@@ -3,17 +3,21 @@ package com.example.demo.service;
 import com.example.demo.dto.SchemeRequest;
 import com.example.demo.entity.Scheme;
 import com.example.demo.repository.SchemeRepository;
+import com.fasterxml.jackson.databind.JsonNode;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class SchemeService {
 
     private final SchemeRepository schemeRepository;
+    private final MlService        mlService;
 
     public List<Scheme> getAllSchemes() {
         return schemeRepository.findAll();
@@ -32,6 +36,11 @@ public class SchemeService {
     public List<Scheme> searchSchemes(String query) {
         return schemeRepository
                 .findByNameContainingIgnoreCase(query);
+    }
+
+    public JsonNode semanticSearch(String query, String language, int topK) {
+        log.info("Semantic search: query='{}' language={} topK={}", query, language, topK);
+        return mlService.searchSchemes(query, language, topK);
     }
 
     public Scheme createScheme(
@@ -69,6 +78,7 @@ public class SchemeService {
 
         return schemeRepository.save(scheme);
     }
+
     public Scheme updateScheme(
             Long id,
             SchemeRequest request
