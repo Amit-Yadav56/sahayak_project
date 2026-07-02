@@ -217,6 +217,12 @@ class SearchRequest(BaseModel):
                            description="Query language code: en / hi / ta / te / bn / ...\n"
                                        "Note: default model (all-MiniLM-L6-v2) is English-only.\n"
                                        "Switch to LaBSE in embed.py + search.py for multilingual support.")
+    #For MultoLanguage Model
+    #language: str  = Field("en", example="en",
+    #                      description="Query language code: en / hi / ta / te / bn / ...\n"
+    #                                  "Search runs on LaBSE, a cross-lingual embedding model, "
+    #                                  "so queries in Hindi/Tamil/Telugu/Kannada/etc. are matched "
+    #                                  "directly with no separate translation step.")
     top_k:    int  = Field(5, ge=1, le=50)
 
 
@@ -348,6 +354,8 @@ def search(req: SearchRequest):
     return SearchResponse(
         query      = req.query,
         language   = req.language,
+        #For MultoLanguage Model
+        #model      = meta.get("model", "LaBSE"),
         model      = meta.get("model", "all-MiniLM-L6-v2"),
         elapsed_ms = round((time.time() - t0) * 1000, 1),
         returned   = len(results),

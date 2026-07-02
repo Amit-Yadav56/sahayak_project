@@ -30,6 +30,8 @@ from pathlib import Path
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
+#for multilingual model
+#MODEL_NAME    = "LaBSE"
 MODEL_NAME    = "all-MiniLM-L6-v2"
 SCHEMES_PATH  = Path("data/processed/schemes_normalized.json")
 EMBED_OUT     = Path("ml/semantic_search/scheme_embeddings.npy")

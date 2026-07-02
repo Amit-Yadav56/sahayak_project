@@ -15,6 +15,8 @@ Usage:
 
     search = SemanticSearch()   # load once at API startup
 
+    # For multilingual support, change MODEL_NAME in embed.py + search.py to "LaBSE" and re-run embed.py
+    #results = search.query("मैं किसान हूं, 2 एकड़ जमीन, सालाना 80,000 कमाता हूं")
     results = search.query("schemes for poor farmers who lost crops in flood")
     for r in results:
         print(r["score"], r["name"])
@@ -31,6 +33,8 @@ from typing import Any
 
 import numpy as np
 
+#For multilingual model 
+#MODEL_NAME   = "LaBSE"
 MODEL_NAME   = "all-MiniLM-L6-v2"
 EMBED_PATH   = Path("ml/semantic_search/scheme_embeddings.npy")
 SLUGS_PATH   = Path("ml/semantic_search/scheme_slugs.json")
@@ -40,7 +44,9 @@ SCHEMES_PATH = Path("data/processed/schemes_normalized.json")
 class SemanticSearch:
     """
     Loads the embedding index and scheme metadata once at init, then answers
-    queries in a single matrix multiply. Typical query latency: 5–20ms.
+    queries in a single matrix multiply. Typical query latency: 5–20ms
+    (LaBSE encoding of the query itself adds a few ms more than MiniLM did,
+    since it's a larger model — still well under 100ms on CPU for one query).
     """
 
     def __init__(
@@ -82,10 +88,12 @@ class SemanticSearch:
         min_score: float = 0.0,
     ) -> list[dict[str, Any]]:
         """
-        Semantic search over all schemes.
+        Semantic search over all schemes. `text` may be in any language
+        LaBSE supports (English, Hindi, Tamil, Telugu, Kannada, etc.) —
+        no translation is applied or needed.
 
         Args:
-            text:      free-form natural language query
+            text:      free-form natural language query, (any supported language)->not for all-MiniLM-L6-v2
             top_k:     number of results to return
             min_score: minimum cosine similarity threshold (0–1)
 
@@ -152,6 +160,7 @@ if __name__ == "__main__":
     search = SemanticSearch()
     queries = [
         "schemes for poor farmers who lost crops in flood",
+        #"मैं किसान हूं, 2 एकड़ जमीन, सालाना 80,000 कमाता हूं",
         "financial help for widow women",
         "scholarship for SC ST students",
         "disability pension scheme",
