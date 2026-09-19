@@ -23,6 +23,7 @@ import argparse
 import json
 import logging
 import os
+import sys
 from pathlib import Path
 
 import psycopg2
@@ -30,6 +31,12 @@ import psycopg2.extras
 from dotenv import load_dotenv
 
 load_dotenv()
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
@@ -116,10 +123,7 @@ def prepare_row(scheme: dict) -> dict:
         "deadline":            scheme.get("deadline"),  # None is fine, column is nullable
         "is_active":           scheme.get("is_active", True),
         # Your column is TEXT, not JSONB — store a JSON *string*, not psycopg2.extras.Json
-        "eligibility_json":    psycopg2.extras.Json(
-            elig,
-            dumps=lambda obj: json.dumps(obj, ensure_ascii=False),
-        ),
+        "eligibility_json":    json.dumps(elig, ensure_ascii=False),
         "eligibility_summary": build_eligibility_summary(elig),
     }
 
@@ -130,43 +134,6 @@ def prepare_row(scheme: dict) -> dict:
 # so a SQL-level ON CONFLICT upsert isn't available unless you add one
 # (see db/schema.sql for the optional ALTER TABLE). Until then, we do the
 # existence check in Python: SELECT by name, then INSERT or UPDATE.
-
-
-def ensure_jsonb_eligibility_column(conn):
-    """Convert eligibility_json to jsonb if the table still uses text."""
-    with conn.cursor() as cur:
-        cur.execute(
-            """
-            SELECT data_type
-            FROM information_schema.columns
-            WHERE table_schema = 'public'
-              AND table_name = 'schemes'
-              AND column_name = 'eligibility_json'
-            """
-        )
-        row = cur.fetchone()
-
-        if not row:
-            raise SystemExit("Could not find public.schemes.eligibility_json")
-
-        if row["data_type"] == "jsonb":
-            return
-
-        if row["data_type"] != "text":
-            raise SystemExit(
-                f"Unsupported eligibility_json type: {row['data_type']}"
-            )
-
-        log.info("Migrating schemes.eligibility_json from text to jsonb ...")
-        cur.execute(
-            """
-            ALTER TABLE schemes
-            ALTER COLUMN eligibility_json TYPE jsonb
-            USING eligibility_json::jsonb
-            """
-        )
-        conn.commit()
-        log.info("Migration complete: schemes.eligibility_json is now jsonb")
 
 SELECT_BY_NAME_SQL = "SELECT id FROM schemes WHERE name = %(name)s LIMIT 1;"
 
@@ -265,8 +232,7 @@ def load_schemes(conn, schemes: list[dict], dry_run: bool = False) -> dict:
                 if dry_run:
                     log.info(f"[DRY RUN] Would upsert: {row['name']}")
                     log.info(f"  eligibility_summary: {row['eligibility_summary']}")
-                    elig_preview = json.dumps(row['eligibility_json'].adapted, ensure_ascii=False)
-                    log.info(f"  eligibility_json: {elig_preview[:150]}...")
+                    log.info(f"  eligibility_json: {row['eligibility_json'][:150]}...")
                     continue
 
                 _, action = upsert_one(cur, row)
@@ -301,9 +267,9 @@ def verify(conn):
         cur.execute("""
             SELECT name, ministry, eligibility_summary
             FROM schemes
-            WHERE eligibility_json @> %s
+            WHERE eligibility_json::text LIKE %s
             LIMIT 5
-        """, (psycopg2.extras.Json({"gender": "female"}),))
+        """, ('%"gender": "female"%',))
         sample = cur.fetchall()
 
     log.info(f"\n{'='*50}")
@@ -340,9 +306,6 @@ def main(reset: bool = False, dry_run: bool = False):
     log.info(f"Connected to PostgreSQL: {os.getenv('DB_NAME', 'sahayak')}@{os.getenv('DB_HOST', 'localhost')}")
 
     try:
-        if not dry_run:
-            ensure_jsonb_eligibility_column(conn)
-
         stats = load_schemes(conn, schemes, dry_run=dry_run)
         log.info(f"Done. Inserted: {stats['inserted']}, Updated: {stats['updated']}, Failed: {stats['failed']}")
 

@@ -1,0 +1,501 @@
+user_id,age,gender,state,annual_income,income_source,caste_category,disability,is_widow,education_level,has_bank_account,has_aadhar,land_ownership,has_house,children_count
+1,30,other,Madhya Pradesh,32441,unemployed,EWS,False,False,none,True,True,0.0,False,4
+2,51,other,Meghalaya,97798,labourer,General,False,False,diploma,True,True,0.0,True,3
+3,19,male,Tamil Nadu,392502,self_employed,EWS,False,False,class 12,False,True,0.0,False,0
+4,38,male,Odisha,483303,other,General,False,False,class 8,True,True,5.52,False,4
+5,58,male,Kerala,53523,other,ST,False,False,class 10,True,True,0.0,True,0
+6,74,other,Uttarakhand,627132,self_employed,SC,False,False,postgraduate,True,True,0.0,False,4
+7,52,female,Himachal Pradesh,61897,farmer,OBC,False,False,class 8,True,True,0.0,True,3
+8,67,other,Tamil Nadu,591509,other,General,False,False,class 12,False,True,0.34,True,2
+9,65,male,Mizoram,511054,unemployed,SC,False,False,diploma,False,True,0.0,False,0
+10,55,female,Madhya Pradesh,82114,farmer,OBC,False,False,class 5,False,True,2.16,False,1
+11,57,other,Meghalaya,165045,other,OBC,False,False,class 12,True,True,0.0,False,3
+12,41,other,Bihar,78454,other,OBC,False,False,class 10,True,True,0.0,False,2
+13,37,male,Goa,385503,labourer,EWS,False,False,graduate,True,True,0.0,True,3
+14,83,male,Arunachal Pradesh,15631,labourer,SC,False,False,phd,True,True,0.57,False,3
+15,21,male,Bihar,1042094,self_employed,OBC,False,False,class 10,False,False,0.0,True,3
+16,16,other,Madhya Pradesh,325298,salaried,ST,False,False,none,True,True,0.0,True,4
+17,47,other,Goa,25050,farmer,OBC,False,False,class 10,True,False,0.0,False,0
+18,28,other,Chandigarh,249879,salaried,SC,False,False,diploma,True,True,0.0,True,2
+19,1,male,Himachal Pradesh,22824,salaried,OBC,False,False,diploma,False,False,0.0,True,4
+20,84,other,West Bengal,1963,farmer,EWS,False,False,class 8,True,False,0.0,True,2
+21,27,other,Himachal Pradesh,251443,farmer,SC,False,False,graduate,False,True,0.0,True,2
+22,71,other,Tamil Nadu,139517,other,General,True,False,phd,True,True,0.0,True,0
+23,3,male,Sikkim,687566,farmer,OBC,False,False,phd,False,True,0.0,True,1
+24,23,female,Arunachal Pradesh,6274,other,SC,False,False,class 10,True,True,4.11,False,1
+25,59,female,Karnataka,91029,labourer,OBC,True,False,class 12,False,False,2.05,True,4
+26,15,female,Uttarakhand,49176,self_employed,SC,False,False,diploma,True,False,4.6,True,0
+27,49,other,Madhya Pradesh,845341,farmer,OBC,False,False,diploma,True,True,4.61,False,3
+28,14,female,Assam,242508,other,OBC,False,False,class 8,True,True,0.0,True,2
+29,0,female,Madhya Pradesh,175104,other,OBC,False,False,class 5,True,True,0.0,True,1
+30,9,female,Goa,7418,farmer,OBC,False,False,class 10,True,True,0.0,True,0
+31,29,male,Punjab,407550,labourer,EWS,True,False,class 5,True,True,0.0,False,4
+32,57,other,Assam,421858,unemployed,EWS,False,False,class 8,True,True,0.57,False,4
+33,36,female,Karnataka,20162,salaried,SC,False,False,class 5,True,True,0.0,False,0
+34,0,male,Chhattisgarh,168858,other,ST,False,True,graduate,True,False,0.99,False,3
+35,70,other,Karnataka,570233,self_employed,ST,False,True,diploma,True,True,0.0,False,1
+36,0,male,Rajasthan,26304,self_employed,ST,False,False,class 12,True,True,0.0,False,3
+37,54,female,Gujarat,450317,farmer,ST,False,False,diploma,True,True,0.0,True,0
+38,63,male,Sikkim,433040,farmer,ST,False,False,class 10,True,True,0.0,False,0
+39,14,other,Chhattisgarh,6503,self_employed,SC,False,False,class 10,True,True,0.0,True,2
+40,73,male,Sikkim,106622,unemployed,ST,False,False,none,False,True,6.48,False,3
+41,16,other,Uttarakhand,221284,unemployed,SC,False,False,postgraduate,True,True,3.82,False,0
+42,32,female,Andhra Pradesh,210905,salaried,ST,True,False,class 10,True,True,1.81,False,4
+43,50,female,Tripura,75343,self_employed,EWS,False,False,postgraduate,True,True,1.04,True,4
+44,0,other,Kerala,239811,salaried,SC,False,False,class 5,True,True,0.0,False,1
+45,27,female,Himachal Pradesh,97096,unemployed,EWS,False,False,class 5,False,True,0.0,True,4
+46,80,other,Madhya Pradesh,865201,farmer,ST,False,False,postgraduate,True,True,0.0,True,3
+47,52,female,Rajasthan,19242,unemployed,General,False,False,class 5,False,True,0.0,False,4
+48,49,female,Nagaland,597866,self_employed,SC,False,False,none,True,True,0.0,True,1
+49,21,male,Bihar,47733,self_employed,General,True,False,postgraduate,True,True,0.0,False,3
+50,34,other,Assam,222771,labourer,OBC,False,False,class 12,False,True,0.74,False,4
+51,35,female,Himachal Pradesh,108760,unemployed,ST,False,False,class 5,True,False,0.0,False,0
+52,2,other,Chhattisgarh,903474,farmer,SC,False,False,class 8,True,True,0.0,True,4
+53,63,male,Andhra Pradesh,158724,farmer,ST,False,False,diploma,True,True,0.0,True,4
+54,0,female,Odisha,87265,unemployed,General,False,False,none,True,True,0.0,True,2
+55,7,male,Chandigarh,77671,other,OBC,False,False,none,False,True,0.34,False,4
+56,100,female,Kerala,64627,other,General,True,False,class 12,True,True,0.0,True,1
+57,0,male,Rajasthan,53966,self_employed,General,False,False,phd,True,True,0.0,False,4
+58,58,other,Jharkhand,165577,self_employed,SC,False,False,diploma,False,False,0.97,False,3
+59,0,female,Rajasthan,146366,farmer,OBC,False,False,diploma,False,False,0.0,False,3
+60,53,other,Haryana,876279,salaried,General,False,False,graduate,True,False,0.0,False,3
+61,63,other,Karnataka,9139,salaried,General,False,False,class 5,True,True,0.0,False,3
+62,4,male,West Bengal,98029,self_employed,General,False,False,phd,True,True,0.38,False,3
+63,48,other,Assam,46336,self_employed,ST,False,False,none,False,True,1.58,True,2
+64,55,other,Maharashtra,71953,self_employed,SC,False,False,graduate,True,True,0.0,True,3
+65,69,male,Delhi,724447,salaried,ST,False,False,class 10,True,True,0.0,False,1
+66,83,male,Uttarakhand,92379,other,ST,False,False,class 12,True,True,3.09,False,2
+67,0,female,Chandigarh,532422,self_employed,SC,False,False,class 12,True,True,6.59,True,1
+68,72,female,Gujarat,23660,farmer,ST,False,False,class 12,True,True,0.0,True,1
+69,69,other,West Bengal,75064,self_employed,General,False,False,class 12,True,True,0.08,False,0
+70,4,other,Goa,43738,other,ST,False,False,phd,True,True,1.07,True,3
+71,36,male,Punjab,293022,labourer,OBC,False,False,class 5,False,True,0.0,False,0
+72,100,female,Madhya Pradesh,28845,unemployed,OBC,False,False,none,False,True,1.66,True,4
+73,17,male,Goa,119498,farmer,OBC,False,False,class 8,False,True,0.0,True,0
+74,41,female,Gujarat,4772,other,SC,False,False,class 5,True,True,0.0,False,0
+75,9,other,Karnataka,13300,other,EWS,False,False,none,False,True,0.0,True,3
+76,42,other,Kerala,40140,unemployed,OBC,False,False,diploma,True,True,1.41,True,0
+77,28,female,Assam,150167,self_employed,OBC,False,False,class 5,True,True,6.14,False,3
+78,67,other,Uttarakhand,402736,unemployed,OBC,False,False,phd,True,True,0.0,False,3
+79,77,female,Himachal Pradesh,108329,other,EWS,False,False,class 5,True,True,0.65,True,3
+80,80,other,Gujarat,280964,other,EWS,False,False,class 12,True,True,0.0,False,2
+81,54,male,West Bengal,250635,other,ST,False,False,none,True,True,0.0,True,1
+82,12,other,Karnataka,26635,unemployed,General,False,True,class 5,True,True,0.0,True,2
+83,15,female,Sikkim,140491,self_employed,SC,False,False,class 12,True,True,0.0,True,2
+84,33,female,Haryana,99419,labourer,General,False,False,phd,True,True,0.0,False,0
+85,6,female,Nagaland,4729,self_employed,General,False,False,graduate,True,True,0.0,True,4
+86,47,male,Karnataka,143490,self_employed,General,False,False,graduate,False,True,3.02,True,0
+87,100,female,Gujarat,129742,labourer,OBC,False,False,class 8,True,True,0.0,True,3
+88,75,female,Puducherry,285745,unemployed,EWS,False,False,diploma,True,True,0.0,True,2
+89,70,female,Madhya Pradesh,570076,other,SC,False,False,class 5,True,True,0.0,False,0
+90,74,other,Haryana,52137,farmer,EWS,False,False,diploma,False,True,0.0,True,3
+91,8,female,Uttarakhand,147021,other,SC,False,False,class 5,True,True,0.0,True,4
+92,13,other,Goa,326847,other,SC,False,False,graduate,True,True,1.64,False,2
+93,88,other,Himachal Pradesh,24528,salaried,ST,False,False,class 10,True,True,21.33,True,2
+94,0,other,Delhi,37307,labourer,General,False,False,class 8,True,True,0.0,False,1
+95,0,female,Madhya Pradesh,650202,other,EWS,False,False,class 10,True,True,0.0,True,1
+96,74,female,Meghalaya,154825,unemployed,SC,False,False,class 8,False,True,0.58,False,2
+97,67,male,Kerala,83890,unemployed,OBC,False,False,graduate,True,False,0.0,False,0
+98,8,male,Gujarat,208612,farmer,SC,False,False,diploma,False,True,3.54,False,1
+99,49,female,Jharkhand,72871,other,OBC,False,False,graduate,True,True,0.0,True,3
+100,35,female,Gujarat,125055,other,EWS,False,False,graduate,True,True,0.0,True,0
+101,9,other,Jharkhand,196360,self_employed,EWS,True,True,graduate,False,True,3.11,True,0
+102,43,male,Andhra Pradesh,11337,labourer,EWS,False,False,postgraduate,False,True,0.29,False,3
+103,31,male,Madhya Pradesh,469783,salaried,General,False,False,phd,True,True,0.0,True,0
+104,46,female,Andhra Pradesh,407963,labourer,ST,False,False,postgraduate,True,True,0.17,True,3
+105,0,female,West Bengal,32475,other,SC,True,False,postgraduate,True,True,0.0,True,3
+106,8,male,Telangana,278064,other,ST,False,False,none,True,True,0.0,True,0
+107,47,female,Uttarakhand,120662,other,EWS,False,False,diploma,True,True,0.0,False,3
+108,32,male,Haryana,6563,unemployed,OBC,False,False,class 12,True,True,0.0,False,3
+109,58,other,Tripura,176696,farmer,SC,False,False,class 12,False,False,0.0,False,1
+110,3,male,Gujarat,1262574,self_employed,OBC,False,True,phd,True,True,0.0,True,0
+111,42,other,Mizoram,174493,unemployed,ST,False,False,diploma,True,True,0.0,True,4
+112,17,female,Mizoram,174722,labourer,General,False,False,class 8,True,True,0.0,False,2
+113,4,male,Jharkhand,294266,farmer,EWS,False,False,class 8,True,True,1.96,False,2
+114,0,male,Kerala,13958,other,EWS,False,False,graduate,True,True,0.0,False,2
+115,47,female,Gujarat,22731,self_employed,General,False,False,class 10,True,True,0.0,True,2
+116,0,female,Andhra Pradesh,217069,labourer,General,False,False,class 12,True,True,5.81,False,3
+117,21,female,Maharashtra,678585,self_employed,SC,False,False,postgraduate,True,True,5.81,False,1
+118,62,other,Chhattisgarh,641985,farmer,ST,False,False,graduate,True,True,0.0,True,0
+119,43,other,Puducherry,64945,self_employed,EWS,False,False,phd,True,False,0.0,True,0
+120,77,female,Uttarakhand,46739,farmer,EWS,True,True,diploma,False,True,4.47,True,4
+121,31,other,Uttarakhand,554693,unemployed,EWS,False,False,class 12,True,True,0.0,True,3
+122,93,other,Dadra & Nagar Haveli and Daman & Diu,8102,other,ST,False,False,class 10,True,True,1.98,False,3
+123,32,male,Maharashtra,212491,salaried,General,True,False,graduate,True,True,0.0,False,0
+124,9,other,Haryana,109605,labourer,EWS,False,False,phd,True,True,0.0,False,2
+125,82,male,Kerala,98137,salaried,SC,False,False,class 10,True,True,0.0,False,2
+126,19,female,Tamil Nadu,511747,salaried,OBC,False,False,class 5,True,True,1.3,True,4
+127,90,female,Manipur,36914,labourer,EWS,False,True,phd,True,True,0.8,True,1
+128,21,female,Haryana,264530,salaried,ST,False,False,none,False,True,0.0,False,0
+129,3,male,Bihar,1760434,other,ST,False,False,class 12,False,True,0.0,True,2
+130,7,male,Odisha,571262,farmer,ST,False,False,postgraduate,True,True,0.82,True,1
+131,82,female,Andhra Pradesh,438601,other,EWS,False,False,class 8,True,False,0.97,True,2
+132,0,other,Puducherry,255205,salaried,SC,False,False,none,True,True,2.32,False,2
+133,38,female,Rajasthan,238384,self_employed,OBC,False,False,diploma,True,True,0.0,False,1
+134,77,male,Tripura,186376,unemployed,EWS,False,False,phd,False,True,0.0,True,4
+135,48,male,Punjab,687461,labourer,ST,False,False,postgraduate,True,True,0.0,True,0
+136,80,male,Uttarakhand,410895,self_employed,EWS,False,False,class 5,True,True,0.0,False,3
+137,43,other,Madhya Pradesh,1149593,self_employed,ST,False,False,graduate,True,True,0.0,False,2
+138,51,other,Karnataka,149796,farmer,OBC,False,False,class 12,True,True,0.0,True,1
+139,48,male,Goa,9824,farmer,ST,False,False,class 5,True,True,0.0,False,0
+140,52,female,Meghalaya,66754,farmer,OBC,False,False,class 12,True,False,0.0,False,2
+141,54,male,Uttarakhand,1274155,salaried,EWS,False,False,phd,False,False,0.0,False,3
+142,100,other,Haryana,143969,self_employed,EWS,False,False,class 12,True,True,0.0,False,2
+143,8,other,Jharkhand,133045,self_employed,ST,False,False,class 10,True,True,0.0,True,4
+144,20,female,Meghalaya,335955,farmer,EWS,False,False,phd,True,True,0.0,True,0
+145,16,other,Chandigarh,1939100,unemployed,ST,False,False,graduate,False,True,0.0,True,4
+146,31,female,Andhra Pradesh,31144,labourer,ST,False,False,graduate,True,False,0.0,True,4
+147,92,female,Andhra Pradesh,104949,labourer,OBC,False,False,class 10,True,True,0.0,True,3
+148,31,male,Haryana,71046,labourer,EWS,False,False,phd,False,False,0.0,False,0
+149,53,male,Madhya Pradesh,462153,farmer,OBC,False,False,postgraduate,True,True,0.0,False,3
+150,0,male,Puducherry,226135,salaried,SC,False,True,graduate,False,False,0.2,True,1
+151,27,female,Madhya Pradesh,93315,salaried,ST,False,False,postgraduate,True,False,2.3,False,0
+152,5,other,Madhya Pradesh,2848,self_employed,OBC,False,False,diploma,True,False,1.5,True,1
+153,63,female,Chhattisgarh,23177,other,EWS,False,True,diploma,True,True,3.44,False,0
+154,63,female,Rajasthan,339063,other,EWS,False,False,class 5,True,False,1.15,False,2
+155,42,male,Haryana,251364,unemployed,ST,False,False,graduate,True,True,0.0,False,2
+156,11,female,Manipur,41874,salaried,OBC,False,False,none,False,True,0.0,True,0
+157,100,other,Chandigarh,242729,farmer,ST,False,False,class 5,True,True,0.0,True,3
+158,72,male,Sikkim,212134,labourer,OBC,False,False,class 12,True,True,0.0,True,3
+159,89,female,Gujarat,255446,self_employed,EWS,False,False,class 12,True,True,0.0,True,2
+160,63,other,Chhattisgarh,43897,other,SC,False,False,diploma,True,True,0.0,False,3
+161,42,female,Telangana,82230,unemployed,ST,False,False,phd,True,True,2.6,False,1
+162,89,male,Sikkim,427267,other,ST,False,False,class 12,True,True,0.0,True,4
+163,0,other,Uttarakhand,211938,salaried,ST,False,False,phd,True,False,0.57,False,1
+164,16,female,Madhya Pradesh,1011929,farmer,ST,False,False,phd,True,True,0.0,True,2
+165,0,other,Uttarakhand,266449,farmer,EWS,False,False,class 12,True,False,5.65,True,2
+166,46,female,Rajasthan,30816,salaried,ST,False,True,class 5,True,True,3.22,False,1
+167,74,male,Punjab,120586,self_employed,ST,True,False,class 8,True,True,1.9,True,4
+168,28,other,Haryana,496220,unemployed,General,False,False,diploma,True,True,0.0,True,2
+169,76,male,Goa,106898,other,ST,False,False,class 12,False,True,0.0,True,1
+170,17,female,Uttarakhand,354699,unemployed,EWS,False,False,graduate,True,True,0.0,False,1
+171,29,female,Gujarat,289809,self_employed,SC,False,False,graduate,False,True,0.0,False,3
+172,57,male,Bihar,249997,salaried,OBC,False,False,class 12,True,True,0.0,False,4
+173,81,female,Punjab,234294,unemployed,General,False,False,graduate,True,True,0.0,True,0
+174,23,male,Karnataka,173447,labourer,General,False,False,diploma,False,True,0.0,False,1
+175,73,female,Jharkhand,189971,other,EWS,False,False,class 12,False,True,0.0,False,1
+176,36,other,Karnataka,33922,salaried,OBC,False,False,graduate,True,True,1.07,True,0
+177,20,female,Andhra Pradesh,3710,unemployed,ST,False,True,class 5,True,True,0.0,True,0
+178,100,female,Andhra Pradesh,93812,unemployed,SC,False,False,postgraduate,False,False,0.0,True,3
+179,21,female,Puducherry,0,other,ST,False,False,class 12,True,False,2.13,True,2
+180,65,female,Puducherry,388375,farmer,ST,False,False,none,True,True,0.0,False,3
+181,24,female,Madhya Pradesh,355281,labourer,ST,False,False,class 5,True,True,0.96,False,1
+182,50,other,Uttarakhand,2553,other,OBC,False,False,class 8,False,True,0.0,True,0
+183,76,other,Andhra Pradesh,121140,labourer,ST,False,False,class 5,True,True,0.0,True,0
+184,25,female,Gujarat,149629,labourer,SC,False,False,class 5,True,True,4.39,True,2
+185,64,female,Meghalaya,237132,farmer,OBC,False,True,class 5,True,True,0.0,False,3
+186,0,other,Tamil Nadu,208574,other,ST,True,False,class 8,True,True,0.0,True,1
+187,0,other,Arunachal Pradesh,342821,self_employed,General,False,False,class 10,True,True,0.0,True,4
+188,3,other,Tripura,321929,farmer,SC,False,False,diploma,True,True,0.0,True,1
+189,16,male,Kerala,101996,salaried,ST,False,False,class 5,True,True,3.92,True,1
+190,74,other,Manipur,320734,farmer,OBC,False,False,none,True,True,0.0,True,0
+191,84,female,Assam,63566,salaried,OBC,False,False,class 5,True,True,0.0,True,1
+192,52,male,Meghalaya,523874,salaried,SC,False,False,postgraduate,True,True,0.0,True,4
+193,14,male,Karnataka,395549,labourer,EWS,False,True,graduate,True,True,0.0,False,0
+194,12,other,Tripura,141613,unemployed,SC,False,False,graduate,True,True,0.0,False,0
+195,67,female,Punjab,301699,farmer,SC,False,False,phd,True,True,1.68,True,1
+196,83,female,Uttarakhand,361918,salaried,SC,False,False,class 10,True,True,0.22,True,2
+197,0,female,Odisha,1002607,self_employed,OBC,False,False,class 5,True,True,0.0,False,4
+198,47,female,Kerala,151375,labourer,General,False,True,graduate,False,True,0.0,True,0
+199,19,male,Gujarat,532244,self_employed,OBC,False,False,class 5,True,True,0.0,True,0
+200,57,male,Tamil Nadu,24121,self_employed,SC,True,True,graduate,False,True,2.3,True,1
+201,15,female,Uttar Pradesh,287898,unemployed,SC,False,False,class 5,True,True,4.32,False,4
+202,46,female,Telangana,196599,unemployed,ST,False,False,class 12,True,True,4.52,False,0
+203,41,other,West Bengal,2351555,other,OBC,False,False,phd,False,False,11.25,True,3
+204,23,male,Arunachal Pradesh,67477,salaried,SC,False,False,none,True,True,0.0,True,1
+205,39,male,Gujarat,79433,self_employed,OBC,False,True,class 10,False,True,3.24,False,0
+206,43,other,Nagaland,747485,salaried,General,False,False,diploma,True,True,0.0,True,2
+207,56,other,Bihar,808891,unemployed,SC,False,False,diploma,True,True,0.73,False,1
+208,90,other,Uttarakhand,124231,salaried,EWS,False,False,class 10,True,True,0.0,True,0
+209,13,male,Himachal Pradesh,517222,salaried,SC,False,False,class 5,True,True,0.0,True,3
+210,53,female,Jharkhand,533782,self_employed,SC,False,False,class 10,True,True,0.0,True,2
+211,10,female,Bihar,46614,unemployed,ST,False,False,class 5,True,False,0.0,False,3
+212,56,male,Maharashtra,13760,self_employed,SC,False,False,phd,True,True,0.1,False,3
+213,81,male,Puducherry,167378,unemployed,SC,False,False,class 5,True,True,0.17,False,2
+214,57,other,Madhya Pradesh,235661,self_employed,OBC,False,False,postgraduate,True,True,3.63,False,1
+215,17,female,Meghalaya,495359,unemployed,ST,False,False,none,False,True,0.0,False,3
+216,61,female,Himachal Pradesh,20561,unemployed,General,False,False,class 8,True,True,8.32,False,1
+217,83,male,Madhya Pradesh,1770951,other,EWS,False,False,class 5,True,True,0.0,False,4
+218,2,other,Arunachal Pradesh,243915,self_employed,EWS,False,False,class 5,False,True,0.67,False,2
+219,60,other,Uttarakhand,4406,self_employed,General,False,False,graduate,True,False,0.0,True,3
+220,3,female,West Bengal,425095,self_employed,SC,False,False,class 5,False,True,0.0,False,2
+221,78,other,Maharashtra,23381,self_employed,ST,False,False,phd,False,True,0.0,True,2
+222,39,other,West Bengal,634415,labourer,General,False,False,class 10,True,True,0.0,True,2
+223,22,male,Goa,83097,self_employed,ST,False,False,postgraduate,True,True,4.5,False,0
+224,21,male,Maharashtra,53346,labourer,EWS,False,False,class 10,True,True,3.03,False,0
+225,83,male,Karnataka,229787,salaried,General,False,False,class 12,True,True,0.0,True,3
+226,80,female,Himachal Pradesh,219560,salaried,General,False,False,class 12,True,True,8.91,False,2
+227,84,female,Meghalaya,52174,farmer,EWS,False,False,graduate,True,True,0.0,False,2
+228,52,female,Tripura,333645,labourer,EWS,False,False,class 10,True,True,0.0,False,2
+229,60,other,Dadra & Nagar Haveli and Daman & Diu,59951,other,General,False,False,phd,False,True,0.0,True,0
+230,64,female,Haryana,0,salaried,SC,False,False,class 5,True,False,0.0,False,0
+231,65,male,Himachal Pradesh,505288,farmer,ST,False,False,class 8,True,True,0.0,False,3
+232,31,other,Uttarakhand,59665,other,General,False,False,diploma,True,True,2.86,True,1
+233,12,male,Odisha,238290,self_employed,ST,False,False,none,True,True,0.0,False,4
+234,43,male,Puducherry,354785,farmer,SC,False,False,class 12,True,True,0.69,False,4
+235,36,other,Haryana,1619269,salaried,SC,False,False,class 8,False,False,0.0,True,1
+236,76,other,Tripura,46276,farmer,SC,False,False,class 12,False,True,0.0,True,0
+237,64,male,Maharashtra,237746,other,ST,True,True,graduate,True,True,1.86,True,0
+238,16,female,Haryana,30263,labourer,General,False,False,phd,False,True,0.0,True,4
+239,89,female,Gujarat,100344,farmer,General,False,False,postgraduate,True,True,0.0,False,0
+240,59,female,Tamil Nadu,76673,farmer,General,False,False,diploma,False,True,0.0,True,0
+241,85,other,Delhi,46736,unemployed,SC,False,False,class 5,True,True,1.02,True,3
+242,84,male,Nagaland,29993,self_employed,General,False,False,postgraduate,False,True,0.96,True,0
+243,60,female,Haryana,35951,farmer,ST,False,False,diploma,True,False,0.0,False,4
+244,86,female,Tamil Nadu,183023,other,EWS,False,False,diploma,True,True,3.5,False,4
+245,74,female,Gujarat,572901,self_employed,OBC,False,False,diploma,False,True,2.06,True,1
+246,59,other,West Bengal,178315,farmer,ST,False,False,none,True,True,0.0,True,0
+247,72,male,Andhra Pradesh,265760,farmer,ST,False,False,postgraduate,True,True,0.0,False,2
+248,36,female,Karnataka,131616,salaried,SC,False,False,none,False,True,0.0,False,3
+249,20,male,Tamil Nadu,62307,labourer,ST,False,False,class 5,False,True,0.0,False,0
+250,1,female,Goa,1304,self_employed,General,False,False,postgraduate,False,True,0.0,False,1
+251,12,other,Gujarat,275297,self_employed,SC,False,False,class 10,True,False,0.0,True,1
+252,25,female,Tripura,0,other,EWS,False,False,class 10,True,True,0.85,False,1
+253,0,female,Tamil Nadu,247852,other,EWS,False,False,phd,True,True,0.0,False,0
+254,0,other,Bihar,17480,salaried,SC,False,False,class 8,False,True,2.8,True,3
+255,87,other,Manipur,206318,self_employed,OBC,False,False,class 12,True,True,0.0,True,2
+256,40,female,Meghalaya,531557,unemployed,SC,False,False,class 10,False,False,0.39,False,1
+257,16,female,Jharkhand,10370,labourer,SC,False,False,class 12,True,True,0.0,True,2
+258,81,other,Haryana,463100,unemployed,SC,False,False,diploma,True,False,0.0,False,1
+259,8,female,Delhi,28935,labourer,OBC,False,False,diploma,True,True,0.0,False,4
+260,19,female,Sikkim,752540,salaried,OBC,False,False,class 5,True,True,4.85,False,2
+261,58,female,Andhra Pradesh,11210,farmer,OBC,False,False,phd,True,True,1.99,True,3
+262,56,other,Meghalaya,632691,farmer,ST,False,False,class 8,True,True,0.15,True,2
+263,69,female,Assam,147322,salaried,ST,False,True,class 5,True,True,0.0,False,4
+264,10,female,West Bengal,657938,salaried,General,False,False,class 12,False,True,0.0,False,3
+265,0,male,Odisha,412018,other,EWS,False,False,diploma,False,True,0.0,True,0
+266,0,female,Chhattisgarh,70736,other,SC,False,False,class 8,True,True,0.0,True,1
+267,71,female,West Bengal,258680,salaried,General,False,False,postgraduate,False,True,0.0,True,2
+268,41,female,Sikkim,149753,unemployed,EWS,False,False,diploma,False,False,0.75,False,3
+269,18,other,Punjab,330101,salaried,ST,False,False,class 5,True,True,0.0,False,1
+270,62,other,Delhi,652352,farmer,General,False,False,none,False,True,0.0,True,0
+271,70,other,Odisha,447759,labourer,SC,False,False,class 12,True,True,0.9,True,1
+272,18,female,Chhattisgarh,43357,labourer,EWS,False,False,postgraduate,False,True,0.0,True,2
+273,19,other,Punjab,69494,self_employed,SC,False,False,none,False,True,0.0,False,2
+274,3,female,Goa,136379,self_employed,General,False,False,class 10,True,True,0.0,True,3
+275,20,male,Maharashtra,173891,other,OBC,False,False,class 8,True,True,0.0,True,1
+276,15,female,Maharashtra,281159,other,ST,False,False,none,True,True,0.0,True,4
+277,19,male,Himachal Pradesh,45482,unemployed,OBC,False,False,none,False,True,0.0,False,1
+278,61,female,Goa,46753,unemployed,ST,False,False,class 8,True,True,2.31,False,4
+279,22,male,Mizoram,221890,labourer,EWS,False,False,class 8,True,True,3.06,False,0
+280,46,male,Delhi,696789,other,EWS,False,False,phd,True,False,0.0,True,3
+281,62,other,Madhya Pradesh,257492,self_employed,ST,False,False,class 5,True,False,0.0,True,0
+282,0,other,Andhra Pradesh,2166,self_employed,OBC,False,False,class 8,True,True,1.54,False,4
+283,51,male,Haryana,133279,unemployed,EWS,False,False,class 12,False,True,0.0,True,1
+284,58,other,Maharashtra,745187,salaried,General,False,False,none,True,False,0.19,True,4
+285,32,other,Odisha,11545,unemployed,ST,True,False,none,False,True,0.0,True,1
+286,69,male,Goa,459686,labourer,EWS,False,False,none,True,True,0.0,True,2
+287,0,other,Jharkhand,4645,salaried,General,False,False,phd,False,True,0.0,True,4
+288,64,female,Gujarat,256633,unemployed,SC,False,False,class 5,True,True,1.44,True,4
+289,2,female,Punjab,440860,other,SC,False,False,none,True,True,0.0,False,1
+290,53,female,Tripura,181678,labourer,General,False,False,graduate,True,True,5.36,True,2
+291,35,male,Haryana,734923,labourer,OBC,False,False,class 12,True,True,1.93,True,0
+292,87,other,Meghalaya,169645,farmer,General,False,False,diploma,True,True,0.0,False,2
+293,47,other,Rajasthan,98662,farmer,OBC,False,False,graduate,True,True,0.0,True,1
+294,90,other,Gujarat,154079,self_employed,General,False,False,diploma,True,False,0.61,True,4
+295,10,other,Rajasthan,418534,labourer,ST,False,False,class 10,False,True,0.0,False,3
+296,35,other,Puducherry,48596,self_employed,General,False,False,phd,True,True,0.0,True,4
+297,30,female,Punjab,194188,salaried,General,False,False,diploma,True,False,0.04,True,4
+298,23,other,West Bengal,314202,salaried,OBC,False,False,phd,True,True,0.0,True,2
+299,19,male,Assam,255816,unemployed,SC,False,False,class 5,True,True,0.0,False,2
+300,0,female,Kerala,259544,labourer,EWS,True,False,none,True,True,2.72,False,1
+301,100,female,Himachal Pradesh,238509,farmer,General,False,False,class 8,True,False,0.0,True,2
+302,17,other,Uttarakhand,455840,salaried,General,False,False,postgraduate,False,True,1.18,False,4
+303,82,female,Arunachal Pradesh,299126,other,EWS,False,False,class 12,False,True,0.19,True,3
+304,78,male,Gujarat,126425,other,ST,False,False,postgraduate,True,True,0.0,False,0
+305,37,female,Odisha,641533,labourer,ST,False,False,graduate,False,True,1.96,False,4
+306,32,female,Rajasthan,62476,salaried,General,False,False,postgraduate,True,True,0.0,True,0
+307,0,other,Uttarakhand,6713,labourer,General,False,False,none,True,True,0.0,True,2
+308,60,other,Madhya Pradesh,391863,labourer,SC,False,True,graduate,True,True,3.68,False,0
+309,32,female,Karnataka,368754,farmer,ST,False,False,class 5,True,False,0.0,False,2
+310,26,other,Tamil Nadu,0,salaried,EWS,False,False,class 12,True,False,0.0,True,0
+311,42,male,Chhattisgarh,45788,labourer,SC,False,True,none,True,True,0.0,True,0
+312,76,other,Puducherry,18579,labourer,SC,False,False,class 5,True,True,0.0,False,2
+313,3,other,Kerala,118610,self_employed,OBC,False,False,phd,True,True,0.41,True,3
+314,77,other,Rajasthan,43690,salaried,EWS,False,False,postgraduate,True,True,0.0,True,0
+315,31,female,Mizoram,319139,unemployed,EWS,False,False,phd,True,True,0.0,True,0
+316,6,male,Maharashtra,49198,labourer,General,False,False,graduate,True,True,0.0,True,2
+317,10,male,Puducherry,665569,farmer,OBC,False,False,none,True,True,0.0,False,0
+318,62,female,Tamil Nadu,24341,farmer,OBC,False,False,phd,True,True,0.0,False,1
+319,54,other,Telangana,27876,other,EWS,False,False,class 5,True,True,0.0,True,1
+320,57,female,Andhra Pradesh,581937,self_employed,EWS,False,False,graduate,False,True,1.58,True,4
+321,0,female,Goa,193232,farmer,General,False,False,class 12,True,False,0.76,False,2
+322,0,male,Gujarat,126098,labourer,General,False,False,diploma,False,True,0.71,False,4
+323,42,female,Mizoram,47458,unemployed,EWS,False,False,none,True,True,0.12,False,2
+324,84,male,Puducherry,413115,other,EWS,False,False,class 12,True,True,0.0,True,1
+325,0,other,Chhattisgarh,1781923,unemployed,ST,False,False,graduate,True,True,0.17,False,0
+326,71,other,Haryana,41908,unemployed,OBC,False,False,graduate,True,True,0.0,False,1
+327,56,female,Madhya Pradesh,117207,farmer,EWS,False,False,graduate,True,True,0.0,False,2
+328,79,female,Uttarakhand,243998,labourer,ST,False,False,diploma,True,True,2.69,True,4
+329,37,male,West Bengal,105121,farmer,General,False,False,phd,True,True,0.0,False,4
+330,86,male,Uttarakhand,118144,farmer,EWS,False,False,class 12,True,True,0.98,True,2
+331,70,male,Tamil Nadu,1170515,salaried,EWS,False,False,phd,True,True,0.0,False,0
+332,0,other,Bihar,109121,labourer,ST,False,True,diploma,True,True,0.0,False,2
+333,50,male,Karnataka,721211,self_employed,SC,False,False,class 5,True,True,0.0,False,1
+334,89,other,Gujarat,1072382,labourer,ST,False,False,class 10,False,True,0.0,False,1
+335,19,other,Andhra Pradesh,675877,unemployed,OBC,True,False,class 5,True,True,0.06,True,3
+336,33,female,Odisha,402212,labourer,SC,False,True,class 12,True,True,0.0,True,0
+337,27,female,Tamil Nadu,43191,other,EWS,False,False,graduate,True,True,0.07,False,0
+338,29,other,Meghalaya,278182,labourer,OBC,False,False,postgraduate,False,True,0.0,True,1
+339,71,female,Manipur,382105,other,ST,False,False,phd,True,False,0.0,False,3
+340,6,male,Manipur,182817,self_employed,ST,True,False,none,True,True,0.0,False,2
+341,50,female,Delhi,284903,labourer,General,False,False,postgraduate,True,True,1.76,False,4
+342,31,female,Delhi,267710,self_employed,OBC,False,False,diploma,True,False,0.0,False,0
+343,42,female,Rajasthan,301595,self_employed,General,False,False,phd,True,True,0.0,True,1
+344,23,male,Jammu and Kashmir,59120,salaried,General,False,False,postgraduate,True,True,0.0,False,0
+345,17,female,Arunachal Pradesh,580158,farmer,EWS,False,False,postgraduate,True,True,0.0,True,0
+346,0,female,Gujarat,523323,farmer,General,False,False,none,True,True,0.0,False,2
+347,20,female,Goa,1521841,other,OBC,False,False,phd,True,True,0.0,False,0
+348,71,female,Rajasthan,556045,labourer,General,False,False,class 12,True,True,0.47,True,4
+349,62,other,Assam,291712,salaried,SC,False,False,diploma,False,True,0.0,False,3
+350,79,male,Gujarat,308253,self_employed,OBC,False,False,class 5,True,True,0.0,True,0
+351,0,other,Tripura,71605,salaried,OBC,False,False,class 5,True,True,0.0,True,2
+352,0,male,Haryana,120373,self_employed,SC,False,False,class 8,True,True,0.0,False,2
+353,53,other,West Bengal,14413,other,EWS,False,False,phd,True,True,0.0,False,2
+354,36,male,Puducherry,103558,labourer,ST,False,False,graduate,True,True,0.0,True,2
+355,0,male,Madhya Pradesh,206182,salaried,OBC,False,False,class 12,True,True,0.45,True,4
+356,65,male,Manipur,52745,salaried,ST,False,False,class 8,False,True,0.0,False,1
+357,59,female,Tamil Nadu,312659,farmer,EWS,True,False,class 5,True,False,2.91,False,0
+358,82,male,West Bengal,96739,salaried,OBC,False,False,class 5,True,True,6.35,False,0
+359,7,other,Tamil Nadu,488896,farmer,EWS,False,False,diploma,True,True,4.67,True,3
+360,26,female,Delhi,59163,other,EWS,True,False,diploma,True,True,0.0,False,4
+361,60,other,Tamil Nadu,35331,other,ST,False,False,postgraduate,True,False,4.52,True,2
+362,62,female,Uttarakhand,181147,farmer,General,False,False,postgraduate,False,True,0.0,False,4
+363,18,other,Jharkhand,478007,other,SC,False,False,class 12,True,True,0.0,False,4
+364,50,male,Assam,104149,self_employed,EWS,False,False,diploma,True,True,0.0,True,4
+365,8,male,Puducherry,517830,self_employed,OBC,False,False,class 5,True,True,0.0,True,0
+366,16,male,Sikkim,654805,labourer,General,False,False,class 12,True,True,2.29,True,4
+367,56,other,Madhya Pradesh,1012538,unemployed,SC,False,False,graduate,False,False,4.63,False,0
+368,46,male,Karnataka,493766,unemployed,General,False,False,diploma,True,True,0.0,True,1
+369,0,female,Jharkhand,549704,other,OBC,False,False,none,True,True,0.0,True,3
+370,11,other,Tripura,491878,unemployed,ST,False,False,class 8,True,True,0.0,True,1
+371,50,other,West Bengal,81050,unemployed,EWS,False,False,none,False,True,0.0,True,3
+372,36,other,Nagaland,0,farmer,SC,False,False,class 5,True,True,0.0,False,4
+373,23,male,Haryana,701728,self_employed,EWS,False,False,postgraduate,True,True,0.0,False,2
+374,18,female,Tamil Nadu,389453,other,EWS,False,False,class 8,True,True,2.67,True,3
+375,0,male,Goa,752070,salaried,OBC,False,False,class 12,True,True,1.79,True,3
+376,34,other,Arunachal Pradesh,67360,farmer,OBC,False,False,class 5,False,True,0.0,False,3
+377,58,female,Telangana,981,farmer,EWS,False,False,class 5,True,True,0.0,True,4
+378,13,female,Gujarat,91397,salaried,EWS,False,False,postgraduate,True,True,0.0,False,0
+379,56,other,Andhra Pradesh,625387,farmer,SC,False,False,graduate,True,True,2.23,False,4
+380,24,female,Mizoram,198304,self_employed,General,True,False,class 5,True,True,0.0,True,0
+381,8,other,Goa,267218,other,OBC,False,False,class 5,False,True,0.0,False,4
+382,90,male,Sikkim,73034,other,ST,False,False,class 12,False,True,0.0,False,2
+383,36,male,Uttarakhand,120640,salaried,SC,False,False,class 5,True,False,0.0,True,3
+384,37,other,Tamil Nadu,33698,farmer,ST,False,False,class 12,False,True,0.0,False,0
+385,35,male,Chhattisgarh,301039,other,ST,True,False,postgraduate,True,True,0.0,False,0
+386,9,female,West Bengal,924749,unemployed,ST,False,False,diploma,True,True,11.63,False,2
+387,44,male,Puducherry,459998,unemployed,SC,False,True,graduate,True,True,0.0,True,2
+388,0,male,Chhattisgarh,10905,labourer,General,False,False,class 5,False,True,0.0,False,3
+389,7,male,Puducherry,123619,labourer,General,False,False,phd,True,True,0.0,True,4
+390,5,other,Haryana,38168,unemployed,General,False,True,class 8,True,True,0.0,False,0
+391,76,male,Tamil Nadu,425662,unemployed,General,False,False,class 10,True,True,0.0,False,2
+392,74,other,Meghalaya,36930,labourer,OBC,True,False,class 5,True,True,0.92,True,1
+393,91,other,Gujarat,141544,self_employed,OBC,False,False,none,True,True,0.0,False,3
+394,27,male,Punjab,255291,labourer,EWS,False,False,none,True,True,0.0,True,2
+395,76,other,Himachal Pradesh,80614,farmer,General,False,False,phd,True,True,0.0,True,0
+396,76,female,Uttarakhand,206456,farmer,OBC,False,False,class 12,True,True,0.0,False,3
+397,90,male,Andhra Pradesh,776526,farmer,OBC,False,False,class 5,True,True,0.0,False,3
+398,42,male,Karnataka,377370,other,SC,False,False,class 10,True,True,0.0,True,3
+399,17,female,Goa,43995,labourer,OBC,False,False,none,True,True,3.82,True,1
+400,20,female,Delhi,277626,labourer,EWS,False,False,phd,False,True,0.0,True,1
+401,36,male,Karnataka,327349,unemployed,OBC,False,False,class 8,False,False,0.0,True,3
+402,0,other,Tamil Nadu,516599,farmer,ST,False,False,none,True,True,0.89,True,0
+403,27,female,Manipur,52950,unemployed,ST,False,True,postgraduate,True,True,0.0,True,2
+404,1,other,Himachal Pradesh,18330,self_employed,SC,True,False,phd,True,True,0.0,False,2
+405,63,male,Gujarat,35286,labourer,SC,False,False,class 5,True,True,0.82,False,3
+406,90,male,Andhra Pradesh,349767,salaried,OBC,False,False,graduate,True,True,0.0,True,4
+407,26,other,Punjab,340248,unemployed,EWS,False,False,class 5,True,False,0.99,True,0
+408,49,male,Gujarat,623815,salaried,EWS,False,False,phd,False,True,0.0,False,0
+409,48,male,Bihar,616234,salaried,OBC,False,False,diploma,True,True,0.0,False,3
+410,59,female,Meghalaya,77158,farmer,SC,False,False,class 12,True,True,0.0,False,2
+411,89,other,Karnataka,395525,salaried,OBC,False,False,postgraduate,True,True,0.0,True,2
+412,16,female,Kerala,232871,farmer,OBC,False,False,graduate,False,True,0.0,False,1
+413,70,other,Haryana,100597,unemployed,SC,False,False,postgraduate,True,True,0.0,True,4
+414,0,female,West Bengal,132666,other,SC,False,False,phd,True,False,0.05,False,3
+415,51,male,Goa,168564,farmer,EWS,False,False,diploma,True,True,0.0,True,0
+416,74,female,Odisha,1138587,other,EWS,False,False,graduate,False,True,0.0,False,3
+417,21,male,Gujarat,353711,unemployed,SC,False,False,class 5,False,True,0.0,True,2
+418,0,male,Gujarat,511629,self_employed,SC,False,True,class 12,False,True,0.0,True,0
+419,59,other,Sikkim,191905,self_employed,SC,False,False,class 10,True,True,0.0,False,4
+420,83,other,Mizoram,6890,unemployed,ST,True,False,none,False,True,0.77,False,1
+421,45,female,Puducherry,134431,salaried,SC,False,False,class 5,True,True,0.2,False,4
+422,88,female,Tamil Nadu,79177,salaried,SC,False,False,none,True,True,0.0,True,1
+423,0,other,Tripura,285131,unemployed,EWS,False,False,class 5,True,False,0.28,True,2
+424,18,female,Himachal Pradesh,551197,salaried,EWS,False,False,class 12,True,True,3.89,True,1
+425,33,male,Madhya Pradesh,305538,farmer,General,False,False,graduate,True,True,0.0,False,0
+426,30,female,Sikkim,13273,farmer,SC,False,False,class 5,False,True,0.0,True,2
+427,83,other,Meghalaya,128238,other,OBC,False,False,phd,True,True,0.0,True,1
+428,22,other,Chandigarh,1084,unemployed,General,False,False,postgraduate,True,True,0.0,False,1
+429,55,male,Tamil Nadu,180515,salaried,ST,False,False,class 5,True,True,0.0,True,0
+430,0,male,Goa,145733,other,ST,False,False,postgraduate,True,True,0.0,True,0
+431,48,male,Sikkim,3217,self_employed,ST,False,False,class 5,True,True,0.0,False,1
+432,42,female,Madhya Pradesh,39293,other,ST,False,False,class 12,False,True,0.0,True,4
+433,66,female,Tamil Nadu,39858,self_employed,ST,False,False,class 8,True,True,0.0,True,0
+434,6,female,Gujarat,49723,farmer,EWS,False,False,phd,False,True,2.17,True,2
+435,63,male,Gujarat,1403695,salaried,General,False,False,postgraduate,True,True,0.0,False,2
+436,0,male,Haryana,112390,farmer,ST,False,False,postgraduate,True,True,0.0,True,1
+437,30,female,West Bengal,287868,farmer,SC,True,False,class 8,False,True,0.0,True,2
+438,82,male,Bihar,132654,labourer,SC,False,False,class 12,True,False,0.73,True,0
+439,0,other,Kerala,216933,farmer,ST,False,False,none,False,True,0.0,False,3
+440,27,female,Bihar,171657,salaried,SC,False,False,class 10,True,True,0.0,False,4
+441,52,male,Rajasthan,105856,labourer,EWS,False,False,class 5,True,True,0.0,True,4
+442,51,other,Assam,520736,other,EWS,False,False,class 10,True,True,0.0,False,4
+443,81,other,Chhattisgarh,181533,other,OBC,False,False,postgraduate,True,True,0.0,False,3
+444,8,other,Rajasthan,55988,other,ST,False,False,class 12,False,True,0.0,False,1
+445,57,female,Gujarat,139824,labourer,EWS,False,False,class 10,True,True,0.0,True,3
+446,5,male,Gujarat,43397,salaried,OBC,False,False,class 8,True,True,0.0,False,0
+447,19,female,Delhi,605609,salaried,ST,False,False,class 5,True,True,0.0,True,4
+448,67,other,Kerala,441496,farmer,EWS,False,False,class 5,False,True,0.0,False,1
+449,54,female,Uttarakhand,173664,self_employed,SC,False,False,class 5,True,True,0.0,False,1
+450,49,female,Delhi,516723,farmer,General,False,False,none,True,True,1.61,True,2
+451,38,male,Chandigarh,721681,salaried,ST,False,False,class 10,True,False,1.16,True,3
+452,73,male,Karnataka,519817,self_employed,ST,False,False,diploma,True,False,0.0,False,2
+453,0,female,Puducherry,118699,other,General,False,False,postgraduate,False,True,0.0,False,2
+454,62,male,Nagaland,86146,unemployed,OBC,False,False,diploma,True,False,0.38,False,2
+455,15,female,Rajasthan,868804,farmer,EWS,False,False,class 10,False,False,2.42,True,3
+456,20,male,Chhattisgarh,792717,other,OBC,False,False,postgraduate,False,True,0.45,False,2
+457,49,male,Goa,141104,salaried,OBC,False,False,class 10,True,True,0.69,True,4
+458,48,other,Madhya Pradesh,288214,labourer,ST,True,False,graduate,True,True,0.0,False,2
+459,46,male,Odisha,16055,salaried,OBC,False,False,none,True,True,0.0,False,2
+460,72,male,Bihar,217165,salaried,SC,False,False,class 8,True,True,0.0,True,2
+461,64,female,West Bengal,344406,salaried,ST,False,False,class 12,True,True,2.67,True,1
+462,85,other,Maharashtra,400144,labourer,General,False,False,postgraduate,True,True,0.0,False,3
+463,81,female,Jharkhand,203766,farmer,OBC,False,False,class 12,True,True,0.0,True,4
+464,36,male,Himachal Pradesh,223974,farmer,EWS,False,False,postgraduate,True,False,2.29,False,3
+465,100,male,Sikkim,8789,self_employed,ST,False,False,class 12,True,True,0.0,False,3
+466,73,male,Arunachal Pradesh,59363,salaried,General,False,False,class 5,True,True,0.59,True,3
+467,14,male,Mizoram,288055,other,SC,False,False,class 12,True,True,0.0,True,4
+468,88,male,Andaman and Nicobar Islands,535231,self_employed,EWS,False,False,postgraduate,True,True,1.1,True,1
+469,12,male,Sikkim,180048,other,ST,False,False,postgraduate,True,True,1.26,True,3
+470,89,male,Rajasthan,222129,unemployed,SC,False,False,none,True,True,0.0,True,4
+471,90,other,Andhra Pradesh,25592,other,EWS,False,False,class 8,False,True,1.08,False,2
+472,58,other,Chandigarh,412349,labourer,SC,False,False,class 5,True,True,0.0,True,4
+473,51,female,Manipur,184946,self_employed,ST,True,False,diploma,True,False,0.0,False,0
+474,49,male,Maharashtra,35605,farmer,General,False,False,class 8,True,True,0.0,False,1
+475,0,male,Assam,829100,labourer,General,False,False,postgraduate,False,True,0.0,False,1
+476,37,male,Delhi,67231,other,General,False,False,graduate,False,True,0.0,False,2
+477,0,other,Madhya Pradesh,821309,farmer,ST,True,False,diploma,True,True,0.0,False,0
+478,83,female,Gujarat,148699,other,ST,False,False,diploma,True,True,0.0,False,4
+479,39,female,Mizoram,385115,other,ST,False,False,diploma,False,True,0.0,False,2
+480,17,male,Haryana,55624,self_employed,EWS,False,False,postgraduate,True,True,0.04,False,2
+481,62,male,West Bengal,60710,unemployed,SC,False,False,phd,True,True,0.0,True,0
+482,67,other,Chandigarh,278121,self_employed,General,False,False,class 5,False,True,0.0,False,0
+483,79,male,Goa,412398,salaried,ST,False,False,phd,True,False,0.9,False,0
+484,50,female,Haryana,439644,salaried,OBC,False,False,class 8,True,True,0.0,True,1
+485,68,female,Arunachal Pradesh,386869,self_employed,OBC,False,False,phd,False,True,0.31,True,4
+486,0,male,Sikkim,170786,other,ST,False,False,none,False,False,0.0,False,2
+487,100,other,Gujarat,15623,salaried,SC,False,False,class 8,True,True,1.57,False,3
+488,84,female,Madhya Pradesh,373358,salaried,SC,True,False,class 8,True,True,1.43,True,2
+489,0,other,Himachal Pradesh,3894,farmer,SC,True,False,class 12,True,True,2.11,True,2
+490,59,female,Chhattisgarh,1017909,other,EWS,False,False,class 10,True,True,0.0,False,1
+491,20,male,Telangana,705441,self_employed,OBC,False,False,graduate,False,True,4.39,True,3
+492,61,other,Himachal Pradesh,154627,self_employed,EWS,False,False,postgraduate,True,False,0.0,False,3
+493,74,male,Tamil Nadu,1264577,other,EWS,False,False,postgraduate,True,True,0.0,False,0
+494,14,other,West Bengal,49924,salaried,EWS,False,False,class 8,True,True,4.49,False,1
+495,63,male,Madhya Pradesh,32620,self_employed,SC,False,False,class 12,True,False,0.0,True,4
+496,65,other,Sikkim,154480,other,ST,False,False,graduate,True,False,0.0,True,3
+497,22,other,Jharkhand,6279,other,SC,False,False,class 10,False,True,0.0,False,4
+498,65,male,Bihar,32038,salaried,EWS,False,False,class 10,False,True,0.0,True,4
+499,56,male,Madhya Pradesh,202871,labourer,General,False,False,phd,True,True,0.21,True,1
+500,19,female,Punjab,340528,salaried,General,False,False,none,True,True,4.47,True,0

@@ -18,11 +18,18 @@ Output: data/raw/kaggle/<dataset_name>/  (extracted CSV files)
 import os
 import logging
 import zipfile
+import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
 
 load_dotenv()
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
@@ -75,7 +82,7 @@ def download_dataset(slug: str, name: str) -> Path:
     dest = OUTPUT_DIR / name
     dest.mkdir(parents=True, exist_ok=True)
 
-    log.info(f"Downloading Kaggle dataset: {slug} → {dest}")
+    log.info(f"Downloading Kaggle dataset: {slug} -> {dest}")
     kaggle.api.dataset_download_files(
         slug,
         path=str(dest),

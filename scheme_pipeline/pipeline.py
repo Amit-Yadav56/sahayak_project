@@ -15,21 +15,26 @@ import argparse
 import logging
 import sys
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler("pipeline.log"),
+        logging.FileHandler("pipeline.log", encoding="utf-8"),
     ],
 )
 log = logging.getLogger("pipeline")
 
 
 def step_scrape(max_schemes: int = None):
-    log.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    log.info("STEP 1 — Scraping data sources")
-    log.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    log.info("---------------------------------------------------")
+    log.info("STEP 1 - Scraping data sources")
+    log.info("---------------------------------------------------")
 
     # 1a. myscheme.gov.in
     try:
@@ -39,7 +44,7 @@ def step_scrape(max_schemes: int = None):
         schemes = scrape(max_schemes=max_schemes)
         out = Path("data/raw/myscheme_raw.json")
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(schemes, indent=2, ensure_ascii=False))
+        out.write_text(json.dumps(schemes, indent=2, ensure_ascii=False), encoding="utf-8")
         log.info(f"myscheme: saved {len(schemes)} schemes")
     except Exception as e:
         log.error(f"myscheme scrape failed: {e}")
@@ -67,17 +72,17 @@ def step_scrape(max_schemes: int = None):
 
 
 def step_parse():
-    log.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    log.info("STEP 2 — Parsing & normalizing")
-    log.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    log.info("---------------------------------------------------")
+    log.info("STEP 2 - Parsing & normalizing")
+    log.info("---------------------------------------------------")
     from parsers.normalize import run
     run()
 
 
 def step_load(reset: bool = False):
-    log.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    log.info("STEP 3 — Loading into PostgreSQL")
-    log.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    log.info("---------------------------------------------------")
+    log.info("STEP 3 - Loading into PostgreSQL")
+    log.info("---------------------------------------------------")
     from db.loader import main
     main(reset=reset)
 

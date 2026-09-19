@@ -1,8 +1,9 @@
 # Scheme Pipeline
 
 Scrapes Indian government schemes from myscheme.gov.in, data.gov.in, and Kaggle,
-normalizes eligibility data into a structured JSON format, and loads everything
-into PostgreSQL.
+normalizes eligibility data into a structured JSON format using a rule-based +
+trainable-NER extractor, loads everything into PostgreSQL, and serves a FastAPI
+ML service that the Java Spring Boot backend calls internally.
 
 ---
 
@@ -17,6 +18,13 @@ pip install -r requirements.txt
 If you are installing on Python 3.14, make sure pip is pulling a recent pandas
 release. Older pandas pins can force a NumPy source build on Windows when no
 compatible wheel is available.
+
+`ml/ner_extractor`, `ml/eligibility_matcher`, and `ml/semantic_search`
+additionally need `spacy`, `xgboost`, `scikit-learn`, and
+`sentence-transformers` (all in `requirements.txt`). No pretrained model
+downloads are required for the rule-based extractor or XGBoost — both are
+trained from scratch on this project's own data. `sentence-transformers`
+downloads `all-MiniLM-L6-v2` (~80MB) on first use.
 
 ### 2. Configure credentials
 
@@ -56,11 +64,21 @@ python -m scrapers.myscheme       # → data/raw/myscheme_raw.json
 python -m scrapers.kaggle_dl      # → data/raw/kaggle/*/
 
 # Step 2: Parse and normalize
+python -m parsers.normalize --max 10
 python -m parsers.normalize       # → data/processed/schemes_normalized.json
 
-# Step 3: Load into PostgreSQL
+# Step 3: Audit extraction quality (run after any change to extractor/normalize)
+python audit_normalized.py
+
+# Step 4: Load into PostgreSQL
 python -m db.loader               # upserts all rows
 python -m db.loader --reset       # drops tables first (dev only)
+
+# Step 5: Build semantic search index (one-time, ~60s)
+python -m ml.semantic_search.embed  # → ml/semantic_search/scheme_embeddings.npy
+
+# Step 6: Run the ML API
+uvicorn api.main:app --host 0.0.0.0 --port 8000
 ```
 
 ---
@@ -69,71 +87,394 @@ python -m db.loader --reset       # drops tables first (dev only)
 
 ```
 scheme_pipeline/
-├── .env.example          ← copy to .env and fill in credentials
+├── .env.example
 ├── requirements.txt
-├── pipeline.py           ← master runner (run this)
+├── pipeline.py                      ← master runner
 │
 ├── scrapers/
-│   ├── myscheme.py       ← scrapes myscheme.gov.in via JSON API
-│   ├── datagovin.py      ← downloads from data.gov.in REST API
-│   └── kaggle_dl.py      ← downloads CSVs via Kaggle Python API
+│   ├── myscheme.py                  ← scrapes myscheme.gov.in via JSON API
+│   ├── datagovin.py                 ← downloads from data.gov.in REST API
+│   └── kaggle_dl.py                 ← downloads CSVs via Kaggle Python API
 │
 ├── parsers/
-│   └── normalize.py      ← maps all sources to unified schema + builds eligibility_json
+│   ├── normalize.py                 ← maps all sources → unified schema + eligibility_json
+│   └── canonicalize.py              ← collapses duplicate strings (Degree/degree, class 10/10th standard)
+│
+├── ml/
+│   ├── ner_extractor/
+│   │   ├── extractor.py             ← MODEL 2: rule-based spaCy Matcher + regex extractor
+│   │   │                               called by normalize.py for every scheme record
+│   │   └── __init__.py
+│   │
+│   ├── eligibility_matcher/
+│   │   ├── features.py              ← MODEL 1: feature encoder (user + scheme → 33-dim vector)
+│   │   ├── synthesize.py            ← 191k synthetic (user, scheme) training pairs generator
+│   │   ├── train.py                 ← XGBoost trainer + evaluator
+│   │   ├── score.py                 ← inference: user profile → ranked scheme list
+│   │   ├── model.json               ← trained XGBoost model (generated)
+│   │   └── __init__.py
+│   │
+│   └── semantic_search/
+│       ├── embed.py                 ← MODEL 3: builds sentence-embedding index for all schemes
+│       ├── search.py                ← cosine similarity search over the index
+│       └── __init__.py
+│
+├── api/
+│   ├── main.py                      ← FastAPI ML service (3 endpoints, called by Java)
+│   └── __init__.py
 │
 ├── db/
-│   ├── schema.sql         ← table DDL + indexes (auto-applied by loader.py)
-│   └── loader.py          ← upserts data/processed/schemes_normalized.json → PostgreSQL
+│   ├── schema.sql                   ← table DDL + indexes
+│   └── loader.py                    ← upserts schemes_normalized.json → PostgreSQL
 │
-└── data/
-    ├── raw/               ← raw scraped JSON and CSV files
-    └── processed/         ← normalized JSON ready for DB
+├── data/
+│   ├── raw/                         ← raw scraped JSON and CSV files
+│   ├── processed/                   ← schemes_normalized.json (ready for DB)
+│   ├── synthetic_user_profiles.csv  ← 500 synthetic user profiles (for reference/testing)
+│   ├── train.spacy                  ← NER training split (generated)
+│   ├── dev.spacy                    ← NER held-out eval split (generated)
+│   ├── manual_labels.json           ← human-reviewed NER labels (built by label_tool.py)
+│   └── manual_labels.spacy          ← exported spaCy format of manual labels (generated)
+│
+├── trained_model/                   ← trained spaCy NER pipeline (generated by train_ner.py)
+│                                       used by POST /extract-criteria for new scheme text
+│
+├── audit_normalized.py              ← coverage stats + red-flag detection at full scale
+├── generate_training_data.py        ← extractor spans + manual labels → spaCy train/dev files
+├── train_ner.py                     ← trains + evaluates the NER model on held-out dev data
+└── label_tool.py                    ← interactive CLI for manually labeling eligibility text
+```
+
+---
+
+## Architecture
+
+```
+Android / Web
+      ↓
+Java Spring Boot  (auth, DB, business logic)
+      ↓  HTTP (internal, port 8000)
+Python FastAPI    (ML inference — stateless)
+      ├── POST /match             XGBoost eligibility scoring
+      ├── POST /search            Semantic search (sentence embeddings)
+      └── POST /extract-criteria  spaCy NER extraction for new scheme text
+```
+
+Java never does ML inference directly. Python never touches the DB or auth.
+Each service only does what it's good at.
+
+---
+
+## Python FastAPI — ML Service (port 8000)
+
+Called internally by Java. Never called directly by Android.
+
+```bash
+uvicorn api.main:app --host 0.0.0.0 --port 8000
+```
+
+The startup event pre-warms all three models so the first real request is fast.
+
+### `POST /match`
+
+Scores all ~4789 schemes for a user profile using XGBoost. Returns ranked list
+with score, status, and per-field matched criteria.
+
+```json
+{
+  "user": {
+    "age": 28, "gender": "female", "state": "Tamil Nadu",
+    "annual_income": 80000, "income_source": "farmer",
+    "caste_category": "SC", "disability": false, "is_widow": false,
+    "education_level": "class 10", "has_bank_account": true,
+    "has_aadhar": true, "land_ownership": 0.0,
+    "has_house": false, "children_count": 0
+  },
+  "top_n": 20,
+  "min_status": "LIKELY_ELIGIBLE"
+}
+```
+
+Response includes `matched_criteria` per scheme — `true/false/null` per field —
+so Java can show "Why this scheme?" explanations to the user without any
+extra logic on the Java or Android side.
+
+**Status values:**
+| Status | Score | Meaning |
+|---|---|---|
+| `ELIGIBLE` | ≥ 0.80 | All known criteria satisfied |
+| `LIKELY_ELIGIBLE` | ≥ 0.55 | Most criteria satisfied |
+| `CHECK_REQUIRED` | ≥ 0.30 | Partial match — verify manually |
+| `NOT_ELIGIBLE` | < 0.30 | Hard criterion violated |
+
+### `POST /search`
+
+Semantic search — finds schemes by meaning, not keywords. "flood help" finds
+crop insurance schemes even without those exact words.
+
+```json
+{ "query": "schemes for poor farmers who lost crops in flood", "language": "en", "top_k": 5 }
+```
+
+Returns `scheme_id`, `relevance_score`, and a `snippet` from the description.
+Currently English-only (`all-MiniLM-L6-v2`). Swap to `LaBSE` in `embed.py`
+and `search.py` for Hindi/Tamil/Telugu support — architecture is identical.
+
+**Requires the embedding index to be built first:**
+```bash
+python -m ml.semantic_search.embed   # run once, takes ~60s, produces ~7MB index
+```
+
+### `POST /extract-criteria`
+
+Extracts structured `eligibility_json` from raw scheme text. Used by the Java
+admin endpoint when parsing a new scheme URL — Java fetches the page text,
+sends it here, gets back structured JSON for review before saving.
+
+```json
+{ "text": "The applicant must be female, aged 18-60, SC/ST category...", "state_hint": "Central" }
+```
+
+---
+
+## Java Spring Boot — Scheme Endpoints
+
+### `GET /api/schemes/my`
+
+ML-matched schemes for the logged-in user. Java loads `UserProfile` from DB,
+calls Python `/match`, returns the ranked list.
+
+```
+GET /api/schemes/my?top_n=20&min_status=LIKELY_ELIGIBLE
+Authorization: Bearer <jwt>
+```
+
+### `GET /api/schemes/semantic-search`
+
+Semantic search via the ML service. Fast for the user (~20ms after warmup).
+The existing `GET /api/schemes/search?q=` still works as a fast DB keyword
+search — both endpoints coexist.
+
+```
+GET /api/schemes/semantic-search?q=flood+help+for+farmers&topK=10
+```
+
+### `POST /api/schemes/admin/parse-url`
+
+Admin only. Fetches a scheme page URL, extracts eligibility via the ML service,
+returns structured JSON for review. Does not auto-save — admin confirms first.
+
+```json
+{ "url": "https://www.myscheme.gov.in/schemes/pm-kisan", "stateHint": "Central" }
+```
+
+### Existing endpoints (unchanged)
+
+```
+GET /api/schemes                  all schemes
+GET /api/schemes/{id}             single scheme by id
+GET /api/schemes/category/{cat}   filter by category
+GET /api/schemes/search?q=        keyword search (DB, instant)
+```
+
+---
+
+## ML Model 1 — Eligibility Matcher (XGBoost)
+
+`ml/eligibility_matcher/` scores a user profile against every scheme and
+returns a ranked list with confidence scores (~100ms for all 4789 schemes).
+
+For each (user, scheme) pair, `features.py` builds a 33-feature vector of
+direct match signals (age in range? income below cap? caste in list?) plus
+raw user and scheme properties. XGBoost predicts a 0–1 score from this vector.
+
+**Why XGBoost over simple filters:**
+- Handles null eligibility fields — 83% of schemes have no age constraint,
+  84% have no income constraint. A filter skips these; the model learns their
+  typical weight from non-null examples.
+- Gives smooth partial-match scores — a scheme for SC women scores 0.6 for an
+  OBC woman rather than hard-zero.
+- Ranks among technically-eligible schemes so the most relevant appear first.
+
+**Retrain when data changes (~15 seconds):**
+```bash
+python -m ml.eligibility_matcher.train
+```
+
+**Honest caveat:** trained on 191k synthetic (user, scheme) pairs derived from
+the eligibility_json rules. Handles partial matches and null fields better than
+pure rules, but the ground truth is still the extracted rules. Improves
+meaningfully once real user interaction data (clicks, applications) is available.
+
+---
+
+## ML Model 2 — Eligibility Criteria Extractor (spaCy rules)
+
+`ml/ner_extractor/extractor.py` turns raw eligibility text into structured
+`eligibility_json`. Called automatically by `parsers/normalize.py` for every
+scheme during the normalization step.
+
+**This is what actually runs in production** — not the trained NER model.
+The trained model (`trained_model/`) is used by `POST /extract-criteria` for
+new single-scheme text from admin URL parsing.
+
+Two extraction passes:
+
+- **AGE / GENDER / CATEGORY / OCCUPATION / EDUCATION / REQUIREMENT** — spaCy
+  Matcher token patterns with context guards rejecting false positives
+  (e.g. "2 to 3 years of experience" isn't an age range; numbers outside
+  0–100 are rejected; "50% women members" on a review panel isn't a gender
+  requirement).
+- **INCOME / BPL** — clause-scoped regex pass. Handles `₹48,000/-` formatting,
+  `lakh`/`crore`/`LPA` multipliers, decimal amounts (`₹2.50 Lakh`), polarity
+  (`"greater than X"` is a floor not a ceiling), `"Non BPL"` exclusion, and
+  skips `"Income Tax Act"` boilerplate.
+
+**Canonicalization** (`parsers/canonicalize.py`) runs after extraction to
+collapse duplicate strings: `"Degree"`/`"degree"` → `degree`,
+`"Class 10th"`/`"10th standard"`/`"matriculation"` → `class 10`,
+`"farmer"`/`"farmers"` → `farmer`, etc. — so search filters work correctly.
+
+### Known limitations
+
+- **Monthly vs. annual income** — some text gives a monthly figure only.
+  The extractor reports as written; no ×12 conversion is assumed.
+- **Two-age-bracket schemes** — a handful cover two disjoint groups (children
+  under 14 AND elderly over 60). `min_age`/`max_age` can't represent two
+  bands — schema gap, not an extraction bug.
+
+### Auditing at scale
+
+```bash
+python audit_normalized.py
+```
+
+Always run after any change to `extractor.py` or `normalize.py`. Several real
+bugs (clause-crossing income matches, calendar years read as ages, institutional
+tenure read as applicant age) were only visible at full 4789-record volume.
+
+### Training the NER model
+
+The rule-based extractor also acts as a silver-label generator. Its entity
+spans become training data for a real spaCy NER model via:
+
+```bash
+python generate_training_data.py   # → data/train.spacy + data/dev.spacy
+python train_ner.py                # → trained_model/
+```
+
+`manual_labels.spacy` (from `label_tool.py`) is automatically merged into
+the training set at 5× weight, so human corrections take priority over
+silver labels without drowning them out.
+
+Dev set results after 100 manual labels (336 held-out records):
+
+| Label | P | R | F1 |
+|---|---|---|---|
+| AGE | 0.835 | 0.862 | 0.848 |
+| CATEGORY | 0.987 | 1.000 | 0.993 |
+| EDUCATION | 0.948 | 0.986 | 0.967 |
+| GENDER | 0.882 | 0.980 | 0.928 |
+| INCOME | 0.781 | 0.938 | 0.852 |
+| OCCUPATION | 0.989 | 0.987 | 0.988 |
+| REQUIREMENT | 0.846 | 1.000 | 0.917 |
+| **Overall** | **0.933** | **0.971** | **0.952** |
+
+The post-manual-label scores are slightly lower overall than pre-manual because
+the 100 labels introduced harder, more correct definitions (full phrases instead
+of bare words, new entity types like `Voter ID`, `SSLC`, `ESI Card`,
+`Brahmin community`). The model is now learning a harder task — this is not a
+regression. More labels (~300+) will close the gap.
+
+### Manual labeling
+
+```bash
+python label_tool.py            # label 100 records interactively
+python label_tool.py --export   # → data/manual_labels.spacy
+```
+
+Pre-fills every record with the rule extractor's spans — you're correcting
+mistakes, not labeling from scratch. Most records need only Enter to accept.
+
+**Full controls:**
+```
+Enter / y              → accept all pre-labeled entities
+d N                    → delete entity N
+da LABEL               → delete all entities with this label
+r N LABEL              → relabel entity N  (e.g. r 1 INCOME)
+a START:END LABEL      → add entity by character offset
+f phrase               → find char offsets of a phrase in text
+xa LABEL phrase        → add every occurrence of phrase as LABEL
+s                      → skip this record
+q                      → quit and save progress
+```
+
+Progress auto-saves after every accepted record.
+
+**Do not add a STATE label** — state is captured more reliably from structured
+metadata. Valid labels: `AGE`, `INCOME`, `GENDER`, `CATEGORY`, `OCCUPATION`,
+`EDUCATION`, `REQUIREMENT`.
+
+---
+
+## ML Model 3 — Semantic Search (sentence-transformers)
+
+`ml/semantic_search/` provides natural language search over all schemes using
+cosine similarity over sentence embeddings.
+
+**Build the index once** (~60s on CPU, produces ~7MB):
+```bash
+python -m ml.semantic_search.embed
+```
+
+This downloads `all-MiniLM-L6-v2` (~80MB, cached after first run), encodes
+all 4789 schemes as text combining name + category + description + eligibility
+summary, and saves `scheme_embeddings.npy` + `scheme_slugs.json`.
+
+**Swap to LaBSE for multilingual support** (Hindi/Tamil/Telugu):
+```python
+# In embed.py and search.py, change:
+MODEL_NAME = "LaBSE"
+# Then re-run: python -m ml.semantic_search.embed
 ```
 
 ---
 
 ## eligibility_json schema
 
-Every scheme row stores a structured `eligibility_json` JSONB column:
-
 ```json
 {
   "age":           { "min": 18, "max": 60 },
   "gender":        "female",
   "income_limit":  { "annual_inr": 250000, "bpl_only": false },
+  "education":     ["class 10"],
   "caste":         ["SC", "ST"],
   "state":         "Tamil Nadu",
-  "occupation":    ["farmer", "student"],
+  "occupation":    ["farmer"],
   "disability":    false,
   "residence":     "rural"
 }
 ```
 
-### Example queries
+### Example PostgreSQL queries
 
 ```sql
 -- Schemes for women in Tamil Nadu
-SELECT name, ministry
-FROM schemes
-WHERE eligibility_json @> '{"gender": "female", "state": "Tamil Nadu"}';
+SELECT name, ministry FROM schemes
+WHERE eligibility_json::jsonb @> '{"gender": "female", "state": "Tamil Nadu"}'::jsonb;
 
 -- Schemes for SC/ST with income limit
-SELECT name, eligibility_json -> 'income_limit'
-FROM schemes
-WHERE eligibility_json -> 'caste' ? 'SC'
-  AND (eligibility_json -> 'income_limit' ->> 'annual_inr')::int > 0;
+SELECT name, (eligibility_json::jsonb -> 'income_limit') FROM schemes
+WHERE (eligibility_json::jsonb -> 'caste') ? 'SC'
+  AND ((eligibility_json::jsonb -> 'income_limit' ->> 'annual_inr')::int > 0);
 
 -- Schemes with disability support
 SELECT name FROM schemes
-WHERE eligibility_json @> '{"disability": true}';
+WHERE eligibility_json::jsonb @> '{"disability": true}'::jsonb;
 ```
 
-If you run these queries in `psql` on Windows and see a `WIN1252` encoding
-error on `₹` or other UTF-8 characters, switch the session encoding first:
-
+If you see a `WIN1252` encoding error on `₹` in psql on Windows:
 ```sql
-\encoding UTF8
--- or
 SET client_encoding = 'UTF8';
 ```
 
@@ -141,12 +482,10 @@ SET client_encoding = 'UTF8';
 
 ## Calibrating field names
 
-After scraping, run this to see the exact keys the APIs return:
-
 ```python
 import json
 data = json.load(open("data/raw/myscheme_raw.json"))
-print(list(data[0].keys()))  # see available fields
+print(list(data[0].keys()))
 ```
 
-Then update the field mappings in `parsers/normalize.py` accordingly.
+Update field mappings in `parsers/normalize.py` accordingly.

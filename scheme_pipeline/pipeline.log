@@ -108,3 +108,70 @@
 2026-06-17 16:44:24,722 INFO [scrapers.kaggle_dl] Kaggle auth set from environment variables.
 2026-06-17 16:44:37,577 INFO [scrapers.kaggle_dl]   Downloaded files: ['schemes.csv', 'schemes_faqs.csv']
 2026-06-17 16:44:37,589 INFO [pipeline] STEP 2 — Parsing & normalizing
+2026-06-18 10:28:22,290 INFO [pipeline] STEP 1 — Scraping data sources
+2026-06-18 10:28:22,472 INFO [scrapers.myscheme] Fetching list page 1 ...
+2026-06-18 10:28:22,897 INFO [scrapers.myscheme] Will save 10 schemes
+2026-06-18 10:28:22,899 INFO [pipeline] myscheme: saved 10 schemes
+2026-06-18 10:28:22,909 INFO [scrapers.datagovin] Downloading resource 'central_govt_schemes' (6176ee09-3d56-4a3b-8115-21841ddd696a) ...
+2026-06-18 10:28:22,909 INFO [scrapers.datagovin]   Fetching offset=0 ...
+2026-06-18 10:28:53,313 ERROR [pipeline] data.gov.in download failed: HTTPSConnectionPool(host='api.data.gov.in', port=443): Read timed out. (read timeout=30)
+2026-06-18 10:28:53,323 INFO [scrapers.kaggle_dl] Kaggle auth set from environment variables.
+2026-06-18 10:29:08,250 INFO [scrapers.kaggle_dl]   Downloaded files: ['schemes.csv', 'schemes_faqs.csv']
+2026-06-18 10:29:08,252 INFO [pipeline] STEP 2 — Parsing & normalizing
+2026-06-18 10:29:12,170 INFO [parsers.normalize] myscheme (live API): parsed 10 schemes
+2026-06-18 10:29:14,004 INFO [parsers.normalize] kaggle/schemes.csv: parsed 4670 schemes (rich eligibility)
+2026-06-18 10:29:15,016 INFO [parsers.normalize] kaggle/schemes_faqs.csv: parsed 51435 schemes (rich eligibility)
+2026-06-18 10:32:03,059 INFO [pipeline] ---------------------------------------------------
+2026-06-18 10:32:03,060 INFO [pipeline] STEP 1 - Scraping data sources
+2026-06-18 10:32:03,060 INFO [pipeline] ---------------------------------------------------
+2026-06-18 10:32:03,274 INFO [scrapers.myscheme] Fetching list page 1 ...
+2026-06-18 10:32:03,541 INFO [scrapers.myscheme] Will save 10 schemes
+2026-06-18 10:32:03,548 INFO [pipeline] myscheme: saved 10 schemes
+2026-06-18 10:32:03,568 INFO [scrapers.datagovin] Downloading resource 'central_govt_schemes' (6176ee09-3d56-4a3b-8115-21841ddd696a) ...
+2026-06-18 10:32:03,595 INFO [scrapers.datagovin]   Fetching offset=0 ...
+2026-06-18 10:32:42,145 INFO [pipeline] ---------------------------------------------------
+2026-06-18 10:32:42,145 INFO [pipeline] STEP 1 - Scraping data sources
+2026-06-18 10:32:42,145 INFO [pipeline] ---------------------------------------------------
+2026-06-18 10:32:42,326 INFO [scrapers.myscheme] Fetching list page 1 ...
+2026-06-18 10:32:42,540 INFO [scrapers.myscheme] Will save 10 schemes
+2026-06-18 10:32:42,544 INFO [pipeline] myscheme: saved 10 schemes
+2026-06-18 10:32:42,559 INFO [scrapers.datagovin] Downloading resource 'central_govt_schemes' (6176ee09-3d56-4a3b-8115-21841ddd696a) ...
+2026-06-18 10:32:42,560 INFO [scrapers.datagovin]   Fetching offset=0 ...
+2026-06-18 10:33:12,966 ERROR [pipeline] data.gov.in download failed: HTTPSConnectionPool(host='api.data.gov.in', port=443): Read timed out. (read timeout=30)
+2026-06-18 10:33:12,974 INFO [scrapers.kaggle_dl] Kaggle auth set from environment variables.
+2026-06-18 10:33:13,096 INFO [scrapers.kaggle_dl] Downloading Kaggle dataset: elchemist/myscheme-india-govt-welfare-schemes -> data\raw\kaggle\india_govt_schemes
+2026-06-18 10:33:21,210 INFO [scrapers.kaggle_dl]   Downloaded files: ['schemes.csv', 'schemes_faqs.csv']
+2026-06-18 10:33:21,211 INFO [pipeline] ---------------------------------------------------
+2026-06-18 10:33:21,211 INFO [pipeline] STEP 2 - Parsing & normalizing
+2026-06-18 10:33:21,211 INFO [pipeline] ---------------------------------------------------
+2026-06-18 10:33:22,153 INFO [parsers.normalize] myscheme (live API): parsed 10 schemes
+2026-06-18 10:33:23,501 INFO [parsers.normalize] kaggle/schemes.csv: parsed 4670 schemes (rich eligibility)
+2026-06-18 10:33:24,386 INFO [parsers.normalize] kaggle/schemes_faqs.csv: parsed 51435 schemes (rich eligibility)
+2026-06-18 10:33:24,396 INFO [parsers.normalize] Merge: 10 live + 56105 kaggle â†’ 10 matched, 4670 total after merge
+2026-06-18 10:33:24,402 INFO [parsers.normalize] Dedup: 4670 â†’ 4669 schemes
+2026-06-18 10:33:25,013 INFO [parsers.normalize] Saved 4669 normalized schemes â†’ data\processed\schemes_normalized.json
+2026-06-18 10:33:25,013 INFO [parsers.normalize] Sample eligibility_json: {
+  "age": {
+    "min": null,
+    "max": 18
+  },
+  "gender": "male",
+  "income_limit": {
+    "annual_inr": null,
+    "bpl_only": false
+  },
+  "caste": [
+    "SC",
+    "ST"
+  ],
+  "state": "all",
+  "occupation": [
+    "individual"
+  ],
+  "disability": false,
+  "residence": "all"
+}
+2026-06-18 10:33:25,063 INFO [pipeline] ---------------------------------------------------
+2026-06-18 10:33:25,064 INFO [pipeline] STEP 3 - Loading into PostgreSQL
+2026-06-18 10:33:25,064 INFO [pipeline] ---------------------------------------------------
+2026-06-18 10:33:25,244 WARNING [db.loader] --reset-db was passed, but loader.py never drops your `schemes` table (it's referenced by saved_schemes via FK). Ignoring reset and proceeding with a normal upsert.
