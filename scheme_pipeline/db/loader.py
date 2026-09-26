@@ -43,7 +43,7 @@ log = logging.getLogger(__name__)
 INPUT_FILE = Path("data/processed/schemes_normalized.json")
 
 
-# ── DB connection ─────────────────────────────────────────────────────────────
+# --- DB connection ---
 
 def get_conn():
     """
@@ -60,7 +60,7 @@ def get_conn():
     )
 
 
-# ── Build eligibility_summary from the structured dict ────────────────────────
+# --- Build eligibility_summary from the structured dict ---
 
 def build_eligibility_summary(elig: dict) -> str:
     """
@@ -99,7 +99,7 @@ def build_eligibility_summary(elig: dict) -> str:
     return summary[:255]  # respect varchar(255) limit
 
 
-# ── Map a normalized scheme dict onto your exact table columns ────────────────
+# --- Map a normalized scheme dict onto your exact table columns ---
 
 def prepare_row(scheme: dict) -> dict:
     """
@@ -128,7 +128,7 @@ def prepare_row(scheme: dict) -> dict:
     }
 
 
-# ── Upsert logic ────────────────────────────────────────────────────────────
+# --- Upsert logic ---
 #
 # Your table has NO unique constraint on `name` (only PRIMARY KEY on `id`),
 # so a SQL-level ON CONFLICT upsert isn't available unless you add one
@@ -174,7 +174,7 @@ INSERT INTO schemes (
 RETURNING id;
 """
 
-# ── If you add a UNIQUE constraint on name later (see schema.sql), use this ──
+# --- If you add a UNIQUE constraint on name later (see schema.sql), use this ---
 # UPSERT_SQL = """
 # INSERT INTO schemes (
 #     name, ministry, category, subcategory, state,
@@ -254,7 +254,7 @@ def load_schemes(conn, schemes: list[dict], dry_run: bool = False) -> dict:
     return stats
 
 
-# ── Verification ──────────────────────────────────────────────────────────────
+# --- Verification ---
 
 def verify(conn):
     with conn.cursor() as cur:
@@ -280,7 +280,7 @@ def verify(conn):
     log.info(f"{'='*50}\n")
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# --- Main ---
 
 def main(reset: bool = False, dry_run: bool = False):
     """

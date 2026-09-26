@@ -40,7 +40,7 @@ TARGET       = 100
 ENTITY_LABELS = ["AGE", "INCOME", "GENDER", "CATEGORY", "OCCUPATION",
                  "EDUCATION", "REQUIREMENT"]
 
-# ── ANSI colours (skip if terminal doesn't support them) ────────────────────
+# --- ANSI colours (skip if terminal doesn't support them) ---
 _USE_COLOR = sys.stdout.isatty() and os.name != "nt"
 
 def _c(text, code):
@@ -68,7 +68,7 @@ def _color_label(label):
     return _c(f"[{label}]", code)
 
 
-# ── Record selection ─────────────────────────────────────────────────────────
+# --- Record selection ---
 def select_candidates(records: list, n: int = TARGET * 4) -> list:
     """
     Pick a diverse set of candidates: records that have at least one entity
@@ -109,7 +109,7 @@ def select_candidates(records: list, n: int = TARGET * 4) -> list:
     return selected[:n]
 
 
-# ── Display helpers ───────────────────────────────────────────────────────────
+# --- Display helpers ---
 def _render_text_with_entities(text: str, entities: list) -> str:
     """
     Annotate the raw text with coloured [LABEL] markers so the human
@@ -144,7 +144,7 @@ def _print_entity_list(entities: list):
               f"{dim(span_info)}")
 
 
-# ── Parse edit commands ───────────────────────────────────────────────────────
+# --- Parse edit commands ---
 def _parse_command(line: str, entities: list, text: str):
     """
     Returns the new entity list after applying the command, or None on error.
@@ -280,7 +280,7 @@ def _parse_command(line: str, entities: list, text: str):
     return None
 
 
-# ── Main labeling loop ────────────────────────────────────────────────────────
+# --- Main labeling loop ---
 def label(target: int = TARGET):
     records = json.loads(DATA_FILE.read_text(encoding="utf-8"))
     candidates = select_candidates(records)
@@ -392,7 +392,7 @@ def _save(records: list):
     )
 
 
-# ── Export to spaCy DocBin ────────────────────────────────────────────────────
+# --- Export to spaCy DocBin ---
 def export():
     if not LABELS_FILE.exists():
         print(red(f"{LABELS_FILE} not found — run the labeling tool first."))
@@ -429,7 +429,7 @@ def export():
     print("  Or pass it directly to train_ner.py as a higher-weight training source.")
 
 
-# ── Entry point ───────────────────────────────────────────────────────────────
+# --- Entry point ---
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--export", action="store_true",

@@ -32,7 +32,7 @@ from ml.eligibility_matcher.features import build_feature_vector, FEATURE_NAMES
 from ml.eligibility_matcher.synthesize import score_to_status
 from ml.ner_extractor.extractor import extract_eligibility
 
-# ── App ──────────────────────────────────────────────────────────────────────────
+# --- App ---
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -54,7 +54,7 @@ app = FastAPI(
 app.add_middleware(CORSMiddleware, allow_origins=["*"],
                    allow_methods=["*"], allow_headers=["*"])
 
-# ── Lazy-loaded globals (loaded once, reused across requests) ─────────────────
+# --- Lazy-loaded globals (loaded once, reused across requests) ---
 
 _schemes:     list[dict] | None = None
 _eligibilities: list[dict] | None = None
@@ -96,7 +96,7 @@ def _get_search():
     return _search_engine
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+# --- Helpers ---
 
 def _constraint_density(elig: dict) -> int:
     n = 0
@@ -164,7 +164,7 @@ def _matched_criteria(user: dict, elig: dict) -> dict:
     }
 
 
-# ── Request / Response models ─────────────────────────────────────────────────
+# --- Request / Response models ---
 
 class UserProfileInput(BaseModel):
     age:              int    = Field(..., ge=0, le=120, example=28)
@@ -254,7 +254,7 @@ class ExtractCriteriaRequest(BaseModel):
     state_hint: str = Field("any", description="Scheme's state, if known")
 
 
-# ── POST /match ───────────────────────────────────────────────────────────────
+# --- POST /match ---
 
 @app.post("/match", response_model=MatchResponse,
           summary="Score all schemes for a user profile")
@@ -314,7 +314,7 @@ def match(req: MatchRequest):
     )
 
 
-# ── POST /search ──────────────────────────────────────────────────────────────
+# --- POST /search ---
 
 @app.post("/search", response_model=SearchResponse,
           summary="Semantic search over schemes")
@@ -364,7 +364,7 @@ def search(req: SearchRequest):
     )
 
 
-# ── POST /extract-criteria ────────────────────────────────────────────────────
+# --- POST /extract-criteria ---
 
 @app.post("/extract-criteria",
           summary="Extract structured eligibility JSON from raw scheme text")
@@ -383,7 +383,7 @@ def extract_criteria(req: ExtractCriteriaRequest):
     }
 
 
-# ── Health ────────────────────────────────────────────────────────────────────
+# --- Health ---
 
 @app.get("/health", include_in_schema=False)
 def health():

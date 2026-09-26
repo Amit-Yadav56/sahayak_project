@@ -72,7 +72,7 @@ def main():
           f"best round={model.best_iteration}  "
           f"best test MAE={model.best_score:.4f}\n")
 
-    # ── Evaluation ────────────────────────────────────────────────────────
+    # --- Evaluation ---
     y_pred = model.predict(dtest)
     mae  = mean_absolute_error(y_test, y_pred)
     # within-0.1 accuracy (how often the predicted score is within ±0.1 of true)

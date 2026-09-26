@@ -23,7 +23,7 @@ if hasattr(sys.stderr, "reconfigure"):
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
-# ── Constants ────────────────────────────────────────────────────────────────
+# --- Constants ---
 BASE_URL   = "https://api.myscheme.gov.in"
 LIST_API   = f"{BASE_URL}/search/v6/schemes"   # paginated search/list endpoint
 DETAIL_API = f"{BASE_URL}/schemes/v6/public/schemes"   # append ?slug=...&lang=en for detail
@@ -125,7 +125,7 @@ def _normalize_search_hit(hit: dict) -> dict:
         "raw_json": hit,
     }
 
-# ── Helpers ──────────────────────────────────────────────────────────────────
+# --- Helpers ---
 
 def get_json(url: str, params: dict = None, retries: int = 3) -> dict:
     """GET url, return parsed JSON. Retries on transient errors."""
@@ -142,7 +142,7 @@ def get_json(url: str, params: dict = None, retries: int = 3) -> dict:
                 raise
 
 
-# ── Core scraping functions ───────────────────────────────────────────────────
+# --- Core scraping functions ---
 
 def fetch_all_scheme_records(max_schemes: int | None = None) -> list[dict]:
     """
@@ -196,7 +196,7 @@ def fetch_scheme_detail(slug: str) -> dict | None:
         return None
 
 
-# ── Main ─────────────────────────────────────────────────────────────────────
+# --- Main ---
 
 def scrape(max_schemes: int = None) -> list[dict]:
     """

@@ -44,7 +44,7 @@ from typing import Any
 
 import numpy as np
 
-# ── Education level ordering (for ordinal comparison) ───────────────────────
+# --- Education level ordering (for ordinal comparison) ---
 _EDUCATION_ORDER = {
     "none": 0,
     "class 1": 1, "class 2": 2, "class 3": 3, "class 4": 4, "class 5": 5,
@@ -61,7 +61,7 @@ def _edu_level(v: str) -> int:
     return _EDUCATION_ORDER.get((v or "none").lower().strip(), 15)  # default: graduate-level
 
 
-# ── Caste hierarchy for partial matching ────────────────────────────────────
+# --- Caste hierarchy for partial matching ---
 # SC/ST are a subset of OBC in many schemes' spirit — a scheme targeting
 # SC/ST should score higher for SC/ST users than for General users even
 # if OBC isn't listed. The model learns this from data, but we give it
@@ -91,7 +91,7 @@ def _caste_partial_score(user_caste: str, scheme_castes: list) -> float:
     return 0.0
 
 
-# ── Income mapping ───────────────────────────────────────────────────────────
+# --- Income mapping ---
 _INCOME_SOURCE_TO_OCCUPATION = {
     "farmer": {"farmer", "agricultural_labourer"},
     "labourer": {"labourer", "agricultural_labourer", "construction"},
@@ -136,7 +136,7 @@ def _edu_match(user_edu: str, scheme_edu: list) -> float:
     return 0.0
 
 
-# ── Main feature builder ────────────────────────────────────────────────────
+# --- Main feature builder ---
 
 FEATURE_NAMES = [
     # Match signals
@@ -195,7 +195,7 @@ def build_feature_vector(user: dict[str, Any], scheme_elig: dict[str, Any]) -> n
     s_edu       = scheme_elig.get("education") or []
     s_requires  = scheme_elig.get("requires") or []
 
-    # ── Age match ────────────────────────────────────────────────────────
+    # --- Age match ---
     has_age_c = (s_min_age is not None) or (s_max_age is not None)
     if not has_age_c:
         age_match = 0.5
@@ -217,7 +217,7 @@ def build_feature_vector(user: dict[str, Any], scheme_elig: dict[str, Any]) -> n
             age_below = 0.0
             age_above = min((age - hi) / max(hi, 1), 1.0)
 
-    # ── Gender match ─────────────────────────────────────────────────────
+    # --- Gender match ---
     if s_gender == "all":
         gender_match = 0.5
     elif gender == s_gender:
@@ -225,7 +225,7 @@ def build_feature_vector(user: dict[str, Any], scheme_elig: dict[str, Any]) -> n
     else:
         gender_match = 0.0
 
-    # ── State match ──────────────────────────────────────────────────────
+    # --- State match ---
     if s_state.lower() in ("all", "central", ""):
         state_match = 0.5
     elif state.lower() == s_state.lower():
@@ -233,7 +233,7 @@ def build_feature_vector(user: dict[str, Any], scheme_elig: dict[str, Any]) -> n
     else:
         state_match = 0.0
 
-    # ── Income match ─────────────────────────────────────────────────────
+    # --- Income match ---
     if s_bpl:
         # BPL schemes: income below ~1L is a rough proxy for BPL
         bpl_match = 1.0 if income <= 100_000 else 0.0
@@ -248,36 +248,36 @@ def build_feature_vector(user: dict[str, Any], scheme_elig: dict[str, Any]) -> n
         income_ratio = 0.5
         bpl_match = 0.5
 
-    # ── Caste match ──────────────────────────────────────────────────────
+    # --- Caste match ---
     caste_match = _caste_partial_score(caste, s_castes)
     has_caste_c = 1.0 if s_castes else 0.0
 
-    # ── Disability match ─────────────────────────────────────────────────
+    # --- Disability match ---
     if s_dis:
         disability_match = 1.0 if disability else 0.0
     else:
         disability_match = 0.5
 
-    # ── Widow match ──────────────────────────────────────────────────────
+    # --- Widow match ---
     widow_occ = any("widow" in o.lower() for o in s_occ)
     if widow_occ:
         widow_match = 1.0 if is_widow else 0.0
     else:
         widow_match = 0.5
 
-    # ── Occupation match ─────────────────────────────────────────────────
+    # --- Occupation match ---
     occupation_match = _occupation_match(inc_src, s_occ)
 
-    # ── Education match ──────────────────────────────────────────────────
+    # --- Education match ---
     education_match = _edu_match(edu, s_edu)
 
-    # ── Document requirements ─────────────────────────────────────────────
+    # --- Document requirements ---
     needs_aadhar = "aadhar" in s_requires
     needs_bank   = "bank_account" in s_requires
     aadhar_match = (1.0 if has_aadhar else 0.0) if needs_aadhar else 0.5
     bank_match   = (1.0 if has_bank   else 0.0) if needs_bank   else 0.5
 
-    # ── Constraint density ────────────────────────────────────────────────
+    # --- Constraint density ---
     has_inc_c   = 1.0 if (s_inc_cap or s_bpl) else 0.0
     has_gender_c = 1.0 if s_gender != "all" else 0.0
     has_state_c  = 1.0 if s_state.lower() not in ("all", "central", "") else 0.0
@@ -287,7 +287,7 @@ def build_feature_vector(user: dict[str, Any], scheme_elig: dict[str, Any]) -> n
         float(s_dis), float(bool(s_edu)),
     ])
 
-    # ── Raw user features ─────────────────────────────────────────────────
+    # --- Raw user features ---
     user_age_norm    = min(age / 100.0, 1.0)
     user_is_female   = 1.0 if gender == "female" else 0.0
     user_is_sc       = 1.0 if caste.upper() == "SC" else 0.0

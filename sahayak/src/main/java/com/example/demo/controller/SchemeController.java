@@ -27,12 +27,10 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class SchemeController {
 
-    private final SchemeService         schemeService;
-    private final MlService             mlService;
+    private final SchemeService schemeService;
+    private final MlService mlService;
     private final UserProfileRepository profileRepository;
-    private final UserRepository        userRepository;
-
-    // ── Existing endpoints ───────────────────────────────────────────────────
+    private final UserRepository userRepository;
 
     @GetMapping
     public List<Scheme> getAllSchemes() {
@@ -54,46 +52,14 @@ public class SchemeController {
         return schemeService.searchSchemes(q);
     }
 
-    // ── Semantic search ───────────────────────────────────────────────────────
-
     @GetMapping("/semantic-search")
     public ResponseEntity<?> semanticSearch(
-            @RequestParam                       String q,
-            @RequestParam(defaultValue = "en")  String language,
-            @RequestParam(defaultValue = "10")  int    topK
+            @RequestParam String q,
+            @RequestParam(defaultValue = "en") String language,
+            @RequestParam(defaultValue = "10") int topK
     ) {
         return ResponseEntity.ok(schemeService.semanticSearch(q, language, topK));
     }
-
-    // ── ML-matched schemes for logged-in user ────────────────────────────────
-
-    /*
-     *
-     * GET /api/schemes/my
-     * Returns schemes matched to the authenticated user's profile,
-     * scored and ranked by the XGBoost ML model.
-     *
-     * Query params:
-     *   top_n       default 20
-     *   min_status  default LIKELY_ELIGIBLE
-     *
-     * Response: ML service JSON passed through directly:
-     * {
-     *   "total_schemes": 4789,
-     *   "returned": 20,
-     *   "elapsed_ms": 98.5,
-     *   "results": [
-     *     {
-     *       "scheme_id": "pm-kisan",
-     *       "score": 0.97,
-     *       "status": "ELIGIBLE",
-     *       "matched_criteria": { "age": true, "income": true, "caste": null, ... },
-     *       "name": "...", "benefit_amount": "...", "application_url": "..."
-     *     }, ...
-     *   ]
-     * }
-     */
-
 
     @GetMapping("/my")
     public ResponseEntity<?> getMySchemes(
@@ -102,40 +68,23 @@ public class SchemeController {
             @RequestParam(defaultValue = "LIKELY_ELIGIBLE") String minStatus
     ) {
         User currentUser = userRepository.findByEmail(authentication.getName())
-                .orElseThrow(() -> new RuntimeException(
-                        "Authenticated user not found: " + authentication.getName()));
+                .orElseThrow(() -> new RuntimeException("Authenticated user not found: " + authentication.getName()));
 
         UserProfile profile = profileRepository.findByUser(currentUser)
-                .orElseThrow(() -> new ProfileNotFoundException(
-                        "No profile found for user " + currentUser.getId() +
-                        ". Complete your profile first."));
+                .orElseThrow(() -> new ProfileNotFoundException("No profile found for user " + currentUser.getId() + ". Complete your profile first."));
 
         log.info("Matching schemes for user={} state={} caste={}",
                 currentUser.getId(),
-                profile.getUser().getState(),
+                profile.getUser() != null ? profile.getUser().getState() : "",
                 profile.getCasteCategory());
 
         JsonNode mlResult = mlService.matchSchemes(profile, topN, minStatus);
         return ResponseEntity.ok(mlResult);
     }
-    /**
-     * POST /api/admin/schemes/parse-url
-     * Fetches a scheme page URL, extracts structured eligibility_json
-     * via the ML service, returns it for admin review before saving.
-     *
-     * Request body: { "url": "https://...", "stateHint": "Central" }
-     *
-     * Response:
-     * {
-     *   "url": "...",
-     *   "extracted_text_length": 842,
-     *   "eligibility_json": { "age": {...}, "gender": "...", ... },
-     *   "elapsed_ms": 45.2
-     * }
-     */
+
     @PostMapping("/admin/parse-url")
     public ResponseEntity<?> parseUrl(@RequestBody ParseUrlRequest request) {
-        String url       = request.getUrl();
+        String url = request.getUrl();
         String stateHint = request.getStateHint() != null ? request.getStateHint() : "any";
 
         String eligibilityText;
@@ -143,12 +92,10 @@ public class SchemeController {
             log.info("Fetching scheme URL: {}", url);
             Document doc = Jsoup.connect(url)
                     .userAgent("Mozilla/5.0")
-                    .timeout(10_000)
+                    .timeout(10000)
                     .get();
 
-            String sectionText = doc
-                    .select("[data-tab=eligibility], .eligibility-section, #eligibility")
-                    .text();
+            String sectionText = doc.select("[data-tab=eligibility], .eligibility-section, #eligibility").text();
             eligibilityText = sectionText.isBlank() ? doc.body().text() : sectionText;
 
             if (eligibilityText.length() > 3000) {
@@ -156,29 +103,27 @@ public class SchemeController {
             }
         } catch (IOException e) {
             log.error("Failed to fetch URL {}: {}", url, e.getMessage());
-            return ResponseEntity.badRequest()
-                    .body(Map.of("error", "Could not fetch URL: " + e.getMessage()));
+            return ResponseEntity.badRequest().body(Map.of("error", "Could not fetch URL: " + e.getMessage()));
         }
 
         if (eligibilityText.isBlank()) {
-            return ResponseEntity.badRequest()
-                    .body(Map.of("error", "No extractable text found at URL"));
+            return ResponseEntity.badRequest().body(Map.of("error", "No extractable text found at URL"));
         }
 
         log.info("Extracting criteria from {} chars of text", eligibilityText.length());
         JsonNode mlResult = mlService.extractCriteria(eligibilityText, stateHint);
 
         return ResponseEntity.ok(Map.of(
-                "url",                   url,
+                "url", url,
                 "extracted_text_length", eligibilityText.length(),
-                "eligibility_json",      mlResult.get("eligibility_json"),
-                "elapsed_ms",            mlResult.get("elapsed_ms")
+                "eligibility_json", mlResult.get("eligibility_json"),
+                "elapsed_ms", mlResult.get("elapsed_ms")
         ));
     }
 
-    // ── Exception ─────────────────────────────────────────────────────────────
-
     public static class ProfileNotFoundException extends RuntimeException {
-        public ProfileNotFoundException(String msg) { super(msg); }
+        public ProfileNotFoundException(String msg) {
+            super(msg);
+        }
     }
 }

@@ -17,7 +17,7 @@ DATA_FILE = Path("data/processed/schemes_normalized.json")
 records = json.loads(DATA_FILE.read_text(encoding="utf-8"))
 print(f"Total records: {len(records)}\n")
 
-# ── Coverage stats ──────────────────────────────────────────────────────────
+# --- Coverage stats ---
 n = len(records)
 has_age = sum(1 for r in records if r["eligibility_json"]["age"]["min"] or r["eligibility_json"]["age"]["max"])
 has_income = sum(1 for r in records if r["eligibility_json"]["income_limit"]["annual_inr"] or r["eligibility_json"]["income_limit"]["bpl_only"])
@@ -38,7 +38,7 @@ print(f"  disability: {has_disability:>5} ({100*has_disability/n:.1f}%)")
 print(f"  education:  {has_education:>5} ({100*has_education/n:.1f}%)")
 print(f"  residence:  {has_residence:>5} ({100*has_residence/n:.1f}%)")
 
-# ── Red flags ────────────────────────────────────────────────────────────────
+# --- Red flags ---
 print("\nRED FLAGS:")
 
 # 1. age min > max (logically impossible)
@@ -87,7 +87,7 @@ print(f"\n  Gender distribution: {dict(gender_counter)}")
 residence_counter = Counter(r["eligibility_json"]["residence"] for r in records)
 print(f"  Residence distribution: {dict(residence_counter)}")
 
-# ── Random spot-check sample ─────────────────────────────────────────────────
+# --- Random spot-check sample ---
 print("\n" + "=" * 78)
 print("RANDOM SPOT-CHECK SAMPLE (10 records):")
 random.seed(42)

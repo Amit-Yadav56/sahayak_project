@@ -1,0 +1,55 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# Environment & credentials
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# ML models, weights & caches
+model_cache/
+**/model_cache/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.onnx
+*.npy
+*.npz
+*.faiss
+chroma_db/
+
+# Frontend
+node_modules/
+**/node_modules/
+frontend/dist/
+.vite/
+*.log
+
+# Java / Maven
+target/
+**/target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.class
+*.jar
+.mvn/wrapper/maven-wrapper.jar

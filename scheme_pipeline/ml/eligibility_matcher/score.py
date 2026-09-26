@@ -177,7 +177,7 @@ class EligibilityMatcher:
         return results
 
 
-# ── Quick CLI test ────────────────────────────────────────────────────────────
+# --- Quick CLI test ---
 
 if __name__ == "__main__":
     matcher = EligibilityMatcher()

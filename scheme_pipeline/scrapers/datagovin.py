@@ -28,7 +28,7 @@ if hasattr(sys.stderr, "reconfigure"):
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
-# ── Config ────────────────────────────────────────────────────────────────────
+# --- Config ---
 
 API_KEY   = os.getenv("DATA_GOV_API_KEY", "YOUR_API_KEY_HERE")
 BASE_URL  = "https://api.data.gov.in/resource"
@@ -36,7 +36,7 @@ PAGE_SIZE = 1000     # max records per call the API allows
 OUTPUT_DIR = Path("data/raw")
 DELAY_SECS = 0.5
 
-# ── Resource IDs to download ──────────────────────────────────────────────────
+# --- Resource IDs to download ---
 # Find resource IDs at:  https://data.gov.in/  → search for dataset → "API" button
 # Each dataset has a unique resource ID like  "6176ee09-3d56-4a3b-8115-21841ddd696a"
 
@@ -54,7 +54,7 @@ RESOURCES = [
     # },
 ]
 
-# ── Core functions ─────────────────────────────────────────────────────────────
+# --- Core functions ---
 
 def fetch_resource_page(resource_id: str, offset: int = 0, limit: int = PAGE_SIZE) -> dict:
     """Fetch one page of records from a data.gov.in resource."""
@@ -122,7 +122,7 @@ def download_resource(resource: dict) -> Path:
     return out
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# --- Main ---
 
 if __name__ == "__main__":
     if API_KEY == "YOUR_API_KEY_HERE":

@@ -15,36 +15,17 @@ public class ProfileController {
     private final UserService userService;
 
     @PostMapping
-    public String createProfile(
-            Authentication authentication,
-            @RequestBody ProfileRequest request
-    ) {
-
-        return userService.createProfile(
-                authentication.getName(),
-                request
-        );
+    public String createProfile(Authentication authentication, @RequestBody ProfileRequest request) {
+        return userService.createProfile(authentication.getName(), request);
     }
 
     @GetMapping
-    public UserProfile getProfile(
-            Authentication authentication
-    ) {
-
-        return userService.getProfile(
-                authentication.getName()
-        );
+    public UserProfile getProfile(Authentication authentication) {
+        return userService.getProfile(authentication.getName());
     }
 
     @PutMapping
-    public String updateProfile(
-            Authentication authentication,
-            @RequestBody ProfileRequest request
-    ) {
-
-        return userService.updateProfile(
-                authentication.getName(),
-                request
-        );
+    public String updateProfile(Authentication authentication, @RequestBody ProfileRequest request) {
+        return userService.updateProfile(authentication.getName(), request);
     }
 }

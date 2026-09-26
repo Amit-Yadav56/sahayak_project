@@ -12,22 +12,14 @@ import org.springframework.web.bind.annotation.*;
 public class AdminSchemeController {
 
     private final SchemeService schemeService;
-    @PostMapping
-    public Scheme createScheme(
-            @RequestBody SchemeRequest request
-    ){
 
+    @PostMapping
+    public Scheme createScheme(@RequestBody SchemeRequest request) {
         return schemeService.createScheme(request);
     }
 
     @PutMapping("/{id}")
-    public Scheme updateScheme(
-            @PathVariable Long id,
-            @RequestBody SchemeRequest request
-    ){
-        return schemeService.updateScheme(
-                id,
-                request
-        );
+    public Scheme updateScheme(@PathVariable Long id, @RequestBody SchemeRequest request) {
+        return schemeService.updateScheme(id, request);
     }
 }

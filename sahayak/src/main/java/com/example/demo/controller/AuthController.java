@@ -15,26 +15,18 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public String register(
-            @Valid @RequestBody RegisterRequest request
-    ) {
+    public String register(@Valid @RequestBody RegisterRequest request) {
         return userService.register(request);
     }
 
     @PostMapping("/login")
-    public LoginResponse login(
-            @RequestBody LoginRequest request
-    ) {
+    public LoginResponse login(@RequestBody LoginRequest request) {
         return userService.login(request);
     }
 
     @GetMapping("/me")
-    public UserResponse me(
-            Authentication authentication
-    ) {
-        return userService.getCurrentUser(
-                authentication.getName()
-        );
+    public UserResponse me(Authentication authentication) {
+        return userService.getCurrentUser(authentication.getName());
     }
 
     @PostMapping("/logout")

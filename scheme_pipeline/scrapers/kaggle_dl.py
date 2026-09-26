@@ -35,7 +35,7 @@ log = logging.getLogger(__name__)
 
 OUTPUT_DIR = Path("data/raw/kaggle")
 
-# ── Datasets to download ───────────────────────────────────────────────────────
+# --- Datasets to download ---
 # Format: "owner/dataset-slug"  (from the Kaggle dataset URL)
 # Example URL: https://www.kaggle.com/datasets/nehaprabhavalkar/av-healthcare-analytics-ii
 #              → "nehaprabhavalkar/av-healthcare-analytics-ii"
@@ -53,7 +53,7 @@ DATASETS = [
 ]
 
 
-# ── Core ──────────────────────────────────────────────────────────────────────
+# --- Core ---
 
 def setup_kaggle_auth():
     """
@@ -99,7 +99,7 @@ def list_csvs(folder: Path) -> list[Path]:
     return sorted(folder.glob("**/*.csv"))
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# --- Main ---
 
 if __name__ == "__main__":
     setup_kaggle_auth()

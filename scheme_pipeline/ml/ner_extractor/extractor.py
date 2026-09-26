@@ -75,7 +75,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger(__name__)
 
 
-# ── Output schema ───────────────────────────────────────────────────────────
+# --- Output schema ---
 
 @dataclass
 class EligibilityCriteria:
@@ -107,7 +107,7 @@ class EligibilityCriteria:
         }
 
 
-# ── Build the spaCy pipeline once (module-level, reused across calls) ────────
+# --- Build the spaCy pipeline once (module-level, reused across calls) ---
 #
 # NOTE: INCOME_MAX and BPL are no longer Matcher patterns — see module
 # docstring point A. They're handled by _extract_income_from_text() instead.
@@ -116,7 +116,7 @@ def _build_nlp():
     nlp = spacy.blank("en")
     matcher = Matcher(nlp.vocab)
 
-    # ── AGE patterns ──────────────────────────────────────────────────────
+    # --- AGE patterns ---
     matcher.add("AGE_RANGE", [
         [{"LIKE_NUM": True}, {"LOWER": {"IN": ["to", "-", "and"]}}, {"LIKE_NUM": True},
          {"LOWER": {"IN": ["years", "yrs", "year"]}, "OP": "?"}],
@@ -135,12 +135,12 @@ def _build_nlp():
         [{"LOWER": "up"}, {"LOWER": "to"}, {"LIKE_NUM": True}],
     ])
 
-    # ── CATEGORY patterns (caste/EWS) ────────────────────────────────────
+    # --- CATEGORY patterns (caste/EWS) ---
     matcher.add("CATEGORY", [
         [{"TEXT": {"REGEX": r"^(SC|ST|OBC|EWS)$"}}],
     ])
 
-    # ── GENDER patterns ──────────────────────────────────────────────────
+    # --- GENDER patterns ---
     matcher.add("GENDER_FEMALE", [
         [{"LOWER": {"IN": ["female", "females", "women", "woman", "girls", "girl"]}}],
     ])
@@ -148,7 +148,7 @@ def _build_nlp():
         [{"LOWER": {"IN": ["male", "males", "men", "man", "boys", "boy"]}}],
     ])
 
-    # ── OCCUPATION patterns ──────────────────────────────────────────────
+    # --- OCCUPATION patterns ---
     matcher.add("OCCUPATION", [
         [{"LOWER": {"IN": [
             "farmer", "farmers", "labourer", "labourers", "laborer", "laborers",
@@ -162,12 +162,12 @@ def _build_nlp():
         [{"LOWER": "agricultural"}, {"LOWER": {"IN": ["labourer", "labourers", "laborer", "laborers", "worker", "workers"]}}],
     ])
 
-    # ── REQUIREMENT patterns ──────────────────────────────────────────────
+    # --- REQUIREMENT patterns ---
     matcher.add("REQUIRES_AADHAR", [[{"LOWER": {"IN": ["aadhar", "aadhaar"]}}]])
     matcher.add("REQUIRES_BANK", [[{"LOWER": "bank"}, {"LOWER": "account"}]])
     matcher.add("REQUIRES_RATION", [[{"LOWER": "ration"}, {"LOWER": "card"}]])
 
-    # ── EDUCATION patterns ──────────────────────────────────────────────
+    # --- EDUCATION patterns ---
     matcher.add("EDUCATION_CLASS", [
         [{"LIKE_NUM": True}, {"LOWER": {"IN": ["st", "nd", "rd", "th"]}, "OP": "?"},
          {"LOWER": {"IN": ["standard", "class", "grade", "pass", "passed"]}}],
@@ -187,7 +187,7 @@ def _build_nlp():
 
 _NLP, _MATCHER = _build_nlp()
 
-# ── AGE false-friend / context-guard vocab ───────────────────────────────────
+# --- AGE false-friend / context-guard vocab ---
 # Any of these appearing in the enclosing clause disqualifies an AGE match —
 # they signal the number means something other than applicant age.
 _AGE_FALSE_FRIENDS = {
@@ -260,7 +260,7 @@ def _clause_text(doc, start: int, end: int) -> str:
     return doc[clause_start:clause_end].text.lower()
 
 
-# ── INCOME extraction — clause-scoped regex, NOT spaCy Matcher ──────────────
+# --- INCOME extraction — clause-scoped regex, NOT spaCy Matcher ---
 # See module docstring point A for why. Operates directly on the raw text
 # string, never crosses a ';' or '.' clause boundary, and parses amounts by
 # direct regex rather than relying on spaCy's like_num (which fails on
@@ -447,7 +447,7 @@ def _extract(text: str, state_hint: str = "any"):
     education_found = set()
     entity_spans: list[tuple[int, int, str]] = []  # (start_token, end_token, NER label)
 
-    # ── Income / BPL (regex pass, char-offset based) ─────────────────────
+    # --- Income / BPL (regex pass, char-offset based) ---
     max_income, income_char_span, bpl_only, bpl_char_span = _extract_income_from_text(text)
     result.max_income = max_income
     if bpl_only:
@@ -461,7 +461,7 @@ def _extract(text: str, state_hint: str = "any"):
         if sp is not None:
             entity_spans.append((sp.start, sp.end, "INCOME"))
 
-    # ── Everything else (Matcher pass) ────────────────────────────────────
+    # --- Everything else (Matcher pass) ---
     matches = sorted(matches, key=lambda m: m[1])
     age_range_spans = []
 

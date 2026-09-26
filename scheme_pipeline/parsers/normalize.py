@@ -21,7 +21,7 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
-# ── Model 2 (NER extractor) — optional, falls back to regex if unavailable ───
+# --- Model 2 (NER extractor) — optional, falls back to regex if unavailable ---
 try:
     from ml.ner_extractor.extractor import extract_eligibility as _ml_extract_eligibility
     _ML_EXTRACTOR_AVAILABLE = True
@@ -38,7 +38,7 @@ PROCESSED_DIR = Path("data/processed")
 OUTPUT_FILE   = PROCESSED_DIR / "schemes_normalized.json"
 
 
-# ── Eligibility JSON schema ────────────────────────────────────────────────────
+# --- Eligibility JSON schema ---
 #
 #  This is the canonical shape stored in the `eligibility_json` JSONB column.
 #  All sources are mapped INTO this shape.
@@ -104,7 +104,7 @@ def map_model2_output_to_eligibility(ml_result: dict, state_hint: str = "all") -
     return el
 
 
-# ── Field extraction helpers ───────────────────────────────────────────────────
+# --- Field extraction helpers ---
 
 def parse_age(raw_age) -> dict:
     """
@@ -271,7 +271,7 @@ def parse_education(raw_text) -> list[str]:
     return sorted(set(found))
 
 
-# ── Source-specific parsers ────────────────────────────────────────────────────
+# --- Source-specific parsers ---
 
 def parse_benefit_type(raw_benefits: str) -> str:
     """Classify the benefit into a short type label your `benefit_type` column expects."""
@@ -385,7 +385,7 @@ def parse_myscheme_record(raw: dict) -> dict | None:
     eligibility_text = raw.get("eligibility") or ""
     benefits_text     = raw.get("benefits") or ""
 
-    # ── build eligibility_json — Model 2 (NER extractor) first, regex fallback ──
+    # --- build eligibility_json — Model 2 (NER extractor) first, regex fallback ---
     # Dataset's eligibility field is semicolon-delimited into separate clauses
     # (e.g. "age 18-60 years; resident of X; income below Rs 2,50,000").
     clauses = [c.strip() for c in eligibility_text.split(";") if c.strip()]
@@ -434,7 +434,7 @@ def parse_myscheme_record(raw: dict) -> dict | None:
     el["education"]  = canonicalize_education(el["education"])
     el["occupation"] = canonicalize_occupation(el["occupation"])
 
-    # ── categories: "categories" is a Python-list-style string in some exports ──
+    # --- categories: "categories" is a Python-list-style string in some exports ---
     cats = raw.get("categories") or raw.get("category") or ""
     cats = cats.strip("[]").replace("'", "").strip()
     primary_category = cats.split(",")[0].strip() if cats else ""
@@ -496,7 +496,7 @@ def parse_kaggle_row(row: dict, filename: str) -> dict | None:
     }
 
 
-# ── Deduplication ─────────────────────────────────────────────────────────────
+# --- Deduplication ---
 
 def dedup(schemes: list[dict]) -> list[dict]:
     """
@@ -524,7 +524,7 @@ def dedup(schemes: list[dict]) -> list[dict]:
     return result
 
 
-# ── Merge: live API records (fresh, but listing-only) + Kaggle (rich eligibility) ──
+# --- Merge: live API records (fresh, but listing-only) + Kaggle (rich eligibility) ---
 
 def merge_live_with_kaggle(live_schemes: list[dict], kaggle_schemes: list[dict]) -> list[dict]:
     """
@@ -574,7 +574,7 @@ def merge_live_with_kaggle(live_schemes: list[dict], kaggle_schemes: list[dict])
     return merged
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# --- Main ---
 
 def run(max_records: int | None = None) -> list[dict]:
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
@@ -582,7 +582,7 @@ def run(max_records: int | None = None) -> list[dict]:
     live_schemes   = []
     kaggle_schemes = []
 
-    # ── 1. myscheme.gov.in LIVE search API (scrapers/myscheme.py output) ─────
+    # --- 1. myscheme.gov.in LIVE search API (scrapers/myscheme.py output) ---
     # This is JSON in the shape: id, slug, scheme_name, short_title, level,
     # scheme_for, ministry, categories, states, description, tags, close_date,
     # priority — listing fields only, no eligibility text.
@@ -598,7 +598,7 @@ def run(max_records: int | None = None) -> list[dict]:
     else:
         log.warning(f"Not found: {myscheme_live_file} — run scrapers/myscheme.py first")
 
-    # ── 2. Kaggle CSV — rich shape with eligibility, benefits, etc. ──────────
+    # --- 2. Kaggle CSV — rich shape with eligibility, benefits, etc. ---
     # Covers both data/raw/kaggle/**/*.csv (from kaggle_dl.py) and any
     # myscheme_*.csv dropped directly into data/raw/ (manual CSV export).
     kaggle_csv_paths = list((RAW_DIR / "kaggle").glob("**/*.csv")) + list(RAW_DIR.glob("myscheme_*.csv"))
@@ -615,10 +615,10 @@ def run(max_records: int | None = None) -> list[dict]:
         except Exception as e:
             log.error(f"Failed to parse {csv_file}: {e}")
 
-    # ── 3. Merge live API + Kaggle ────────────────────────────────────────────
+    # --- 3. Merge live API + Kaggle ---
     all_schemes = merge_live_with_kaggle(live_schemes, kaggle_schemes)
 
-    # ── Dedup & save ─────────────────────────────────────────────────────────
+    # --- Dedup & save ---
     final = dedup(all_schemes)
     if max_records:
         final = final[:max_records]

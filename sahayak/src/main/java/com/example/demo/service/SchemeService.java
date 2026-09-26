@@ -17,7 +17,7 @@ import java.util.List;
 public class SchemeService {
 
     private final SchemeRepository schemeRepository;
-    private final MlService        mlService;
+    private final MlService mlService;
 
     public List<Scheme> getAllSchemes() {
         return schemeRepository.findAll();
@@ -25,8 +25,7 @@ public class SchemeService {
 
     public Scheme getSchemeById(Long id) {
         return schemeRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Scheme not found"));
+                .orElseThrow(() -> new RuntimeException("Scheme not found"));
     }
 
     public List<Scheme> getSchemesByCategory(String category) {
@@ -34,8 +33,7 @@ public class SchemeService {
     }
 
     public List<Scheme> searchSchemes(String query) {
-        return schemeRepository
-                .findByNameContainingIgnoreCase(query);
+        return schemeRepository.findByNameContainingIgnoreCase(query);
     }
 
     public JsonNode semanticSearch(String query, String language, int topK) {
@@ -43,10 +41,7 @@ public class SchemeService {
         return mlService.searchSchemes(query, language, topK);
     }
 
-    public Scheme createScheme(
-            SchemeRequest request
-    ){
-
+    public Scheme createScheme(SchemeRequest request) {
         Scheme scheme = Scheme.builder()
                 .name(request.getName())
                 .ministry(request.getMinistry())
@@ -55,21 +50,11 @@ public class SchemeService {
                 .description(request.getDescription())
                 .benefitType(request.getBenefitType())
                 .benefitAmount(request.getBenefitAmount())
-                .eligibilitySummary(
-                        request.getEligibilitySummary()
-                )
-                .eligibilityJson(
-                        request.getEligibilityJson()
-                )
-                .documentsRequired(
-                        request.getDocumentsRequired()
-                )
-                .howToApply(
-                        request.getHowToApply()
-                )
-                .applicationUrl(
-                        request.getApplicationUrl()
-                )
+                .eligibilitySummary(request.getEligibilitySummary())
+                .eligibilityJson(request.getEligibilityJson())
+                .documentsRequired(request.getDocumentsRequired())
+                .howToApply(request.getHowToApply())
+                .applicationUrl(request.getApplicationUrl())
                 .deadline(request.getDeadline())
                 .state(request.getState())
                 .isActive(request.getIsActive())
@@ -79,77 +64,27 @@ public class SchemeService {
         return schemeRepository.save(scheme);
     }
 
-    public Scheme updateScheme(
-            Long id,
-            SchemeRequest request
-    ){
+    public Scheme updateScheme(Long id, SchemeRequest request) {
+        Scheme scheme = schemeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Scheme not found"));
 
-        Scheme scheme = schemeRepository
-                .findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException(
-                                "Scheme not found"
-                        ));
+        if (request.getName() != null) scheme.setName(request.getName());
+        if (request.getMinistry() != null) scheme.setMinistry(request.getMinistry());
+        if (request.getCategory() != null) scheme.setCategory(request.getCategory());
+        if (request.getSubcategory() != null) scheme.setSubcategory(request.getSubcategory());
+        if (request.getDescription() != null) scheme.setDescription(request.getDescription());
+        if (request.getBenefitType() != null) scheme.setBenefitType(request.getBenefitType());
+        if (request.getBenefitAmount() != null) scheme.setBenefitAmount(request.getBenefitAmount());
+        if (request.getEligibilitySummary() != null) scheme.setEligibilitySummary(request.getEligibilitySummary());
+        if (request.getEligibilityJson() != null) scheme.setEligibilityJson(request.getEligibilityJson());
+        if (request.getDocumentsRequired() != null) scheme.setDocumentsRequired(request.getDocumentsRequired());
+        if (request.getHowToApply() != null) scheme.setHowToApply(request.getHowToApply());
+        if (request.getApplicationUrl() != null) scheme.setApplicationUrl(request.getApplicationUrl());
+        if (request.getDeadline() != null) scheme.setDeadline(request.getDeadline());
+        if (request.getState() != null) scheme.setState(request.getState());
+        if (request.getIsActive() != null) scheme.setIsActive(request.getIsActive());
 
-        if(request.getName() != null)
-            scheme.setName(request.getName());
-
-        if(request.getMinistry() != null)
-            scheme.setMinistry(request.getMinistry());
-
-        if(request.getCategory() != null)
-            scheme.setCategory(request.getCategory());
-
-        if(request.getSubcategory() != null)
-            scheme.setSubcategory(request.getSubcategory());
-
-        if(request.getDescription() != null)
-            scheme.setDescription(
-                    request.getDescription());
-
-        if(request.getBenefitType() != null)
-            scheme.setBenefitType(
-                    request.getBenefitType());
-
-        if(request.getBenefitAmount() != null)
-            scheme.setBenefitAmount(
-                    request.getBenefitAmount());
-
-        if(request.getEligibilitySummary() != null)
-            scheme.setEligibilitySummary(
-                    request.getEligibilitySummary());
-
-        if(request.getEligibilityJson() != null)
-            scheme.setEligibilityJson(
-                    request.getEligibilityJson());
-
-        if(request.getDocumentsRequired() != null)
-            scheme.setDocumentsRequired(
-                    request.getDocumentsRequired());
-
-        if(request.getHowToApply() != null)
-            scheme.setHowToApply(
-                    request.getHowToApply());
-
-        if(request.getApplicationUrl() != null)
-            scheme.setApplicationUrl(
-                    request.getApplicationUrl());
-
-        if(request.getDeadline() != null)
-            scheme.setDeadline(
-                    request.getDeadline());
-
-        if(request.getState() != null)
-            scheme.setState(
-                    request.getState());
-
-        if(request.getIsActive() != null)
-            scheme.setIsActive(
-                    request.getIsActive());
-
-        scheme.setLastUpdated(
-                LocalDateTime.now());
-
+        scheme.setLastUpdated(LocalDateTime.now());
         return schemeRepository.save(scheme);
     }
 }

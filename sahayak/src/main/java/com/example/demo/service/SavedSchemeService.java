@@ -17,19 +17,11 @@ public class SavedSchemeService {
     private final UserRepository userRepository;
     private final SchemeRepository schemeRepository;
 
-    public List<SavedSchemeResponse> getSavedSchemes(
-            String email
-    ) {
+    public List<SavedSchemeResponse> getSavedSchemes(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
-        User user = userRepository
-                .findByEmail(email)
-                .orElseThrow(() ->
-                        new RuntimeException(
-                                "User not found"));
-
-        return savedSchemeRepository
-                .findByUser(user)
-                .stream()
+        return savedSchemeRepository.findByUser(user).stream()
                 .map(saved -> new SavedSchemeResponse(
                         saved.getId(),
                         saved.getScheme().getId(),
@@ -41,79 +33,38 @@ public class SavedSchemeService {
                 .toList();
     }
 
-    public String saveScheme(
-            String email,
-            Long schemeId
-    ) {
+    public String saveScheme(String email, Long schemeId) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
-        User user = userRepository
-                .findByEmail(email)
-                .orElseThrow(() ->
-                        new RuntimeException(
-                                "User not found"));
+        Scheme scheme = schemeRepository.findById(schemeId)
+                .orElseThrow(() -> new RuntimeException("Scheme not found"));
 
-        Scheme scheme = schemeRepository
-                .findById(schemeId)
-                .orElseThrow(() ->
-                        new RuntimeException(
-                                "Scheme not found"));
-
-        if(savedSchemeRepository
-                .findByUserAndScheme(
-                        user,
-                        scheme
-                )
-                .isPresent()) {
-
+        if (savedSchemeRepository.findByUserAndScheme(user, scheme).isPresent()) {
             return "Scheme already saved";
         }
 
-        SavedScheme savedScheme =
-                SavedScheme.builder()
-                        .user(user)
-                        .scheme(scheme)
-                        .savedAt(
-                                LocalDateTime.now()
-                        )
-                        .build();
+        SavedScheme savedScheme = SavedScheme.builder()
+                .user(user)
+                .scheme(scheme)
+                .savedAt(LocalDateTime.now())
+                .build();
 
-        savedSchemeRepository
-                .save(savedScheme);
-
+        savedSchemeRepository.save(savedScheme);
         return "Scheme saved successfully";
     }
 
-    public String unsaveScheme(
-            String email,
-            Long schemeId
-    ) {
+    public String unsaveScheme(String email, Long schemeId) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
-        User user = userRepository
-                .findByEmail(email)
-                .orElseThrow(() ->
-                        new RuntimeException(
-                                "User not found"));
+        Scheme scheme = schemeRepository.findById(schemeId)
+                .orElseThrow(() -> new RuntimeException("Scheme not found"));
 
-        Scheme scheme = schemeRepository
-                .findById(schemeId)
-                .orElseThrow(() ->
-                        new RuntimeException(
-                                "Scheme not found"));
+        SavedScheme savedScheme = savedSchemeRepository.findByUserAndScheme(user, scheme)
+                .orElseThrow(() -> new RuntimeException("Saved scheme not found"));
 
-        SavedScheme savedScheme =
-                savedSchemeRepository
-                        .findByUserAndScheme(
-                                user,
-                                scheme
-                        )
-                        .orElseThrow(() ->
-                                new RuntimeException(
-                                        "Saved scheme not found"));
-
-        savedSchemeRepository.delete(
-                savedScheme
-        );
-
+        savedSchemeRepository.delete(savedScheme);
         return "Scheme removed";
     }
 }

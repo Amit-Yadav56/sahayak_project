@@ -21,7 +21,7 @@ not just in a unit test.
 
 import re
 
-# ── Education ─────────────────────────────────────────────────────────────
+# --- Education ---
 
 _CLASS_N_RE = re.compile(r"^class\s*(\d+)\s*(?:st|nd|rd|th)?\.?$", re.IGNORECASE)
 _N_STANDARD_RE = re.compile(r"^(\d+)\s*(?:st|nd|rd|th)?\s*standard$", re.IGNORECASE)
@@ -83,7 +83,7 @@ def canonicalize_education(values: list[str]) -> list[str]:
     return sorted(out)
 
 
-# ── Occupation ────────────────────────────────────────────────────────────
+# --- Occupation ---
 
 _OCCUPATION_CANONICAL_MAP = {
     "farmers": "farmer", "farmer": "farmer",

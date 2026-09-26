@@ -71,7 +71,7 @@ def main():
     nlp.to_disk(MODEL_OUT)
     print(f"\nSaved trained pipeline -> {MODEL_OUT}/")
 
-    # ── Real evaluation on held-out dev set ──────────────────────────────
+    # --- Real evaluation on held-out dev set ---
     print("\n" + "=" * 60)
     print("DEV SET EVALUATION (held out — never seen during training)")
     print("=" * 60)

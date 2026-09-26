@@ -1,8 +1,7 @@
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 
 # Virtual environments
 venv/
@@ -12,23 +11,33 @@ env/
 # Environment/secrets
 .env
 .env.*
+!.env.example
 
 # IDE
 .vscode/
 .idea/
 
-# Python cache/testing
+# Testing & cache
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 
-# Build files
+# Build
 build/
 dist/
 *.egg-info/
 
-# OS files
+# Models & weights
+model_cache/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.onnx
+*.npy
+*.npz
+*.faiss
+
+# OS
 .DS_Store
 Thumbs.db
-
-**/model_cache/**

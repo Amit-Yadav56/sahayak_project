@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.SavedSchemeResponse;
-import com.example.demo.entity.SavedScheme;
 import com.example.demo.service.SavedSchemeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -17,39 +16,17 @@ public class SavedSchemeController {
     private final SavedSchemeService savedSchemeService;
 
     @GetMapping
-    public List<SavedSchemeResponse> getSavedSchemes(
-            Authentication authentication
-    ) {
-
-        return savedSchemeService
-                .getSavedSchemes(
-                        authentication.getName()
-                );
+    public List<SavedSchemeResponse> getSavedSchemes(Authentication authentication) {
+        return savedSchemeService.getSavedSchemes(authentication.getName());
     }
 
     @PostMapping("/{schemeId}")
-    public String saveScheme(
-            @PathVariable Long schemeId,
-            Authentication authentication
-    ) {
-
-        return savedSchemeService
-                .saveScheme(
-                        authentication.getName(),
-                        schemeId
-                );
+    public String saveScheme(@PathVariable Long schemeId, Authentication authentication) {
+        return savedSchemeService.saveScheme(authentication.getName(), schemeId);
     }
 
     @DeleteMapping("/{schemeId}")
-    public String unsaveScheme(
-            @PathVariable Long schemeId,
-            Authentication authentication
-    ) {
-
-        return savedSchemeService
-                .unsaveScheme(
-                        authentication.getName(),
-                        schemeId
-                );
+    public String unsaveScheme(@PathVariable Long schemeId, Authentication authentication) {
+        return savedSchemeService.unsaveScheme(authentication.getName(), schemeId);
     }
 }
