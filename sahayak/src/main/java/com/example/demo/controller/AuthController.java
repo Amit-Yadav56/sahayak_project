@@ -15,8 +15,9 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public String register(@Valid @RequestBody RegisterRequest request) {
-        return userService.register(request);
+    public org.springframework.http.ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request) {
+        String msg = userService.register(request);
+        return org.springframework.http.ResponseEntity.ok(java.util.Map.of("message", msg));
     }
 
     @PostMapping("/login")
@@ -30,7 +31,7 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public String logout() {
-        return "Logged out successfully";
+    public org.springframework.http.ResponseEntity<?> logout() {
+        return org.springframework.http.ResponseEntity.ok(java.util.Map.of("message", "Logged out successfully"));
     }
 }

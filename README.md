@@ -2,6 +2,13 @@
 
 Sahayak is a platform to help citizens discover Indian welfare schemes they qualify for.
 
+
+# 1 Spring Boot (Java)
+mvn -q spring-boot:run
+# 2 FastAPI ML service (Python)
+python -m uvicorn scheme_pipeline.api:app --reload --port 8000
+# 3 Front‑end (React/Vite)
+npm run dev
 ## Project Structure
 
 - `frontend/`: React showcase app with scheme search and eligibility calculator.

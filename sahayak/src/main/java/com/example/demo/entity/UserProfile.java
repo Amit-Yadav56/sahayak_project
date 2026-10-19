@@ -46,4 +46,8 @@ public class UserProfile {
     @OneToOne
     @JoinColumn(name="user_id")
     private User user;
+
+    public String getState() {
+        return user != null ? user.getState() : null;
+    }
 }

@@ -16,6 +16,7 @@ Run:
 from __future__ import annotations
 
 import asyncio
+import html
 import json
 import time
 from contextlib import asynccontextmanager
@@ -39,8 +40,17 @@ async def lifespan(app: FastAPI):
     # Startup: pre-load the sentence-transformer model and embedding index
     # into memory when the Python server starts — not on the first user
     # request. All subsequent /search calls will be fast (~20ms).
+    import logging
     loop = asyncio.get_event_loop()
-    await loop.run_in_executor(None, _get_search)
+    try:
+        engine = await loop.run_in_executor(None, _get_search)
+        if engine is None:
+            logging.warning(
+                "Embedding index not found at %s — semantic search will return 503. "
+                "Run `python -m ml.semantic_search.embed` to generate it.", EMBED_PATH
+            )
+    except Exception as exc:
+        logging.warning("ML semantic search warmup failed: %s", exc)
     yield
     # (no shutdown cleanup needed)
 
@@ -87,10 +97,7 @@ def _get_search():
     global _search_engine
     if _search_engine is None:
         if not EMBED_PATH.exists():
-            raise HTTPException(
-                status_code=503,
-                detail="Embedding index not found. Run `python -m ml.semantic_search.embed` first."
-            )
+            return None   # caller must check and return 503 manually
         from ml.semantic_search.search import SemanticSearch
         _search_engine = SemanticSearch()
     return _search_engine
@@ -112,7 +119,7 @@ def _constraint_density(elig: dict) -> int:
     return n
 
 
-def _matched_criteria(user: dict, elig: dict) -> dict:
+def _matched_criteria(user: dict, elig: dict, scheme_name: str = "") -> dict:
     """
     Returns which eligibility fields the user matches, partially matches,
     or fails — gives Java side enough info to display "Why this scheme?"
@@ -136,9 +143,19 @@ def _matched_criteria(user: dict, elig: dict) -> dict:
         return inc <= cap
 
     def gender_match():
+        s_lower = (scheme_name or "").lower()
+        u_g = (user.get("gender") or "other").lower()
+
+        # Strict checks for explicit keywords in scheme name where NER defaulted gender to "all"
+        if "transgender" in s_lower or "third gender" in s_lower:
+            return u_g in ("transgender", "other")
+        if any(w in s_lower for w in ["women", "girl", "kanya", "mahila", "widow", "maternity", "pregnant"]):
+            if "men and women" not in s_lower:
+                return u_g == "female"
+
         g = elig.get("gender", "all")
         if g == "all": return None
-        return user.get("gender", "").lower() == g.lower()
+        return u_g == g.lower()
 
     def caste_match():
         castes = [c.upper() for c in (elig.get("caste") or [])]
@@ -202,6 +219,9 @@ class MatchedScheme(BaseModel):
     benefit_amount:   str
     application_url:  str
     description:      str
+    eligibility_summary: str = ""
+    documents_required:  str = ""
+    how_to_apply:        str = ""
 
 
 class MatchResponse(BaseModel):
@@ -287,20 +307,37 @@ def match(req: MatchRequest):
             continue
         scheme_id = scheme.get("slug") or scheme.get("source_id") or scheme.get("name", "")
         elig = _eligibilities[i]
+        scheme_name = scheme.get("name", "")
+        criteria = _matched_criteria(user, elig, scheme_name)
+
+        # Enforce hard constraints: State mismatch and Gender mismatch
+        if criteria.get("state") is False:
+            continue
+        if criteria.get("gender") is False:
+            continue
+
         density_by_scheme_id[scheme_id] = _constraint_density(elig)
+        raw_data = scheme.get("raw_json", {}) if isinstance(scheme.get("raw_json"), dict) else {}
+        elig_text = scheme.get("eligibility_summary") or raw_data.get("eligibility") or ""
+        docs_text = scheme.get("documents_required") or raw_data.get("documents_required") or ""
+        proc_text = scheme.get("how_to_apply") or scheme.get("application_process") or raw_data.get("application_process") or ""
+
         results.append(MatchedScheme(
-            scheme_id        = scheme_id,
-            score            = round(score, 4),
-            status           = status,
-            matched_criteria = _matched_criteria(user, elig),
-            name             = scheme.get("name", ""),
-            ministry         = scheme.get("ministry", ""),
-            category         = scheme.get("category", ""),
-            state            = scheme.get("state", ""),
-            benefit_type     = scheme.get("benefit_type", ""),
-            benefit_amount   = scheme.get("benefit_amount", ""),
-            application_url  = scheme.get("application_url", ""),
-            description      = (scheme.get("description") or "")[:300],
+            scheme_id           = scheme_id,
+            score               = round(score, 4),
+            status              = status,
+            matched_criteria    = criteria,
+            name                = html.unescape(scheme_name),
+            ministry            = html.unescape(scheme.get("ministry", "")),
+            category            = html.unescape(scheme.get("category", "")),
+            state               = html.unescape(scheme.get("state", "")),
+            benefit_type        = html.unescape(scheme.get("benefit_type", "")),
+            benefit_amount      = html.unescape(scheme.get("benefit_amount", "")),
+            application_url     = scheme.get("application_url", ""),
+            description         = html.unescape((scheme.get("description") or "")[:500]),
+            eligibility_summary = html.unescape(elig_text),
+            documents_required  = html.unescape(docs_text),
+            how_to_apply        = html.unescape(proc_text),
         ))
 
     results.sort(key=lambda x: (-x.score, -density_by_scheme_id.get(x.scheme_id, 0)))
@@ -325,6 +362,11 @@ def search(req: SearchRequest):
         pass
 
     engine = _get_search()
+    if engine is None:
+        raise HTTPException(
+            status_code=503,
+            detail="Embedding index not found. Run `python -m ml.semantic_search.embed` first."
+        )
     t0 = time.time()
     raw = engine.query(req.query, top_k=req.top_k)
     meta = raw[0].pop("_meta", {}) if raw else {}
@@ -346,10 +388,10 @@ def search(req: SearchRequest):
         results.append(SearchResult(
             scheme_id       = r.get("name", ""),   # replaced by real slug once embed index has it
             relevance_score = r["score"],
-            name            = r["name"],
-            category        = r["category"],
-            state           = r["state"],
-            snippet         = snippet,
+            name            = html.unescape(r["name"]),
+            category        = html.unescape(r["category"]),
+            state           = html.unescape(r["state"]),
+            snippet         = html.unescape(snippet),
         ))
 
     return SearchResponse(

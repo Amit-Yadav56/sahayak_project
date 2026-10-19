@@ -18,4 +18,5 @@ public class ProfileRequest {
     private String educationLevel;
     private Boolean hasBankAccount;
     private Boolean hasAadhar;
+    private String state;
 }

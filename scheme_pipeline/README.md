@@ -28,7 +28,7 @@ Edit `.env` with your Postgres password and database name.
 Start the FastAPI server:
 
 ```bash
-uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir api --reload-dir ml --reload-dir data
 ```
 
 The service runs at http://localhost:8000.

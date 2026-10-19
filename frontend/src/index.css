@@ -8,6 +8,8 @@
   --bg: #f8fafc;
   --card-bg: #ffffff;
   --text-main: #0f172a;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
   --text-muted: #64748b;
   --border: #e2e8f0;
   --success: #16a34a;
@@ -628,4 +630,9 @@ body {
   .schemes-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

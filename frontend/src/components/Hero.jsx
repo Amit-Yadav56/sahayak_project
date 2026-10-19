@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Hero({ searchQuery, setSearchQuery, onSearch }) {
+export default function Hero({ searchQuery, setSearchQuery, onSearch, isSearching }) {
   const quickSearches = [
     "PM Kisan",
     "Health insurance",
@@ -34,8 +34,8 @@ export default function Hero({ searchQuery, setSearchQuery, onSearch }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <button type="submit" className="search-btn">
-              Search
+            <button type="submit" className="search-btn" disabled={isSearching}>
+              {isSearching ? "Searching…" : "Search"}
             </button>
           </form>
 

@@ -24,8 +24,7 @@ public class SchemeService {
     }
 
     public Scheme getSchemeById(Long id) {
-        return schemeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Scheme not found"));
+        return schemeRepository.findById(id).orElseThrow(() -> new RuntimeException("Scheme not found"));
     }
 
     public List<Scheme> getSchemesByCategory(String category) {
@@ -43,30 +42,29 @@ public class SchemeService {
 
     public Scheme createScheme(SchemeRequest request) {
         Scheme scheme = Scheme.builder()
-                .name(request.getName())
-                .ministry(request.getMinistry())
-                .category(request.getCategory())
-                .subcategory(request.getSubcategory())
-                .description(request.getDescription())
-                .benefitType(request.getBenefitType())
-                .benefitAmount(request.getBenefitAmount())
-                .eligibilitySummary(request.getEligibilitySummary())
-                .eligibilityJson(request.getEligibilityJson())
-                .documentsRequired(request.getDocumentsRequired())
-                .howToApply(request.getHowToApply())
-                .applicationUrl(request.getApplicationUrl())
-                .deadline(request.getDeadline())
-                .state(request.getState())
-                .isActive(request.getIsActive())
-                .lastUpdated(LocalDateTime.now())
-                .build();
+            .name(request.getName())
+            .ministry(request.getMinistry())
+            .category(request.getCategory())
+            .subcategory(request.getSubcategory())
+            .description(request.getDescription())
+            .benefitType(request.getBenefitType())
+            .benefitAmount(request.getBenefitAmount())
+            .eligibilitySummary(request.getEligibilitySummary())
+            .eligibilityJson(request.getEligibilityJson())
+            .documentsRequired(request.getDocumentsRequired())
+            .howToApply(request.getHowToApply())
+            .applicationUrl(request.getApplicationUrl())
+            .deadline(request.getDeadline())
+            .state(request.getState())
+            .isActive(request.getIsActive())
+            .lastUpdated(LocalDateTime.now())
+            .build();
 
         return schemeRepository.save(scheme);
     }
 
     public Scheme updateScheme(Long id, SchemeRequest request) {
-        Scheme scheme = schemeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Scheme not found"));
+        Scheme scheme = schemeRepository.findById(id).orElseThrow(() -> new RuntimeException("Scheme not found"));
 
         if (request.getName() != null) scheme.setName(request.getName());
         if (request.getMinistry() != null) scheme.setMinistry(request.getMinistry());

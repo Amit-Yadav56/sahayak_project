@@ -67,11 +67,8 @@ public class SchemeController {
             @RequestParam(defaultValue = "20") int topN,
             @RequestParam(defaultValue = "LIKELY_ELIGIBLE") String minStatus
     ) {
-        User currentUser = userRepository.findByEmail(authentication.getName())
-                .orElseThrow(() -> new RuntimeException("Authenticated user not found: " + authentication.getName()));
-
-        UserProfile profile = profileRepository.findByUser(currentUser)
-                .orElseThrow(() -> new ProfileNotFoundException("No profile found for user " + currentUser.getId() + ". Complete your profile first."));
+        User currentUser = userRepository.findByEmail(authentication.getName()).orElseThrow(() -> new RuntimeException("Authenticated user not found: " + authentication.getName()));
+        UserProfile profile = profileRepository.findByUser(currentUser).orElseThrow(() -> new ProfileNotFoundException("No profile found for user " + currentUser.getId() + ". Complete your profile first."));
 
         log.info("Matching schemes for user={} state={} caste={}",
                 currentUser.getId(),
@@ -91,9 +88,9 @@ public class SchemeController {
         try {
             log.info("Fetching scheme URL: {}", url);
             Document doc = Jsoup.connect(url)
-                    .userAgent("Mozilla/5.0")
-                    .timeout(10000)
-                    .get();
+                .userAgent("Mozilla/5.0")
+                .timeout(10000)
+                .get();
 
             String sectionText = doc.select("[data-tab=eligibility], .eligibility-section, #eligibility").text();
             eligibilityText = sectionText.isBlank() ? doc.body().text() : sectionText;

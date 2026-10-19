@@ -15,8 +15,9 @@ public class ProfileController {
     private final UserService userService;
 
     @PostMapping
-    public String createProfile(Authentication authentication, @RequestBody ProfileRequest request) {
-        return userService.createProfile(authentication.getName(), request);
+    public org.springframework.http.ResponseEntity<?> createProfile(Authentication authentication, @RequestBody ProfileRequest request) {
+        String msg = userService.createProfile(authentication.getName(), request);
+        return org.springframework.http.ResponseEntity.ok(java.util.Map.of("message", msg));
     }
 
     @GetMapping
@@ -25,7 +26,8 @@ public class ProfileController {
     }
 
     @PutMapping
-    public String updateProfile(Authentication authentication, @RequestBody ProfileRequest request) {
-        return userService.updateProfile(authentication.getName(), request);
+    public org.springframework.http.ResponseEntity<?> updateProfile(Authentication authentication, @RequestBody ProfileRequest request) {
+        String msg = userService.updateProfile(authentication.getName(), request);
+        return org.springframework.http.ResponseEntity.ok(java.util.Map.of("message", msg));
     }
 }
